@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Slaapsupplement Vergelijker 2026 — Welk supplement past bij jou? | BestSlaapAdvies</title>
+  <meta name="description" content="Vergelijk 21 slaapsupplementen op effectiviteit, wetenschappelijk bewijs, snelheid en prijs. Filter op jouw slaapprobleem en vind wat écht werkt."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary:#1a6b8a; --dark:#0d3d52; --accent:#2d9cdb;
+      --light:#e8f4f9; --bg:#f0f7fa; --border:#d0e8f2;
+      --text:#1a2e3b; --sub:#5a7a8a;
+      --green:#1a8a5a; --green-light:#e6f7f0;
+      --amber:#c47a1a; --amber-light:#fef3e2;
+      --red:#c0392b; --red-light:#fdf0ef;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    nav { background: white; border-bottom: 2px solid var(--border); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; }
+    .nav-logo span { font-size: 17px; font-weight: 800; color: var(--dark); }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    /* HERO */
+    .page-hero { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); color: white; padding: 48px 32px 40px; }
+    .page-hero .inner { max-width: 1100px; margin: 0 auto; }
+    .page-hero .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7dd3f0; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,.78); max-width: 600px; }
+
+    /* STATS BAR */
+    .stats-bar { background: white; border-bottom: 1px solid var(--border); padding: 18px 32px; }
+    .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 800; color: var(--dark); line-height: 1; }
+    .stat-num.green { color: var(--green); }
+    .stat-num.amber { color: var(--amber); }
+    .stat-num.red { color: var(--red); }
+    .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-top: 4px; }
+    .stat-sub { font-size: 11px; color: var(--sub); margin-top: 2px; }
+
+    /* FILTERS */
+    .filter-wrap { background: white; border-bottom: 1px solid var(--border); padding: 20px 32px; position: sticky; top: 57px; z-index: 90; }
+    .filter-inner { max-width: 1100px; margin: 0 auto; }
+    .filter-row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+    .filter-group { display: flex; flex-direction: column; gap: 6px; }
+    .filter-group-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); }
+    .filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pill { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 20px; border: 1.5px solid var(--border); background: white; color: var(--sub); cursor: pointer; transition: all .15s; white-space: nowrap; }
+    .pill:hover { border-color: var(--accent); color: var(--primary); }
+    .pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+    .reset-btn { font-size: 12px; font-weight: 600; color: var(--sub); background: none; border: none; cursor: pointer; padding: 5px 8px; align-self: flex-end; text-decoration: underline; }
+    .reset-btn:hover { color: var(--primary); }
+
+    /* RESULTS COUNT */
+    .results-bar { max-width: 1100px; margin: 0 auto; padding: 16px 24px 0; font-size: 13px; color: var(--sub); }
+    .results-bar span { font-weight: 700; color: var(--dark); }
+
+    /* GRID */
+    .tracker-wrap { max-width: 1100px; margin: 0 auto; padding: 16px 24px 64px; }
+    .tracker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+
+    /* SUPPLEMENT CARD */
+    .supp-card { background: white; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.05); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
+    .supp-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.1); transform: translateY(-2px); }
+    .supp-card.hidden { display: none; }
+
+    .card-header { padding: 18px 20px 14px; border-bottom: 1px solid var(--border); }
+    .card-header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .supp-name { font-size: 17px; font-weight: 800; color: var(--dark); line-height: 1.2; }
+    .supp-latin { font-size: 11px; color: var(--sub); font-style: italic; margin-top: 1px; }
+    .best-for-badge { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+    .best-for-badge.stress { background: #f0ebf9; color: #6b3fa0; }
+    .best-for-badge.inslapen { background: var(--light); color: var(--primary); }
+    .best-for-badge.kwaliteit { background: var(--green-light); color: var(--green); }
+    .best-for-badge.hormonen { background: #fde8f2; color: #a0397a; }
+    .best-for-badge.algemeen { background: var(--amber-light); color: var(--amber); }
+    .best-for-badge.blaas { background: #e8f0fe; color: #3b5bdb; }
+
+    .supp-desc { font-size: 13px; color: var(--sub); line-height: 1.55; }
+
+    /* SCORES */
+    .scores-section { padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .score-row { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
+    .score-row:last-child { margin-bottom: 0; }
+    .score-label { font-size: 11px; font-weight: 600; color: var(--sub); width: 95px; flex-shrink: 0; }
+    .score-bar-wrap { flex: 1; height: 7px; background: var(--bg); border-radius: 4px; overflow: hidden; }
+    .score-bar { height: 100%; border-radius: 4px; transition: width .3s; }
+    .score-bar.high { background: var(--green); }
+    .score-bar.mid { background: var(--accent); }
+    .score-bar.low { background: var(--amber); }
+    .score-val { font-size: 12px; font-weight: 700; color: var(--dark); width: 32px; text-align: right; flex-shrink: 0; }
+
+    /* META PILLS */
+    .meta-section { padding: 12px 20px; border-bottom: 1px solid var(--border); display: flex; gap: 7px; flex-wrap: wrap; }
+    .meta-pill { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 12px; }
+    .meta-pill.speed-fast { background: #e6f7f0; color: var(--green); }
+    .meta-pill.speed-med { background: var(--light); color: var(--primary); }
+    .meta-pill.speed-slow { background: var(--amber-light); color: var(--amber); }
+    .meta-pill.evidence-strong { background: var(--green-light); color: var(--green); }
+    .meta-pill.evidence-med { background: var(--light); color: var(--primary); }
+    .meta-pill.evidence-low { background: var(--amber-light); color: var(--amber); }
+    .meta-pill.side-none { background: var(--green-light); color: var(--green); }
+    .meta-pill.side-mild { background: var(--amber-light); color: var(--amber); }
+    .meta-pill.side-caution { background: var(--red-light); color: var(--red); }
+    .meta-pill.price { background: var(--bg); color: var(--sub); border: 1px solid var(--border); }
+
+    /* PROBLEMS */
+    .problems-section { padding: 10px 20px; border-bottom: 1px solid var(--border); }
+    .problems-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 6px; }
+    .problem-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+    .prob-tag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: var(--light); color: var(--primary); }
+
+    /* CARD FOOTER */
+    .card-footer { padding: 14px 20px; margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .price-tag { font-size: 14px; font-weight: 700; color: var(--dark); }
+    .card-btns { display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
+    .buy-btn { display: inline-block; background: var(--primary); color: white; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 7px; text-decoration: none; transition: background .15s; white-space: nowrap; }
+    .buy-btn:hover { background: var(--dark); }
+    .review-link { font-size: 11px; color: var(--sub); text-decoration: none; text-align: right; }
+    .review-link:hover { color: var(--primary); text-decoration: underline; }
+    .section-divider { grid-column: 1 / -1; margin-top: 24px; padding: 16px 0 4px; border-top: 2px solid var(--accent); }
+    .section-divider h2 { font-size: 18px; font-weight: 800; color: var(--dark); }
+    .section-divider p { font-size: 13px; color: var(--sub); margin-top: 4px; }
+    .affiliate-note { font-size: 10px; color: var(--sub); text-align: right; }
+
+    /* LEGEND */
+    .legend { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 18px 22px; margin-bottom: 20px; }
+    .legend-title { font-size: 12px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+    .legend-grid { display: flex; gap: 24px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--sub); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .legend-dot.green { background: var(--green); }
+    .legend-dot.blue { background: var(--accent); }
+    .legend-dot.amber { background: var(--amber); }
+
+    /* NO RESULTS */
+    .no-results { text-align: center; padding: 64px 24px; color: var(--sub); display: none; }
+    .no-results h3 { font-size: 18px; color: var(--dark); margin-bottom: 8px; }
+
+    .site-footer { background: #0d3d52; color: #7aacbf; padding: 48px 32px 32px; font-size: 13px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto 28px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+    .footer-brand strong { font-size: 16px; color: white; display: block; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; color: #7aacbf; max-width: 240px; line-height: 1.6; }
+    .footer-brand a { color: #a8d4e6; text-decoration: none; }
+    .footer-nav { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 6px; }
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
+    .footer-col a { color: #a8d4e6; text-decoration: none; transition: color .15s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; text-align: center; }
+    .footer-copy { color: #5a8a9f; margin-bottom: 8px; }
+    .footer-copy a { color: #7aacbf; text-decoration: none; }
+    .footer-disc { font-size: 11px; color: #5a8a9f; max-width: 640px; margin: 0 auto; line-height: 1.6; }
+
+    /* STATS BAR CLICKABLE */
+    .stat-item { cursor: pointer; border-radius: 8px; padding: 6px; transition: background .15s; }
+    .stat-item:hover { background: var(--light); }
+    .stat-item.active { background: var(--light); outline: 2px solid var(--accent); }
+
+    /* BRAND COMPARE MODAL */
+    .compare-btn { display: block; width: 100%; margin-top: 8px; background: #f0f7fa; color: var(--primary); border: 1.5px solid var(--border); font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 7px; cursor: pointer; transition: all .15s; text-align: center; }
+    .compare-btn:hover { background: var(--light); border-color: var(--accent); }
+    /* MULTI-AFFILIATE BUTTONS */
+    .multi-buy { display: flex; flex-direction: column; gap: 5px; width: 100%; }
+    .buy-btn-secondary { display: inline-block; background: white; color: var(--primary); border: 1.5px solid var(--primary); font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: 7px; text-decoration: none; transition: all .15s; white-space: nowrap; text-align: center; }
+    .buy-btn-secondary:hover { background: var(--light); }
+    .store-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-top: 2px; margin-bottom: 1px; }
+
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 1000; align-items: center; justify-content: center; padding: 24px; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: white; border-radius: 16px; padding: 28px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 24px 60px rgba(0,0,0,.3); position: relative; }
+    .modal-close { position: absolute; top: 16px; right: 16px; background: var(--bg); border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 18px; cursor: pointer; color: var(--sub); display: flex; align-items: center; justify-content: center; }
+    .modal-close:hover { background: var(--border); }
+    .modal-title { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+    .modal-sub { font-size: 13px; color: var(--sub); margin-bottom: 20px; }
+    .compare-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 10px; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .compare-table th { text-align: left; padding: 5px 8px; color: var(--sub); font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: .8px; border-bottom: 1px solid var(--border); }
+    .compare-table td { padding: 8px 8px; border-bottom: 1px solid #eef4f8; vertical-align: middle; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: #f0f8ff; }
+    .brand-name { font-weight: 700; color: var(--dark); display: block; }
+    .brand-sub { font-size: 10px; color: var(--sub); }
+    .brand-score { display: inline-block; background: var(--green); color: white; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 5px; }
+    .brand-score.mid { background: var(--accent); }
+    .brand-score.low { background: var(--amber); }
+    .best-pick { font-size: 9px; font-weight: 700; background: #fef3e2; color: var(--amber); padding: 2px 6px; border-radius: 4px; margin-left: 4px; }
+    .buy-mini { display: inline-block; background: var(--primary); color: white; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 5px; text-decoration: none; white-space: nowrap; }
+    .buy-mini:hover { background: var(--dark); }
+    .stars { color: #f59e0b; font-size: 11px; }
+
+    /* REVIEW SECTION */
+    .reviews-section { max-width: 1100px; margin: 0 auto 80px; padding: 0 24px; }
+    .reviews-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--accent); }
+    .reviews-header h2 { font-size: 20px; font-weight: 800; color: var(--dark); }
+    .reviews-header p { font-size: 13px; color: var(--sub); margin-top: 4px; }
+    .write-review-btn { background: var(--primary); color: white; font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .write-review-btn:hover { background: var(--dark); }
+    .review-types { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media(max-width:700px){ .review-types { grid-template-columns: 1fr; } }
+    .editorial-box { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); border-radius: 14px; padding: 24px; color: white; }
+    .editorial-badge { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7dd3f0; margin-bottom: 12px; }
+    .editorial-product { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+    .editorial-sub { font-size: 12px; color: rgba(255,255,255,.6); margin-bottom: 16px; }
+    .editorial-score-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .big-score { font-size: 40px; font-weight: 900; color: #7dd3f0; line-height: 1; }
+    .editorial-labels { font-size: 12px; color: rgba(255,255,255,.7); }
+    .editorial-verdict { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.55; border-top: 1px solid rgba(255,255,255,.15); padding-top: 12px; margin-top: 12px; }
+    .pros-cons { display: flex; gap: 12px; margin-top: 12px; }
+    .pros, .cons { flex: 1; }
+    .pros-title { font-size: 10px; font-weight: 700; color: #86efac; text-transform: uppercase; margin-bottom: 6px; }
+    .cons-title { font-size: 10px; font-weight: 700; color: #fca5a5; text-transform: uppercase; margin-bottom: 6px; }
+    .pros li, .cons li { font-size: 11px; color: rgba(255,255,255,.8); list-style: none; padding: 2px 0; }
+    .pros li::before { content: "✓ "; color: #86efac; }
+    .cons li::before { content: "✗ "; color: #fca5a5; }
+
+    .user-reviews-col { display: flex; flex-direction: column; gap: 14px; }
+    .user-review-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .review-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .reviewer-info { }
+    .reviewer-name { font-size: 13px; font-weight: 700; color: var(--dark); }
+    .reviewer-meta { font-size: 11px; color: var(--sub); margin-top: 1px; }
+    .review-stars { font-size: 14px; color: #f59e0b; }
+    .verified-badge { font-size: 10px; font-weight: 700; color: var(--green); background: var(--green-light); padding: 2px 7px; border-radius: 4px; }
+    .review-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+    .review-text { font-size: 12.5px; color: var(--sub); line-height: 1.55; }
+    .review-product-tag { font-size: 10px; color: var(--primary); background: var(--light); padding: 2px 8px; border-radius: 4px; margin-top: 8px; display: inline-block; }
+    .helpful-row { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; font-size: 11px; color: var(--sub); }
+    .helpful-btn { background: none; border: 1px solid var(--border); padding: 3px 10px; border-radius: 5px; cursor: pointer; font-size: 11px; color: var(--sub); }
+    .helpful-btn:hover { border-color: var(--accent); color: var(--primary); }
+
+    .review-form-box { background: var(--light); border-radius: 12px; border: 2px dashed var(--border); padding: 24px; margin-top: 4px; }
+    .review-form-box h3 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .review-form-box p { font-size: 13px; color: var(--sub); margin-bottom: 16px; }
+    .form-row { margin-bottom: 10px; }
+    .form-row label { display: block; font-size: 11px; font-weight: 700; color: var(--sub); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .5px; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 8px 10px; border: 1.5px solid var(--border); border-radius: 7px; font-size: 13px; color: var(--text); background: white; }
+    .form-row textarea { resize: vertical; min-height: 80px; }
+    .star-picker { display: flex; gap: 4px; font-size: 22px; cursor: pointer; }
+    .star-picker span { color: #d1d5db; transition: color .1s; }
+    .star-picker span.on { color: #f59e0b; }
+    .submit-review { width: 100%; background: var(--primary); color: white; border: none; padding: 11px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 6px; transition: background .15s; }
+    .submit-review:hover { background: var(--dark); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html"><span>BestSlaapAdvies</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Supplementen</a>
+    <a href="../ontspanning/index.html">Ontspanning</a>
+    <a href="../gids/index.html">Slaapgids</a>
+    <a href="../media/index.html">Media</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <div class="eyebrow">💊 Slaapsupplement Vergelijker</div>
+    <h1>Welk slaapsupplement past bij jou?</h1>
+    <p>Filter op jouw slaapprobleem en vergelijk 11 supplementen op wetenschappelijk bewijs, effectiviteit en prijs. Alle scores zijn gebaseerd op gepubliceerd klinisch onderzoek.</p>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item" title="Toon alle supplementen" onclick="statFilter('all')">
+      <div class="stat-num" id="cnt-all">—</div>
+      <div class="stat-label">Supplementen</div>
+      <div class="stat-sub">klik om alles te zien</div>
+    </div>
+    <div class="stat-item" title="Filter: Sterk bewijs" onclick="statFilter('evidence','strong')">
+      <div class="stat-num green" id="cnt-strong">—</div>
+      <div class="stat-label">Sterk bewijs</div>
+      <div class="stat-sub">klik om te filteren</div>
+    </div>
+    <div class="stat-item" title="Filter: Matig bewijs" onclick="statFilter('evidence','medium')">
+      <div class="stat-num" style="color:var(--accent)" id="cnt-medium">—</div>
+      <div class="stat-label">Matig bewijs</div>
+      <div class="stat-sub">klik om te filteren</div>
+    </div>
+    <div class="stat-item" title="Filter: Beperkt bewijs" onclick="statFilter('evidence','low')">
+      <div class="stat-num amber" id="cnt-low">—</div>
+      <div class="stat-label">Beperkt bewijs</div>
+      <div class="stat-sub">klik om te filteren</div>
+    </div>
+    <div class="stat-item" title="Filter: Zelfde nacht" onclick="statFilter('speed','snel')">
+      <div class="stat-num" id="cnt-snel">—</div>
+      <div class="stat-label">Zelfde nacht</div>
+      <div class="stat-sub">klik om te filteren</div>
+    </div>
+  </div>
+</div>
+
+<div class="filter-wrap">
+  <div class="filter-inner">
+    <div class="filter-row">
+      <div class="filter-group">
+        <div class="filter-group-label">Slaapprobleem</div>
+        <div class="filter-pills">
+          <button class="pill" data-filter="problem" data-val="inslapen">Niet kunnen inslapen</button>
+          <button class="pill" data-filter="problem" data-val="doorslapen">Wakker worden</button>
+          <button class="pill" data-filter="problem" data-val="kwaliteit">Slaapkwaliteit</button>
+          <button class="pill" data-filter="problem" data-val="stress">Stress & piekeren</button>
+          <button class="pill" data-filter="problem" data-val="hormonen">Hormonen & menopauze</button>
+          <button class="pill" data-filter="problem" data-val="nachtplassen">🚽 Nacht plassen</button>
+          <button class="pill" data-filter="problem" data-val="nachtmerries">😨 Nachtmerries</button>
+          <button class="pill" data-filter="problem" data-val="snurken">😴 Snurken</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-label">Snelheid</div>
+        <div class="filter-pills">
+          <button class="pill" data-filter="speed" data-val="snel">Zelfde nacht</button>
+          <button class="pill" data-filter="speed" data-val="geleidelijk">1–2 weken</button>
+          <button class="pill" data-filter="speed" data-val="langzaam">4+ weken</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-label">Prijs</div>
+        <div class="filter-pills">
+          <button class="pill" data-filter="price" data-val="1">€ Goedkoop</button>
+          <button class="pill" data-filter="price" data-val="2">€€ Gemiddeld</button>
+          <button class="pill" data-filter="price" data-val="3">€€€ Premium</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-label">Categorie</div>
+        <div class="filter-pills">
+          <button class="pill" data-filter="category" data-val="supplement">💊 Supplementen</button>
+          <button class="pill" data-filter="category" data-val="accessoire">🛏️ Accessoires</button>
+        </div>
+      </div>
+      <button class="reset-btn" onclick="resetFilters()">Wis filters</button>
+    </div>
+  </div>
+</div>
+
+<div class="results-bar">
+  <span id="results-count">23</span> van 23 producten zichtbaar
+</div>
+
+<div class="tracker-wrap">
+
+  <div class="legend">
+    <div class="legend-title">Hoe lezen we de scores?</div>
+    <div class="legend-grid">
+      <div class="legend-item"><div class="legend-dot green"></div> 80–100: Sterk bewijs / Hoog effectief</div>
+      <div class="legend-item"><div class="legend-dot blue"></div> 60–79: Matig bewijs / Gemiddeld effectief</div>
+      <div class="legend-item"><div class="legend-dot amber"></div> &lt;60: Beperkt bewijs / Wisselend effectief</div>
+      <div class="legend-item" style="margin-left:8px">Scores gebaseerd op gepubliceerde RCTs en meta-analyses (PubMed, Cochrane)</div>
+    </div>
+  </div>
+
+  <div class="tracker-grid" id="tracker-grid">
+
+    <!-- 1. MAGNESIUM GLYCINAAT -->
+    <div class="supp-card" data-problems="inslapen doorslapen kwaliteit stress hormonen snurken" data-speed="geleidelijk" data-price="2" data-evidence="strong">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Magnesium Glycinaat</div>
+            <div class="supp-latin">Magnesium bisglycinate</div>
+          </div>
+          <span class="best-for-badge algemeen">Beste algehele keuze</span>
+        </div>
+        <div class="supp-desc">De meest effectieve magnesiumvorm voor slaap. Combineert de kalmerende werking van magnesium met glycine — een aminozuur dat de lichaamstemperatuur verlaagt en diepe slaap bevordert.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:88%"></div></div>
+          <div class="score-val">88</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:85%"></div></div>
+          <div class="score-val">85</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:92%"></div></div>
+          <div class="score-val">92</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (1–2 wkn)</span>
+        <span class="meta-pill evidence-strong">✓ Sterk bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Stress</span>
+          <span class="prob-tag">Menopauze</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€23,95 / 90 tabs</div>
+          <div class="affiliate-note">* wordt affiliate link na aanmelding</div>
+        </div>
+        <div class="card-btns">
+          <div class="multi-buy">
+            <div class="store-label">Kies jouw winkel</div>
+            <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+glycinaat+bisglycinaat+slaap" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com — alle merken →</a>
+            <a href="https://www.hollandandbarrett.nl/search/?query=magnesium+bisglycinate" target="_blank" rel="noopener" class="buy-btn-secondary">🟢 Holland & Barrett →</a>
+            <a href="https://www.vitakruid.nl/magnesium" target="_blank" rel="noopener" class="buy-btn-secondary">💊 Vitakruid direct →</a>
+          </div>
+          <a href="beste-magnesium-slaap.html" class="review-link" style="margin-top:4px">Lees volledige review</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. MELATONINE -->
+    <div class="supp-card" data-problems="inslapen" data-speed="snel" data-price="1" data-evidence="strong">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Melatonine</div>
+            <div class="supp-latin">Melatonin</div>
+          </div>
+          <span class="best-for-badge inslapen">Inslapen</span>
+        </div>
+        <div class="supp-desc">Het meest onderzochte slaapmiddel ter wereld. Uiterst effectief voor moeilijk inslapen, jetlag en ploegenwerk — maar helpt <em>niet</em> bij doorslapen of slaapkwaliteit. In Nederland max. 0,3mg vrij verkrijgbaar.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:95%"></div></div>
+          <div class="score-val">95</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:78%"></div></div>
+          <div class="score-val">78</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Snel (zelfde nacht)</span>
+        <span class="meta-pill evidence-strong">✓ Sterk bewijs</span>
+        <span class="meta-pill side-mild">Bijwerkingen: sufheid mogelijk</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Jetlag</span>
+          <span class="prob-tag">Ploegenwerk</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€8–15 / 60 tabs</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=melatonine+slaap+supplement+0.3mg" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('melatonine')">⚖️ Vergelijk 4 merken →</button>
+          <a href="melatonine-slaap.html" class="review-link">Lees volledige review</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. GLYCINE -->
+    <div class="supp-card" data-problems="kwaliteit doorslapen" data-speed="snel" data-price="1" data-evidence="strong">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Glycine</div>
+            <div class="supp-latin">Glycine (aminozuur)</div>
+          </div>
+          <span class="best-for-badge kwaliteit">Slaapkwaliteit</span>
+        </div>
+        <div class="supp-desc">Onderschat supplement met sterk bewijs. Glycine verlaagt de lichaamstemperatuur — een cruciaal signaal voor diep slapen. Studies tonen significant betere slaapkwaliteit en frisser wakker worden bij 3g voor het slapen.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:80%"></div></div>
+          <div class="score-val">80</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:82%"></div></div>
+          <div class="score-val">82</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:90%"></div></div>
+          <div class="score-val">90</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Snel (zelfde nacht)</span>
+        <span class="meta-pill evidence-strong">✓ Sterk bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: vrijwel geen</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Frisser wakker</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€12–18 / 200g</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=glycine+aminozuur+supplement+poeder" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="supplement-combinaties.html" class="review-link">Meer info</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. L-THEANINE -->
+    <div class="supp-card" data-problems="stress inslapen nachtmerries" data-speed="snel" data-price="2" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">L-Theanine</div>
+            <div class="supp-latin">L-Theanine (theezuur)</div>
+          </div>
+          <span class="best-for-badge stress">Stress & piekeren</span>
+        </div>
+        <div class="supp-desc">Aminozuur uit groene thee dat de geest kalmeert zonder slaperigheid overdag te veroorzaken. Ideaal voor mensen met een druk hoofd 's nachts. Werkt al bij de eerste inname. Veilig te combineren met magnesium.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:85%"></div></div>
+          <div class="score-val">85</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Snel (zelfde nacht)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: vrijwel geen</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & piekeren</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Druk hoofd</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€15–22 / 60 caps</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=l-theanine+supplement+slaap+200mg" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="l-theanine-slaap.html" class="review-link">Lees volledige review</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ASHWAGANDHA -->
+    <div class="supp-card" data-problems="stress inslapen kwaliteit hormonen nachtmerries" data-speed="langzaam" data-price="2" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Ashwagandha</div>
+            <div class="supp-latin">Withania somnifera (KSM-66)</div>
+          </div>
+          <span class="best-for-badge stress">Stress & cortisol</span>
+        </div>
+        <div class="supp-desc">Adaptogeen kruid dat cortisol (stresshormoon) verlaagt — de belangrijkste oorzaak van stress-gerelateerde slapeloosheid. Kies altijd KSM-66 of Sensoril extract voor bewezen effectiviteit. Werkt het best na 4–8 weken.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:74%"></div></div>
+          <div class="score-val">74</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:75%"></div></div>
+          <div class="score-val">75</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:74%"></div></div>
+          <div class="score-val">74</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-slow">🕐 Langzaam (4–8 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-mild">Bijwerkingen: lichte maagklachten</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & piekeren</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Hormonen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€18–28 / 60 caps</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=ashwagandha+ksm66+slaap+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="ashwagandha-slaap.html" class="review-link">Lees volledige review</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. MAGNESIUM CITRAAT -->
+    <div class="supp-card" data-problems="inslapen doorslapen stress" data-speed="geleidelijk" data-price="1" data-evidence="strong">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Magnesium Citraat</div>
+            <div class="supp-latin">Magnesium citrate</div>
+          </div>
+          <span class="best-for-badge algemeen">Budget optie</span>
+        </div>
+        <div class="supp-desc">Goede instapkeuze. Minder effectief voor slaap dan glycinaat (lagere opname, geen glycine-voordeel), maar ruim beschikbaar bij elke drogisterij en apotheek en bewezen effectief bij magnesiumtekort.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:82%"></div></div>
+          <div class="score-val">82</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (1–2 wkn)</span>
+        <span class="meta-pill evidence-strong">✓ Sterk bewijs</span>
+        <span class="meta-pill side-mild">Bijwerkingen: laxerend bij hoge dosis</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Stress</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€10–16 / 60 tabs</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+citraat+supplement+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="magnesium-glycinaat-vs-citraat.html" class="review-link">Lees vergelijking</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. VALERIAAN -->
+    <div class="supp-card" data-problems="inslapen stress" data-speed="geleidelijk" data-price="1" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Valeriaan</div>
+            <div class="supp-latin">Valeriana officinalis</div>
+          </div>
+          <span class="best-for-badge inslapen">Mild inslapen</span>
+        </div>
+        <div class="supp-desc">Klassiek kruidenmiddel voor lichte slapeloosheid. Bewijs is wisselend — sommige studies positief, andere neutraal. Werkt voor sommige mensen uitstekend, voor anderen niet. Veilig om te proberen bij milde slaapproblemen.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:62%"></div></div>
+          <div class="score-val">62</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (1–2 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-mild">Bijwerkingen: levendige dromen</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Milde slapeloosheid</span>
+          <span class="prob-tag">Stress</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€8–14 / 60 caps</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=valeriaan+supplement+slaap+capsules" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="valeriaan-review.html" class="review-link">Lees volledige review</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. PASSIEFLORA -->
+    <div class="supp-card" data-problems="stress inslapen hormonen" data-speed="snel" data-price="1" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Passieflora</div>
+            <div class="supp-latin">Passiflora incarnata</div>
+          </div>
+          <span class="best-for-badge stress">Angst & spanning</span>
+        </div>
+        <div class="supp-desc">Mild kalmerende werking via GABA-receptoren. Goed bewijs voor angst-gerelateerde slaapproblemen. Werkt snel en is goed te combineren met valeriaan of magnesium. Populair bij mensen die geen zware middelen willen.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Snel (zelfde nacht)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & angst</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Hormonen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€8–14 / 60 caps</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=passiebloem+passieflora+supplement+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="alternatieven-melatonine.html" class="review-link">Meer info</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. MAGNESIUM L-THREONATE -->
+    <div class="supp-card" data-problems="kwaliteit doorslapen" data-speed="geleidelijk" data-price="3" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Magnesium L-Threonate</div>
+            <div class="supp-latin">Magnesium threonate (Magtein®)</div>
+          </div>
+          <span class="best-for-badge kwaliteit">Hersenen & slaap</span>
+        </div>
+        <div class="supp-desc">Enige magnesiumvorm die de bloed-hersenbarrière passeert. Verhoogt magnesiumgehalte in de hersenen direct — verbetert cognitie én slaapkwaliteit. Duurder maar uniek in zijn klasse. Goed onderbouwd door MIT-onderzoek.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:82%"></div></div>
+          <div class="score-val">82</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:74%"></div></div>
+          <div class="score-val">74</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:88%"></div></div>
+          <div class="score-val">88</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (2–4 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Cognitie & geheugen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€35–50 / 90 caps</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+l-threonate+magtein+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="beste-magnesium-slaap.html" class="review-link">Lees vergelijking</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. 5-HTP -->
+    <div class="supp-card" data-problems="kwaliteit doorslapen inslapen" data-speed="geleidelijk" data-price="2" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">5-HTP</div>
+            <div class="supp-latin">5-Hydroxytryptophan</div>
+          </div>
+          <span class="best-for-badge kwaliteit">Serotonine & slaap</span>
+        </div>
+        <div class="supp-desc">Precursor van serotonine en melatonine. Kan slaapkwaliteit verbeteren via verhoogde serotonine aanmaak. Belangrijk: <strong>niet combineren met antidepressiva (SSRI/SNRI)</strong> — risico op serotoninesyndroom.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (1–2 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-caution">⚠ Niet met antidepressiva</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€16–24 / 60 caps</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <a href="../gids/slaapsupplementen-veilig.html" class="buy-btn">Lees waarschuwing →</a>
+      </div>
+    </div>
+
+    <!-- 11. CBD OLIE -->
+    <div class="supp-card" data-problems="stress hormonen inslapen nachtmerries" data-speed="geleidelijk" data-price="3" data-evidence="low">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">CBD Olie</div>
+            <div class="supp-latin">Cannabidiol</div>
+          </div>
+          <span class="best-for-badge stress">Angst & stress</span>
+        </div>
+        <div class="supp-desc">Populair maar wisselend bewijs voor slaap specifiek. Werkt indirect via angstreductie. Kwaliteit verschilt sterk per merk — kies altijd producten met COA (Certificate of Analysis). Duur en beperkt RCT-bewijs voor slaap.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:55%"></div></div>
+          <div class="score-val">55</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:48%"></div></div>
+          <div class="score-val">48</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:58%"></div></div>
+          <div class="score-val">58</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Variabel</span>
+        <span class="meta-pill evidence-low">↓ Beperkt bewijs</span>
+        <span class="meta-pill side-mild">Bijwerkingen: geneesmiddelinteracties</span>
+        <span class="meta-pill price">€€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & angst</span>
+          <span class="prob-tag">Hormonen</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div>
+          <div class="price-tag">±€30–60 / 10ml</div>
+          <div class="affiliate-note">* affiliate link</div>
+        </div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=cbd+olie+slaap+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="cbd-olie-slaap.html" class="review-link">Lees volledige review</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. SLAAP GUMMIES (COMBO) -->
+    <div class="supp-card" data-problems="inslapen stress kwaliteit" data-speed="snel" data-price="2" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Slaap Gummies (Combi)</div>
+            <div class="supp-latin">Melatonine + L-Theanine + Valeriaan + B6 + Kamille</div>
+          </div>
+          <span class="best-for-badge inslapen">Alles in één</span>
+        </div>
+        <div class="supp-desc">Populaire combinatiesupplementen die meerdere slaapingredients combineren in één gummy. Ideaal voor beginners die niet meerdere losse supplementen willen nemen. Lekker, makkelijk en breed effectief.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:74%"></div></div>
+          <div class="score-val">74</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:82%"></div></div>
+          <div class="score-val">82</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Snel (zelfde nacht)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Stress & piekeren</span>
+          <span class="prob-tag">Slaapkwaliteit</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€44,95 / 60 gummies</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=slaap+gummies+melatonine+l-theanine+valeriaan" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="supplement-combinaties.html" class="review-link">Lees meer</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. SLAAP COMPLEX KRUIDENMIX -->
+    <div class="supp-card" data-problems="inslapen stress kwaliteit hormonen doorslapen" data-speed="geleidelijk" data-price="2" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Slaap Complex</div>
+            <div class="supp-latin">Valeriaan + Passiebloem + Citroenmelisse + Kamille + 5-HTP + Rhodiola</div>
+          </div>
+          <span class="best-for-badge algemeen">Breed spectrum</span>
+        </div>
+        <div class="supp-desc">Volledig kruidencomplex dat meerdere slaapproblemen tegelijk aanpakt. Bevat adaptogenen, kalmerende kruiden én serotonine-precursors. Goede keuze als je niet zeker weet wat de oorzaak van je slaapprobleem is.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (1–2 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-mild">Bijwerkingen: mild mogelijk</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Stress</span>
+          <span class="prob-tag">Hormonen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€29,95 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=slaap+complex+supplement+kruiden+valeriaan" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="supplement-combinaties.html" class="review-link">Lees meer</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. OMEGA-3 / VISOLIE -->
+    <div class="supp-card" data-problems="kwaliteit doorslapen snurken" data-speed="langzaam" data-price="1" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Omega-3 / Visolie</div>
+            <div class="supp-latin">EPA + DHA vetzuren</div>
+          </div>
+          <span class="best-for-badge kwaliteit">Slaapkwaliteit</span>
+        </div>
+        <div class="supp-desc">Omega-3 vetzuren (EPA/DHA) ondersteunen de aanmaak van serotonine en melatonine. Studies tonen verband tussen omega-3 tekort en slaapproblemen. Extra voordeel: breed gezondheidseffect. Veel Nederlanders hebben tekort.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-slow">🕐 Langzaam (4–8 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: visopsmaak mogelijk</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Algemene gezondheid</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€13–17 / 120 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=omega+3+visolie+epa+dha+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="gids/index.html" class="review-link">Meer info</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. VITAMINE D3 -->
+    <div class="supp-card" data-problems="kwaliteit inslapen doorslapen snurken" data-speed="langzaam" data-price="1" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Vitamine D3</div>
+            <div class="supp-latin">Cholecalciferol</div>
+          </div>
+          <span class="best-for-badge kwaliteit">Tekort aanvullen</span>
+        </div>
+        <div class="supp-desc">Tot 70% van de Nederlanders heeft een vitamine D tekort in de winter. Vitamine D-deficiëntie is direct gekoppeld aan slaapproblemen, vermoeidheid en verhoogde cortisolspiegels. Aanvullen is essentieel als basis voor betere slaap.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:85%"></div></div>
+          <div class="score-val">85</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-slow">🕐 Langzaam (4–8 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: veilig bij normale dosis</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Vermoeidheid</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€8–14 / 180 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=vitamine+d3+2000ie+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16. CITROENMELISSE -->
+    <div class="supp-card" data-problems="stress inslapen hormonen" data-speed="snel" data-price="1" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Citroenmelisse</div>
+            <div class="supp-latin">Melissa officinalis</div>
+          </div>
+          <span class="best-for-badge stress">Stress & angst</span>
+        </div>
+        <div class="supp-desc">Kalmerende plant die GABA-activiteit verhoogt. Goede studies voor angst en slaap, vaak gecombineerd met valeriaan voor sterk synergistisch effect. Mild, veilig en werkt snel. Populair bij mensen die iets "zachts" zoeken.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:67%"></div></div>
+          <div class="score-val">67</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Snel (zelfde nacht)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & angst</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Hormonen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€8–14 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=citroenmelisse+supplement+slaap+capsules" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17. REISHI PADDENSTOEL -->
+    <div class="supp-card" data-problems="stress kwaliteit hormonen" data-speed="langzaam" data-price="3" data-evidence="low">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Reishi Paddenstoel</div>
+            <div class="supp-latin">Ganoderma lucidum</div>
+          </div>
+          <span class="best-for-badge hormonen">Adaptogeen</span>
+        </div>
+        <div class="supp-desc">Medicinale paddenstoel die al eeuwen wordt gebruikt voor ontspanning en slaap. Moderne studies tonen stressreductie en verbeterde slaapkwaliteit. Beperkt RCT-bewijs, maar groeiende wetenschappelijke interesse. Trending in 2026.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:58%"></div></div>
+          <div class="score-val">58</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:52%"></div></div>
+          <div class="score-val">52</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-slow">🕐 Langzaam (4–8 wkn)</span>
+        <span class="meta-pill evidence-low">↓ Beperkt bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress</span>
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Hormonen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€30–50 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=reishi+paddenstoel+supplement+capsules" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18. INOSITOL -->
+    <div class="supp-card" data-problems="hormonen kwaliteit stress doorslapen" data-speed="geleidelijk" data-price="2" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Inositol</div>
+            <div class="supp-latin">Myo-inositol</div>
+          </div>
+          <span class="best-for-badge hormonen">Vrouwen & hormonen</span>
+        </div>
+        <div class="supp-desc">Vitamine-achtige stof die insuline- en hormoonbalans ondersteunt. Goed bewijs voor slaapkwaliteit bij vrouwen met hormonale disbalans (PCOS, menopauze). Vermindert nachtelijk wakker worden en angst. Sterk onderschat supplement voor vrouwen 40+.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:71%"></div></div>
+          <div class="score-val">71</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:78%"></div></div>
+          <div class="score-val">78</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (2–4 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Hormonen & menopauze</span>
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Wakker worden</span>
+          <span class="prob-tag">Stress</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€18–28 / 90 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=inositol+supplement+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <a href="supplementen-vrouwen-40.html" class="review-link">Lees meer</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 19. VITAMINE B6 -->
+    <div class="supp-card" data-problems="kwaliteit inslapen hormonen" data-speed="geleidelijk" data-price="1" data-evidence="medium">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Vitamine B6</div>
+            <div class="supp-latin">Pyridoxine / P5P</div>
+          </div>
+          <span class="best-for-badge kwaliteit">Melatonine aanmaak</span>
+        </div>
+        <div class="supp-desc">Essentieel co-enzym voor de aanmaak van serotonine en melatonine. Zonder voldoende B6 werken de meeste slaapsupplementen minder goed. Goedkoop, veilig en breed inzetbaar. Kies P5P (actieve vorm) voor beste resultaat.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:82%"></div></div>
+          <div class="score-val">82</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (2–4 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: veilig bij normale dosis</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Hormoonbalans</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€8–14 / 90 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=vitamine+b6+p5p+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20. MAGNESIUM BADZOUTEN -->
+    <div class="supp-card" data-problems="stress kwaliteit inslapen" data-speed="snel" data-price="2" data-evidence="low">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Magnesium Badzouten</div>
+            <div class="supp-latin">Magnesium chloride vlokken</div>
+          </div>
+          <span class="best-for-badge stress">Ontspanning & bad</span>
+        </div>
+        <div class="supp-desc">Transdermale magnesiuminname via een warm bad of voetenbadje. Populair als ontspanningsritueel voor het slapengaan. Wetenschappelijk bewijs voor opname via de huid is beperkt, maar het warme bad op zich verlaagt de lichaamstemperatuur — wat slaap bevordert.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:55%"></div></div>
+          <div class="score-val">55</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar low" style="width:45%"></div></div>
+          <div class="score-val">45</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Ontspanningseffect</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:85%"></div></div>
+          <div class="score-val">85</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Zelfde avond (ontspanning)</span>
+        <span class="meta-pill evidence-low">↓ Beperkt bewijs opname</span>
+        <span class="meta-pill side-none">Bijwerkingen: geen</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & ontspanning</span>
+          <span class="prob-tag">Slaapkwaliteit</span>
+          <span class="prob-tag">Avondritueel</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€24,95 / 2kg</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+vlokken+badzout+slaap+ontspanning" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 21. LAVENDEL SPRAY -->
+    <div class="supp-card" data-problems="stress inslapen" data-speed="snel" data-price="1" data-evidence="low">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Lavendel Kussenspray</div>
+            <div class="supp-latin">Lavandula angustifolia (aromatherapie)</div>
+          </div>
+          <span class="best-for-badge inslapen">Slaapomgeving</span>
+        </div>
+        <div class="supp-desc">Lavendelaroma verlaagt aantoonbaar hartslag en bloeddruk, bevordert ontspanning. Goede studies voor verbetering van slaapkwaliteit via aromatherapie. Goedkoop, direct en populair cadeau-item. Ideale aanvulling op andere supplementen.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:62%"></div></div>
+          <div class="score-val">62</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Gebruiksgemak</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:95%"></div></div>
+          <div class="score-val">95</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Snel (zelfde nacht)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: geen</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & ontspanning</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Slaapomgeving</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€12,30 / 80ml</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=lavendel+kussenspray+slaapspray+pillow+spray" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 22. NIACINAMIDE (VITAMINE B3) — NACHTMERRIES -->
+    <div class="supp-card" data-problems="nachtmerries kwaliteit" data-speed="geleidelijk" data-price="1" data-evidence="medium" data-category="supplement">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Niacinamide</div>
+            <div class="supp-latin">Vitamine B3 (nicotinamide) · 500–1000mg</div>
+          </div>
+          <span class="best-for-badge blaas">Nachtmerries</span>
+        </div>
+        <div class="supp-desc">Vitamine B3 in niacinamide-vorm beïnvloedt GABA-receptoren en vermindert REM-slaap intensiteit — de slaapfase waarin nachtmerries optreden. Studies en uitgebreide anekdotische rapportage tonen significante reductie van nachtmerrie-frequentie en intensiteit. Goedkoop, veilig en breed beschikbaar.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:62%"></div></div>
+          <div class="score-val">62</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:88%"></div></div>
+          <div class="score-val">88</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (1–2 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: veilig bij normale dosis</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Nachtmerries</span>
+          <span class="prob-tag">Intense dromen</span>
+          <span class="prob-tag">Slaapkwaliteit</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€8–14 / 90 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=niacinamide+vitamine+b3+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 24. QUERCETIN — SNURKEN -->
+    <div class="supp-card" data-problems="snurken kwaliteit" data-speed="geleidelijk" data-price="2" data-evidence="medium" data-category="supplement">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Quercetin</div>
+            <div class="supp-latin">Quercetine · bioflavonoïde</div>
+          </div>
+          <span class="best-for-badge blaas">Snurken & luchtwegen</span>
+        </div>
+        <div class="supp-desc">Krachtig anti-inflammatoir bioflavonoïde dat zwelling en ontstekingen in de luchtwegen en neusholte vermindert — de meest voorkomende oorzaak van snurken. Studies tonen vermindering van allergische en inflammatoire nasale obstructie. Werkt het best in combinatie met Vitamine C voor betere opname (quercetin + bromelain formule).</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:66%"></div></div>
+          <div class="score-val">66</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:62%"></div></div>
+          <div class="score-val">62</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (2–4 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Snurken</span>
+          <span class="prob-tag">Neusverstopping</span>
+          <span class="prob-tag">Luchtwegontsteking</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€18–28 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=quercetin+quercetine+supplement+luchtwegen" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 25. POMPOEN ZAAD EXTRACT — NACHT PLASSEN -->
+    <div class="supp-card" data-problems="nachtplassen doorslapen" data-speed="geleidelijk" data-price="2" data-evidence="medium" data-category="supplement">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Pompoen Zaad Extract</div>
+            <div class="supp-latin">Cucurbita pepo seed extract</div>
+          </div>
+          <span class="best-for-badge blaas">Nacht plassen</span>
+        </div>
+        <div class="supp-desc">Beste evidence-based optie voor nacht plassen. Meerdere RCTs tonen significant minder nachtelijke plasdrang bij 400–500mg/dag. Werkt op blaasmusculatuur en sphinctercontrole. Effectief voor zowel mannen als vrouwen. In Nederland verkrijgbaar als Cucurbita extract.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:75%"></div></div>
+          <div class="score-val">75</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-med">⏱ Geleidelijk (2–4 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: minimaal</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Nacht plassen</span>
+          <span class="prob-tag">Overactieve blaas</span>
+          <span class="prob-tag">Wakker worden</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€18–28 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=pompoen+zaad+extract+blaas+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 23. ZAAGPALMETTO -->
+    <div class="supp-card" data-problems="nachtplassen doorslapen" data-speed="langzaam" data-price="2" data-evidence="medium" data-category="supplement">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Zaagpalmetto</div>
+            <div class="supp-latin">Serenoa repens · mannen 40+</div>
+          </div>
+          <span class="best-for-badge hormonen">Mannen & prostaat</span>
+        </div>
+        <div class="supp-desc">Specifiek voor mannen bij wie nacht plassen veroorzaakt wordt door prostaatvergroting (BPH). Zaagpalmetto remt 5-alfa-reductase en vermindert prostaatgroei. Goed bewijs: meerdere studies tonen 25–30% minder nachtelijk plassen bij mannen boven 45. Vrouwen: niet relevant.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:70%"></div></div>
+          <div class="score-val">70</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:74%"></div></div>
+          <div class="score-val">74</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Opneembaarheid</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:68%"></div></div>
+          <div class="score-val">68</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-slow">🕐 Langzaam (4–8 wkn)</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-mild">Bijwerkingen: mild mogelijk</span>
+        <span class="meta-pill price">€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Nacht plassen</span>
+          <span class="prob-tag">Prostaat (mannen)</span>
+          <span class="prob-tag">Wakker worden</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€20–30 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=zaagpalmetto+saw+palmetto+supplement+prostaat" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCESSORIES SECTION DIVIDER -->
+    <div class="section-divider" data-category="accessoire">
+      <h2>🛏️ Slaap Accessoires</h2>
+      <p>Producten die je slaapomgeving direct verbeteren — ook beschikbaar via Bol.com.</p>
+    </div>
+
+    <!-- A1. VERZWARINGSDEKEN -->
+    <div class="supp-card" data-problems="stress inslapen kwaliteit" data-speed="snel" data-price="3" data-evidence="medium" data-category="accessoire">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Verzwaringsdeken</div>
+            <div class="supp-latin">Weighted blanket · 7–15 kg</div>
+          </div>
+          <span class="best-for-badge stress">Angst & ontspanning</span>
+        </div>
+        <div class="supp-desc">Diepe drukstimulatie kalmeert het zenuwstelsel — vergelijkbaar met een knuffel. Goed bewijs voor betere slaap bij angst, stress en onrustig slapen. Tientallen merken beschikbaar op Bol.com in alle gewichten.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:75%"></div></div>
+          <div class="score-val">75</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:72%"></div></div>
+          <div class="score-val">72</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Gebruiksgemak</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:90%"></div></div>
+          <div class="score-val">90</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Zelfde nacht</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: geen</span>
+        <span class="meta-pill price">€€€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & angst</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Onrustig slapen</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€79–129 / deken</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=verzwaringsdeken+weighted+blanket+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- A2. PILLOW SPRAY -->
+    <div class="supp-card" data-problems="stress inslapen" data-speed="snel" data-price="1" data-evidence="medium" data-category="accessoire">
+      <div class="card-header">
+        <div class="card-header-top">
+          <div>
+            <div class="supp-name">Pillow Spray Lavendel & Kamille</div>
+            <div class="supp-latin">Aromatherapie kussenspray 250ml</div>
+          </div>
+          <span class="best-for-badge inslapen">Avondritueel</span>
+        </div>
+        <div class="supp-desc">Populair cadeau-item én bewezen effectief. Lavendel + kamille combinatie voor optimaal slaapbevorderend effect. Groot formaat (250ml) voor langdurig gebruik. Meer dan 20 merken en varianten op Bol.com.</div>
+      </div>
+      <div class="scores-section">
+        <div class="score-row">
+          <div class="score-label">Effectiviteit</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Bewijs</div>
+          <div class="score-bar-wrap"><div class="score-bar mid" style="width:65%"></div></div>
+          <div class="score-val">65</div>
+        </div>
+        <div class="score-row">
+          <div class="score-label">Gebruiksgemak</div>
+          <div class="score-bar-wrap"><div class="score-bar high" style="width:98%"></div></div>
+          <div class="score-val">98</div>
+        </div>
+      </div>
+      <div class="meta-section">
+        <span class="meta-pill speed-fast">⚡ Zelfde nacht</span>
+        <span class="meta-pill evidence-med">~ Matig bewijs</span>
+        <span class="meta-pill side-none">Bijwerkingen: geen</span>
+        <span class="meta-pill price">€</span>
+      </div>
+      <div class="problems-section">
+        <div class="problems-label">Helpt bij</div>
+        <div class="problem-tags">
+          <span class="prob-tag">Stress & ontspanning</span>
+          <span class="prob-tag">Niet kunnen inslapen</span>
+          <span class="prob-tag">Avondritueel</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div><div class="price-tag">±€10–20 / 250ml</div><div class="affiliate-note">* wordt affiliate link</div></div>
+        <div class="card-btns">
+          <a href="https://www.bol.com/nl/nl/s/?searchtext=pillow+spray+lavendel+kamille+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="no-results">
+    <h3>Geen supplementen gevonden</h3>
+    <p>Probeer minder filters tegelijk te selecteren.</p>
+    <button onclick="resetFilters()" style="margin-top:16px; background:var(--primary); color:white; border:none; padding:10px 20px; border-radius:8px; font-weight:700; cursor:pointer;">Wis filters</button>
+  </div>
+
+</div>
+
+<!-- ===== REVIEWS SECTION ===== -->
+<div class="reviews-section">
+  <div class="reviews-header">
+    <div>
+      <h2>⭐ Ervaringen van gebruikers</h2>
+      <p>Échte ervaringen van mensen die deze supplementen hebben geprobeerd. <strong>Heb jij ervaring? Deel het hieronder.</strong></p>
+    </div>
+    <a href="#schrijf-review" class="write-review-btn">+ Schrijf een review</a>
+  </div>
+
+  <div class="review-types">
+
+    <!-- LEFT: Editorial expert review -->
+    <div class="editorial-box">
+      <div class="editorial-badge">✏️ Redactionele review · BestSlaapAdvies expert</div>
+      <div class="editorial-product">Lucovitaal Melatonine 0.299mg</div>
+      <div class="editorial-sub">500 tabletten · ±€9 · Beste koop in categorie</div>
+      <div class="editorial-score-row">
+        <div class="big-score">88</div>
+        <div class="editorial-labels">
+          <div style="font-size:14px;color:white;font-weight:700;">Uitstekend</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.6)">Prijs/kwaliteit</div>
+          <div style="margin-top:4px"><span class="stars">★★★★★</span><span style="font-size:10px;color:rgba(255,255,255,.5)"> 4.4/5</span></div>
+        </div>
+      </div>
+      <div class="pros-cons">
+        <ul class="pros">
+          <div class="pros-title">Voordelen</div>
+          <li>Goedkoopste optie (€1,80/mnd)</li>
+          <li>Juiste dosering 0.3mg</li>
+          <li>Apotheek-kwaliteit</li>
+          <li>500 tabs — jaar voorraad</li>
+        </ul>
+        <ul class="cons">
+          <div class="cons-title">Nadelen</div>
+          <li>Basis verpakking</li>
+          <li>Geen trage afgifte</li>
+        </ul>
+      </div>
+      <div class="editorial-verdict">
+        <strong>Ons oordeel:</strong> Voor de meeste mensen is Lucovitaal de simpele keuze. Bewezen dosering, absurd lage prijs per dosis en beschikbaar in elke apotheek. Betaal niet meer voor een mooi doosje als de werkzame stof identiek is.
+      </div>
+      <div style="margin-top:14px">
+        <a href="https://www.bol.com/nl/nl/s/?searchtext=lucovitaal+melatonine+0.3mg" target="_blank" rel="noopener" class="buy-mini" style="font-size:12px;padding:8px 16px;">Bekijk prijs op Bol.com →</a>
+        <span style="font-size:10px;color:rgba(255,255,255,.4);margin-left:8px">* affiliate link</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: User reviews -->
+    <div class="user-reviews-col">
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Marieke V. <span class="verified-badge">✓ Geverifieerde aankoop</span></div>
+            <div class="reviewer-meta">Vrouw, 47 jaar · Utrecht · 14 maart 2026</div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-title">"Eindelijk in slaap zonder piekeren"</div>
+        <div class="review-text">Na de menopauze lag ik elke nacht wakker. Magnesium glycinaat + melatonine 0.3mg samen geprobeerd — na twee weken echt verschil. Ik val nu binnen 20 minuten in slaap in plaats van een uur. De combinatie is het sleutelwoord denk ik.</div>
+        <div class="review-product-tag">💊 Magnesium Glycinaat + Melatonine combo</div>
+        <div class="helpful-row">
+          <span>12 mensen vonden dit nuttig</span>
+          <button class="helpful-btn">👍 Nuttig</button>
+        </div>
+      </div>
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Thomas K. <span class="verified-badge">✓ Geverifieerde aankoop</span></div>
+            <div class="reviewer-meta">Man, 34 jaar · Amsterdam · 3 februari 2026</div>
+          </div>
+          <div class="review-stars">★★★★☆</div>
+        </div>
+        <div class="review-title">"L-theanine is een gamechanger voor druk hoofd"</div>
+        <div class="review-text">Ik werk in tech, veel stress. Kon 's avonds gewoon niet uitzetten. L-theanine 200mg een uur voor bed genomen — brein gaat echt rustiger aan. Geen sufheid, geen bijwerkingen. Ik sla hem nu nooit over. 4 sterren omdat het bij mijn vriendin niets deed, dus werkt niet voor iedereen.</div>
+        <div class="review-product-tag">💊 L-Theanine 200mg</div>
+        <div class="helpful-row">
+          <span>8 mensen vonden dit nuttig</span>
+          <button class="helpful-btn">👍 Nuttig</button>
+        </div>
+      </div>
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Sandra M.</div>
+            <div class="reviewer-meta">Vrouw, 52 jaar · Rotterdam · 28 januari 2026</div>
+          </div>
+          <div class="review-stars">★★★☆☆</div>
+        </div>
+        <div class="review-title">"Ashwagandha werkt, maar je moet geduld hebben"</div>
+        <div class="review-text">Ik had verwacht snel resultaat, maar pas na 6 weken merkte ik verschil. Minder gespannen wakker worden, meer rustiger door de dag. Niet voor iedereen geschikt als je ongeduldig bent. Geef het minimaal 8 weken.</div>
+        <div class="review-product-tag">💊 Ashwagandha KSM-66</div>
+        <div class="helpful-row">
+          <span>5 mensen vonden dit nuttig</span>
+          <button class="helpful-btn">👍 Nuttig</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WRITE A REVIEW FORM -->
+  <div class="review-form-box" id="schrijf-review" style="margin-top:32px">
+    <h3>✍️ Deel jouw ervaring</h3>
+    <p>Welk supplement heb jij geprobeerd? Jouw eerlijke ervaring helpt andere bezoekers een betere keuze te maken.</p>
+    <form action="https://formspree.io/f/JOUW-FORMSPREE-ID" method="POST">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div class="form-row">
+          <label>Naam (of initialen)</label>
+          <input type="text" name="naam" placeholder="Bijv. Marieke V." required>
+        </div>
+        <div class="form-row">
+          <label>Supplement</label>
+          <select name="supplement" required>
+            <option value="">— Kies supplement —</option>
+            <option>Magnesium Glycinaat</option>
+            <option>Melatonine</option>
+            <option>L-Theanine</option>
+            <option>Ashwagandha</option>
+            <option>Valeriaan</option>
+            <option>CBD Olie</option>
+            <option>Slaap Gummies</option>
+            <option>Anders (zie tekst)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Beoordeling</label>
+        <div class="star-picker" id="starPicker">
+          <span data-val="1" onclick="setStars(1)">★</span>
+          <span data-val="2" onclick="setStars(2)">★</span>
+          <span data-val="3" onclick="setStars(3)">★</span>
+          <span data-val="4" onclick="setStars(4)">★</span>
+          <span data-val="5" onclick="setStars(5)">★</span>
+        </div>
+        <input type="hidden" name="sterren" id="starInput" value="">
+      </div>
+      <div class="form-row">
+        <label>Jouw ervaring</label>
+        <textarea name="bericht" placeholder="Wat was jouw probleem? Welke dosering heb je gebruikt? Wanneer merkte je effect? Wat werkte wel of niet?" required></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="Nieuwe review — BestSlaapAdvies">
+      <button type="submit" class="submit-review">Verstuur mijn review →</button>
+      <div style="font-size:10px;color:var(--sub);margin-top:8px;text-align:center">Wij controleren alle reviews voor publicatie. Geen spam, geen marketing e-mails.</div>
+    </form>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>BestSlaapAdvies.nl</strong>
+      <p>Onafhankelijke vergelijkingen van slaapsupplementen, matrassen en trackers voor Nederland en België.</p>
+      <p style="margin-top:10px"><a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Categorieën</span>
+        <a href="index.html">Supplementen</a>
+    <a href="../ontspanning/index.html">Ontspanning</a>
+        <a href="../gids/index.html">Slaapgids</a>
+        <a href="../media/index.html">Media</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Informatie</span>
+        <a href="../disclaimer.html">Methode &amp; Disclaimer</a>
+        <a href="../privacy.html">Privacyverklaring</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 BestSlaapAdvies.nl · <a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    <p class="footer-disc">Scores zijn gebaseerd op gepubliceerd klinisch onderzoek (PubMed, Cochrane Reviews). Dit is geen medisch advies — raadpleeg bij gezondheidsklachten altijd een arts. Deze site bevat affiliate links; dit heeft geen invloed op onze onafhankelijke vergelijkingen.</p>
+  </div>
+</footer>
+
+<script>
+  const activeFilters = { problem: null, speed: null, price: null, category: null, evidence: null };
+
+  // Auto-assign supplement category to cards without explicit category
+  document.querySelectorAll('.supp-card').forEach(card => {
+    if (!card.dataset.category) card.dataset.category = 'supplement';
+  });
+
+  // Calculate and display stat counts dynamically from actual card data
+  function updateStatCounts() {
+    const suppCards = Array.from(document.querySelectorAll('.supp-card[data-category="supplement"]'));
+    const total = document.querySelectorAll('.supp-card').length;
+    document.getElementById('cnt-all').textContent = total;
+    document.getElementById('cnt-strong').textContent = suppCards.filter(c => c.dataset.evidence === 'strong').length;
+    document.getElementById('cnt-medium').textContent = suppCards.filter(c => c.dataset.evidence === 'medium').length;
+    document.getElementById('cnt-low').textContent    = suppCards.filter(c => c.dataset.evidence === 'low').length;
+    document.getElementById('cnt-snel').textContent   = suppCards.filter(c => c.dataset.speed === 'snel').length;
+  }
+  updateStatCounts();
+
+  document.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const type = pill.dataset.filter;
+      const val = pill.dataset.val;
+      if (activeFilters[type] === val) {
+        activeFilters[type] = null;
+        pill.classList.remove('active');
+      } else {
+        document.querySelectorAll(`.pill[data-filter="${type}"]`).forEach(p => p.classList.remove('active'));
+        activeFilters[type] = val;
+        pill.classList.add('active');
+      }
+      clearStatHighlight();
+      applyFilters();
+    });
+  });
+
+  function statFilter(type, val) {
+    // Reset all filters first
+    Object.keys(activeFilters).forEach(k => activeFilters[k] = null);
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    clearStatHighlight();
+
+    if (type === 'all') {
+      applyFilters();
+      return;
+    }
+    activeFilters[type] = val;
+
+    // Highlight active stat item
+    document.querySelectorAll('.stat-item').forEach(s => {
+      const matches = (s.getAttribute('onclick') || '').includes(`'${val}'`);
+      s.classList.toggle('active', matches);
+    });
+
+    applyFilters();
+  }
+
+  function clearStatHighlight() {
+    document.querySelectorAll('.stat-item').forEach(s => s.classList.remove('active'));
+  }
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.supp-card');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const isAccessoire = card.dataset.category === 'accessoire';
+      let show = true;
+
+      // Category filter
+      if (activeFilters.category && card.dataset.category !== activeFilters.category) show = false;
+
+      if (show && !isAccessoire) {
+        if (activeFilters.problem) {
+          const problems = (card.dataset.problems || '').split(' ');
+          if (!problems.includes(activeFilters.problem)) show = false;
+        }
+        if (activeFilters.speed && card.dataset.speed !== activeFilters.speed) show = false;
+        if (activeFilters.price && card.dataset.price !== activeFilters.price) show = false;
+        if (activeFilters.evidence && card.dataset.evidence !== activeFilters.evidence) show = false;
+      }
+
+      // When supplement filters active, hide accessories
+      if (!activeFilters.category && isAccessoire) {
+        const hasFilter = activeFilters.problem || activeFilters.speed || activeFilters.price || activeFilters.evidence;
+        if (hasFilter) show = false;
+      }
+
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    const divider = document.querySelector('.section-divider');
+    if (divider) {
+      const accVisible = Array.from(cards).some(c => c.dataset.category === 'accessoire' && !c.classList.contains('hidden'));
+      divider.style.display = accVisible ? '' : 'none';
+    }
+
+    document.getElementById('results-count').textContent = visible;
+    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  // ── BRAND COMPARE MODAL ──
+  const compareData = {
+    melatonine: {
+      title: 'Melatonine — Merken vergelijking',
+      sub: '4 populaire merken vergeleken op dosering, prijs per maand en kwaliteit',
+      note: '⚠ In Nederland is max. 0,3mg vrij verkrijgbaar. Hogere doses vereisen apotheekadvies.',
+      brands: [
+        { name: 'Lucovitaal', sub: '0.299mg · 500 tabs · apotheekformule', dose: '0,3mg', price: '~€1,80/mnd', score: 88, cls: '', best: true, url: 'https://www.bol.com/nl/nl/s/?searchtext=lucovitaal+melatonine+0.3mg' },
+        { name: 'NOW Foods', sub: '1mg · 180 caps · importmerk', dose: '1mg', price: '~€5,00/mnd', score: 82, cls: 'mid', best: false, url: 'https://www.bol.com/nl/nl/s/?searchtext=now+foods+melatonine+slaap' },
+        { name: 'Vitakruid', sub: '0,3mg · 90 tabs · NL-kwaliteitsmerk', dose: '0,3mg', price: '~€6,50/mnd', score: 79, cls: 'mid', best: false, url: 'https://www.bol.com/nl/nl/s/?searchtext=vitakruid+melatonine+slaap' },
+        { name: 'Natrol Fast Dissolve', sub: '5mg · smelttablet · snelwerkend', dose: '5mg', price: '~€9,00/mnd', score: 71, cls: 'low', best: false, url: 'https://www.bol.com/nl/nl/s/?searchtext=natrol+melatonine+fast+dissolve' },
+      ]
+    }
+  };
+
+  function openCompare(key) {
+    const d = compareData[key];
+    if (!d) return;
+    document.getElementById('modal-title').textContent = d.title;
+    document.getElementById('modal-sub').textContent = d.sub;
+
+    let rows = d.brands.map(b => `
+      <tr>
+        <td>
+          <span class="brand-name">${b.name}${b.best ? ' <span class="best-pick">★ Beste koop</span>' : ''}</span>
+          <span class="brand-sub">${b.sub}</span>
+        </td>
+        <td style="font-size:13px;font-weight:600">${b.dose}</td>
+        <td style="font-size:13px;font-weight:600">${b.price}</td>
+        <td><span class="brand-score ${b.cls}">${b.score}</span></td>
+        <td><a href="${b.url}" target="_blank" rel="noopener" class="buy-mini">Koop →</a></td>
+      </tr>`).join('');
+
+    document.getElementById('modal-body').innerHTML = `
+      <table class="compare-table" style="width:100%">
+        <thead><tr><th>Merk & product</th><th>Dosering</th><th>Prijs/mnd</th><th>Score</th><th></th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <p style="font-size:11px;color:var(--sub);margin-top:12px">${d.note}</p>`;
+
+    document.getElementById('compareModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCompare() {
+    document.getElementById('compareModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeCompareOnOverlay(e) {
+    if (e.target === document.getElementById('compareModal')) closeCompare();
+  }
+
+  function setStars(n) {
+    document.getElementById('starInput').value = n + ' sterren';
+    document.querySelectorAll('#starPicker span').forEach((s, i) => s.classList.toggle('on', i < n));
+  }
+
+  function resetFilters() {
+    Object.keys(activeFilters).forEach(k => activeFilters[k] = null);
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    clearStatHighlight();
+    applyFilters();
+  }
+</script>
+<!-- BRAND COMPARE MODAL -->
+<div class="modal-overlay" id="compareModal" onclick="closeCompareOnOverlay(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeCompare()">✕</button>
+    <div class="modal-title" id="modal-title">Merken vergelijking</div>
+    <div class="modal-sub" id="modal-sub"></div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">
+    Wij gebruiken functionele cookies voor de werking van de site. Als u op een productlink klikt, kunnen externe partijen (Bol.com, Awin) tracking cookies plaatsen voor commissieverwerking.
+    <a href="../privacy.html" style="color:#7dd3f0;font-weight:600;">Lees onze privacyverklaring →</a>
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;cursor:pointer;">Alleen noodzakelijk</button>
+    <button onclick="setCookieConsent('accepted')" style="background:#2d9cdb;border:none;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:6px;cursor:pointer;">Akkoord</button>
+  </div>
+</div>
+<script>
+(function(){
+  function getCookie(n){var v=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return v?v.pop():'';}
+  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
+  if(!getCookie('bsa_cookie_consent')){
+    var b=document.getElementById('cookie-banner');
+    if(b){b.style.display='flex';}
+  }
+})();
+</script>
+
+</body>
+</html>

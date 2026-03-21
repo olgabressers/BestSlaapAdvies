@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Beste slaap podcasts en YouTube kanalen 2026 | BestSlaapAdvies</title>
+  <meta name="description" content="De beste podcasts en YouTube kanalen over slaap op één plek. Gesorteerd op onderwerp: slaapwetenschap, supplementen, stress, meditatie, menopauze en meer."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary:#1a6b8a; --dark:#0d3d52; --accent:#2d9cdb; --light:#e8f4f9; --bg:#f0f7fa; --border:#d0e8f2; --text:#1a2e3b; --sub:#5a7a8a; --pod:#7b5ea7; --pod-light:#f0ebf9; --yt:#c0392b; --yt-light:#fdf0ef; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* WHITE NAV */
+    nav { background: white; border-bottom: 2px solid #d0e8f2; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; }
+    .nav-logo span { color: #0d3d52; font-size: 17px; font-weight: 800; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: #5a7a8a; text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: #1a6b8a; border-bottom-color: #1a6b8a; }
+
+    .page-hero { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); color: white; padding: 52px 32px 44px; text-align: center; }
+    .page-hero .inner { max-width: 680px; margin: 0 auto; }
+    .page-hero .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7dd3f0; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
+    .page-hero p { font-size: 16px; color: rgba(255,255,255,.78); }
+
+    /* PLATFORM FILTER BAR */
+    .platform-bar { background: white; border-bottom: 1px solid var(--border); padding: 14px 32px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .platform-btn { background: var(--light); border: 1px solid var(--border); color: var(--sub); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 24px; cursor: pointer; transition: all .15s; }
+    .platform-btn:hover { background: var(--border); color: var(--dark); }
+    .platform-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+
+    /* TOPIC NAV PILLS */
+    .topic-nav { background: white; border-bottom: 1px solid var(--border); padding: 12px 32px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-nav a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 20px; background: var(--light); border: 1px solid var(--border); transition: all .15s; white-space: nowrap; }
+    .topic-nav a:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+    .section-header { margin-bottom: 24px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 6px; }
+    .section-title { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .section-desc { font-size: 14px; color: var(--sub); }
+    .section-block { margin-bottom: 56px; }
+
+    /* MEDIA GRID */
+    .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+    .media-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
+    .media-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.09); transform: translateY(-2px); }
+
+    .media-card-top { display: flex; gap: 14px; align-items: flex-start; }
+    .media-thumb { width: 56px; height: 56px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+    .media-thumb.podcast { background: var(--pod-light); }
+    .media-thumb.youtube { background: var(--yt-light); }
+    .media-thumb.dutch { background: #e8f7f0; }
+    .media-thumb.meditatie { background: #ede9f7; }
+
+    .media-type-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; margin-bottom: 5px; }
+    .media-type-badge.podcast { background: var(--pod-light); color: var(--pod); }
+    .media-type-badge.youtube { background: var(--yt-light); color: var(--yt); }
+    .media-type-badge.dutch { background: #e8f7f0; color: #1a7a4a; }
+    .media-type-badge.meditatie { background: #ede9f7; color: #5b45a0; }
+
+    .media-info { flex: 1; }
+    .media-name { font-size: 15px; font-weight: 700; color: var(--dark); line-height: 1.3; margin-bottom: 4px; }
+    .media-host { font-size: 12px; color: var(--sub); margin-bottom: 4px; }
+    .media-desc { font-size: 13px; color: var(--sub); line-height: 1.5; }
+    .media-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .media-tag { font-size: 10px; font-weight: 600; background: var(--light); color: var(--primary); padding: 3px 9px; border-radius: 12px; }
+    .media-footer { font-size: 12px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 4px; }
+
+    /* FEATURED */
+    .featured-card { background: white; border-radius: 14px; border: 2px solid var(--accent); padding: 24px; margin-bottom: 24px; display: flex; gap: 20px; align-items: flex-start; text-decoration: none; color: inherit; transition: box-shadow .2s; }
+    .featured-card:hover { box-shadow: 0 8px 24px rgba(45,156,219,.15); }
+    .featured-thumb { width: 72px; height: 72px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; background: var(--light); }
+    .featured-badge { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .featured-name { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+    .featured-host { font-size: 13px; color: var(--sub); margin-bottom: 8px; }
+    .featured-desc { font-size: 14px; color: var(--sub); line-height: 1.6; }
+
+    /* DIVIDER */
+    .topic-divider { display: flex; align-items: center; gap: 16px; margin: 48px 0 28px; }
+    .topic-divider h2 { font-size: 20px; font-weight: 800; color: var(--dark); white-space: nowrap; }
+    .topic-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* FOOTER */
+    .site-footer { background: #0d3d52; color: #7aacbf; padding: 48px 32px 32px; font-size: 13px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto 28px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+    .footer-brand strong { font-size: 16px; color: white; display: block; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; color: #7aacbf; max-width: 240px; line-height: 1.6; }
+    .footer-brand a { color: #a8d4e6; text-decoration: none; }
+    .footer-nav { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 6px; }
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
+    .footer-col a { color: #a8d4e6; text-decoration: none; transition: color .15s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; text-align: center; }
+    .footer-copy { color: #5a8a9f; margin-bottom: 8px; }
+    .footer-copy a { color: #7aacbf; text-decoration: none; }
+    .footer-disc { font-size: 11px; color: #5a8a9f; max-width: 640px; margin: 0 auto; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html"><span>BestSlaapAdvies</span></a>
+  <div class="nav-links">
+    <a href="../supplementen/index.html">Supplementen</a>
+    <a href="../ontspanning/index.html">Ontspanning</a>
+    <a href="../gids/index.html">Slaapgids</a>
+    <a href="index.html" class="active">Media</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <div class="eyebrow">🎙️ Podcasts & Video's</div>
+    <h1>De beste slaap media op één plek</h1>
+    <p>Gecureerde podcasts en YouTube kanalen over slaap — gesorteerd op onderwerp, zodat je precies vindt wat je zoekt.</p>
+  </div>
+</div>
+
+<!-- PLATFORM FILTER BAR -->
+<div class="platform-bar">
+  <button class="platform-btn active" data-filter="all" onclick="filterPlatform('all')">Alle</button>
+  <button class="platform-btn" data-filter="youtube" onclick="filterPlatform('youtube')">▶ YouTube</button>
+  <button class="platform-btn" data-filter="podcast" onclick="filterPlatform('podcast')">🎙 Podcast</button>
+  <button class="platform-btn" data-filter="spotify" onclick="filterPlatform('spotify')">Spotify</button>
+</div>
+
+<!-- TOPIC CATEGORY ANCHORS -->
+<div class="topic-nav">
+  <a href="#aanbevolen">⭐ Aanbevolen</a>
+  <a href="#wetenschap">🔬 Wetenschap</a>
+  <a href="#supplementen">💊 Supplementen</a>
+  <a href="#stress">🧘 Stress</a>
+  <a href="#meditatie">🌙 Meditatie</a>
+  <a href="#vrouwen">👩 Vrouwen</a>
+  <a href="#nederlands">🇳🇱 Nederlands</a>
+</div>
+
+<div class="wrap">
+
+  <!-- AANBEVOLEN -->
+  <div id="aanbevolen" class="section-block">
+    <div class="section-header">
+      <div class="section-label">Redactie keuze</div>
+      <div class="section-title">Aanbevolen om te beginnen</div>
+      <div class="section-desc">Deze drie bronnen geven je het meeste inzicht in slaap — ongeacht je niveau.</div>
+    </div>
+
+    <a class="featured-card" href="https://www.youtube.com/@hubermanlab" target="_blank" rel="noopener" data-platform="youtube">
+      <div class="featured-thumb">🧠</div>
+      <div>
+        <div class="featured-badge">⭐ Redactie favoriet · YouTube</div>
+        <div class="featured-name">Huberman Lab — Slaap Protocol</div>
+        <div class="featured-host">Andrew Huberman · Stanford Neuroscientist</div>
+        <div class="featured-desc">Andrew Huberman is een neurobiologist van Stanford die slaap wetenschappelijk maar toegankelijk uitlegt. Zijn afleveringen over slaap, licht en melatonine zijn verplichte kost. Begin met: <em>"Master Your Sleep & Be More Alert When Awake"</em>.</div>
+      </div>
+    </a>
+
+    <a class="featured-card" href="https://open.spotify.com/show/2hnqHOWOHHFyMNGFwSEBiM" target="_blank" rel="noopener" data-platform="podcast spotify">
+      <div class="featured-thumb">🎙️</div>
+      <div>
+        <div class="featured-badge">⭐ Redactie favoriet · Podcast</div>
+        <div class="featured-name">Sleep Is a Skill</div>
+        <div class="featured-host">Mollie Eastman</div>
+        <div class="featured-desc">De meest praktische slaappodcast die er is. Mollie Eastman combineert wetenschappelijk onderzoek met direct toepasbare tips. Elke aflevering focust op een specifiek aspect van slaap: supplementen, routines, technologie, stress.</div>
+      </div>
+    </a>
+
+    <a class="featured-card" href="https://www.youtube.com/@mattwalker9601" target="_blank" rel="noopener" data-platform="youtube podcast">
+      <div class="featured-thumb">📚</div>
+      <div>
+        <div class="featured-badge">⭐ Redactie favoriet · YouTube & Podcast</div>
+        <div class="featured-name">Matthew Walker — Why We Sleep</div>
+        <div class="featured-host">Prof. Matthew Walker · UC Berkeley</div>
+        <div class="featured-desc">Matthew Walker schreef het invloedrijkste boek over slaap van de afgelopen decennia. Zijn YouTube kanaal en podcastoptredens (o.a. bij Huberman Lab en Peter Attia) zijn de beste startplek voor slaapwetenschap.</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- SLAAPWETENSCHAP -->
+  <div id="wetenschap" class="section-block">
+    <div class="topic-divider"><h2>🔬 Slaapwetenschap</h2></div>
+    <div class="media-grid">
+
+      <a class="media-card" href="https://peterattiamd.com/podcast/" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">The Peter Attia Drive</div>
+            <div class="media-host">Dr. Peter Attia</div>
+          </div>
+        </div>
+        <div class="media-desc">Diepgaande wetenschappelijke gesprekken over slaap, gezondheid en levensduur. Attia interviewt de beste slaaponderzoekers ter wereld. Ideaal voor wie de wetenschap achter slaap wil begrijpen.</div>
+        <div class="media-tags"><span class="media-tag">Wetenschap</span><span class="media-tag">Levensduur</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Luister op Spotify →</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/@hubermanlab" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">Huberman Lab</div>
+            <div class="media-host">Andrew Huberman</div>
+          </div>
+        </div>
+        <div class="media-desc">Aanbevolen afl.: "Sleep Toolkit: Tools for Optimizing Sleep" — een complete gids voor slaapoptimalisatie op basis van neurobiologie. Gratis, 2 uur, verplichte kost.</div>
+        <div class="media-tags"><span class="media-tag">Neurobiologie</span><span class="media-tag">Protocol</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+      <a class="media-card" href="https://www.foundmyfitness.com/podcast" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">Found My Fitness</div>
+            <div class="media-host">Dr. Rhonda Patrick</div>
+          </div>
+        </div>
+        <div class="media-desc">Rhonda Patrick behandelt slaap vanuit de biochemie: hoe voeding, beweging en supplementen je slaapkwaliteit direct beïnvloeden. Technisch maar toegankelijk.</div>
+        <div class="media-tags"><span class="media-tag">Biochemie</span><span class="media-tag">Voeding</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Luister op Spotify →</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/@WhatIveLearned" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">What I've Learned</div>
+            <div class="media-host">Joseph Everett</div>
+          </div>
+        </div>
+        <div class="media-desc">Uitstekende, visueel sterke video's over slaaponderzoek. Begin met: <em>"How to Fix Your Sleep Schedule"</em> en <em>"Why You Feel Tired All The Time"</em>. Helder en goed onderbouwd.</div>
+        <div class="media-tags"><span class="media-tag">Onderzoek</span><span class="media-tag">Animatie</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- SUPPLEMENTEN & VOEDING -->
+  <div id="supplementen" class="section-block">
+    <div class="topic-divider"><h2>💊 Supplementen & Voeding</h2></div>
+    <div class="media-grid">
+
+      <a class="media-card" href="https://open.spotify.com/show/2hnqHOWOHHFyMNGFwSEBiM" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">Sleep Is a Skill</div>
+            <div class="media-host">Mollie Eastman</div>
+          </div>
+        </div>
+        <div class="media-desc">Meerdere afleveringen specifiek over supplementen: magnesium, glycine, L-theanine en melatonine. Praktisch en evidence-based. Afl. 160+: "The Truth About Sleep Supplements".</div>
+        <div class="media-tags"><span class="media-tag">Supplementen</span><span class="media-tag">Praktisch</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Luister op Spotify →</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/@ThomasDeLauerOfficial" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">Thomas DeLauer</div>
+            <div class="media-host">Thomas DeLauer</div>
+          </div>
+        </div>
+        <div class="media-desc">Duidelijke video's over supplementen voor slaap en herstel. Aanbevolen: <em>"Best Supplements for Sleep — Magnesium, Glycine & More"</em>. Praktisch met wetenschappelijke onderbouwing.</div>
+        <div class="media-tags"><span class="media-tag">Magnesium</span><span class="media-tag">Glycine</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/@hubermanlab" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">Huberman Lab — Supplementen Protocol</div>
+            <div class="media-host">Andrew Huberman</div>
+          </div>
+        </div>
+        <div class="media-desc">Huberman's beroemde slaapsupplement stack: magnesium threonate, apigenin en theanine. Video: <em>"Improve Sleep Quality with Supplements"</em>. Concrete doseringen en tijdstippen.</div>
+        <div class="media-tags"><span class="media-tag">Protocol</span><span class="media-tag">Dosering</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- STRESS & MENTAAL -->
+  <div id="stress" class="section-block">
+    <div class="topic-divider"><h2>🧘 Stress & Mentaal Welzijn</h2></div>
+    <div class="media-grid">
+
+      <a class="media-card" href="https://www.calm.com/blog/podcast" target="_blank" rel="noopener" data-platform="podcast">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">Daily Calm</div>
+            <div class="media-host">Calm App</div>
+          </div>
+        </div>
+        <div class="media-desc">Korte dagelijkse meditaties (10 min) speciaal ontworpen voor slaap en ontspanning. Ideaal als avondroutine. Beschikbaar via de Calm app — ook in het Nederlands.</div>
+        <div class="media-tags"><span class="media-tag">Meditatie</span><span class="media-tag">Routine</span><span class="media-tag">NL/EN</span></div>
+        <div class="media-footer">Bekijk Calm app →</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/@HealthyGamerGG" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">HealthyGamer GG</div>
+            <div class="media-host">Dr. Alok Kanojia (Harvard psychiater)</div>
+          </div>
+        </div>
+        <div class="media-desc">Harvard-psychiater legt uit hoe stress, angst en piekeren slaap saboteren. Afl.: <em>"Why You Can't Sleep (And What To Do)"</em>. Bijzonder helder en empatisch.</div>
+        <div class="media-tags"><span class="media-tag">Stress</span><span class="media-tag">Piekeren</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+      <a class="media-card" href="https://open.spotify.com/show/4LzNGBKJFMEJuICnLiGxYN" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">The Model Health Show</div>
+            <div class="media-host">Shawn Stevenson</div>
+          </div>
+        </div>
+        <div class="media-desc">Auteur van <em>Sleep Smarter</em> bespreekt de verbanden tussen slaap, stress en prestaties. Toegankelijk en motiverend. Sterk aanbevolen startpunt voor slaapverbeteraars.</div>
+        <div class="media-tags"><span class="media-tag">Leefstijl</span><span class="media-tag">Prestaties</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Luister op Spotify →</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- MEDITATIE (NEW SECTION) -->
+  <div id="meditatie" class="section-block">
+    <div class="topic-divider"><h2>🌙 Meditatie & Ontspanning</h2></div>
+    <div class="media-grid">
+
+      <a class="media-card" href="https://www.youtube.com/@headspace" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">Headspace</div>
+            <div class="media-host">youtube.com/@headspace</div>
+          </div>
+        </div>
+        <div class="media-desc">Geleide meditaties en slaapverhalen van 's werelds bekendste meditatie-app. Ideaal voor beginners: rustige stem, heldere structuur en specifieke slaapsessies.</div>
+        <div class="media-tags"><span class="media-tag">Meditatie</span><span class="media-tag">Slaapverhalen</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/@greatmeditation" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">Great Meditation</div>
+            <div class="media-host">youtube.com/@greatmeditation</div>
+          </div>
+        </div>
+        <div class="media-desc">Gratis geleide slaapmeditaties, geen account nodig. Uitgebreide bibliotheek met body scan-, ademhalings- en visualisatiemeditaties specifiek gericht op inslapen.</div>
+        <div class="media-tags"><span class="media-tag">Gratis</span><span class="media-tag">Slaapmeditatie</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+      <a class="media-card" href="https://insighttimer.com" target="_blank" rel="noopener" data-platform="spotify podcast">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast / App</span>
+            <div class="media-name">Insight Timer</div>
+            <div class="media-host">insighttimer.com</div>
+          </div>
+        </div>
+        <div class="media-desc">De grootste gratis meditatie-app met duizenden slaapmeditaties van coaches wereldwijd. Geen betaalde abonnement nodig voor de meeste slaapsessies. Ook beschikbaar als podcast.</div>
+        <div class="media-tags"><span class="media-tag">Gratis</span><span class="media-tag">App</span><span class="media-tag">Duizenden sessies</span></div>
+        <div class="media-footer">Ga naar Insight Timer →</div>
+      </a>
+
+      <a class="media-card" href="https://open.spotify.com/show/1P7NzmCkDRkwxhHPx3ygmL" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">Sleep Meditation Podcast</div>
+            <div class="media-host">Sleepy</div>
+          </div>
+        </div>
+        <div class="media-desc">Korte geleide meditaties speciaal voor inslapen. Elke aflevering is compact en direct bruikbaar als avondroutine. Gratis op Spotify, geen account bij externe app nodig.</div>
+        <div class="media-tags"><span class="media-tag">Meditatie</span><span class="media-tag">Inslapen</span><span class="media-tag">Spotify</span></div>
+        <div class="media-footer">Luister op Spotify →</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- VROUWEN & HORMONEN -->
+  <div id="vrouwen" class="section-block">
+    <div class="topic-divider"><h2>👩 Vrouwen & Hormonen</h2></div>
+    <div class="media-grid">
+
+      <a class="media-card" href="https://open.spotify.com/show/7oKXOpimSvRCOqlMFGaW2q" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">The Menopause Society Podcast</div>
+            <div class="media-host">The Menopause Society</div>
+          </div>
+        </div>
+        <div class="media-desc">Officiële podcast van de internationale menopauze-organisatie. Meerdere afleveringen over slaapstoornissen tijdens de overgang, met praktisch advies van specialisten.</div>
+        <div class="media-tags"><span class="media-tag">Menopauze</span><span class="media-tag">Hormonen</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Luister op Spotify →</div>
+      </a>
+
+      <a class="media-card" href="https://www.youtube.com/@DrLaraBreiden" target="_blank" rel="noopener" data-platform="youtube">
+        <div class="media-card-top">
+          <div class="media-thumb youtube">▶️</div>
+          <div class="media-info">
+            <span class="media-type-badge youtube">▶️ YouTube</span>
+            <div class="media-name">Dr. Lara Briden</div>
+            <div class="media-host">Dr. Lara Briden — Hormoonspecialist</div>
+          </div>
+        </div>
+        <div class="media-desc">Hormoonspecialist en auteur van <em>Hormone Repair Manual</em>. Legt helder uit hoe oestrogeen, progesteron en cortisol slaap beïnvloeden. Essentieel voor vrouwen 40+.</div>
+        <div class="media-tags"><span class="media-tag">Hormonen</span><span class="media-tag">Vrouwen 40+</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Bekijk op YouTube →</div>
+      </a>
+
+      <a class="media-card" href="https://open.spotify.com/show/6H4IDnCOkYBkYorqhltXYW" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb podcast">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge podcast">🎙️ Podcast</span>
+            <div class="media-name">The Hormone Solution</div>
+            <div class="media-host">Dr. Anna Cabeca</div>
+          </div>
+        </div>
+        <div class="media-desc">Praktisch en wetenschappelijk over vrouwelijke hormonen en slaap. Specifieke afleveringen over slaap tijdens perimenopauze en menopauze. Sterk aanbevolen voor vrouwen in de overgang.</div>
+        <div class="media-tags"><span class="media-tag">Perimenopauze</span><span class="media-tag">Praktisch</span><span class="media-tag">Engels</span></div>
+        <div class="media-footer">Luister op Spotify →</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- NEDERLANDS & VLAAMS -->
+  <div id="nederlands" class="section-block">
+    <div class="topic-divider"><h2>🇳🇱 Nederlands &amp; Vlaams</h2></div>
+    <div class="media-grid">
+
+      <a class="media-card" href="https://open.spotify.com/search/slaap%20podcast" target="_blank" rel="noopener" data-platform="podcast spotify">
+        <div class="media-card-top">
+          <div class="media-thumb dutch">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge dutch">🇳🇱 Podcast</span>
+            <div class="media-name">Slaap als een Roos</div>
+            <div class="media-host">Nederland</div>
+          </div>
+        </div>
+        <div class="media-desc">Zoek op Spotify naar Nederlandstalige slaappodcasts via deze link. Je vindt er actuele shows zoals "Slaap als een Roos" en andere praktische slaaptips in het Nederlands.</div>
+        <div class="media-tags"><span class="media-tag">Praktisch</span><span class="media-tag">Nederlands</span><span class="media-tag">Spotify</span></div>
+        <div class="media-footer">Zoek op Spotify →</div>
+      </a>
+
+      <a class="media-card" href="https://www.vpro.nl/programmas/tegenlicht.html" target="_blank" rel="noopener" data-platform="podcast">
+        <div class="media-card-top">
+          <div class="media-thumb dutch">📺</div>
+          <div class="media-info">
+            <span class="media-type-badge dutch">🇳🇱 Documentaire</span>
+            <div class="media-name">VPRO Tegenlicht — Slaaptekort</div>
+            <div class="media-host">VPRO</div>
+          </div>
+        </div>
+        <div class="media-desc">VPRO Tegenlicht heeft meerdere documentaires gemaakt over het slaaptekort als maatschappelijk probleem. Nederlandstalig, journalistiek en onderbouwd. Gratis te bekijken via NPO.</div>
+        <div class="media-tags"><span class="media-tag">Documentaire</span><span class="media-tag">Maatschappij</span><span class="media-tag">Gratis</span></div>
+        <div class="media-footer">Bekijk op NPO →</div>
+      </a>
+
+      <a class="media-card" href="https://www.vrt.be/vrtnu/a-z/beter-in-je-vel/" target="_blank" rel="noopener" data-platform="podcast">
+        <div class="media-card-top">
+          <div class="media-thumb dutch">🎙️</div>
+          <div class="media-info">
+            <span class="media-type-badge dutch">🇧🇪 Podcast</span>
+            <div class="media-name">Beter in Je Vel</div>
+            <div class="media-host">VRT / België</div>
+          </div>
+        </div>
+        <div class="media-desc">Vlaamse welzijnspodcast van VRT met regelmatig aandacht voor slaap. Toegankelijk en persoonlijk. Ideaal voor Belgische luisteraars die liever Vlaams horen.</div>
+        <div class="media-tags"><span class="media-tag">Welzijn</span><span class="media-tag">Vlaams</span><span class="media-tag">Gratis</span></div>
+        <div class="media-footer">Luister via VRT →</div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>BestSlaapAdvies.nl</strong>
+      <p>Onafhankelijke vergelijkingen van slaapsupplementen, matrassen en trackers voor Nederland en België.</p>
+      <p style="margin-top:10px"><a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Categorieën</span>
+        <a href="../supplementen/index.html">Supplementen</a>
+    <a href="../ontspanning/index.html">Ontspanning</a>
+        <a href="../gids/index.html">Slaapgids</a>
+        <a href="index.html">Media</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Informatie</span>
+        <a href="../disclaimer.html">Methode &amp; Disclaimer</a>
+        <a href="../privacy.html">Privacyverklaring</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 BestSlaapAdvies.nl · <a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    <p class="footer-disc">BestSlaapAdvies.nl is niet gelieerd aan de genoemde podcasts of YouTube kanalen. Alle aanbevelingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
+  </div>
+</footer>
+
+<script>
+function filterPlatform(platform) {
+  document.querySelectorAll('.platform-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === platform));
+  document.querySelectorAll('.media-card, .featured-card').forEach(card => {
+    if (platform === 'all') { card.style.display = ''; }
+    else { card.style.display = (card.dataset.platform || '').includes(platform) ? '' : 'none'; }
+  });
+}
+</script>
+
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">
+    Wij gebruiken functionele cookies voor de werking van de site. Als u op een productlink klikt, kunnen externe partijen (Bol.com, Awin) tracking cookies plaatsen voor commissieverwerking.
+    <a href="../privacy.html" style="color:#7dd3f0;font-weight:600;">Lees onze privacyverklaring →</a>
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;cursor:pointer;">Alleen noodzakelijk</button>
+    <button onclick="setCookieConsent('accepted')" style="background:#2d9cdb;border:none;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:6px;cursor:pointer;">Akkoord</button>
+  </div>
+</div>
+<script>
+(function(){
+  function getCookie(n){var v=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return v?v.pop():'';}
+  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
+  if(!getCookie('bsa_cookie_consent')){
+    var b=document.getElementById('cookie-banner');
+    if(b){b.style.display='flex';}
+  }
+})();
+</script>
+
+</body>
+</html>

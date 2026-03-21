@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Slaapgids — beter slapen met bewezen tips | BestSlaapAdvies.nl</title>
+  <meta name="description" content="Praktische slaapgidsen en artikelen op basis van wetenschappelijk onderzoek. Van slaaphygiëne tot supplementen, stress en menopauze."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://bestslaapadvies.nl/gids/"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1a6b8a;
+      --dark: #0d3d52;
+      --accent: #2d9cdb;
+      --light: #e8f4f9;
+      --bg: #f0f7fa;
+      --border: #d0e8f2;
+      --text: #1a2e3b;
+      --sub: #5a7a8a;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: white; border-bottom: 2px solid var(--border); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; }
+    .nav-logo span { font-size: 17px; font-weight: 800; color: var(--dark); }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    /* HERO */
+    .page-hero { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); color: white; padding: 52px 32px 44px; }
+    .page-hero .inner { max-width: 1000px; margin: 0 auto; }
+    .page-hero .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7dd3f0; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
+    .page-hero p { font-size: 16px; color: rgba(255,255,255,.78); max-width: 560px; }
+
+    /* CONTENT */
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* FEATURED ARTICLE */
+    .featured-article { background: white; border-radius: 14px; border: 2px solid var(--accent); padding: 28px 32px; margin-bottom: 48px; display: flex; gap: 28px; align-items: flex-start; text-decoration: none; color: inherit; transition: box-shadow .2s; }
+    .featured-article:hover { box-shadow: 0 8px 28px rgba(45,156,219,.15); }
+    .fa-badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .fa-title { font-size: 22px; font-weight: 800; color: var(--dark); line-height: 1.25; margin-bottom: 10px; }
+    .fa-desc { font-size: 14px; color: var(--sub); line-height: 1.65; margin-bottom: 16px; }
+    .fa-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--sub); }
+    .fa-meta span { display: flex; align-items: center; gap: 4px; }
+    .fa-icon { width: 80px; height: 80px; background: var(--light); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .fa-link { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--primary); }
+    @media (max-width: 600px) { .featured-article { flex-direction: column; } .fa-icon { width: 56px; height: 56px; } }
+
+    /* SECTION TITLE */
+    .section-title { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+
+    /* ARTICLES GRID */
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; margin-bottom: 48px; }
+    .article-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
+    .article-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .ac-cat { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+    .ac-title { font-size: 15px; font-weight: 700; color: var(--dark); line-height: 1.35; margin-bottom: 8px; }
+    .ac-desc { font-size: 13px; color: var(--sub); line-height: 1.6; flex: 1; }
+    .ac-footer { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .ac-time { font-size: 11px; color: var(--sub); }
+    .ac-link { font-size: 12px; font-weight: 700; color: var(--primary); }
+
+    /* COMING SOON CARD */
+    .coming-soon { background: white; border-radius: 12px; border: 1.5px dashed var(--border); padding: 22px; opacity: .6; cursor: default; }
+    .coming-soon .ac-link { color: var(--sub); }
+
+    /* CTA BOX */
+    .cta-box { background: var(--dark); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .cta-box p:first-child { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 6px; }
+    .cta-box p:last-child { color: rgba(255,255,255,.85); font-size: 15px; }
+    .cta-box a { background: var(--primary); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+    .cta-box a:hover { background: var(--accent); }
+
+    /* FOOTER */
+    .site-footer { background: #0d3d52; color: #7aacbf; padding: 48px 32px 32px; font-size: 13px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto 28px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+    .footer-brand strong { font-size: 16px; color: white; display: block; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; color: #7aacbf; max-width: 240px; line-height: 1.6; }
+    .footer-brand a { color: #a8d4e6; text-decoration: none; }
+    .footer-nav { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 6px; }
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
+    .footer-col a { color: #a8d4e6; text-decoration: none; transition: color .15s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; text-align: center; }
+    .footer-copy { color: #5a8a9f; margin-bottom: 8px; }
+    .footer-copy a { color: #7aacbf; text-decoration: none; }
+    .footer-disc { font-size: 11px; color: #5a8a9f; max-width: 640px; margin: 0 auto; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html"><span>BestSlaapAdvies</span></a>
+  <div class="nav-links">
+    <a href="../supplementen/index.html">Supplementen</a>
+    <a href="../ontspanning/index.html">Ontspanning</a>
+    <a href="index.html" class="active">Slaapgids</a>
+    <a href="../media/index.html">Media</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <div class="eyebrow">Slaapgids</div>
+    <h1>Beter slapen — bewezen tips en gidsen</h1>
+    <p>Praktische artikelen op basis van wetenschappelijk onderzoek. Geen hype, geen verkoopverhalen — alleen wat werkt.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- FEATURED ARTICLE -->
+  <a class="featured-article" href="slaaphygiene.html">
+    <div class="fa-icon">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1a6b8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    </div>
+    <div>
+      <div class="fa-badge">⭐ Aanbevolen startpunt · Slaaphygiëne</div>
+      <div class="fa-title">Slaaphygiëne: de 12 regels die écht werken (2026)</div>
+      <div class="fa-desc">De 12 bewezen slaaphygiëne-regels die je slaapkwaliteit direct verbeteren — van lichtblootstelling en cafeïnegebruik tot slaapkameromgeving en avondroutine. Gebaseerd op peer-reviewed onderzoek.</div>
+      <div class="fa-meta">
+        <span>📖 9 min lezen</span>
+        <span>🔬 Wetenschappelijk onderbouwd</span>
+        <span>📅 Maart 2026</span>
+      </div>
+      <div class="fa-link">Lees het artikel →</div>
+    </div>
+  </a>
+
+  <!-- MORE ARTICLES -->
+  <div class="section-title">Alle slaapgidsen</div>
+  <div class="articles-grid">
+
+    <a class="article-card" href="slaaphygiene.html">
+      <div class="ac-cat">Slaaphygiëne</div>
+      <div class="ac-title">Slaaphygiëne: de 12 regels die écht werken</div>
+      <div class="ac-desc">Van lichtblootstelling en cafeïne tot slaapkameromgeving — de basis voor elke slaapverbetering.</div>
+      <div class="ac-footer">
+        <span class="ac-time">9 min lezen</span>
+        <span class="ac-link">Lees meer →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="slaap-stress.html">
+      <div class="ac-cat">Slaapproblemen</div>
+      <div class="ac-title">Slaapproblemen door stress: wat helpt echt?</div>
+      <div class="ac-desc">Piekeren, cortisol en de vicieuze cirkel van slaapangst — en hoe je er uitkomt.</div>
+      <div class="ac-footer">
+        <span class="ac-time">8 min lezen</span>
+        <span class="ac-link">Lees meer →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="slaap-menopauze.html">
+      <div class="ac-cat">Vrouwen &amp; Hormonen</div>
+      <div class="ac-title">Slaap en menopauze: praktische tips voor de overgang</div>
+      <div class="ac-desc">Hoe oestrogeen en progesteron je slaap beïnvloeden, en welke aanpassingen het meeste helpen.</div>
+      <div class="ac-footer">
+        <span class="ac-time">9 min lezen</span>
+        <span class="ac-link">Lees meer →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="hoeveel-slaap.html">
+      <div class="ac-cat">Wetenschap</div>
+      <div class="ac-title">Hoeveel slaap heb je echt nodig?</div>
+      <div class="ac-desc">De wetenschap achter slaapbehoefte per leeftijdsgroep — en waarom 8 uur niet voor iedereen geldt.</div>
+      <div class="ac-footer">
+        <span class="ac-time">7 min lezen</span>
+        <span class="ac-link">Lees meer →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="slaapsupplementen-veilig.html">
+      <div class="ac-cat">Supplementen</div>
+      <div class="ac-title">Zijn slaapsupplementen veilig? Wat je moet weten</div>
+      <div class="ac-desc">Veiligheid, interacties en wanneer je beter een arts kunt raadplegen — een eerlijk overzicht.</div>
+      <div class="ac-footer">
+        <span class="ac-time">7 min lezen</span>
+        <span class="ac-link">Lees meer →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="slaap-beweging.html">
+      <div class="ac-cat">Leefstijl</div>
+      <div class="ac-title">Slaap en beweging: het verband dat je moet kennen</div>
+      <div class="ac-desc">Welke sporten en tijdstippen je slaap verbeteren — en welke je slaap juist saboteren.</div>
+      <div class="ac-footer">
+        <span class="ac-time">7 min lezen</span>
+        <span class="ac-link">Lees meer →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="cta-box">
+    <div>
+      <p>Supplementen vergelijken</p>
+      <p>Bekijk onze onafhankelijke vergelijking van slaapsupplementen — inclusief bewijs, dosering en prijs.</p>
+    </div>
+    <a href="../supplementen/index.html">Naar supplementen →</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>BestSlaapAdvies.nl</strong>
+      <p>Onafhankelijke vergelijkingen van slaapsupplementen, matrassen en trackers voor Nederland en België.</p>
+      <p style="margin-top:10px"><a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Categorieën</span>
+        <a href="../supplementen/index.html">Supplementen</a>
+    <a href="../ontspanning/index.html">Ontspanning</a>
+        <a href="index.html">Slaapgids</a>
+        <a href="../media/index.html">Media</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Informatie</span>
+        <a href="../disclaimer.html">Methode &amp; Disclaimer</a>
+        <a href="../privacy.html">Privacyverklaring</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 BestSlaapAdvies.nl · <a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    <p class="footer-disc">Deze site bevat affiliate links. Wij ontvangen een kleine commissie als je via onze links iets koopt — zonder extra kosten voor jou. Alle vergelijkingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
+  </div>
+</footer>
+
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">
+    Wij gebruiken functionele cookies voor de werking van de site. Als u op een productlink klikt, kunnen externe partijen (Bol.com, Awin) tracking cookies plaatsen voor commissieverwerking.
+    <a href="../privacy.html" style="color:#7dd3f0;font-weight:600;">Lees onze privacyverklaring →</a>
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;cursor:pointer;">Alleen noodzakelijk</button>
+    <button onclick="setCookieConsent('accepted')" style="background:#2d9cdb;border:none;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:6px;cursor:pointer;">Akkoord</button>
+  </div>
+</div>
+<script>
+(function(){
+  function getCookie(n){var v=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return v?v.pop():'';}
+  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
+  if(!getCookie('bsa_cookie_consent')){
+    var b=document.getElementById('cookie-banner');
+    if(b){b.style.display='flex';}
+  }
+})();
+</script>
+
+</body>
+</html>

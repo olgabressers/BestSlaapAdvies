@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Onze methode & disclaimer — BestSlaapAdvies.nl</title>
+  <meta name="description" content="Hoe BestSlaapAdvies supplementen vergelijkt, wat onze scores betekenen, en onze volledige disclaimer over affiliate links en medisch advies."/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary:#1a6b8a; --dark:#0d3d52; --accent:#2d9cdb; --light:#e8f4f9; --bg:#f0f7fa; --border:#d0e8f2; --text:#1a2e3b; --sub:#5a7a8a; --green:#1a8a5a; --green-light:#e6f7f0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    nav { background: white; border-bottom: 2px solid var(--border); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; }
+    .nav-logo span { font-size: 17px; font-weight: 800; color: var(--dark); }
+    .nav-logo small { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); display: block; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .page-hero { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); color: white; padding: 48px 32px 40px; }
+    .page-hero .inner { max-width: 800px; margin: 0 auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7dd3f0; font-weight: 700; margin-bottom: 10px; }
+    .page-hero h1 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 580px; }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .toc { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
+    .toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 12px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .toc a:hover { text-decoration: underline; }
+
+    .section { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 24px; }
+    .section h2 { font-size: 19px; font-weight: 800; color: var(--dark); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--light); display: flex; align-items: center; gap: 10px; }
+    .section h3 { font-size: 15px; font-weight: 700; color: var(--dark); margin: 18px 0 8px; }
+    .section p { font-size: 14px; color: var(--sub); line-height: 1.75; margin-bottom: 12px; }
+    .section ul, .section ol { padding-left: 20px; margin-bottom: 12px; }
+    .section li { font-size: 14px; color: var(--sub); line-height: 1.7; margin-bottom: 4px; }
+    .section strong { color: var(--text); }
+
+    .score-explain { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 16px 0; align-items: start; }
+    .score-badge { font-size: 13px; font-weight: 800; color: white; padding: 3px 10px; border-radius: 6px; white-space: nowrap; }
+    .score-badge.green { background: #1a8a5a; }
+    .score-badge.blue { background: var(--accent); }
+    .score-badge.amber { background: #c47a1a; }
+    .score-desc { font-size: 13.5px; color: var(--sub); line-height: 1.6; }
+
+    .warning-box { background: #fff8e6; border: 1.5px solid #f59e0b; border-radius: 10px; padding: 18px 22px; margin: 16px 0; }
+    .warning-box p { color: #7c5c00; margin: 0; font-size: 13.5px; }
+    .warning-box strong { color: #5c4200; }
+
+    .green-box { background: var(--green-light); border: 1.5px solid #a7f3d0; border-radius: 10px; padding: 18px 22px; margin: 16px 0; }
+    .green-box p { color: #065f46; margin: 0; font-size: 13.5px; }
+
+    .contact-box { background: var(--dark); border-radius: 14px; padding: 28px; color: white; text-align: center; margin-top: 32px; }
+    .contact-box h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .contact-box p { font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 16px; }
+    .contact-box a { color: #7dd3f0; }
+
+    .site-footer { background: #0d3d52; color: #7aacbf; padding: 48px 32px 32px; font-size: 13px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto 28px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+    .footer-brand strong { font-size: 16px; color: white; display: block; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; color: #7aacbf; max-width: 240px; line-height: 1.6; }
+    .footer-brand a { color: #a8d4e6; text-decoration: none; }
+    .footer-nav { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 6px; }
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
+    .footer-col a { color: #a8d4e6; text-decoration: none; transition: color .15s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; text-align: center; }
+    .footer-copy { color: #5a8a9f; margin-bottom: 8px; }
+    .footer-copy a { color: #7aacbf; text-decoration: none; }
+    .footer-disc { font-size: 11px; color: #5a8a9f; max-width: 640px; margin: 0 auto; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><span>BestSlaapAdvies</span><small>Nederland &amp; België</small></a>
+  <div class="nav-links">
+    <a href="supplementen/index.html">Supplementen</a>
+    <a href="ontspanning/index.html">Ontspanning</a>
+    <a href="gids/index.html">Slaapgids</a>
+    <a href="media/index.html">Media</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="index.html">BestSlaapAdvies</a> / Methode &amp; Disclaimer</div>
+    <div class="eyebrow">Transparantie</div>
+    <h1>Onze vergelijkingsmethode &amp; disclaimer</h1>
+    <p>Hoe wij supplementen beoordelen, wat onze scores betekenen, hoe affiliate links werken, en wat wij wel en niet zijn.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">Inhoud</div>
+    <ol>
+      <li><a href="#wie">Wie zijn wij?</a></li>
+      <li><a href="#methode">Onze vergelijkingsmethode</a></li>
+      <li><a href="#scores">Wat de scores betekenen</a></li>
+      <li><a href="#onafhankelijkheid">Onafhankelijkheid &amp; editorial beleid</a></li>
+      <li><a href="#affiliate">Affiliate links &amp; commissies</a></li>
+      <li><a href="#medisch">Medische disclaimer</a></li>
+      <li><a href="#aansprakelijkheid">Aansprakelijkheid &amp; garanties</a></li>
+      <li><a href="#ip">Intellectueel eigendom</a></li>
+      <li><a href="#hyperlinks">Externe links</a></li>
+      <li><a href="#toepasselijk-recht">Toepasselijk recht</a></li>
+      <li><a href="#contact">Vragen of correcties</a></li>
+    </ol>
+  </div>
+
+  <!-- 0. WIE ZIJN WIJ -->
+  <div class="section" id="wie">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Over BestSlaapAdvies.nl
+    </h2>
+    <p>BestSlaapAdvies.nl is een onafhankelijk redactioneel vergelijkings- en informatieplatform over slaap, slaapsupplementen en slaapgerelateerde producten, gericht op consumenten in Nederland en België.</p>
+    <p>De website is bereikbaar via <strong>https://bestslaapadvies.nl</strong> en wordt beheerd vanuit Nederland.</p>
+    <p><strong>Contact:</strong> <a href="mailto:info@bestslaapadvies.nl" style="color:var(--primary)">info@bestslaapadvies.nl</a></p>
+    <p>Voor ons privacybeleid en informatie over gegevensverwerking verwijzen wij naar onze <a href="privacy.html" style="color:var(--primary)">Privacyverklaring</a>.</p>
+  </div>
+
+  <!-- 1. METHODE -->
+  <div class="section" id="methode">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      1. Onze vergelijkingsmethode
+    </h2>
+    <p>BestSlaapAdvies vergelijkt slaapsupplementen, matrassen en slaaptrackers op basis van gepubliceerd wetenschappelijk onderzoek en vastgelegde criteria. <strong>Wij testen producten niet zelf in een lab</strong> en kopen geen producten voor fysieke tests. Onze beoordelingen zijn gebaseerd op:</p>
+    <ul>
+      <li><strong>Gepubliceerde klinische studies</strong> — RCTs (randomized controlled trials) en meta-analyses uit PubMed, Cochrane Reviews en vergelijkbare wetenschappelijke databases</li>
+      <li><strong>Productspecificaties</strong> — ingrediënten, doseringen, en formulering zoals vermeld door de fabrikant</li>
+      <li><strong>Gebruikerservaringen</strong> — aggregatie van reviews van platforms zoals Bol.com, Trustpilot en andere onafhankelijke bronnen</li>
+      <li><strong>Prijsvergelijking</strong> — actuele prijzen op Bol.com, Holland &amp; Barrett en andere Nederlandse retailers</li>
+      <li><strong>Beschikbaarheid in Nederland en België</strong> — alleen producten die daadwerkelijk verkrijgbaar zijn worden opgenomen</li>
+    </ul>
+    <h3>Beoordelingscriteria supplementen</h3>
+    <p>Elk supplement wordt beoordeeld op drie dimensies, elk gescoord van 0–100:</p>
+    <ul>
+      <li><strong>Effectiviteit</strong> — in welke mate toont het gepubliceerde onderzoek verbetering van de specifieke slaapuitkomst?</li>
+      <li><strong>Wetenschappelijk bewijs</strong> — kwaliteit, aantal en recentheid van klinische studies (RCT weegt zwaarder dan observationeel onderzoek)</li>
+      <li><strong>Opneembaarheid / gebruiksgemak</strong> — biologische beschikbaarheid van de specifieke vorm, dosering, bijwerkingsprofiel</li>
+    </ul>
+    <p>De scores zijn redactioneel bepaald en vormen een kwalitatieve vertaling van het beschikbare bewijs — geen geautomatiseerde berekening. Ze worden periodiek herzien als nieuw onderzoek beschikbaar komt.</p>
+  </div>
+
+  <!-- 2. SCORES -->
+  <div class="section" id="scores">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      2. Wat de scores betekenen
+    </h2>
+    <p>Onze scores zijn <strong>vergelijkend en relatief</strong> — ze geven aan hoe een supplement of product scoort ten opzichte van andere opties in dezelfde categorie, niet als absolute medische claim.</p>
+    <div class="score-explain">
+      <span class="score-badge green">80–100</span>
+      <span class="score-desc"><strong>Sterk bewijs / Hoog effectief.</strong> Meerdere RCTs tonen consistent positief effect. De wetenschappelijke consensus is duidelijk positief voor deze toepassing.</span>
+      <span class="score-badge blue">60–79</span>
+      <span class="score-desc"><strong>Matig bewijs / Gemiddeld effectief.</strong> Positieve studies aanwezig, maar beperkt in aantal, kwaliteit of consistentie. Veelbelovend maar niet definitief.</span>
+      <span class="score-badge amber">0–59</span>
+      <span class="score-desc"><strong>Beperkt bewijs / Wisselend effectief.</strong> Onvoldoende of tegenstrijdig onderzoek. Interessant maar (nog) niet wetenschappelijk onderbouwd.</span>
+    </div>
+    <div class="warning-box">
+      <p><strong>Let op:</strong> Een hoge score betekent dat het supplement wetenschappelijk goed onderbouwd is voor de gemiddelde populatie. Dit is geen garantie dat het product bij <em>u</em> werkt. Individuele reacties op supplementen variëren sterk afhankelijk van genetica, leefstijl, bestaande aandoeningen en medicijngebruik.</p>
+    </div>
+  </div>
+
+  <!-- 3. ONAFHANKELIJKHEID -->
+  <div class="section" id="onafhankelijkheid">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      3. Onafhankelijkheid &amp; editorial beleid
+    </h2>
+    <p>BestSlaapAdvies is een onafhankelijk redactioneel platform. Wij worden <strong>niet betaald door fabrikanten of merken om hun producten op te nemen of positief te beoordelen.</strong></p>
+    <ul>
+      <li>Geen enkel merk kan betalen voor een betere score of een vaste positie in onze vergelijkingen</li>
+      <li>Onze redactie bepaalt zelf welke producten worden opgenomen, op basis van relevantie en beschikbaarheid</li>
+      <li>Gesponsorde of betaalde vermeldingen worden altijd expliciet als zodanig gemarkeerd</li>
+      <li>Affiliate commissies (zie hieronder) zijn gekoppeld aan de aankoop, niet aan de score van een product</li>
+    </ul>
+    <div class="green-box">
+      <p><strong>Correcties zijn welkom.</strong> Als u een feitelijke onjuistheid ontdekt in onze vergelijkingen of artikelen, neem dan contact op. Wij herzien onze content regelmatig en nemen correcties serieus.</p>
+    </div>
+  </div>
+
+  <!-- 4. AFFILIATE -->
+  <div class="section" id="affiliate">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      4. Affiliate links &amp; commissies
+    </h2>
+    <p>BestSlaapAdvies maakt gebruik van <strong>affiliate marketing</strong> om de site te financieren en gratis toegankelijk te houden voor bezoekers.</p>
+    <h3>Hoe het werkt</h3>
+    <ul>
+      <li>Sommige links op deze site zijn affiliate links — gemarkeerd met een asterisk (*) of de tekst "affiliate link"</li>
+      <li>Als u via zo'n link een product aanschaft, ontvangen wij een kleine commissie van de winkel (bijv. Bol.com Partners, Daisycon, Awin)</li>
+      <li><strong>Voor u verandert er niets</strong> — de prijs van het product is identiek, ongeacht of u via onze link of direct naar de winkel gaat</li>
+      <li>De commissie wordt betaald door de winkel, niet door u</li>
+    </ul>
+    <h3>Onze affiliate partners</h3>
+    <ul>
+      <li><strong>Bol.com Partners</strong> — voor de meeste supplementen, matrassen en accessoires</li>
+      <li><strong>Daisycon</strong> — voor Holland &amp; Barrett en andere Nederlandse gezondheidsretailers</li>
+      <li><strong>Awin</strong> — voor internationale merken</li>
+    </ul>
+    <div class="warning-box">
+      <p><strong>Onze beoordelingen worden niet beïnvloed door affiliate commissies.</strong> Een product met een hogere commissie krijgt geen betere score. Onze methode staat los van onze commerciële relaties.</p>
+    </div>
+  </div>
+
+  <!-- 5. MEDISCH -->
+  <div class="section" id="medisch">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      5. Medische disclaimer
+    </h2>
+    <p><strong>De informatie op BestSlaapAdvies is uitsluitend bedoeld voor algemene informatieve doeleinden en vormt geen medisch advies.</strong></p>
+    <ul>
+      <li>Onze content vervangt geen consult bij een huisarts, specialist of apotheker</li>
+      <li>Slaapsupplementen kunnen interacties hebben met medicijnen — raadpleeg altijd uw arts of apotheker als u medicijnen gebruikt</li>
+      <li>Onze aanbevelingen zijn gebaseerd op de gemiddelde volwassen bevolking en houden geen rekening met individuele gezondheidssituaties</li>
+      <li>Zwangere vrouwen, vrouwen die borstvoeding geven, kinderen en mensen met chronische aandoeningen dienen supplementen alleen te gebruiken na overleg met een arts</li>
+      <li>Bij aanhoudende slaapproblemen (langer dan 4 weken) raden wij aan een arts te raadplegen om onderliggende oorzaken uit te sluiten</li>
+    </ul>
+    <div class="warning-box">
+      <p><strong>Zelfmedicatie heeft grenzen.</strong> Slaapsupplementen kunnen nuttig zijn, maar zijn geen vervanging voor behandeling van onderliggende aandoeningen zoals slaapapneu, depressie, chronische pijn of hormonale stoornissen. Raadpleeg een arts als u twijfelt.</p>
+    </div>
+  </div>
+
+  <!-- 6. AANSPRAKELIJKHEID -->
+  <div class="section" id="aansprakelijkheid">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      6. Aansprakelijkheid &amp; garanties
+    </h2>
+    <p>BestSlaapAdvies en haar redactie aanvaarden <strong>geen aansprakelijkheid</strong> voor:</p>
+    <ul>
+      <li>Directe of indirecte schade als gevolg van het gebruik van informatie op deze site</li>
+      <li>Bijwerkingen, allergische reacties of gezondheidsproblemen als gevolg van het gebruik van supplementen of producten die op deze site worden besproken</li>
+      <li>Onjuistheden in productinformatie, prijzen of beschikbaarheid — wij verwijzen door naar de betreffende winkel waar u de meest actuele informatie vindt</li>
+      <li>De kwaliteit, veiligheid of effectiviteit van producten die door derde partijen worden verkocht</li>
+      <li>Schade als gevolg van het opvolgen van aanbevelingen zonder overleg met een medisch professional</li>
+    </ul>
+    <p>De informatie op deze site is samengesteld naar beste inzicht en met zorg voor nauwkeurigheid. Wij kunnen echter niet garanderen dat alle informatie volledig, actueel of vrij van fouten is.</p>
+    <p>Door gebruik te maken van deze site gaat u akkoord met deze voorwaarden. Als u het niet eens bent met onze methode of conclusies, raden wij aan aanvullend professioneel advies in te winnen.</p>
+  </div>
+
+  <!-- 7. INTELLECTUEEL EIGENDOM -->
+  <div class="section" id="ip">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      7. Intellectueel eigendom
+    </h2>
+    <p>Alle content op BestSlaapAdvies.nl — inclusief maar niet beperkt tot teksten, vergelijkingen, scores, afbeeldingen, vormgeving, logo's en code — is eigendom van BestSlaapAdvies.nl en is beschermd door het auteursrecht en andere intellectuele eigendomsrechten.</p>
+    <p><strong>Het is niet toegestaan zonder voorafgaande schriftelijke toestemming:</strong></p>
+    <ul>
+      <li>Onze content geheel of gedeeltelijk te kopiëren, reproduceren of distribueren</li>
+      <li>Onze vergelijkingen, scores of artikelen commercieel te exploiteren</li>
+      <li>De website of de inhoud ervan te scrapen, te indexeren voor commerciële doeleinden, of te gebruiken voor het trainen van AI-modellen</li>
+      <li>Onze merknaam of domeinnaam te gebruiken op een wijze die verwarring kan veroorzaken</li>
+    </ul>
+    <p>Voor het citeren of verwijzen naar onze content in redactionele context (bijv. in een artikel of blog) is geen toestemming nodig, mits u een duidelijke bronvermelding en hyperlink opneemt. Neem contact op via <a href="mailto:info@bestslaapadvies.nl" style="color:var(--primary)">info@bestslaapadvies.nl</a> voor andere gebruiksvormen.</p>
+  </div>
+
+  <!-- 8. EXTERNE LINKS -->
+  <div class="section" id="hyperlinks">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      8. Externe links en doorverwijzingen
+    </h2>
+    <p>Onze website bevat links naar externe websites van derden (waaronder webwinkels, fabrikanten en affiliate partners). Wij plaatsen deze links uitsluitend voor informatieve doeleinden en als service aan onze bezoekers.</p>
+    <p><strong>BestSlaapAdvies.nl is niet verantwoordelijk voor:</strong></p>
+    <ul>
+      <li>De inhoud, juistheid of volledigheid van externe websites waarnaar wij linken</li>
+      <li>Het privacybeleid of de cookie-instellingen van externe websites</li>
+      <li>Producten of diensten die worden aangeboden op externe websites</li>
+      <li>Schade die voortvloeit uit het gebruik van externe websites</li>
+    </ul>
+    <p>Het feit dat wij naar een externe website linken, impliceert geen goedkeuring of aanbeveling van de inhoud van die website. Wij raden u aan het privacybeleid van externe websites die u bezoekt altijd zelf te lezen.</p>
+  </div>
+
+  <!-- 9. TOEPASSELIJK RECHT -->
+  <div class="section" id="toepasselijk-recht">
+    <h2>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+      9. Toepasselijk recht en geschillen
+    </h2>
+    <p>Op deze disclaimer, de inhoud van BestSlaapAdvies.nl en alle geschillen die hieruit voortvloeien, is uitsluitend <strong>Nederlands recht</strong> van toepassing.</p>
+    <p>Geschillen worden bij uitsluiting voorgelegd aan de bevoegde rechter in Nederland. Consumenten kunnen ook gebruik maken van de Europese ODR-procedure via <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color:var(--primary)">ec.europa.eu/consumers/odr</a>.</p>
+    <p>Indien enige bepaling van deze disclaimer nietig of niet-afdwingbaar blijkt, laat dit de geldigheid van de overige bepalingen onverlet.</p>
+    <p>BestSlaapAdvies.nl behoudt zich het recht voor deze disclaimer op elk moment te wijzigen. De meest actuele versie is steeds beschikbaar op deze pagina. Door gebruik te maken van de website aanvaardt u de meest recente versie van deze disclaimer.</p>
+    <p style="font-size:13px;color:var(--sub);margin-top:8px;"><strong>Versie:</strong> 1.1 · <strong>Laatste update:</strong> maart 2026</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box" id="contact">
+    <h3>Vragen, correcties of opmerkingen?</h3>
+    <p>Heeft u een fout gevonden, wilt u een product aanmelden voor vergelijking, of heeft u vragen over onze methode? Wij horen het graag.</p>
+    <a href="mailto:info@bestslaapadvies.nl">Stuur een e-mail naar info@bestslaapadvies.nl</a>
+  </div>
+
+  <p style="font-size:11px;color:var(--sub);margin-top:24px;text-align:center">Laatst bijgewerkt: maart 2026 · BestSlaapAdvies.nl</p>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>BestSlaapAdvies.nl</strong>
+      <p>Onafhankelijke vergelijkingen van slaapsupplementen, matrassen en trackers voor Nederland en België.</p>
+      <p style="margin-top:10px"><a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Categorieën</span>
+        <a href="supplementen/index.html">Supplementen</a>
+    <a href="ontspanning/index.html">Ontspanning</a>
+        <a href="gids/index.html">Slaapgids</a>
+        <a href="media/index.html">Media</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Informatie</span>
+        <a href="disclaimer.html">Methode &amp; Disclaimer</a>
+        <a href="privacy.html">Privacyverklaring</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 BestSlaapAdvies.nl · <a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    <p class="footer-disc">Deze site bevat affiliate links. Wij ontvangen een kleine commissie als je via onze links iets koopt — zonder extra kosten voor jou. Alle vergelijkingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
+  </div>
+</footer>
+
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">
+    Wij gebruiken functionele cookies voor de werking van de site. Als u op een productlink klikt, kunnen externe partijen (Bol.com, Awin) tracking cookies plaatsen voor commissieverwerking.
+    <a href="privacy.html" style="color:#7dd3f0;font-weight:600;">Lees onze privacyverklaring →</a>
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0;">
+    <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;cursor:pointer;">Alleen noodzakelijk</button>
+    <button onclick="setCookieConsent('accepted')" style="background:#2d9cdb;border:none;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:6px;cursor:pointer;">Akkoord</button>
+  </div>
+</div>
+<script>
+(function(){
+  function getCookie(n){var v=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return v?v.pop():'';}
+  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
+  if(!getCookie('bsa_cookie_consent')){
+    var b=document.getElementById('cookie-banner');
+    if(b){b.style.display='flex';}
+  }
+})();
+</script>
+
+</body>
+</html>

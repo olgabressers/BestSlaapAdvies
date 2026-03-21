@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Privacyverklaring — BestSlaapAdvies.nl</title>
+  <meta name="description" content="Privacyverklaring van BestSlaapAdvies.nl — hoe wij omgaan met persoonsgegevens, cookies en uw rechten onder de AVG."/>
+  <meta name="robots" content="noindex, follow"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary:#1a6b8a; --dark:#0d3d52; --accent:#2d9cdb; --light:#e8f4f9; --bg:#f0f7fa; --border:#d0e8f2; --text:#1a2e3b; --sub:#5a7a8a; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    nav { background: white; border-bottom: 2px solid var(--border); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; }
+    .nav-logo span { font-size: 17px; font-weight: 800; color: var(--dark); }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; }
+    .nav-links a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .page-hero { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); color: white; padding: 48px 32px 40px; }
+    .page-hero .inner { max-width: 800px; margin: 0 auto; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 12px; }
+    .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7dd3f0; font-weight: 700; margin-bottom: 10px; }
+    .page-hero h1 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,.75); max-width: 580px; }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .toc { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 40px; }
+    .toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 12px; }
+    .toc ol { padding-left: 20px; column-count: 2; column-gap: 24px; }
+    .toc li { margin-bottom: 6px; break-inside: avoid; }
+    .toc a { color: var(--primary); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .toc a:hover { text-decoration: underline; }
+    @media (max-width: 560px) { .toc ol { column-count: 1; } }
+
+    .section { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 28px 32px; margin-bottom: 24px; }
+    .section h2 { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--light); display: flex; align-items: center; gap: 10px; }
+    .section h3 { font-size: 15px; font-weight: 700; color: var(--dark); margin: 20px 0 8px; }
+    .section p { font-size: 14px; color: #2a4a5a; line-height: 1.8; margin-bottom: 12px; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol { padding-left: 22px; margin-bottom: 14px; }
+    .section li { font-size: 14px; color: #2a4a5a; line-height: 1.75; margin-bottom: 6px; }
+    .section strong { color: var(--text); font-weight: 700; }
+    .section a { color: var(--primary); }
+
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+    @media (max-width: 560px) { .rights-grid { grid-template-columns: 1fr; } }
+    .right-item { background: var(--light); border-radius: 8px; padding: 14px 16px; border-left: 3px solid var(--accent); }
+    .right-item strong { display: block; font-size: 13px; color: var(--dark); margin-bottom: 4px; }
+    .right-item p { font-size: 12.5px; color: var(--sub); margin: 0; line-height: 1.5; }
+
+    .cookie-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; background: white; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .cookie-table th { background: var(--dark); color: white; padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .5px; }
+    .cookie-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .cookie-table tr:nth-child(even) td { background: #f8fcfe; }
+
+    .info-box { background: #fff8e6; border: 1.5px solid #f59e0b; border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+    .info-box p { color: #7c5c00; margin: 0; font-size: 13.5px; }
+
+    .ap-box { background: var(--light); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin: 16px 0; }
+    .ap-box p { color: var(--text); margin-bottom: 6px; font-size: 14px; }
+    .ap-box a { color: var(--primary); font-weight: 600; }
+
+    .contact-box { background: var(--dark); border-radius: 14px; padding: 28px; color: white; text-align: center; margin-top: 32px; }
+    .contact-box h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .contact-box p { font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 4px; }
+    .contact-box a { color: #7dd3f0; }
+
+    .site-footer { background: #0d3d52; color: #7aacbf; padding: 32px; text-align: center; font-size: 13px; }
+    .site-footer a { color: #a8d4e6; text-decoration: none; }
+    .disc { font-size: 11px; color: #5a8a9f; margin-top: 10px; max-width: 640px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><span>BestSlaapAdvies</span></a>
+  <div class="nav-links">
+    <a href="supplementen/index.html">Supplementen</a>
+    <a href="ontspanning/index.html">Ontspanning</a>
+    <a href="gids/index.html">Slaapgids</a>
+    <a href="media/index.html">Media</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="index.html">BestSlaapAdvies</a> / Privacyverklaring</div>
+    <div class="eyebrow">Juridisch</div>
+    <h1>Privacyverklaring</h1>
+    <p>Hoe BestSlaapAdvies.nl omgaat met uw persoonsgegevens, welke cookies wij gebruiken, en wat uw rechten zijn onder de AVG.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">Inhoud</div>
+    <ol>
+      <li><a href="#wie">Wie zijn wij?</a></li>
+      <li><a href="#welke-gegevens">Welke gegevens verzamelen wij?</a></li>
+      <li><a href="#doel">Doel en grondslag verwerking</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#affiliate-tracking">Affiliate tracking</a></li>
+      <li><a href="#derden">Delen met derden</a></li>
+      <li><a href="#bewaring">Bewaartermijnen</a></li>
+      <li><a href="#beveiliging">Beveiliging</a></li>
+      <li><a href="#rechten">Uw rechten</a></li>
+      <li><a href="#klacht">Klacht indienen</a></li>
+      <li><a href="#wijzigingen">Wijzigingen</a></li>
+      <li><a href="#contact-privacy">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. WIE ZIJN WIJ -->
+  <div class="section" id="wie">
+    <h2>1. Wie zijn wij?</h2>
+    <p>BestSlaapAdvies.nl is een onafhankelijk vergelijkings- en informatieplatform over slaap, slaapsupplementen en slaapgerelateerde producten. De website is bereikbaar via <strong>https://bestslaapadvies.nl</strong>.</p>
+    <p><strong>Verwerkingsverantwoordelijke:</strong><br/>
+    BestSlaapAdvies.nl<br/>
+    Nederland<br/>
+    E-mail: <a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    <p>Voor vragen over deze privacyverklaring of over de verwerking van uw persoonsgegevens kunt u contact opnemen via bovenstaand e-mailadres.</p>
+  </div>
+
+  <!-- 2. WELKE GEGEVENS -->
+  <div class="section" id="welke-gegevens">
+    <h2>2. Welke persoonsgegevens verzamelen wij?</h2>
+
+    <h3>2.1 Gegevens die u actief verstrekt</h3>
+    <p>Wij verzamelen uitsluitend gegevens die u zelf aan ons verstrekt:</p>
+    <ul>
+      <li><strong>Contactformulier / e-mail:</strong> naam en e-mailadres, indien u contact met ons opneemt. Deze gegevens worden uitsluitend gebruikt om uw bericht te beantwoorden.</li>
+    </ul>
+    <p>BestSlaapAdvies.nl vereist geen account, registratie of inlog. Wij vragen bezoekers niet om persoonlijke gegevens in te voeren om de site te gebruiken.</p>
+
+    <h3>2.2 Gegevens die automatisch worden verzameld</h3>
+    <p>Bij elk bezoek aan onze website worden door de hostingprovider (Netlify) automatisch technische gegevens vastgelegd in serverlogbestanden. Dit zijn standaard loggegevens die alle webservers bijhouden:</p>
+    <ul>
+      <li>IP-adres (geanonimiseerd of volledig, afhankelijk van serverinstelling)</li>
+      <li>Datum en tijdstip van het bezoek</li>
+      <li>Bezochte pagina's</li>
+      <li>Verwijzende website (referrer)</li>
+      <li>Type browser en besturingssysteem</li>
+    </ul>
+    <p>Deze gegevens zijn noodzakelijk voor de technische werking van de website, het opsporen van fouten en beveiliging. Zij worden niet gekoppeld aan individuele gebruikersprofielen.</p>
+
+    <h3>2.3 Analytische gegevens</h3>
+    <p>Wij maken op dit moment <strong>geen gebruik van Google Analytics of andere externe analysediensten</strong> die persoonsgegevens verwerken. Als wij in de toekomst gebruik gaan maken van dergelijke diensten, zullen wij deze privacyverklaring updaten en uw toestemming vragen waar vereist.</p>
+  </div>
+
+  <!-- 3. DOEL EN GRONDSLAG -->
+  <div class="section" id="doel">
+    <h2>3. Doel en grondslag van verwerking</h2>
+    <p>Wij verwerken persoonsgegevens uitsluitend voor de volgende doeleinden en op basis van de volgende rechtsgrondslagen (artikel 6 AVG):</p>
+    <table class="cookie-table">
+      <thead>
+        <tr><th>Doel</th><th>Rechtsgrondslag</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Beantwoorden van contactverzoeken</td><td>Gerechtvaardig belang / uitvoering overeenkomst (art. 6 lid 1 sub b/f AVG)</td></tr>
+        <tr><td>Technische werking en beveiliging website</td><td>Gerechtvaardigd belang (art. 6 lid 1 sub f AVG)</td></tr>
+        <tr><td>Naleving wettelijke verplichtingen</td><td>Wettelijke verplichting (art. 6 lid 1 sub c AVG)</td></tr>
+        <tr><td>Affiliate tracking (derden)</td><td>Toestemming (art. 6 lid 1 sub a AVG) — zie artikel 5</td></tr>
+      </tbody>
+    </table>
+    <p>Wij verwerken nooit meer gegevens dan noodzakelijk voor het genoemde doel (dataminimalisatie).</p>
+  </div>
+
+  <!-- 4. COOKIES -->
+  <div class="section" id="cookies">
+    <h2>4. Cookies</h2>
+    <p>Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen wanneer u een website bezoekt. Wij maken onderscheid tussen de volgende typen:</p>
+
+    <h3>4.1 Functionele cookies (strikt noodzakelijk)</h3>
+    <p>Functionele cookies zijn noodzakelijk voor de technische werking van de website. Zij vereisen geen toestemming. BestSlaapAdvies.nl gebruikt minimale functionele cookies voor:</p>
+    <ul>
+      <li>Opslaan van uw cookievoorkeuren (onze cookiebanner)</li>
+      <li>Beveiliging (CSRF-bescherming)</li>
+    </ul>
+
+    <h3>4.2 Analytische cookies</h3>
+    <p>Wij maken op dit moment geen gebruik van analytische cookies van derden. Als wij dit in de toekomst doen, vragen wij vooraf uw toestemming.</p>
+
+    <h3>4.3 Tracking- en marketingcookies (derden)</h3>
+    <p>Wanneer u klikt op een affiliate link op onze website (bijv. een link naar Bol.com of Rituals), kunnen de betreffende externe websites cookies plaatsen op uw apparaat om de aankoop te registreren en ons een commissie uit te keren. Deze cookies worden geplaatst door derden — niet door BestSlaapAdvies.nl.</p>
+    <p>Zie artikel 5 voor meer informatie over affiliate tracking.</p>
+
+    <h3>4.4 Overzicht van cookies op deze site</h3>
+    <table class="cookie-table">
+      <thead>
+        <tr><th>Cookie</th><th>Type</th><th>Doel</th><th>Bewaartermijn</th><th>Partij</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>bsa_cookie_consent</code></td><td>Functioneel</td><td>Opslaan cookievoorkeur bezoeker</td><td>1 jaar</td><td>BestSlaapAdvies.nl (eigen)</td></tr>
+        <tr><td>Bol.com tracking cookie</td><td>Marketing</td><td>Commissieregistratie bij aankoop via affiliate link</td><td>5 dagen</td><td>Bol.com (derde partij)</td></tr>
+        <tr><td>Awin tracking cookie</td><td>Marketing</td><td>Commissieregistratie bij aankoop via Awin-link</td><td>30 dagen</td><td>Awin (derde partij)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4.5 Cookies uitschakelen of verwijderen</h3>
+    <p>U kunt cookies op elk moment uitschakelen via de instellingen van uw browser. Houd er rekening mee dat het uitschakelen van cookies de functionaliteit van sommige websites kan beïnvloeden. Instructies voor de meestgebruikte browsers:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/nl/kb/cookies-verwijderen-gegevens-websites-verwijderd" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/nl-nl/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+      <li><a href="https://support.microsoft.com/nl-nl/windows/cookies-verwijderen-en-beheren-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+  </div>
+
+  <!-- 5. AFFILIATE TRACKING -->
+  <div class="section" id="affiliate-tracking">
+    <h2>5. Affiliate tracking</h2>
+    <p>BestSlaapAdvies.nl neemt deel aan affiliate programma's van <strong>Bol.com Partners</strong> en <strong>Awin</strong> (waaronder Rituals en andere merken). Dit betekent dat wij een commissie kunnen ontvangen wanneer u via een link op onze site een product aanschaft.</p>
+
+    <h3>Hoe werkt affiliate tracking?</h3>
+    <p>Wanneer u op een affiliate link klikt, wordt u doorgestuurd naar de externe winkel. De affiliate link bevat een unieke identificatiecode (onze publisher-ID). De winkel of het affiliate netwerk plaatst vervolgens een tracking cookie op uw apparaat om de klik en eventuele aankoop te registreren.</p>
+
+    <h3>Wat wordt bijgehouden?</h3>
+    <ul>
+      <li>Het feit dat er via onze link op de productpagina is geklikt</li>
+      <li>Of er binnen de cookieperiode een aankoop is gedaan</li>
+      <li>Het aankoopbedrag (voor commissieberekening)</li>
+    </ul>
+    <p>Wij ontvangen <strong>geen persoonlijke gegevens</strong> van u van de affiliate netwerken — alleen anonieme statistieken over klikken en commissies.</p>
+
+    <h3>Prijzen en voorwaarden</h3>
+    <p>Het gebruik van affiliate links heeft <strong>geen invloed op de prijs</strong> die u betaalt. De prijs is identiek of u nu via onze link of direct naar de winkel gaat. De commissie wordt betaald door de winkel, niet door u.</p>
+
+    <div class="info-box">
+      <p><strong>Transparantie:</strong> Affiliate links op onze site zijn herkenbaar. Wij vermelden in de footer en op de methode-pagina dat wij gebruik maken van affiliate marketing. Dit is in lijn met de richtlijnen van de ACM (Autoriteit Consument &amp; Markt) voor transparantie over commerciële communicatie.</p>
+    </div>
+  </div>
+
+  <!-- 6. DERDEN -->
+  <div class="section" id="derden">
+    <h2>6. Delen met derden</h2>
+    <p>Wij verkopen, verhuren of verhandelen uw persoonsgegevens nooit aan derden voor commerciële doeleinden. Wij kunnen uw gegevens in de volgende beperkte gevallen delen:</p>
+
+    <h3>6.1 Hostingprovider</h3>
+    <p><strong>Netlify, Inc.</strong> — onze hostingprovider — verwerkt technische loggegevens als onderdeel van de hosting. Netlify is gevestigd in de VS en valt onder het EU-VS Data Privacy Framework. Netlify's privacybeleid is beschikbaar op <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a>.</p>
+
+    <h3>6.2 Affiliate netwerken</h3>
+    <p><strong>Bol.com Partners</strong> en <strong>Awin</strong> ontvangen klikdata via affiliate tracking zoals beschreven in artikel 5. Zij zijn zelfstandige verwerkingsverantwoordelijken en hebben hun eigen privacybeleid.</p>
+
+    <h3>6.3 Wettelijke verplichting</h3>
+    <p>Wij kunnen gegevens verstrekken aan bevoegde autoriteiten als wij daartoe wettelijk verplicht zijn (bijv. op bevel van een rechter of officier van justitie).</p>
+
+    <p>In alle overige gevallen delen wij uw gegevens niet met derden zonder uw expliciete toestemming.</p>
+  </div>
+
+  <!-- 7. BEWARING -->
+  <div class="section" id="bewaring">
+    <h2>7. Bewaartermijnen</h2>
+    <p>Wij bewaren persoonsgegevens niet langer dan noodzakelijk voor het doel waarvoor zij zijn verzameld:</p>
+    <table class="cookie-table">
+      <thead>
+        <tr><th>Type gegevens</th><th>Bewaartermijn</th><th>Reden</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>E-mailcorrespondentie (contactverzoeken)</td><td>Maximaal 2 jaar</td><td>Afhandeling en eventuele vervolgvragen</td></tr>
+        <tr><td>Serverlogbestanden (technisch)</td><td>Maximaal 90 dagen</td><td>Technische werking en beveiliging</td></tr>
+        <tr><td>Cookievoorkeur</td><td>1 jaar</td><td>Niet opnieuw tonen van cookiebanner</td></tr>
+      </tbody>
+    </table>
+    <p>Na het verstrijken van de bewaartermijn worden gegevens veilig verwijderd of geanonimiseerd.</p>
+  </div>
+
+  <!-- 8. BEVEILIGING -->
+  <div class="section" id="beveiliging">
+    <h2>8. Beveiliging</h2>
+    <p>Wij treffen passende technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen onbevoegde toegang, verlies, vernietiging of ongeoorloofde openbaarmaking:</p>
+    <ul>
+      <li><strong>HTTPS/TLS:</strong> alle verbindingen met onze website zijn versleuteld via SSL/TLS (het slotje in uw browser)</li>
+      <li><strong>Hosting:</strong> Netlify biedt infrastructuurbeveiliging op enterprise-niveau, inclusief DDoS-bescherming</li>
+      <li><strong>Geen onnodige dataopslag:</strong> wij verzamelen zo min mogelijk persoonsgegevens (privacy by design)</li>
+      <li><strong>Toegangsbeperking:</strong> alleen bevoegde personen hebben toegang tot gegevens die wij verwerken</li>
+    </ul>
+    <p>Ondanks onze beveiligingsmaatregelen is geen enkele methode van internetoverdracht of elektronische opslag 100% veilig. Wij kunnen absolute veiligheid niet garanderen, maar doen al het redelijke om uw gegevens te beschermen.</p>
+
+    <h3>Datalekken</h3>
+    <p>In het geval van een datalek dat waarschijnlijk een hoog risico inhoudt voor uw rechten en vrijheden, zullen wij u hierover informeren conform artikel 34 AVG. Ernstige datalekken melden wij bij de Autoriteit Persoonsgegevens.</p>
+  </div>
+
+  <!-- 9. RECHTEN -->
+  <div class="section" id="rechten">
+    <h2>9. Uw rechten onder de AVG</h2>
+    <p>Op grond van de Algemene Verordening Gegevensbescherming (AVG) heeft u de volgende rechten met betrekking tot uw persoonsgegevens:</p>
+
+    <div class="rights-grid">
+      <div class="right-item">
+        <strong>Recht op inzage (art. 15 AVG)</strong>
+        <p>U heeft het recht om te weten welke persoonsgegevens wij van u verwerken en om een kopie te ontvangen.</p>
+      </div>
+      <div class="right-item">
+        <strong>Recht op rectificatie (art. 16 AVG)</strong>
+        <p>U heeft het recht onjuiste of onvolledige persoonsgegevens te laten corrigeren.</p>
+      </div>
+      <div class="right-item">
+        <strong>Recht op verwijdering (art. 17 AVG)</strong>
+        <p>U heeft het recht om uw persoonsgegevens te laten verwijderen ("recht om vergeten te worden"), mits wij niet wettelijk verplicht zijn deze te bewaren.</p>
+      </div>
+      <div class="right-item">
+        <strong>Recht op beperking (art. 18 AVG)</strong>
+        <p>U heeft het recht om de verwerking van uw gegevens te laten beperken in bepaalde omstandigheden.</p>
+      </div>
+      <div class="right-item">
+        <strong>Recht op overdraagbaarheid (art. 20 AVG)</strong>
+        <p>U heeft het recht uw gegevens in een gestructureerd, gangbaar formaat te ontvangen om door te sturen naar een andere partij.</p>
+      </div>
+      <div class="right-item">
+        <strong>Recht op bezwaar (art. 21 AVG)</strong>
+        <p>U heeft het recht bezwaar te maken tegen verwerking op basis van gerechtvaardigd belang, waaronder profilering.</p>
+      </div>
+      <div class="right-item">
+        <strong>Recht op intrekking toestemming (art. 7 AVG)</strong>
+        <p>Als wij uw gegevens verwerken op basis van toestemming, kunt u die toestemming op elk moment intrekken zonder gevolgen.</p>
+      </div>
+      <div class="right-item">
+        <strong>Recht om niet te worden geprofileerd</strong>
+        <p>Wij maken geen gebruik van geautomatiseerde besluitvorming of profilering die rechtsgevolgen voor u heeft.</p>
+      </div>
+    </div>
+
+    <h3>Hoe oefent u uw rechten uit?</h3>
+    <p>Stuur een e-mail naar <a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a> met een duidelijke omschrijving van uw verzoek. Wij reageren binnen <strong>30 dagen</strong> (de wettelijk vereiste termijn). Wij kunnen om een kopie van uw identiteitsbewijs vragen om uw identiteit te bevestigen — wij vragen u dan de BSN en pasfoto af te schermen.</p>
+  </div>
+
+  <!-- 10. KLACHT -->
+  <div class="section" id="klacht">
+    <h2>10. Klacht indienen bij de toezichthouder</h2>
+    <p>Als u van mening bent dat wij uw persoonsgegevens niet conform de AVG verwerken, heeft u het recht een klacht in te dienen bij de Nederlandse toezichthouder:</p>
+    <div class="ap-box">
+      <p><strong>Autoriteit Persoonsgegevens (AP)</strong></p>
+      <p>Postbus 93374 · 2509 AJ Den Haag</p>
+      <p>Telefoon: 088 – 1805 250</p>
+      <p>Website: <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a></p>
+      <p>Online klacht: <a href="https://www.autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/klacht-melden" target="_blank" rel="noopener">Klacht indienen bij de AP</a></p>
+    </div>
+    <p>Wij verzoeken u echter eerst contact met ons op te nemen zodat wij uw klacht kunnen onderzoeken en indien nodig kunnen oplossen.</p>
+  </div>
+
+  <!-- 11. WIJZIGINGEN -->
+  <div class="section" id="wijzigingen">
+    <h2>11. Wijzigingen in deze privacyverklaring</h2>
+    <p>Wij behouden ons het recht voor deze privacyverklaring op elk moment te wijzigen, bijvoorbeeld vanwege wijzigingen in onze dienstverlening, technologie of wetgeving. De meest actuele versie is altijd beschikbaar op <a href="https://bestslaapadvies.nl/privacy.html">bestslaapadvies.nl/privacy.html</a>.</p>
+    <p>Bij ingrijpende wijzigingen die uw rechten raken, zullen wij dit via de website kenbaar maken. Wij raden u aan deze pagina periodiek te raadplegen.</p>
+    <p style="font-size:13px;color:var(--sub);margin-top:16px;"><strong>Versie:</strong> 1.0 · <strong>Gepubliceerd:</strong> maart 2026 · <strong>Laatste update:</strong> maart 2026</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box" id="contact-privacy">
+    <h3>Vragen over privacy?</h3>
+    <p>Voor vragen, verzoeken of opmerkingen over deze privacyverklaring of de verwerking van uw persoonsgegevens kunt u ons bereiken via:</p>
+    <p><a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    <p style="margin-top:12px;font-size:13px;opacity:.7;">Wij streven ernaar binnen 5 werkdagen te reageren, en in ieder geval binnen de wettelijke termijn van 30 dagen.</p>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div>© 2026 BestSlaapAdvies.nl · <a href="index.html">Home</a> · <a href="disclaimer.html">Methode &amp; Disclaimer</a> · <a href="privacy.html">Privacyverklaring</a> · <a href="contact.html">Contact</a></div>
+  <div class="disc">BestSlaapAdvies.nl · info@bestslaapadvies.nl · Nederland</div>
+</footer>
+
+</body>
+</html>
