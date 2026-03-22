@@ -65,6 +65,33 @@
   footer { background: var(--dark); color: #7aacbf; padding: 32px; text-align: center; font-size: 13px; }
   footer a { color: #a8d4e6; text-decoration: none; }
   .disclaimer-full { font-size: 12px; color: #5a8a9f; margin-top: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .nav-mobile { display: flex !important; }
+  .hero { padding: 40px 16px 36px; }
+  .page-hero { padding: 32px 16px 28px; }
+  .trust-bar { padding: 12px 16px; gap: 12px; }
+  .wrap { padding: 32px 16px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .articles-grid { grid-template-columns: 1fr; }
+  .media-grid { grid-template-columns: 1fr; }
+  .site-footer { padding: 32px 16px 24px; }
+  .footer-inner { flex-direction: column; gap: 24px; }
+  .footer-nav { flex-direction: column; gap: 16px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .product-header { flex-direction: column; }
+  .product-footer { flex-direction: column; align-items: flex-start; }
+  .compare-table { font-size: 12px; }
+  .compare-table th, .compare-table td { padding: 8px 6px; }
+  .filter-bar { flex-direction: column; }
+  #cookie-banner { flex-direction: column !important; gap: 12px; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 24px; }
+  .nav-logo-text span:first-child { font-size: 15px; }
+}
 </style>
 </head>
 <body>
@@ -76,7 +103,17 @@
     <a style="color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;" href="../gids/index.html">Slaapgids</a>
     <a style="color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;" href="../media/index.html">Media</a>
   </div>
+  <button class="nav-mobile" onclick="var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='flex'?'none':'flex'" style="display:none;background:none;border:none;cursor:pointer;padding:14px 0;margin-left:auto;color:#1a6b8a">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
+<div id="mobile-menu" style="display:none;position:fixed;top:64px;left:0;right:0;background:white;border-bottom:2px solid #d0e8f2;z-index:99;flex-direction:column;box-shadow:0 4px 12px rgba(0,0,0,.1)">
+  <a href="../index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Home</a>
+  <a href="../supplementen/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Supplementen</a>
+  <a href="../ontspanning/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Ontspanning</a>
+  <a href="../gids/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Slaapgids</a>
+  <a href="../media/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;display:block">Media</a>
+</div>
 <div class="article-wrap">
   <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="index.html">Supplementen</a> › Valeriaan voor slaap</div>
   <div class="article-tag">💊 Review · Bijgewerkt maart 2026</div>
@@ -151,13 +188,20 @@
     <li><a href="beste-magnesium-slaap.html" style="color:var(--primary)">Beste magnesium supplement voor slaap</a></li>
   </ul>
 </div>
+<div style="background:white;border-top:1px solid #d0e8f2;padding:32px 24px;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <p style="font-size:14px;color:#5a7a8a;margin-bottom:16px;">Wil je alle supplementen naast elkaar vergelijken?</p>
+    <a href="../supplementen/index.html" style="display:inline-block;background:#1a6b8a;color:white;font-size:14px;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;">&#x2696;&#xFE0F; Vergelijk alle supplementen &rarr;</a>
+  </div>
+</div>
+
 <footer>
   <div>© 2026 BestSlaapAdvies.nl · <a href="../index.html">Home</a> · <a href="index.html">Supplementen</a> · <a href="../disclaimer.html">Disclaimer</a> · <a href="../privacy.html">Privacy</a></div>
   <div class="disclaimer-full">Sommige links zijn affiliate links. Bij aankoop ontvangen wij een kleine commissie — zonder extra kosten voor jou. Inhoud is uitsluitend informatief en geen medisch advies. Raadpleeg bij twijfel altijd een arts.</div>
 </footer>
 
 <!-- COOKIE CONSENT BANNER -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">Wij gebruiken functionele cookies. Productlinks kunnen tracking cookies van Bol.com of Awin plaatsen. <a href="../privacy.html" style="color:#7dd3f0;font-weight:600;">Privacyverklaring →</a></p>
   <div style="display:flex;gap:10px;flex-shrink:0;">
     <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;cursor:pointer;">Alleen noodzakelijk</button>
