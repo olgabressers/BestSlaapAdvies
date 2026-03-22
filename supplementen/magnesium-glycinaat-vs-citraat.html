@@ -204,16 +204,40 @@
     <li><a href="alternatieven-melatonine.html" style="color:var(--primary);">Natuurlijke alternatieven voor melatonine</a></li>
   </ul>
 </div>
-<div style="background:white;border-top:1px solid #d0e8f2;padding:32px 24px;text-align:center;">
+<div style="background:#f0f7fa;border-top:1px solid #d0e8f2;padding:32px 24px;text-align:center;">
   <div style="max-width:600px;margin:0 auto;">
     <p style="font-size:14px;color:#5a7a8a;margin-bottom:16px;">Wil je alle supplementen naast elkaar vergelijken?</p>
     <a href="../supplementen/index.html" style="display:inline-block;background:#1a6b8a;color:white;font-size:14px;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;">&#x2696;&#xFE0F; Vergelijk alle supplementen &rarr;</a>
   </div>
 </div>
 
-<footer>
-  <div>© 2026 BestSlaapAdvies.nl · <a href="../index.html">Home</a> · <a href="index.html">Supplementen</a></div>
-  <div class="disclaimer-full">Sommige links in dit artikel zijn affiliate links. Als je via onze link iets koopt, ontvangen wij een kleine commissie — zonder extra kosten voor jou. Dit heeft geen invloed op onze beoordelingen. De informatie op deze site is niet bedoeld als medisch advies. Raadpleeg bij gezondheidsklachten altijd een arts.</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>BestSlaapAdvies.nl</strong>
+      <p>Onafhankelijke vergelijkingen van slaapsupplementen en ontspanningsproducten voor Nederland en België.</p>
+      <p style="margin-top:10px"><a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Categorieën</span>
+        <a href="../supplementen/index.html">Supplementen</a>
+        <a href="../ontspanning/index.html">Ontspanning</a>
+        <a href="../gids/index.html">Slaapgids</a>
+        <a href="../media/index.html">Media</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Informatie</span>
+        <a href="../disclaimer.html">Methode &amp; Disclaimer</a>
+        <a href="../privacy.html">Privacyverklaring</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 BestSlaapAdvies.nl · <a href="mailto:info@bestslaapadvies.nl">info@bestslaapadvies.nl</a></p>
+    <p class="footer-disc">Deze site bevat affiliate links. Wij ontvangen een kleine commissie als je via onze links iets koopt — zonder extra kosten voor jou. Alle vergelijkingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
+  </div>
 </footer>
 
 <!-- COOKIE CONSENT BANNER -->
@@ -229,9 +253,8 @@
 </div>
 <script>
 (function(){
-  function getCookie(n){var v=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');return v?v.pop():'';}
-  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
-  if(!getCookie('bsa_cookie_consent')){
+  window.setCookieConsent=function(v){localStorage.setItem('bsa_cookie_consent',v);document.getElementById('cookie-banner').style.display='none';}
+  if(!localStorage.getItem('bsa_cookie_consent')){
     var b=document.getElementById('cookie-banner');
     if(b){b.style.display='flex';}
   }
