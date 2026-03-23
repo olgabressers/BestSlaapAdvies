@@ -92,7 +92,7 @@
     .article-footer { margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--primary); }
 
     /* MEDIA PREVIEW */
-    .media-strip { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 24px; }
+    .media-strip { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 24px; }
     .media-strip .inner { max-width: 1100px; margin: 0 auto; }
     .media-strip h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
     .media-strip p { font-size: 14px; color: var(--sub); margin-bottom: 28px; }
@@ -461,8 +461,9 @@
 </div>
 <script>
 (function(){
-  window.setCookieConsent=function(v){localStorage.setItem('bsa_cookie_consent',v);document.getElementById('cookie-banner').style.display='none';}
-  if(!localStorage.getItem('bsa_cookie_consent')){
+  function getCookie(n){var v=document.cookie.match(new RegExp('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)'));return v?v.pop():'';}
+  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
+  if(!getCookie('bsa_cookie_consent')){
     var b=document.getElementById('cookie-banner');
     if(b){b.style.display='flex';}
   }

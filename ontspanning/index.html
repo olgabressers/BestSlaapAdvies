@@ -52,7 +52,7 @@
     .results-bar span{font-weight:700;color:var(--dark)}
     .tracker-wrap{max-width:1100px;margin:0 auto;padding:16px 24px 64px}
     .tracker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
-    .legend{background:white;border-radius:12px;border:1px solid var(--border);padding:18px 22px;margin-bottom:20px}
+    .legend{background:var(--bg);border-radius:12px;border:1px solid var(--border);padding:18px 22px;margin-bottom:20px}
     .legend-title{font-size:12px;font-weight:700;color:var(--dark);margin-bottom:10px}
     .legend-grid{display:flex;gap:24px;flex-wrap:wrap}
     .legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--sub)}
@@ -150,6 +150,7 @@
     .footer-disc{font-size:11px;color:#5a8a9f;max-width:640px;margin:0 auto;line-height:1.6}
     .footer-disc a{color:#7aacbf}
   
+    .filter-toggle { display: none; width: 100%; background: var(--primary); color: white; border: none; padding: 10px 16px; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; border-radius: 0; }
 @media (max-width: 768px) {
   nav { padding: 0 16px; }
   .nav-links { display: none; }
@@ -170,6 +171,9 @@
   .compare-table { font-size: 12px; }
   .compare-table th, .compare-table td { padding: 8px 6px; }
   .filter-bar { flex-direction: column; }
+  .filter-wrap { position: static; }
+  .filter-row { display: none; }
+  .filter-toggle { display: flex !important; }
   #cookie-banner { flex-direction: column !important; gap: 12px; }
 }
 @media (max-width: 480px) {
@@ -221,6 +225,7 @@
 
 <div class="filter-wrap">
   <div class="filter-inner">
+      <button class="filter-toggle" onclick="var r=document.querySelector('.filter-row');r.style.display=r.style.display==='flex'?'none':'flex';">&#9776; Toon / verberg filters</button>
     <div class="filter-row">
       <div class="filter-group">
         <div class="filter-group-label">Categorie</div>
@@ -1825,8 +1830,9 @@
 </div>
 <script>
 (function(){
-  window.setCookieConsent=function(v){localStorage.setItem('bsa_cookie_consent',v);document.getElementById('cookie-banner').style.display='none';}
-  if(!localStorage.getItem('bsa_cookie_consent')){
+  function getCookie(n){var v=document.cookie.match(new RegExp('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)'));return v?v.pop():'';}
+  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
+  if(!getCookie('bsa_cookie_consent')){
     var b=document.getElementById('cookie-banner');
     if(b){b.style.display='flex';}
   }

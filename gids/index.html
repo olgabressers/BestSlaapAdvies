@@ -297,8 +297,9 @@
 </div>
 <script>
 (function(){
-  window.setCookieConsent=function(v){localStorage.setItem('bsa_cookie_consent',v);document.getElementById('cookie-banner').style.display='none';}
-  if(!localStorage.getItem('bsa_cookie_consent')){
+  function getCookie(n){var v=document.cookie.match(new RegExp('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)'));return v?v.pop():'';}
+  window.setCookieConsent=function(v){document.cookie='bsa_cookie_consent='+v+';max-age=31536000;path=/;SameSite=Lax';document.getElementById('cookie-banner').style.display='none';}
+  if(!getCookie('bsa_cookie_consent')){
     var b=document.getElementById('cookie-banner');
     if(b){b.style.display='flex';}
   }
