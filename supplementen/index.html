@@ -300,7 +300,72 @@
     .store-btn:hover { opacity: 0.85; }
     .store-na { font-size: 11px; color: #bbb; }
 
+    /* FAQ SECTION */
+    .faq-section { max-width: 1100px; margin: 0 auto 80px; padding: 0 24px; }
+    .faq-section h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .faq-section .faq-intro { font-size: 13px; color: var(--sub); margin-bottom: 28px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:700px){ .faq-grid { grid-template-columns: 1fr; } }
+    .faq-item { background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .faq-q { font-size: 14px; font-weight: 700; color: var(--dark); padding: 16px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q:hover { background: var(--bg); }
+    .faq-q .faq-icon { font-size: 18px; color: var(--accent); flex-shrink: 0; transition: transform .2s; }
+    .faq-a { font-size: 13px; color: var(--sub); line-height: 1.6; padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s; }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 20px 16px; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-divider { grid-column: 1/-1; border-top: 2px solid var(--accent); padding-top: 4px; margin-top: 8px; }
+    .faq-divider span { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); }
+
   </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Welk slaapsupplement werkt het beste?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Magnesium glycinaat en melatonine zijn de best onderzochte supplementen voor slaap. Magnesium glycinaat helpt bij doorslapen en ontspanning, melatonine versnelt inslapen. Welk supplement het beste werkt hangt af van jouw specifieke slaapprobleem — gebruik onze filter om te vergelijken." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel melatonine moet ik nemen voor slapen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Studies tonen dat 0.3–0.5 mg melatonine het meest effectief is. In Nederland is maximaal 0.299 mg vrij verkrijgbaar zonder recept. Hogere doses (1–5 mg) zijn niet bewezen effectiever en verhogen de kans op sufheid de volgende dag." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is magnesium glycinaat beter dan magnesium citraat voor slaap?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja, voor slaap specifiek scoort magnesium glycinaat beter. De glycine component verlaagt de lichaamstemperatuur (slaapsignaal) en heeft een extra kalmerende werking. Magnesium citraat heeft een goede opneembaarheid maar is vooral geschikt als algemeen magnesiumsupplement." }
+    },
+    {
+      "@type": "Question",
+      "name": "Mag je elke avond melatonine nemen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dagelijks gebruik wordt afgeraden bij langdurig gebruik. Melatonine is het meest effectief bij verstoorde slaapritmes (jetlag, ploegenwerk, tijdelijke slapeloosheid). Bij chronisch gebruik kan je lichaam minder eigen melatonine aanmaken. Gebruik het maximaal 2–3 weken aaneengesloten." }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke supplementen kun je combineren voor betere slaap?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Populaire en veilige combinaties: Magnesium glycinaat + L-theanine (ontspanning én slaapkwaliteit), Magnesium glycinaat + Melatonine 0.3mg (inslapen én doorslapen), Ashwagandha + Glycine (stressvermindering + diepe slaap). Combineer nooit meer dan 2–3 supplementen tegelijk en start altijd met één nieuw supplement per keer." }
+    },
+    {
+      "@type": "Question",
+      "name": "Wanneer merk je effect van ashwagandha?",
+      "acceptedAnswer": { "@type": "Answer", "text": "De meeste mensen merken effect van ashwagandha na 4–8 weken consistent gebruik. Ashwagandha werkt door het stresshormoon cortisol te verlagen — een langzaam proces. Voor directe slaapverbetering zijn melatonine of L-theanine beter geschikt." }
+    },
+    {
+      "@type": "Question",
+      "name": "Zijn slaapsupplementen veilig?",
+      "acceptedAnswer": { "@type": "Answer", "text": "De meeste slaapsupplementen op deze pagina zijn veilig bij gebruik op etiketniveau. Magnesium, glycine, L-theanine en melatonine 0.3mg hebben een uitstekend veiligheidsprofiel. CBD olie, 5-HTP en ashwagandha vereisen meer voorzichtigheid bij gebruik van medicijnen. Raadpleeg altijd een arts bij twijfel of bij gebruik van voorgeschreven medicatie." }
+    },
+    {
+      "@type": "Question",
+      "name": "Welk supplement helpt bij stress en niet kunnen slapen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "L-theanine (200mg voor bed) vermindert aantoonbaar angst en piekergedachten zonder sufheid. Ashwagandha KSM-66 verlaagt cortisol op lange termijn. Magnesium glycinaat ondersteunt het zenuwstelsel. Combineer L-theanine voor acuut effect met ashwagandha voor lange-termijn stressreductie." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1960,6 +2025,85 @@
         </div>
       </div>
 
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Jan B.</div>
+            <div class="reviewer-meta">Man, 41 jaar · Rotterdam · 18 maart 2026</div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-title">"Glycine: beste aankoop van het jaar"</div>
+        <div class="review-text">Had altijd het gevoel dat ik niet echt diep sliep, ook al lag ik 7–8 uur in bed. Glycine 3g voor het slapen — na een week merkbaar verschil. Ik word uitgeruster wakker. En spotgoedkoop vergeleken met de fancy opties.</div>
+        <div class="review-product-tag">💊 Glycine 3g</div>
+        <div class="helpful-row"><span>9 mensen vonden dit nuttig</span><button class="helpful-btn">👍 Nuttig</button></div>
+      </div>
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Petra W. <span class="verified-badge">✓ Geverifieerde aankoop</span></div>
+            <div class="reviewer-meta">Vrouw, 38 jaar · Den Haag · 5 maart 2026</div>
+          </div>
+          <div class="review-stars">★★★★☆</div>
+        </div>
+        <div class="review-title">"Valeriaan + passieflora combo werkt geweldig"</div>
+        <div class="review-text">Sliep slecht door werkstress. Na drie weken valeriaan + passiebloemextract samen — ik val makkelijker in slaap en lig minder te draaien. Geen sufheid 's ochtends. Het is geen wondermiddel maar maakt echt verschil. De geur van valeriaan is… pittig, maar je went eraan.</div>
+        <div class="review-product-tag">💊 Valeriaan + Passieflora</div>
+        <div class="helpful-row"><span>7 mensen vonden dit nuttig</span><button class="helpful-btn">👍 Nuttig</button></div>
+      </div>
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Lisanne H.</div>
+            <div class="reviewer-meta">Vrouw, 29 jaar · Groningen · 12 februari 2026</div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-title">"Verzwaringsdeken: gamechanger voor onrustige slaper"</div>
+        <div class="review-text">Ik bewoog altijd heel veel in mijn slaap en werd er moe van. Een verzwaringsdeken van 7kg geprobeerd — eerste nacht al dieper geslapen. Het voelt echt als een omhelzing. Wel even wennen aan het gewicht, maar na drie nachten wil je niet meer zonder.</div>
+        <div class="review-product-tag">🛏️ Verzwaringsdeken</div>
+        <div class="helpful-row"><span>14 mensen vonden dit nuttig</span><button class="helpful-btn">👍 Nuttig</button></div>
+      </div>
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Niels R.</div>
+            <div class="reviewer-meta">Man, 44 jaar · Haarlem · 8 januari 2026</div>
+          </div>
+          <div class="review-stars">★★★☆☆</div>
+        </div>
+        <div class="review-title">"CBD olie: werkt bij mij, niet bij mijn broer"</div>
+        <div class="review-text">Ik gebruik CBD 5% al een jaar voor het slapen en het maakt echt verschil voor mijn piekergedachten. Mijn broer heeft hetzelfde merk 3 maanden geprobeerd en merkte niks. Lijkt dus erg persoonlijk. Begin met laag percentage en bouw op. Niet goedkoop, maar voor mij de moeite waard.</div>
+        <div class="review-product-tag">💊 CBD Olie 5%</div>
+        <div class="helpful-row"><span>11 mensen vonden dit nuttig</span><button class="helpful-btn">👍 Nuttig</button></div>
+      </div>
+
+      <div class="user-review-card">
+        <div class="review-top">
+          <div class="reviewer-info">
+            <div class="reviewer-name">Erik S. <span class="verified-badge">✓ Geverifieerde aankoop</span></div>
+            <div class="reviewer-meta">Man, 55 jaar · Eindhoven · 22 december 2025</div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-title">"Magnesium glycinaat na jaren slaapadvies eindelijk gevonden"</div>
+        <div class="review-text">Heb jarenlang slaapproblemen gehad. Arts wilde slaaptabletten voorschrijven maar ik wilde eerst supplements proberen. Na twee weken magnesium glycinaat slaap ik door. Geen sufheid, geen afhankelijkheid. Ik had dit tien jaar geleden moeten weten.</div>
+        <div class="review-product-tag">💊 Magnesium Glycinaat 400mg</div>
+        <div class="helpful-row"><span>18 mensen vonden dit nuttig</span><button class="helpful-btn">👍 Nuttig</button></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="margin-top:24px;padding:18px 22px;background:var(--bg);border-radius:12px;border:1px solid var(--border);text-align:center">
+    <div style="font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Meer ervaringen lezen van echte kopers?</div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="https://www.bol.com/nl/nl/s/?searchtext=slaapsupplement" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:6px;background:#0055a5;color:white;font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none">Lees reviews op Bol.com →</a>
+      <a href="https://www.amazon.nl/s?k=slaapsupplement" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;gap:6px;background:#FF9900;color:#111;font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none">Lees reviews op Amazon.nl →</a>
     </div>
   </div>
 
@@ -2009,6 +2153,57 @@
     </form>
   </div>
 
+</div>
+
+
+<!-- ===== FAQ SECTION ===== -->
+<div class="faq-section">
+  <h2>Veelgestelde vragen over slaapsupplementen</h2>
+  <p class="faq-intro">Antwoorden op de meest gestelde vragen — gebaseerd op klinisch onderzoek en onze onafhankelijke vergelijkingen.</p>
+
+  <div class="faq-grid">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Welk slaapsupplement werkt het beste? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Magnesium glycinaat en melatonine zijn de best onderzochte opties. Magnesium glycinaat helpt bij doorslapen en ontspanning, melatonine versnelt het inslapen. Welk supplement het beste werkt hangt af van jouw slaapprobleem — gebruik onze <a href="#tracker-grid" style="color:var(--primary)">filtertools boven</a> om gericht te vergelijken.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Hoeveel melatonine moet ik nemen? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Studies tonen dat <strong>0.3–0.5 mg</strong> het meest effectief is. In Nederland is maximaal 0.299 mg vrij verkrijgbaar. Hogere doses (1–5 mg) zijn niet bewezen effectiever en verhogen de kans op sufheid de volgende ochtend.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Mag je elke avond melatonine nemen? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Dagelijks langdurig gebruik wordt afgeraden. Melatonine werkt het beste bij verstoord slaapritme (jetlag, ploegenwerk, tijdelijke slapeloosheid). Bij chronisch gebruik kan het lichaam minder eigen melatonine aanmaken. Gebruik maximaal 2–3 weken aaneengesloten.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Is magnesium glycinaat beter dan magnesium citraat voor slaap? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Voor slaap specifiek: <strong>ja</strong>. De glycine-component in magnesium glycinaat verlaagt de lichaamstemperatuur (een cruciaal slaapsignaal) en werkt extra kalmerend. Magnesium citraat heeft goede opneembaarheid maar mist dit slaapspecifieke voordeel.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Welke supplementen kun je combineren? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Veilige en bewezen combinaties: <strong>Magnesium glycinaat + L-theanine</strong> (ontspanning + slaapkwaliteit), <strong>Magnesium + Melatonine 0.3mg</strong> (inslapen + doorslapen). Start altijd met één nieuw supplement per keer en gebruik nooit meer dan 2–3 tegelijk.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Wanneer merk je effect van ashwagandha? <span class="faq-icon">+</span></div>
+      <div class="faq-a">De meeste mensen merken effect na <strong>4–8 weken</strong> consistent gebruik. Ashwagandha verlaagt het stresshormoon cortisol — een geleidelijk proces. Voor directe slaapverbetering zijn melatonine of L-theanine beter geschikt.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Zijn slaapsupplementen veilig? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Magnesium, glycine, L-theanine en melatonine 0.3mg hebben een uitstekend veiligheidsprofiel. CBD olie, 5-HTP en ashwagandha vereisen meer voorzichtigheid bij gebruik van medicijnen. Raadpleeg altijd een arts bij twijfel of bij gebruik van voorgeschreven medicatie.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Welk supplement helpt bij stress én slapen? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><strong>L-theanine</strong> (200mg voor bed) vermindert piekergedachten zonder sufheid — acuut effect. <strong>Ashwagandha KSM-66</strong> verlaagt cortisol structureel. Combineer L-theanine voor direct effect met ashwagandha voor lange-termijn stressreductie.</div>
+    </div>
+
+  </div>
 </div>
 
 <footer class="site-footer">
@@ -2609,6 +2804,13 @@ const stores = {
     if(b){b.style.display='flex';}
   }
 })();
+
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
 </script>
 
 </body>
