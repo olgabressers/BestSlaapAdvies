@@ -109,7 +109,7 @@
     .problem-tags{display:flex;gap:5px;flex-wrap:wrap}
     .prob-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;background:var(--light);color:var(--primary)}
     .card-footer{padding:14px 20px;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .price-tag{font-size:14px;font-weight:700;color:var(--dark)}
+    .price-tag{font-size:14px;font-weight:700;color:var(--dark);white-space:nowrap}
     .affiliate-note{font-size:10px;color:var(--sub);margin-top:2px}
     .card-btns{display:flex;flex-direction:column;gap:5px;align-items:flex-end}
     .buy-btn{display:inline-block;background:var(--primary);color:white;font-size:12px;font-weight:700;padding:8px 16px;border-radius:7px;text-decoration:none;transition:background .15s;white-space:nowrap}
@@ -124,7 +124,7 @@
     .no-results h3{font-size:18px;color:var(--dark);margin-bottom:8px}
     .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;padding:24px}
     .modal-overlay.open{display:flex}
-    .modal-box{background:white;border-radius:16px;padding:28px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.3);position:relative}
+    .modal-box{background:white;border-radius:16px;padding:28px;max-width:900px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.3);position:relative}
     .modal-close{position:absolute;top:16px;right:16px;background:var(--bg);border:none;width:32px;height:32px;border-radius:50%;font-size:18px;cursor:pointer;color:var(--sub);display:flex;align-items:center;justify-content:center}
     .modal-close:hover{background:var(--border)}
     .modal-title{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:4px}
@@ -213,7 +213,7 @@
 
 <div class="page-hero">
   <div class="inner">
-    <div class="eyebrow">🕯️ Ontspanning Vergelijker</div>
+    <div class="eyebrow">Ontspanning Vergelijker</div>
     <h1>De beste ontspanningsproducten voor een betere slaap</h1>
     <p>Vergelijk 22 producten — pillow sprays, badzout, massage oliën, kaarsen en slaapthee — op ontspannend effect, geur en prijs-kwaliteit.</p>
   </div>
@@ -237,11 +237,11 @@
       <div class="filter-group">
         <div class="filter-group-label">Categorie</div>
         <div class="filter-pills">
-          <button class="pill" data-filter="cat" data-val="aroma">🌸 Aroma & Spray</button>
-          <button class="pill" data-filter="cat" data-val="bad">🛁 Bad & Lichaam</button>
-          <button class="pill" data-filter="cat" data-val="massage">💆 Massage</button>
-          <button class="pill" data-filter="cat" data-val="kaars">🕯️ Kaarsen</button>
-          <button class="pill" data-filter="cat" data-val="thee">🍵 Slaapthee</button>
+          <button class="pill" data-filter="cat" data-val="aroma">Aroma & Spray</button>
+          <button class="pill" data-filter="cat" data-val="bad">Bad & Lichaam</button>
+          <button class="pill" data-filter="cat" data-val="massage">Massage</button>
+          <button class="pill" data-filter="cat" data-val="kaars">Kaarsen</button>
+          <button class="pill" data-filter="cat" data-val="thee">Slaapthee</button>
         </div>
       </div>
       <div class="filter-group">
@@ -296,7 +296,7 @@
   <div class="tracker-grid" id="tracker-grid">
 
     <div class="section-divider">
-      <h2>🌸 Aroma & Pillow Sprays</h2>
+      <h2>Aroma & Pillow Sprays</h2>
       <p>Geuren die direct inwerken op het zenuwstelsel — via de neus naar de hersenen in seconden.</p>
     </div>
     <div class="supp-card" data-cat="aroma" data-brand="thisworks" data-effect="inslapen" data-price="2">
@@ -341,12 +341,7 @@
           <div class="price-tag">€ 19,95</div>
           <div class="affiliate-note">75ml — ook in 150ml</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=this+works+deep+sleep+pillow+spray" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('pillow-spray')">⚖️ Vergelijk alle Aroma & Spray →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('pillow-spray')">Vergelijk alle Aroma & Spray →</button>
         </div>
       </div>
     </div>
@@ -392,13 +387,7 @@
           <div class="price-tag">€ 22,90</div>
           <div class="affiliate-note">50ml · navulbaar</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+pillow+mist" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-            <a href="https://www.rituals.com/nl-nl/the-ritual-of-jing" target="_blank" rel="noopener" class="buy-btn-secondary">🌸 Rituals direct →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('pillow-spray')">⚖️ Vergelijk alle Aroma & Spray →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('pillow-spray')">Vergelijk alle Aroma & Spray →</button>
         </div>
       </div>
     </div>
@@ -444,12 +433,7 @@
           <div class="price-tag">€ 28,50</div>
           <div class="affiliate-note">30ml · 100% pure oils</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=neom+perfect+night+sleep+pillow+mist" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('pillow-spray')">⚖️ Vergelijk alle Aroma & Spray →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('pillow-spray')">Vergelijk alle Aroma & Spray →</button>
         </div>
       </div>
     </div>
@@ -495,12 +479,7 @@
           <div class="price-tag">€ 11,99</div>
           <div class="affiliate-note">10ml · reisformaat</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=tisserand+sleep+better+roller" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('pillow-spray')">⚖️ Vergelijk alle Aroma & Spray →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('pillow-spray')">Vergelijk alle Aroma & Spray →</button>
         </div>
       </div>
     </div>
@@ -546,17 +525,12 @@
           <div class="price-tag">€ 7,95</div>
           <div class="affiliate-note">100ml · diverse merken</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=lavendel+slaapspray+kussen" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('pillow-spray')">⚖️ Vergelijk alle Aroma & Spray →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('pillow-spray')">Vergelijk alle Aroma & Spray →</button>
         </div>
       </div>
     </div>
     <div class="section-divider">
-      <h2>🛁 Bad & Lichaam</h2>
+      <h2>Bad & Lichaam</h2>
       <p>Een warm bad 1–2 uur voor het slapen verlaagt je kerntemperatuur daarna — een wetenschappelijk bewezen slaaptrigger.</p>
     </div>
     <div class="supp-card" data-cat="bad" data-brand="rituals" data-effect="ritueel" data-price="2">
@@ -601,13 +575,7 @@
           <div class="price-tag">€ 19,90</div>
           <div class="affiliate-note">200ml · ook als shower oil</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+shower+gel" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-            <a href="https://www.rituals.com/nl-nl/the-ritual-of-jing" target="_blank" rel="noopener" class="buy-btn-secondary">🌸 Rituals direct →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('bad')">⚖️ Vergelijk alle Bad & Lichaam →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('bad')">Vergelijk alle Bad & Lichaam →</button>
         </div>
       </div>
     </div>
@@ -653,13 +621,7 @@
           <div class="price-tag">€ 24,90</div>
           <div class="affiliate-note">500ml · luxe formule</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+bath+foam" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-            <a href="https://www.rituals.com/nl-nl/the-ritual-of-jing" target="_blank" rel="noopener" class="buy-btn-secondary">🌸 Rituals direct →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('bad')">⚖️ Vergelijk alle Bad & Lichaam →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('bad')">Vergelijk alle Bad & Lichaam →</button>
         </div>
       </div>
     </div>
@@ -705,12 +667,7 @@
           <div class="price-tag">€ 14,95</div>
           <div class="affiliate-note">500g · ±15 badzoutbaden</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=zechsal+magnesium+badzout+lavendel" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('bad')">⚖️ Vergelijk alle Bad & Lichaam →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('bad')">Vergelijk alle Bad & Lichaam →</button>
         </div>
       </div>
     </div>
@@ -756,17 +713,12 @@
           <div class="price-tag">€ 9,50</div>
           <div class="affiliate-note">200ml · NATRUE gecertificeerd</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=weleda+lavendel+badmelk" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('bad')">⚖️ Vergelijk alle Bad & Lichaam →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('bad')">Vergelijk alle Bad & Lichaam →</button>
         </div>
       </div>
     </div>
     <div class="section-divider">
-      <h2>💆 Massage Oliën</h2>
+      <h2>Massage Oliën</h2>
       <p>Massage stimuleert het parasympathische zenuwstelsel en verlaagt cortisol. Het effect begint al na 5 minuten.</p>
     </div>
     <div class="supp-card" data-cat="massage" data-brand="rituals" data-effect="spieren" data-price="2">
@@ -811,13 +763,7 @@
           <div class="price-tag">€ 24,90</div>
           <div class="affiliate-note">100ml · ook als body lotion</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+massage+oil" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-            <a href="https://www.rituals.com/nl-nl/the-ritual-of-jing" target="_blank" rel="noopener" class="buy-btn-secondary">🌸 Rituals direct →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('massage')">⚖️ Vergelijk alle Massage →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('massage')">Vergelijk alle Massage →</button>
         </div>
       </div>
     </div>
@@ -863,12 +809,7 @@
           <div class="price-tag">€ 12,50</div>
           <div class="affiliate-note">100ml · biologisch gecert.</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=weleda+lavendel+massageolie" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('massage')">⚖️ Vergelijk alle Massage →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('massage')">Vergelijk alle Massage →</button>
         </div>
       </div>
     </div>
@@ -914,12 +855,7 @@
           <div class="price-tag">€ 15,99</div>
           <div class="affiliate-note">100ml · COSMOS Natural</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=tisserand+lavender+chamomile+body+oil" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('massage')">⚖️ Vergelijk alle Massage →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('massage')">Vergelijk alle Massage →</button>
         </div>
       </div>
     </div>
@@ -965,17 +901,12 @@
           <div class="price-tag">€ 22,00</div>
           <div class="affiliate-note">75ml · biologisch</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=dr+hauschka+lavendel+lichaamsolie" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('massage')">⚖️ Vergelijk alle Massage →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('massage')">Vergelijk alle Massage →</button>
         </div>
       </div>
     </div>
     <div class="section-divider">
-      <h2>🕯️ Geurkaarsen</h2>
+      <h2> Geurkaarsen</h2>
       <p>Geur + warm licht = dubbel ontspannend signaal. Lees bij het kaarsenlicht je boek en val makkelijker in slaap.</p>
     </div>
     <div class="supp-card" data-cat="kaars" data-brand="neom" data-effect="ritueel" data-price="3">
@@ -1020,12 +951,7 @@
           <div class="price-tag">€ 48,00</div>
           <div class="affiliate-note">185g · 35 branduren</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=neom+perfect+night+sleep+candle" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('kaarsen')">⚖️ Vergelijk alle Kaars →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('kaarsen')">Vergelijk alle Kaars →</button>
         </div>
       </div>
     </div>
@@ -1071,13 +997,7 @@
           <div class="price-tag">€ 34,90</div>
           <div class="affiliate-note">290g · 50 branduren</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+geurkaars" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-            <a href="https://www.rituals.com/nl-nl/the-ritual-of-jing" target="_blank" rel="noopener" class="buy-btn-secondary">🌸 Rituals direct →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('kaarsen')">⚖️ Vergelijk alle Kaars →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('kaarsen')">Vergelijk alle Kaars →</button>
         </div>
       </div>
     </div>
@@ -1123,12 +1043,7 @@
           <div class="price-tag">€ 19,99</div>
           <div class="affiliate-note">275g · 40 branduren · houten lont</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=woodwick+lavender+kaars" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('kaarsen')">⚖️ Vergelijk alle Kaars →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('kaarsen')">Vergelijk alle Kaars →</button>
         </div>
       </div>
     </div>
@@ -1174,17 +1089,12 @@
           <div class="price-tag">€ 12,99</div>
           <div class="affiliate-note">104g · ±25 branduren</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=yankee+candle+lavendel+slaap" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('kaarsen')">⚖️ Vergelijk alle Kaars →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('kaarsen')">Vergelijk alle Kaars →</button>
         </div>
       </div>
     </div>
     <div class="section-divider">
-      <h2>🍵 Slaapthee</h2>
+      <h2>Slaapthee</h2>
       <p>Het warme kopje thee zelf al heeft een kalmerend effect — daarboven op komen de therapeutische kruiden.</p>
     </div>
     <div class="supp-card" data-cat="thee" data-brand="pukka" data-effect="inslapen" data-price="1">
@@ -1229,12 +1139,7 @@
           <div class="price-tag">€ 4,49</div>
           <div class="affiliate-note">20 zakjes · biologisch</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=pukka+night+time+thee" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('thee')">⚖️ Vergelijk alle Slaapthee →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('thee')">Vergelijk alle Slaapthee →</button>
         </div>
       </div>
     </div>
@@ -1280,12 +1185,7 @@
           <div class="price-tag">€ 3,29</div>
           <div class="affiliate-note">17 zakjes · ook bij AH</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=yogi+tea+bedtime" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('thee')">⚖️ Vergelijk alle Slaapthee →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('thee')">Vergelijk alle Slaapthee →</button>
         </div>
       </div>
     </div>
@@ -1331,12 +1231,7 @@
           <div class="price-tag">€ 3,99</div>
           <div class="affiliate-note">20 zakjes · fairtrade</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=clipper+sleep+easy+thee" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('thee')">⚖️ Vergelijk alle Slaapthee →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('thee')">Vergelijk alle Slaapthee →</button>
         </div>
       </div>
     </div>
@@ -1382,12 +1277,7 @@
           <div class="price-tag">€ 4,99</div>
           <div class="affiliate-note">20 zakjes · medicinale kruiden</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=valeriaan+hop+slaapthee" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('thee')">⚖️ Vergelijk alle Slaapthee →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('thee')">Vergelijk alle Slaapthee →</button>
         </div>
       </div>
     </div>
@@ -1433,12 +1323,7 @@
           <div class="price-tag">€ 5,50</div>
           <div class="affiliate-note">20 zakjes · Amerikaanse klassieker</div>
         </div>
-        <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Koop bij</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=celestial+seasonings+sleepytime" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com →</a>
-          </div>
-          <button class="compare-btn" onclick="openModal('thee')">⚖️ Vergelijk alle Slaapthee →</button>
+        <div class="card-btns"><button class="compare-btn" onclick="openModal('thee')">Vergelijk alle Slaapthee →</button>
         </div>
       </div>
     </div>
@@ -1463,17 +1348,17 @@
           <th>Geur</th>
           <th>Prijs-kwal.</th>
           <th>Prijs</th>
-          <th></th>
+          <th>Bol.com</th><th>Amazon.nl</th>
         </tr>
       </thead>
       <tbody>
       <tr>
-        <td><span class="brand-name">Deep Sleep Pillow Spray <span class='best-pick'>⭐ Beste keuze</span></span><span class="brand-sub">This Works</span></td>
+        <td><span class="brand-name">Deep Sleep Pillow Spray <span class='best-pick'>Beste keuze</span></span><span class="brand-sub">This Works</span></td>
         <td><span class="brand-score high">9.2</span></td>
         <td>8.8</td>
         <td>7.5</td>
         <td>€ 19,95</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=this+works+deep+sleep+pillow+spray" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=this+works+deep+sleep+pillow+spray" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=this+works+deep+sleep+pillow+spray" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">The Ritual of Jing Pillow Mist</span><span class="brand-sub">Rituals</span></td>
@@ -1481,7 +1366,7 @@
         <td>9.0</td>
         <td>8.2</td>
         <td>€ 22,90</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+pillow+mist" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+pillow+mist" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=rituals+jing+pillow+mist" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Perfect Night's Sleep Pillow Mist</span><span class="brand-sub">NEOM Wellbeing</span></td>
@@ -1489,7 +1374,7 @@
         <td>8.6</td>
         <td>7.0</td>
         <td>€ 28,50</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=neom+perfect+night+sleep+pillow+mist" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=neom+perfect+night+sleep+pillow+mist" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=neom+perfect+night+sleep+pillow+mist" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Sleep Better Roller Ball</span><span class="brand-sub">Tisserand Aromatherapy</span></td>
@@ -1497,15 +1382,15 @@
         <td>8.0</td>
         <td>9.0</td>
         <td>€ 11,99</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=tisserand+sleep+better+roller" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=tisserand+sleep+better+roller" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=tisserand+sleep+better+roller" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
-        <td><span class="brand-name">Lavendel Slaapspray <span class='best-pick'>⭐ Beste keuze</span></span><span class="brand-sub">Ziezo / diverse merken</span></td>
+        <td><span class="brand-name">Lavendel Slaapspray <span class='best-pick'>Beste keuze</span></span><span class="brand-sub">Ziezo / diverse merken</span></td>
         <td><span class="brand-score mid">6.8</span></td>
         <td>6.5</td>
         <td>9.5</td>
         <td>€ 7,95</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=lavendel+slaapspray+kussen" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=lavendel+slaapspray+kussen" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=lavendel+slaapspray+kussen" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       </tbody>
     </table>
@@ -1524,17 +1409,17 @@
           <th>Geur</th>
           <th>Prijs-kwal.</th>
           <th>Prijs</th>
-          <th></th>
+          <th>Bol.com</th><th>Amazon.nl</th>
         </tr>
       </thead>
       <tbody>
       <tr>
-        <td><span class="brand-name">The Ritual of Jing Foaming Shower Gel <span class='best-pick'>⭐ Beste keuze</span></span><span class="brand-sub">Rituals</span></td>
+        <td><span class="brand-name">The Ritual of Jing Foaming Shower Gel <span class='best-pick'>Beste keuze</span></span><span class="brand-sub">Rituals</span></td>
         <td><span class="brand-score high">8.3</span></td>
         <td>9.1</td>
         <td>8.4</td>
         <td>€ 19,90</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+shower+gel" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+shower+gel" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=rituals+jing+shower+gel" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">The Ritual of Jing Bath Foam</span><span class="brand-sub">Rituals</span></td>
@@ -1542,15 +1427,15 @@
         <td>9.2</td>
         <td>8.0</td>
         <td>€ 24,90</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+bath+foam" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+bath+foam" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=rituals+jing+bath+foam" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
-        <td><span class="brand-name">Magnesium Badzout Lavendel <span class='best-pick'>⭐ Beste keuze</span></span><span class="brand-sub">Zechsal / Holland & Barrett</span></td>
+        <td><span class="brand-name">Magnesium Badzout Lavendel <span class='best-pick'>Beste keuze</span></span><span class="brand-sub">Zechsal / Holland & Barrett</span></td>
         <td><span class="brand-score high">8.5</span></td>
         <td>7.2</td>
         <td>9.5</td>
         <td>€ 14,95</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=zechsal+magnesium+badzout+lavendel" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=zechsal+magnesium+badzout+lavendel" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=zechsal+magnesium+badzout+lavendel" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Lavendel Ontspannende Badmelk</span><span class="brand-sub">Weleda</span></td>
@@ -1558,7 +1443,7 @@
         <td>7.8</td>
         <td>9.2</td>
         <td>€ 9,50</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=weleda+lavendel+badmelk" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=weleda+lavendel+badmelk" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=weleda+lavendel+badmelk" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       </tbody>
     </table>
@@ -1577,17 +1462,17 @@
           <th>Geur</th>
           <th>Prijs-kwal.</th>
           <th>Prijs</th>
-          <th></th>
+          <th>Bol.com</th><th>Amazon.nl</th>
         </tr>
       </thead>
       <tbody>
       <tr>
-        <td><span class="brand-name">The Ritual of Jing Massage Oil <span class='best-pick'>⭐ Beste keuze</span></span><span class="brand-sub">Rituals</span></td>
+        <td><span class="brand-name">The Ritual of Jing Massage Oil <span class='best-pick'>Beste keuze</span></span><span class="brand-sub">Rituals</span></td>
         <td><span class="brand-score high">8.6</span></td>
         <td>9.0</td>
         <td>8.0</td>
         <td>€ 24,90</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+massage+oil" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+massage+oil" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=rituals+jing+massage+oil" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Lavendel Ontspannende Massageolie</span><span class="brand-sub">Weleda</span></td>
@@ -1595,7 +1480,7 @@
         <td>7.8</td>
         <td>9.1</td>
         <td>€ 12,50</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=weleda+lavendel+massageolie" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=weleda+lavendel+massageolie" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=weleda+lavendel+massageolie" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Lavender & Chamomile Body Oil</span><span class="brand-sub">Tisserand Aromatherapy</span></td>
@@ -1603,7 +1488,7 @@
         <td>8.3</td>
         <td>8.5</td>
         <td>€ 15,99</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=tisserand+lavender+chamomile+body+oil" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=tisserand+lavender+chamomile+body+oil" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=tisserand+lavender+chamomile+body+oil" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Lavendel Lichaamsolie</span><span class="brand-sub">Dr. Hauschka</span></td>
@@ -1611,7 +1496,7 @@
         <td>8.1</td>
         <td>7.8</td>
         <td>€ 22,00</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=dr+hauschka+lavendel+lichaamsolie" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=dr+hauschka+lavendel+lichaamsolie" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=dr+hauschka+lavendel+lichaamsolie" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       </tbody>
     </table>
@@ -1630,7 +1515,7 @@
           <th>Geur</th>
           <th>Prijs-kwal.</th>
           <th>Prijs</th>
-          <th></th>
+          <th>Bol.com</th><th>Amazon.nl</th>
         </tr>
       </thead>
       <tbody>
@@ -1640,15 +1525,15 @@
         <td>9.2</td>
         <td>6.5</td>
         <td>€ 48,00</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=neom+perfect+night+sleep+candle" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=neom+perfect+night+sleep+candle" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=neom+perfect+night+sleep+candle" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
-        <td><span class="brand-name">The Ritual of Jing Geurkaars <span class='best-pick'>⭐ Beste keuze</span></span><span class="brand-sub">Rituals</span></td>
+        <td><span class="brand-name">The Ritual of Jing Geurkaars <span class='best-pick'>Beste keuze</span></span><span class="brand-sub">Rituals</span></td>
         <td><span class="brand-score high">8.4</span></td>
         <td>8.9</td>
         <td>8.2</td>
         <td>€ 34,90</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+geurkaars" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=rituals+jing+geurkaars" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=rituals+jing+geurkaars" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Lavender Spa Kaars</span><span class="brand-sub">WoodWick</span></td>
@@ -1656,7 +1541,7 @@
         <td>8.6</td>
         <td>8.8</td>
         <td>€ 19,99</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=woodwick+lavender+kaars" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=woodwick+lavender+kaars" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=woodwick+lavender+kaars" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Lavendel & Vanille Kaars</span><span class="brand-sub">Yankee Candle</span></td>
@@ -1664,7 +1549,7 @@
         <td>8.5</td>
         <td>9.0</td>
         <td>€ 12,99</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=yankee+candle+lavendel+slaap" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=yankee+candle+lavendel+slaap" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=yankee+candle+lavendel+slaap" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       </tbody>
     </table>
@@ -1683,17 +1568,17 @@
           <th>Smaak</th>
           <th>Prijs-kwal.</th>
           <th>Prijs</th>
-          <th></th>
+          <th>Bol.com</th><th>Amazon.nl</th>
         </tr>
       </thead>
       <tbody>
       <tr>
-        <td><span class="brand-name">Night Time Slaapthee <span class='best-pick'>⭐ Beste keuze</span></span><span class="brand-sub">Pukka Herbs</span></td>
+        <td><span class="brand-name">Night Time Slaapthee <span class='best-pick'>Beste keuze</span></span><span class="brand-sub">Pukka Herbs</span></td>
         <td><span class="brand-score high">8.3</span></td>
         <td>8.5</td>
         <td>9.3</td>
         <td>€ 4,49</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=pukka+night+time+thee" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=pukka+night+time+thee" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=pukka+night+time+thee" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Bedtime Slaapthee</span><span class="brand-sub">Yogi Tea</span></td>
@@ -1701,7 +1586,7 @@
         <td>7.6</td>
         <td>9.0</td>
         <td>€ 3,29</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=yogi+tea+bedtime" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=yogi+tea+bedtime" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=yogi+tea+bedtime" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Sleep Easy Thee</span><span class="brand-sub">Clipper Teas</span></td>
@@ -1709,7 +1594,7 @@
         <td>8.0</td>
         <td>9.1</td>
         <td>€ 3,99</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=clipper+sleep+easy+thee" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=clipper+sleep+easy+thee" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=clipper+sleep+easy+thee" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Valeriaan & Hop Slaapthee</span><span class="brand-sub">Holland & Barrett</span></td>
@@ -1717,7 +1602,7 @@
         <td>6.8</td>
         <td>8.6</td>
         <td>€ 4,99</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=valeriaan+hop+slaapthee" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=valeriaan+hop+slaapthee" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=valeriaan+hop+slaapthee" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       <tr>
         <td><span class="brand-name">Sleepytime Kruidenthee</span><span class="brand-sub">Celestial Seasonings</span></td>
@@ -1725,7 +1610,7 @@
         <td>8.2</td>
         <td>8.4</td>
         <td>€ 5,50</td>
-        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=celestial+seasonings+sleepytime" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td>
+        <td><a href="https://www.bol.com/nl/nl/s/?searchtext=celestial+seasonings+sleepytime" target="_blank" rel="noopener" class="buy-mini">Bol.com →</a></td><td><a href="https://www.amazon.nl/s?k=celestial+seasonings+sleepytime" target="_blank" rel="noopener" class="buy-mini" style="background:#FF9900;color:#111">Amazon →</a></td>
       </tr>
       </tbody>
     </table>
@@ -1826,7 +1711,7 @@
 
 <!-- COOKIE CONSENT BANNER -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
-  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:900px;line-height:1.5;">
     Wij gebruiken functionele cookies voor de werking van de site. Als u op een productlink klikt, kunnen externe partijen (Bol.com, Awin) tracking cookies plaatsen voor commissieverwerking.
     <a href="../privacy.html" style="color:#7dd3f0;font-weight:600;">Lees onze privacyverklaring →</a>
   </p>
