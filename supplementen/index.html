@@ -187,7 +187,7 @@
 
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 1000; align-items: center; justify-content: center; padding: 24px; }
     .modal-overlay.open { display: flex; }
-    .modal-box { background: white; border-radius: 16px; padding: 28px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 24px 60px rgba(0,0,0,.3); position: relative; }
+    .modal-box { background: white; border-radius: 16px; padding: 28px; max-width: 900px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 24px 60px rgba(0,0,0,.3); position: relative; }
     .modal-close { position: absolute; top: 16px; right: 16px; background: var(--bg); border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 18px; cursor: pointer; color: var(--sub); display: flex; align-items: center; justify-content: center; }
     .modal-close:hover { background: var(--border); }
     .modal-title { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
@@ -291,7 +291,17 @@
   .hero h1 { font-size: 24px; }
   .nav-logo-text span:first-child { font-size: 15px; }
 }
-</style>
+
+    .store-btn { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 7px; border-radius: 4px; text-decoration: none; white-space: nowrap; color: white; }
+    .store-btn.bol { background: #0055a5; }
+    .store-btn.amz { background: #FF9900; color: #111; }
+    .store-btn.vit { background: #1a7a3c; }
+    .store-btn.hb  { background: #5a2d82; }
+    .store-btn.dr  { background: #c0392b; }
+    .store-btn:hover { opacity: 0.85; }
+    .store-na { font-size: 11px; color: #bbb; }
+
+  </style>
 </head>
 <body>
 
@@ -365,9 +375,9 @@
           <button class="pill" data-filter="problem" data-val="kwaliteit">Slaapkwaliteit</button>
           <button class="pill" data-filter="problem" data-val="stress">Stress & piekeren</button>
           <button class="pill" data-filter="problem" data-val="hormonen">Hormonen & menopauze</button>
-          <button class="pill" data-filter="problem" data-val="nachtplassen">🚽 Nacht plassen</button>
-          <button class="pill" data-filter="problem" data-val="nachtmerries">😨 Nachtmerries</button>
-          <button class="pill" data-filter="problem" data-val="snurken">😴 Snurken</button>
+          <button class="pill" data-filter="problem" data-val="nachtplassen">Nacht plassen</button>
+          <button class="pill" data-filter="problem" data-val="nachtmerries">Nachtmerries</button>
+          <button class="pill" data-filter="problem" data-val="snurken">Snurken</button>
         </div>
       </div>
       <div class="filter-group">
@@ -467,13 +477,8 @@
           <div class="affiliate-note">* wordt affiliate link na aanmelding</div>
         </div>
         <div class="card-btns">
-          <div class="multi-buy">
-            <div class="store-label">Kies jouw winkel</div>
-            <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+glycinaat+bisglycinaat+slaap" target="_blank" rel="noopener" class="buy-btn">🛒 Bol.com — alle merken →</a>
-            <a href="https://www.hollandandbarrett.nl/search/?query=magnesium+bisglycinate" target="_blank" rel="noopener" class="buy-btn-secondary">🟢 Holland & Barrett →</a>
-            <a href="https://www.vitakruid.nl/magnesium" target="_blank" rel="noopener" class="buy-btn-secondary">💊 Vitakruid direct →</a>
-          </div>
-          <a href="beste-magnesium-slaap.html" class="review-link" style="margin-top:4px">Lees volledige review</a>
+          <button class="compare-btn" onclick="openCompare('magGlyc')">Vergelijk merken &amp; prijzen →</button>
+          <a href="beste-magnesium-slaap.html" class="review-link">Lees volledige review</a>
         </div>
       </div>
     </div>
@@ -527,8 +532,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=melatonine+slaap+supplement+0.3mg" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
-          <button class="compare-btn" onclick="openCompare('melatonine')">⚖️ Vergelijk 4 merken →</button>
+          <button class="compare-btn" onclick="openCompare('melatonine')">Vergelijk merken &amp; prijzen →</button>
           <a href="melatonine-slaap.html" class="review-link">Lees volledige review</a>
         </div>
       </div>
@@ -583,7 +587,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=glycine+aminozuur+supplement+poeder" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('glycine')">Vergelijk merken &amp; prijzen →</button>
           <a href="supplement-combinaties.html" class="review-link">Meer info</a>
         </div>
       </div>
@@ -638,7 +642,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=l-theanine+supplement+slaap+200mg" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('ltheanine')">Vergelijk merken &amp; prijzen →</button>
           <a href="l-theanine-slaap.html" class="review-link">Lees volledige review</a>
         </div>
       </div>
@@ -694,7 +698,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=ashwagandha+ksm66+slaap+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('ashwagandha')">Vergelijk merken &amp; prijzen →</button>
           <a href="ashwagandha-slaap.html" class="review-link">Lees volledige review</a>
         </div>
       </div>
@@ -749,7 +753,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+citraat+supplement+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('magCit')">Vergelijk merken &amp; prijzen →</button>
           <a href="magnesium-glycinaat-vs-citraat.html" class="review-link">Lees vergelijking</a>
         </div>
       </div>
@@ -804,7 +808,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=valeriaan+supplement+slaap+capsules" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('valeriaan')">Vergelijk merken &amp; prijzen →</button>
           <a href="valeriaan-review.html" class="review-link">Lees volledige review</a>
         </div>
       </div>
@@ -859,7 +863,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=passiebloem+passieflora+supplement+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('passieflora')">Vergelijk merken &amp; prijzen →</button>
           <a href="alternatieven-melatonine.html" class="review-link">Meer info</a>
         </div>
       </div>
@@ -914,7 +918,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+l-threonate+magtein+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('magThr')">Vergelijk merken &amp; prijzen →</button>
           <a href="beste-magnesium-slaap.html" class="review-link">Lees vergelijking</a>
         </div>
       </div>
@@ -968,7 +972,10 @@
           <div class="price-tag">±€16–24 / 60 caps</div>
           <div class="affiliate-note">* affiliate link</div>
         </div>
-        <a href="../gids/slaapsupplementen-veilig.html" class="buy-btn">Lees waarschuwing →</a>
+        <div class="card-btns">
+          <button class="compare-btn" onclick="openCompare('vijfHTP')">Vergelijk merken &amp; prijzen →</button>
+          <a href="../gids/slaapsupplementen-veilig.html" class="review-link" style="color:#c0392b;font-weight:700">⚠ Lees waarschuwing eerst</a>
+        </div>
       </div>
     </div>
 
@@ -1021,7 +1028,7 @@
           <div class="affiliate-note">* affiliate link</div>
         </div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=cbd+olie+slaap+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('cbd')">Vergelijk merken &amp; prijzen →</button>
           <a href="cbd-olie-slaap.html" class="review-link">Lees volledige review</a>
         </div>
       </div>
@@ -1073,7 +1080,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€44,95 / 60 gummies</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=slaap+gummies+melatonine+l-theanine+valeriaan" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('gummies')">Vergelijk merken &amp; prijzen →</button>
           <a href="supplement-combinaties.html" class="review-link">Lees meer</a>
         </div>
       </div>
@@ -1126,7 +1133,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€29,95 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=slaap+complex+supplement+kruiden+valeriaan" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('complex')">Vergelijk merken &amp; prijzen →</button>
           <a href="supplement-combinaties.html" class="review-link">Lees meer</a>
         </div>
       </div>
@@ -1178,8 +1185,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€13–17 / 120 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=omega+3+visolie+epa+dha+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
-          <a href="gids/index.html" class="review-link">Meer info</a>
+          <button class="compare-btn" onclick="openCompare('omega3')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1230,7 +1236,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€8–14 / 180 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=vitamine+d3+2000ie+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('vitD3')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1281,7 +1287,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€8–14 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=citroenmelisse+supplement+slaap+capsules" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('citroenm')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1332,7 +1338,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€30–50 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=reishi+paddenstoel+supplement+capsules" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('reishi')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1384,7 +1390,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€18–28 / 90 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=inositol+supplement+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('inositol')">Vergelijk merken &amp; prijzen →</button>
           <a href="supplementen-vrouwen-40.html" class="review-link">Lees meer</a>
         </div>
       </div>
@@ -1436,7 +1442,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€8–14 / 90 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=vitamine+b6+p5p+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('vitB6')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1487,7 +1493,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€24,95 / 2kg</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=magnesium+vlokken+badzout+slaap+ontspanning" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('magBad')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1538,7 +1544,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€12,30 / 80ml</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=lavendel+kussenspray+slaapspray+pillow+spray" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('lavendel')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1589,7 +1595,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€8–14 / 90 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=niacinamide+vitamine+b3+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('niacinam')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1640,7 +1646,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€18–28 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=quercetin+quercetine+supplement+luchtwegen" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('quercetin')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1691,7 +1697,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€18–28 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=pompoen+zaad+extract+blaas+supplement" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('pompoen')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1742,7 +1748,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€20–30 / 60 caps</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=zaagpalmetto+saw+palmetto+supplement+prostaat" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('zaagpalm')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1799,7 +1805,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€79–129 / deken</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=verzwaringsdeken+weighted+blanket+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('verzwaring')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1850,7 +1856,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€10–20 / 250ml</div><div class="affiliate-note">* wordt affiliate link</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=pillow+spray+lavendel+kamille+slaap" target="_blank" rel="noopener" class="buy-btn">Bekijk alle merken →</a>
+          <button class="compare-btn" onclick="openCompare('pillowSpray')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -2151,18 +2157,366 @@
   }
 
   // ── BRAND COMPARE MODAL ──
+const stores = {
+    bol: (q) => `https://www.bol.com/nl/nl/s/?searchtext=${q}`,
+    amz: (q) => `https://www.amazon.nl/s?k=${q}`,
+    vit: (q) => `https://www.vitaminstore.nl/search?q=${q}`,
+    hb:  (q) => `https://www.hollandandbarrett.nl/search/?query=${q}`,
+    dr:  (q) => `https://www.drogisterij.net/zoeken?q=${q}`,
+  };
+
   const compareData = {
     melatonine: {
       title: 'Melatonine — Merken vergelijking',
-      sub: '4 populaire merken vergeleken op dosering, prijs per maand en kwaliteit',
+      sub: 'Beste merken vergeleken op dosering, prijs en beschikbaarheid per winkel',
       note: '⚠ In Nederland is max. 0,3mg vrij verkrijgbaar. Hogere doses vereisen apotheekadvies.',
       brands: [
-        { name: 'Lucovitaal', sub: '0.299mg · 500 tabs · apotheekformule', dose: '0,3mg', price: '~€1,80/mnd', score: 88, cls: '', best: true, url: 'https://www.bol.com/nl/nl/s/?searchtext=lucovitaal+melatonine+0.3mg' },
-        { name: 'NOW Foods', sub: '1mg · 180 caps · importmerk', dose: '1mg', price: '~€5,00/mnd', score: 82, cls: 'mid', best: false, url: 'https://www.bol.com/nl/nl/s/?searchtext=now+foods+melatonine+slaap' },
-        { name: 'Vitakruid', sub: '0,3mg · 90 tabs · NL-kwaliteitsmerk', dose: '0,3mg', price: '~€6,50/mnd', score: 79, cls: 'mid', best: false, url: 'https://www.bol.com/nl/nl/s/?searchtext=vitakruid+melatonine+slaap' },
-        { name: 'Natrol Fast Dissolve', sub: '5mg · smelttablet · snelwerkend', dose: '5mg', price: '~€9,00/mnd', score: 71, cls: 'low', best: false, url: 'https://www.bol.com/nl/nl/s/?searchtext=natrol+melatonine+fast+dissolve' },
+        { name:'Lucovitaal', sub:'0.299mg · 500 tabs · apotheekformule', dose:'0,3mg', price:'~€1,80/mnd', score:88, cls:'', best:true,
+          stores:{bol:stores.bol('lucovitaal+melatonine+0.3mg'), amz:stores.amz('lucovitaal+melatonine'), vit:stores.vit('lucovitaal+melatonine'), hb:null, dr:stores.dr('lucovitaal+melatonine')} },
+        { name:'Vitakruid', sub:'0,3mg · 90 tabs · NL-kwaliteitsmerk', dose:'0,3mg', price:'~€6,50/mnd', score:82, cls:'mid', best:false,
+          stores:{bol:stores.bol('vitakruid+melatonine'), amz:null, vit:stores.vit('vitakruid+melatonine'), hb:null, dr:null} },
+        { name:'NOW Foods', sub:'1mg · 180 caps · importmerk', dose:'1mg', price:'~€5,00/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+melatonine'), amz:stores.amz('NOW+Foods+melatonine'), vit:stores.vit('now+foods+melatonine'), hb:stores.hb('melatonin'), dr:null} },
+        { name:'Natrol Fast Dissolve', sub:'5mg · smelttablet · snelwerkend', dose:'5mg', price:'~€9,00/mnd', score:68, cls:'low', best:false,
+          stores:{bol:stores.bol('natrol+melatonine+fast+dissolve'), amz:stores.amz('natrol+melatonin+fast+dissolve'), vit:null, hb:null, dr:null} },
       ]
-    }
+    },
+    magGlyc: {
+      title: 'Magnesium Glycinaat — Merken vergelijking',
+      sub: 'Beste vorm voor slaap: goed opneembaar, zacht voor de maag',
+      note: 'Magnesium glycinaat = bisglycinaat. Check altijd de elementaire magnesium op het label, niet alleen de totale hoeveelheid.',
+      brands: [
+        { name:'Vitakruid Mg Bisglycinaat', sub:'200mg elem. · 90 tabs · NL-merk', dose:'200mg', price:'~€14/mnd', score:90, cls:'', best:true,
+          stores:{bol:stores.bol('vitakruid+magnesium+bisglycinaat'), amz:null, vit:stores.vit('vitakruid+magnesium+bisglycinaat'), hb:null, dr:null} },
+        { name:"Doctor's Best High Absorption", sub:'200mg elem. · 120 tabs · import', dose:'200mg', price:'~€9/mnd', score:85, cls:'', best:false,
+          stores:{bol:stores.bol('doctors+best+magnesium+glycinaat'), amz:stores.amz('Doctors+Best+Magnesium+Glycinate'), vit:null, hb:null, dr:null} },
+        { name:'NOW Foods Magnesium Glycinate', sub:'200mg elem. · 180 tabs', dose:'200mg', price:'~€11/mnd', score:82, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+magnesium+glycinate'), amz:stores.amz('NOW+Magnesium+Glycinate'), vit:stores.vit('now+magnesium+glycinaat'), hb:null, dr:null} },
+        { name:'Solgar Chelated Magnesium', sub:'100mg elem. · 100 tabs', dose:'100mg', price:'~€15/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+magnesium+chelated'), amz:stores.amz('Solgar+Chelated+Magnesium'), vit:null, hb:stores.hb('magnesium+glycinate'), dr:stores.dr('solgar+magnesium')} },
+      ]
+    },
+    glycine: {
+      title: 'Glycine — Merken vergelijking',
+      sub: 'Aminozuur supplement voor betere slaapkwaliteit en koude lichaamstemperatuur',
+      note: 'Glycine poeder heeft een milde zoete smaak en is gemakkelijk te doseren in water of thee.',
+      brands: [
+        { name:'NOW Foods Glycine Powder', sub:'3000mg/scheprje · 454g poeder', dose:'3g', price:'~€5/mnd', score:88, cls:'', best:true,
+          stores:{bol:stores.bol('now+foods+glycine+poeder'), amz:stores.amz('NOW+Glycine+Powder'), vit:stores.vit('now+glycine'), hb:null, dr:null} },
+        { name:'Bulk Powders Glycine', sub:'3000mg · poeder · 500g', dose:'3g', price:'~€4/mnd', score:82, cls:'', best:false,
+          stores:{bol:stores.bol('bulk+powders+glycine+poeder'), amz:stores.amz('Bulk+Powders+Glycine'), vit:null, hb:null, dr:null} },
+        { name:'Jarrow Formulas Glycine', sub:'1000mg · 100 caps', dose:'3g (3 caps)', price:'~€8/mnd', score:75, cls:'mid', best:false,
+          stores:{bol:stores.bol('jarrow+glycine+capsules'), amz:stores.amz('Jarrow+Formulas+Glycine'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    ltheanine: {
+      title: 'L-Theanine — Merken vergelijking',
+      sub: 'Rustgevend aminozuur voor kalme focus en sneller inslapen',
+      note: 'L-Theanine werkt optimaal in combinatie met 200mg cafeïne overdag (geen effect op slaap) en magnesium \'s avonds.',
+      brands: [
+        { name:'NOW Foods L-Theanine 200mg', sub:'200mg · 60 caps · meest verkocht', dose:'200mg', price:'~€9/mnd', score:86, cls:'', best:true,
+          stores:{bol:stores.bol('now+foods+l-theanine+200mg'), amz:stores.amz('NOW+L-Theanine+200mg'), vit:stores.vit('now+l-theanine'), hb:stores.hb('l-theanine'), dr:null} },
+        { name:'Vitakruid L-Theanine', sub:'200mg · 90 tabs · NL-merk', dose:'200mg', price:'~€12/mnd', score:83, cls:'', best:false,
+          stores:{bol:stores.bol('vitakruid+l-theanine'), amz:null, vit:stores.vit('vitakruid+l-theanine'), hb:null, dr:null} },
+        { name:'Jarrow Theanine 200', sub:'200mg · 60 caps', dose:'200mg', price:'~€10/mnd', score:80, cls:'mid', best:false,
+          stores:{bol:stores.bol('jarrow+theanine+200'), amz:stores.amz('Jarrow+Formulas+Theanine'), vit:null, hb:null, dr:null} },
+        { name:"Doctor's Best Suntheanine", sub:'150mg · 90 caps · gepatenteerd', dose:'150mg', price:'~€13/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('doctors+best+l-theanine'), amz:stores.amz('Doctors+Best+L-Theanine'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    ashwagandha: {
+      title: 'Ashwagandha — Merken vergelijking',
+      sub: 'KSM-66 extract is goudstandaard voor stress, slaap en cortisol',
+      note: 'Kies altijd KSM-66 of Sensoril extract (gestandaardiseerd). Goedkope root powder varianten hebben onbetrouwbare concentraties.',
+      brands: [
+        { name:'Solgar Ashwagandha KSM-66', sub:'300mg KSM-66 · 60 caps · goudstandaard', dose:'300mg', price:'~€18/mnd', score:90, cls:'', best:true,
+          stores:{bol:stores.bol('solgar+ashwagandha+ksm66'), amz:stores.amz('Solgar+Ashwagandha+KSM-66'), vit:null, hb:stores.hb('ashwagandha+ksm'), dr:null} },
+        { name:'Vitakruid Ashwagandha KSM-66', sub:'300mg KSM-66 · 60 tabs · NL-merk', dose:'300mg', price:'~€15/mnd', score:87, cls:'', best:false,
+          stores:{bol:stores.bol('vitakruid+ashwagandha+ksm66'), amz:null, vit:stores.vit('vitakruid+ashwagandha'), hb:null, dr:null} },
+        { name:'NOW Foods Ashwagandha', sub:'450mg root · 90 caps', dose:'450mg', price:'~€8/mnd', score:75, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+ashwagandha'), amz:stores.amz('NOW+Ashwagandha'), vit:stores.vit('now+ashwagandha'), hb:stores.hb('ashwagandha'), dr:null} },
+        { name:'Himalaya Ashwagandha', sub:'300mg root · 60 tabs · Ayurveda', dose:'300mg', price:'~€10/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('himalaya+ashwagandha'), amz:stores.amz('Himalaya+Ashwagandha'), vit:null, hb:stores.hb('himalaya+ashwagandha'), dr:stores.dr('himalaya+ashwagandha')} },
+      ]
+    },
+    magCit: {
+      title: 'Magnesium Citraat — Merken vergelijking',
+      sub: 'Goed opneembaar en betaalbaar, ideaal voor spierontspanning',
+      note: 'Citraat heeft een laxerend effect bij hoge doses. Begin met 150mg en bouw op. Meer dan 400mg/dag niet aanbevolen.',
+      brands: [
+        { name:'Solgar Magnesium Citraat', sub:'420mg elem. · 120 tabs', dose:'210mg', price:'~€12/mnd', score:84, cls:'', best:true,
+          stores:{bol:stores.bol('solgar+magnesium+citraat'), amz:stores.amz('Solgar+Magnesium+Citrate'), vit:null, hb:stores.hb('magnesium+citrate'), dr:stores.dr('solgar+magnesium+citraat')} },
+        { name:'Lucovitaal Magnesium Citraat', sub:'150mg · 30 sachets · bruisgranulaat', dose:'150mg', price:'~€7/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('lucovitaal+magnesium+citraat'), amz:null, vit:null, hb:null, dr:stores.dr('lucovitaal+magnesium+citraat')} },
+        { name:'NOW Foods Magnesium Citrate', sub:'200mg elem. · 250 tabs', dose:'200mg', price:'~€8/mnd', score:80, cls:'', best:false,
+          stores:{bol:stores.bol('now+foods+magnesium+citraat'), amz:stores.amz('NOW+Magnesium+Citrate'), vit:stores.vit('now+magnesium+citraat'), hb:null, dr:null} },
+        { name:'Pure Encapsulations Mg Citraat', sub:'150mg elem. · 90 caps · clean label', dose:'150mg', price:'~€16/mnd', score:82, cls:'mid', best:false,
+          stores:{bol:stores.bol('pure+encapsulations+magnesium+citraat'), amz:stores.amz('Pure+Encapsulations+Magnesium+Citrate'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    valeriaan: {
+      title: 'Valeriaan — Merken vergelijking',
+      sub: 'Klassiek slaapkruid, het meest bewezen van alle plantextracten',
+      note: 'Valeriaan werkt cumulatief: effect na 2–4 weken gebruik. Niet plotseling stoppen na langdurig gebruik.',
+      brands: [
+        { name:'A-Vogel Dormeasan', sub:'Vers extract valeriaan + hop · 50ml tinctuur', dose:'0,5ml', price:'~€8/mnd', score:88, cls:'', best:true,
+          stores:{bol:stores.bol('avogel+dormeasan+valeriaan'), amz:null, vit:stores.vit('avogel+dormeasan'), hb:stores.hb('dormeasan'), dr:stores.dr('avogel+dormeasan')} },
+        { name:'Solgar Valerian Root', sub:'250mg extract · 60 caps', dose:'250mg', price:'~€12/mnd', score:82, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+valerian+root'), amz:stores.amz('Solgar+Valerian'), vit:null, hb:stores.hb('solgar+valerian'), dr:null} },
+        { name:'NOW Foods Valerian Root', sub:'500mg root · 100 caps', dose:'500mg', price:'~€7/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+valeriaan'), amz:stores.amz('NOW+Valerian+Root'), vit:stores.vit('now+valeriaan'), hb:null, dr:null} },
+        { name:'Holland & Barrett Valeriaan', sub:'375mg extract · 60 tabs · HB eigen merk', dose:'375mg', price:'~€6/mnd', score:70, cls:'mid', best:false,
+          stores:{bol:null, amz:null, vit:null, hb:stores.hb('valerian'), dr:null} },
+      ]
+    },
+    passieflora: {
+      title: 'Passieflora — Merken vergelijking',
+      sub: 'Rustgevend kruid bij angst en piekeren voor het slapen',
+      note: 'Passieflora is milder dan valeriaan. Goede keuze voor mensen die valeriaan te zwaar vinden of die lichte onrust ervaren.',
+      brands: [
+        { name:"Nature's Answer Passieflora", sub:'500mg extract · 60 caps', dose:'500mg', price:'~€9/mnd', score:78, cls:'mid', best:true,
+          stores:{bol:stores.bol('natures+answer+passieflora'), amz:stores.amz('Natures+Answer+Passionflower'), vit:null, hb:null, dr:null} },
+        { name:'Holland & Barrett Passieflora', sub:'250mg · 60 tabs · eigen merk', dose:'250mg', price:'~€6/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:null, amz:null, vit:null, hb:stores.hb('passionflower'), dr:null} },
+        { name:'NOW Foods Passion Flower', sub:'350mg ext. · 90 caps', dose:'350mg', price:'~€10/mnd', score:74, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+passieflora'), amz:stores.amz('NOW+Passion+Flower'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    magThr: {
+      title: 'Magnesium L-Threonate — Merken vergelijking',
+      sub: 'Enige magnesiumvorm die de bloedhersenbarrière passeert — voor cognitief herstel',
+      note: 'Magnesium L-threonate is duurder maar bewezen effectief voor geheugen en slaapkwaliteit. Magtein is het gepatenteerde ingrediënt.',
+      brands: [
+        { name:'Life Extension Neuro-Mag', sub:'Magtein 144mg elem. · 90 caps · gepatenteerd', dose:'144mg', price:'~€22/mnd', score:88, cls:'', best:true,
+          stores:{bol:stores.bol('life+extension+neuro+mag+threonate'), amz:stores.amz('Life+Extension+Neuro-Mag'), vit:null, hb:null, dr:null} },
+        { name:'NOW Foods MagMind', sub:'Magtein 50mg elem. · 90 caps', dose:'150mg', price:'~€18/mnd', score:82, cls:'', best:false,
+          stores:{bol:stores.bol('now+foods+magmind+threonate'), amz:stores.amz('NOW+MagMind'), vit:stores.vit('now+magnesium+l-threonate'), hb:null, dr:null} },
+        { name:'Jarrow Formulas MagMind', sub:'Magtein 48mg elem. · 90 caps', dose:'144mg', price:'~€20/mnd', score:80, cls:'mid', best:false,
+          stores:{bol:stores.bol('jarrow+magmind+threonate'), amz:stores.amz('Jarrow+MagMind'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    vijfHTP: {
+      title: '5-HTP — Merken vergelijking',
+      sub: 'Precursor van serotonine — alleen met arts overleg bij medicijngebruik',
+      note: '⚠ 5-HTP NIET combineren met antidepressiva (SSRI/SNRI) — risico op serotoninesyndroom. Altijd arts raadplegen.',
+      brands: [
+        { name:'Natrol 5-HTP Time Release', sub:'100mg · 45 tabs · vertraagde afgifte', dose:'100mg', price:'~€10/mnd', score:80, cls:'', best:true,
+          stores:{bol:stores.bol('natrol+5-htp+time+release'), amz:stores.amz('Natrol+5-HTP+Time+Release'), vit:null, hb:stores.hb('5-htp'), dr:null} },
+        { name:'NOW Foods 5-HTP 100mg', sub:'100mg · 60 caps · meest verkocht', dose:'100mg', price:'~€9/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+5-htp+100mg'), amz:stores.amz('NOW+5-HTP+100mg'), vit:stores.vit('now+5-htp'), hb:null, dr:null} },
+        { name:'Vitakruid 5-HTP', sub:'100mg + vitamine B6 · 60 tabs', dose:'100mg', price:'~€14/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('vitakruid+5-htp'), amz:null, vit:stores.vit('vitakruid+5-htp'), hb:null, dr:null} },
+        { name:'Solgar 5-HTP 100mg', sub:'100mg · 90 caps · premium merk', dose:'100mg', price:'~€20/mnd', score:75, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+5-htp'), amz:stores.amz('Solgar+5-HTP'), vit:null, hb:stores.hb('5-htp+solgar'), dr:null} },
+      ]
+    },
+    cbd: {
+      title: 'CBD Olie — Merken vergelijking',
+      sub: 'Cannabidiol uit hennep — voor ontspanning en angstreductie',
+      note: 'CBD werkt niet voor iedereen. Begin laag (5mg) en bouw op. Kies altijd full-spectrum olie met certificaat van analyse (COA).',
+      brands: [
+        { name:'Cibdol 5% CBD Olie', sub:'500mg CBD · 10ml · Zwitsers premium', dose:'5mg/druppel', price:'~€22/mnd', score:82, cls:'', best:true,
+          stores:{bol:stores.bol('cibdol+cbd+olie+5%25'), amz:null, vit:null, hb:null, dr:null} },
+        { name:'Dutch Natural Healing', sub:'500mg CBD · 10ml · NL-merk', dose:'5mg/druppel', price:'~€18/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('dutch+natural+healing+cbd+olie'), amz:null, vit:null, hb:null, dr:null} },
+        { name:'Medihemp Raw CBD+', sub:'5% CBD · 10ml · bio-gecertificeerd', dose:'5mg/druppel', price:'~€20/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('medihemp+cbd+raw'), amz:null, vit:null, hb:null, dr:null} },
+        { name:'Endoca Raw Hemp Oil', sub:'3% CBD · 10ml · organisch', dose:'3mg/druppel', price:'~€14/mnd', score:72, cls:'low', best:false,
+          stores:{bol:null, amz:stores.amz('Endoca+Raw+Hemp+Oil+CBD'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    gummies: {
+      title: 'Slaap Gummies — Merken vergelijking',
+      sub: 'Combinatie van melatonine, L-theanine en valeriaan in gummy vorm',
+      note: 'Gummies bevatten suiker en additieven. Capsules zijn effectiever per euro. Gummies zijn handig voor reizen.',
+      brands: [
+        { name:'Vitakruid Slaap Gummies', sub:'Melatonine 0,3mg + L-theanine + valeriaan', dose:'2 gummies', price:'~€14/mnd', score:78, cls:'mid', best:true,
+          stores:{bol:stores.bol('vitakruid+slaap+gummies'), amz:null, vit:stores.vit('vitakruid+slaap+gummies'), hb:null, dr:null} },
+        { name:'NOW Foods Sleep Gummies', sub:'Melatonine + L-theanine · 60 stuks', dose:'2 gummies', price:'~€12/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+sleep+gummies'), amz:stores.amz('NOW+Sleep+Gummies'), vit:null, hb:null, dr:null} },
+        { name:'Holland & Barrett Sleep Well Gummies', sub:'Melatonine 1,9mg · 60 gummies', dose:'2 gummies', price:'~€10/mnd', score:65, cls:'low', best:false,
+          stores:{bol:null, amz:null, vit:null, hb:stores.hb('sleep+gummies'), dr:null} },
+      ]
+    },
+    complex: {
+      title: 'Slaap Complex — Merken vergelijking',
+      sub: 'Kant-en-klare combinatieformules met meerdere slaapkruiden',
+      note: 'Slaap complexen zijn handig maar duurder per werkzame stof dan losse supplementen. Ideaal om te proberen wat werkt.',
+      brands: [
+        { name:'Vitakruid Slaap Complex', sub:'Valeriaan + hop + passiflora + citroenmelisse', dose:'2 caps', price:'~€16/mnd', score:80, cls:'', best:true,
+          stores:{bol:stores.bol('vitakruid+slaap+complex'), amz:null, vit:stores.vit('vitakruid+slaap+complex'), hb:null, dr:null} },
+        { name:'Solgar Natural Sleep', sub:'Valeriaan + L-theanine + hop · 30 caps', dose:'2 caps', price:'~€22/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+natural+sleep'), amz:stores.amz('Solgar+Natural+Sleep'), vit:null, hb:stores.hb('solgar+sleep'), dr:null} },
+        { name:'A.Vogel Dormeasan Slaap', sub:'Valeriaan + hop tinctuur · 50ml', dose:'1ml', price:'~€9/mnd', score:74, cls:'mid', best:false,
+          stores:{bol:stores.bol('avogel+slaap+tinctuur'), amz:null, vit:null, hb:stores.hb('dormeasan'), dr:stores.dr('avogel+slaap')} },
+      ]
+    },
+    omega3: {
+      title: 'Omega-3 / Visolie — Merken vergelijking',
+      sub: 'EPA en DHA voor cognitief herstel en ontstekingsremming',
+      note: 'Kies altijd visolie met minimaal 500mg EPA+DHA per capsule. Triglyceride vorm is beter opneembaar dan ethyl ester.',
+      brands: [
+        { name:'Vitakruid Omega-3 TG', sub:'1000mg EPA+DHA · 60 caps · triglyceridevorm', dose:'2 caps', price:'~€16/mnd', score:86, cls:'', best:true,
+          stores:{bol:stores.bol('vitakruid+omega-3+visolie'), amz:null, vit:stores.vit('vitakruid+omega-3'), hb:null, dr:null} },
+        { name:'Solgar Omega-3 950mg', sub:'950mg EPA+DHA · 100 caps', dose:'1 cap', price:'~€18/mnd', score:82, cls:'', best:false,
+          stores:{bol:stores.bol('solgar+omega-3+950mg'), amz:stores.amz('Solgar+Omega-3+950'), vit:null, hb:stores.hb('omega+3+fish+oil'), dr:null} },
+        { name:'NOW Foods Ultra Omega-3', sub:'500mg EPA+250mg DHA · 100 caps', dose:'2 caps', price:'~€12/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+ultra+omega-3'), amz:stores.amz('NOW+Ultra+Omega-3'), vit:stores.vit('now+omega-3'), hb:null, dr:null} },
+      ]
+    },
+    vitD3: {
+      title: 'Vitamine D3 — Merken vergelijking',
+      sub: 'Essentieel voor slaapregulatie, immuunsysteem en stemming',
+      note: 'Vitamine D3 combineer je het best met K2 (MK-7). Laat D-waarden checken bij je huisarts voor je supplementeert.',
+      brands: [
+        { name:'Vitakruid D3+K2', sub:'25mcg D3 + 45mcg K2 · 60 caps · gecombi', dose:'1 cap', price:'~€9/mnd', score:88, cls:'', best:true,
+          stores:{bol:stores.bol('vitakruid+vitamine+d3+k2'), amz:null, vit:stores.vit('vitakruid+d3+k2'), hb:null, dr:null} },
+        { name:'Lucovitaal D3 2000IE', sub:'50mcg D3 · 365 tabs · jaarvoorraad', dose:'1 tab', price:'~€1,50/mnd', score:80, cls:'', best:false,
+          stores:{bol:stores.bol('lucovitaal+vitamine+d3+2000ie'), amz:null, vit:null, hb:null, dr:stores.dr('lucovitaal+vitamine+d3')} },
+        { name:'NOW Foods D3 2000IU', sub:'50mcg D3 · 240 caps', dose:'1 cap', price:'~€4/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+vitamine+d3+2000'), amz:stores.amz('NOW+Vitamin+D3+2000'), vit:stores.vit('now+vitamine+d3'), hb:null, dr:null} },
+        { name:'Solgar Vitamin D3 1000IU', sub:'25mcg D3 · 250 tabs', dose:'1 tab', price:'~€10/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+vitamine+d3+1000iu'), amz:stores.amz('Solgar+Vitamin+D3+1000'), vit:null, hb:stores.hb('vitamin+d3'), dr:null} },
+      ]
+    },
+    citroenm: {
+      title: 'Citroenmelisse — Merken vergelijking',
+      sub: 'Mild kalmerend kruid bij stress-gerelateerde slaapproblemen',
+      note: 'Citroenmelisse werkt milder dan valeriaan maar heeft een goed veiligheidsprofiel. Goed te combineren met valeriaan.',
+      brands: [
+        { name:'Solgar Lemon Balm Melissa', sub:'250mg extract · 60 caps', dose:'250mg', price:'~€12/mnd', score:76, cls:'mid', best:true,
+          stores:{bol:stores.bol('solgar+citroenmelisse+lemon+balm'), amz:stores.amz('Solgar+Lemon+Balm'), vit:null, hb:stores.hb('lemon+balm'), dr:null} },
+        { name:'NOW Foods Lemon Balm', sub:'500mg · 100 caps', dose:'500mg', price:'~€8/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+citroenmelisse'), amz:stores.amz('NOW+Lemon+Balm'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    reishi: {
+      title: 'Reishi Paddenstoel — Merken vergelijking',
+      sub: 'Adaptageen paddenstoel voor dieper slapen en stressreductie',
+      note: 'Reishi werkt cumulatief over weken. Kies altijd producten met >30% polysacchariden en >2% triterpenen.',
+      brands: [
+        { name:'NOW Foods Reishi 270mg', sub:'270mg extract · 100 caps', dose:'270mg', price:'~€10/mnd', score:74, cls:'mid', best:true,
+          stores:{bol:stores.bol('now+foods+reishi+paddenstoel'), amz:stores.amz('NOW+Reishi+Mushroom'), vit:null, hb:null, dr:null} },
+        { name:'Host Defense Reishi', sub:'500mg mycelium · 60 caps · premium', dose:'2 caps', price:'~€25/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('host+defense+reishi'), amz:stores.amz('Host+Defense+Reishi'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    inositol: {
+      title: 'Inositol — Merken vergelijking',
+      sub: 'Suiker-verwante stof voor PCOS, angst en slaapkwaliteit',
+      note: 'Inositol is veilig in hoge doses (tot 12g/dag). Myo-inositol is de meest onderzochte vorm.',
+      brands: [
+        { name:'Vitakruid Myo-Inositol', sub:'2000mg · 60 caps · NL-merk', dose:'2g', price:'~€16/mnd', score:80, cls:'', best:true,
+          stores:{bol:stores.bol('vitakruid+myo-inositol'), amz:null, vit:stores.vit('vitakruid+inositol'), hb:null, dr:null} },
+        { name:'NOW Foods Inositol', sub:'500mg · 100 caps', dose:'500mg', price:'~€8/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+inositol'), amz:stores.amz('NOW+Inositol'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    vitB6: {
+      title: 'Vitamine B6 — Merken vergelijking',
+      sub: 'Co-factor voor melatonine en serotonine aanmaak',
+      note: 'Kies P5P (pyridoxaal-5-fosfaat) boven gewone B6 voor betere biologische beschikbaarheid. Max 25mg/dag aanbevolen.',
+      brands: [
+        { name:'Vitakruid B6 P5P', sub:'25mg P5P · 60 caps · actieve vorm', dose:'25mg', price:'~€9/mnd', score:84, cls:'', best:true,
+          stores:{bol:stores.bol('vitakruid+b6+p5p'), amz:null, vit:stores.vit('vitakruid+vitamine+b6+p5p'), hb:null, dr:null} },
+        { name:'Solgar B6 100mg', sub:'100mg pyridoxine · 100 tabs', dose:'50mg', price:'~€8/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+vitamine+b6'), amz:stores.amz('Solgar+Vitamin+B6'), vit:null, hb:stores.hb('vitamin+b6'), dr:null} },
+      ]
+    },
+    magBad: {
+      title: 'Magnesium Badzouten — Merken vergelijking',
+      sub: 'Transdermal magnesium opname via bad of voetenba',
+      note: 'Wetenschappelijk bewijs voor transdermal opname is beperkt. Maar warm bad bevordert slaap onafhankelijk van magnesium.',
+      brands: [
+        { name:'Westlab Epsom Salt', sub:'Magnesiumsulfaat · 1kg · klassiek', dose:'250g/bad', price:'~€3/bad', score:72, cls:'mid', best:true,
+          stores:{bol:stores.bol('westlab+epsom+zout+magnesium'), amz:stores.amz('Westlab+Epsom+Salt'), vit:null, hb:stores.hb('epsom+salts'), dr:stores.dr('epsom+zout')} },
+        { name:'Zechsal Magnesiumvlokken', sub:'MgCl2 · 1kg · NL-merk', dose:'200g/bad', price:'~€4/bad', score:70, cls:'mid', best:false,
+          stores:{bol:stores.bol('zechsal+magnesium+vlokken'), amz:null, vit:null, hb:null, dr:null} },
+      ]
+    },
+    lavendel: {
+      title: 'Lavendel Kussenspray — Merken vergelijking',
+      sub: 'Aromatherapie voor slaap — geur conditionering',
+      note: 'Aromatherapie heeft beperkt maar consistent bewijs voor slaapkwaliteit. Kies etherische olie op waterbasis, geen synthetische parfum.',
+      brands: [
+        { name:'This Works Deep Sleep Spray', sub:'Lavendel + kamille + vetivert · 75ml', dose:'2 sprays', price:'~€8/mnd', score:80, cls:'', best:true,
+          stores:{bol:stores.bol('this+works+deep+sleep+spray'), amz:stores.amz('This+Works+Deep+Sleep+Spray'), vit:null, hb:stores.hb('this+works+sleep'), dr:null} },
+        { name:'Tisserand Lavendel Spray', sub:'Pure lavendel · 100ml · biologisch', dose:'2 sprays', price:'~€6/mnd', score:74, cls:'mid', best:false,
+          stores:{bol:stores.bol('tisserand+lavendel+slaap+spray'), amz:stores.amz('Tisserand+Lavender+Sleep'), vit:null, hb:null, dr:null} },
+        { name:'Neom Perfect Night\'s Sleep', sub:'Lavendel + patchoeli + basil · 50ml', dose:'2 sprays', price:'~€12/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('neom+perfect+nights+sleep+spray'), amz:stores.amz('Neom+Perfect+Night+Sleep'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    niacinam: {
+      title: 'Niacinamide — Merken vergelijking',
+      sub: 'Vitamine B3 voor NAD+ aanmaak en huidgezondheid',
+      note: 'Niacinamide geeft geen flush (in tegenstelling tot niacine). Hoge doses (>500mg) kunnen methyleringscyclus beïnvloeden.',
+      brands: [
+        { name:'NOW Foods Niacinamide 500mg', sub:'500mg · 100 tabs', dose:'500mg', price:'~€5/mnd', score:78, cls:'mid', best:true,
+          stores:{bol:stores.bol('now+foods+niacinamide+500mg'), amz:stores.amz('NOW+Niacinamide+500'), vit:null, hb:null, dr:null} },
+        { name:'Solgar Niacinamide', sub:'500mg · 100 tabs', dose:'500mg', price:'~€10/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+niacinamide'), amz:stores.amz('Solgar+Niacinamide'), vit:null, hb:stores.hb('niacinamide'), dr:null} },
+      ]
+    },
+    quercetin: {
+      title: 'Quercetin — Merken vergelijking',
+      sub: 'Bioflavonoïde bij nachtelijke blaasklachten en slaapverstoring',
+      note: 'Quercetin heeft lage biologische beschikbaarheid. Kies formules met bromelaïne of piperin voor betere opname.',
+      brands: [
+        { name:'NOW Foods Quercetin 500mg', sub:'500mg + bromelaïne · 100 caps', dose:'500mg', price:'~€10/mnd', score:72, cls:'mid', best:true,
+          stores:{bol:stores.bol('now+foods+quercetin+bromelaïne'), amz:stores.amz('NOW+Quercetin+Bromelain'), vit:null, hb:null, dr:null} },
+        { name:'Solgar Quercetin Complex', sub:'500mg + C + bromelaïne · 50 caps', dose:'500mg', price:'~€20/mnd', score:70, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+quercetin+complex'), amz:stores.amz('Solgar+Quercetin+Complex'), vit:null, hb:stores.hb('quercetin'), dr:null} },
+      ]
+    },
+    pompoen: {
+      title: 'Pompoen Zaad Extract — Merken vergelijking',
+      sub: 'Traditioneel bij nachtplassen en blaasklachten',
+      note: 'Pompoen zaad extract werkt cumulatief. Resultaten na 4–8 weken gebruik. Combineer met zaagpalmetto voor betere werking.',
+      brands: [
+        { name:'NOW Foods Pumpkin Seed', sub:'500mg extract · 90 caps', dose:'500mg', price:'~€9/mnd', score:68, cls:'low', best:true,
+          stores:{bol:stores.bol('now+foods+pompoen+zaad+extract'), amz:stores.amz('NOW+Pumpkin+Seed+Extract'), vit:null, hb:null, dr:null} },
+        { name:'Solgar Pumpkin Seed Oil', sub:'1000mg olie · 90 softgels', dose:'1000mg', price:'~€14/mnd', score:65, cls:'low', best:false,
+          stores:{bol:stores.bol('solgar+pompoen+zaad+olie'), amz:stores.amz('Solgar+Pumpkin+Seed+Oil'), vit:null, hb:stores.hb('pumpkin+seed'), dr:null} },
+      ]
+    },
+    zaagpalm: {
+      title: 'Zaagpalmetto — Merken vergelijking',
+      sub: 'Bij prostaat en nachtplassen bij mannen',
+      note: 'Zaagpalmetto werkt voor milde tot matige symptomen. Raadpleeg een arts voor prostaatklachten.',
+      brands: [
+        { name:'NOW Foods Saw Palmetto Extract', sub:'160mg extract · 60 caps · standaard', dose:'160mg', price:'~€8/mnd', score:72, cls:'mid', best:true,
+          stores:{bol:stores.bol('now+foods+zaagpalmetto+saw+palmetto'), amz:stores.amz('NOW+Saw+Palmetto+Extract'), vit:null, hb:null, dr:null} },
+        { name:'Solgar Saw Palmetto Berries', sub:'540mg berries · 100 caps', dose:'540mg', price:'~€14/mnd', score:68, cls:'low', best:false,
+          stores:{bol:stores.bol('solgar+saw+palmetto'), amz:stores.amz('Solgar+Saw+Palmetto'), vit:null, hb:stores.hb('saw+palmetto'), dr:null} },
+      ]
+    },
+    verzwaring: {
+      title: 'Verzwaringsdeken — Merken vergelijking',
+      sub: 'Gewichtsdruk stimuleert het parasympathisch zenuwstelsel',
+      note: 'Kies een deken van 8–12% van je lichaamsgewicht. 7kg voor een persoon van 70kg is de aanbevolen standaard.',
+      brands: [
+        { name:'Gravity Blanket Original', sub:'7kg · 100% katoen · premium', dose:'7kg', price:'~€149 eenmalig', score:84, cls:'', best:true,
+          stores:{bol:stores.bol('gravity+blanket+verzwaringsdeken'), amz:stores.amz('Gravity+Blanket'), vit:null, hb:null, dr:null} },
+        { name:'Dreamfy Verzwaringsdeken', sub:'7kg · microvezel · NL-merk', dose:'7kg', price:'~€69 eenmalig', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('dreamfy+verzwaringsdeken+7kg'), amz:null, vit:null, hb:null, dr:null} },
+        { name:'Zensation Verzwaringsdeken', sub:'6kg · bamboe katoen', dose:'6kg', price:'~€89 eenmalig', score:74, cls:'mid', best:false,
+          stores:{bol:stores.bol('zensation+verzwaringsdeken'), amz:stores.amz('weighted+blanket+7kg'), vit:null, hb:null, dr:null} },
+      ]
+    },
+    pillowSpray: {
+      title: 'Pillow Spray Lavendel & Kamille — Merken vergelijking',
+      sub: 'Combinatieformule voor maximaal slaapeffect via aromatherapie',
+      note: 'Pillow spray werkt via geurconditionering. Consistent gebruik creëert een slaapassociatie die het effect versterkt.',
+      brands: [
+        { name:'This Works Deep Sleep Pillow Spray', sub:'Lavendel + kamille + vetivert · 75ml', dose:'2 sprays', price:'~€8/mnd', score:82, cls:'', best:true,
+          stores:{bol:stores.bol('this+works+deep+sleep+pillow+spray'), amz:stores.amz('This+Works+Pillow+Spray'), vit:null, hb:stores.hb('this+works+pillow+spray'), dr:null} },
+        { name:'Neom Perfect Night\'s Sleep Pillow Mist', sub:'19 etherische oliën · 100ml', dose:'2 sprays', price:'~€15/mnd', score:78, cls:'mid', best:false,
+          stores:{bol:stores.bol('neom+pillow+mist+sleep'), amz:stores.amz('Neom+Pillow+Mist'), vit:null, hb:null, dr:null} },
+        { name:'REN Clean Skincare Dream Sleep Pillow Spray', sub:'Lavendel + eucalyptus · 75ml', dose:'2 sprays', price:'~€12/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('ren+dream+sleep+pillow+spray'), amz:stores.amz('REN+Pillow+Spray'), vit:null, hb:null, dr:null} },
+      ]
+    },
   };
 
   function openCompare(key) {
@@ -2171,24 +2525,45 @@
     document.getElementById('modal-title').textContent = d.title;
     document.getElementById('modal-sub').textContent = d.sub;
 
-    let rows = d.brands.map(b => `
-      <tr>
+    let rows = d.brands.map(b => {
+      const storeCols = [
+        b.stores.bol   ? `<a href="${b.stores.bol}"   target="_blank" rel="noopener sponsored" class="store-btn bol">Bol.com</a>`         : '<span class="store-na">—</span>',
+        b.stores.amz   ? `<a href="${b.stores.amz}"   target="_blank" rel="noopener sponsored" class="store-btn amz">Amazon</a>`          : '<span class="store-na">—</span>',
+        b.stores.vit   ? `<a href="${b.stores.vit}"   target="_blank" rel="noopener sponsored" class="store-btn vit">Vitaminstore</a>`    : '<span class="store-na">—</span>',
+        b.stores.hb    ? `<a href="${b.stores.hb}"    target="_blank" rel="noopener sponsored" class="store-btn hb">H&B</a>`              : '<span class="store-na">—</span>',
+        b.stores.dr    ? `<a href="${b.stores.dr}"    target="_blank" rel="noopener sponsored" class="store-btn dr">Drogisterij</a>`      : '<span class="store-na">—</span>',
+      ];
+      return `<tr>
         <td>
           <span class="brand-name">${b.name}${b.best ? ' <span class="best-pick">★ Beste koop</span>' : ''}</span>
           <span class="brand-sub">${b.sub}</span>
         </td>
-        <td style="font-size:13px;font-weight:600">${b.dose}</td>
-        <td style="font-size:13px;font-weight:600">${b.price}</td>
+        <td style="font-size:12px;font-weight:600;white-space:nowrap">${b.dose}</td>
+        <td style="font-size:12px;font-weight:600;white-space:nowrap">${b.price}</td>
         <td><span class="brand-score ${b.cls}">${b.score}</span></td>
-        <td><a href="${b.url}" target="_blank" rel="noopener" class="buy-mini">Koop →</a></td>
-      </tr>`).join('');
+        ${storeCols.map(c => `<td style="text-align:center;padding:6px 4px">${c}</td>`).join('')}
+      </tr>`;
+    }).join('');
 
     document.getElementById('modal-body').innerHTML = `
-      <table class="compare-table" style="width:100%">
-        <thead><tr><th>Merk & product</th><th>Dosering</th><th>Prijs/mnd</th><th>Score</th><th></th></tr></thead>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <table class="compare-table" style="width:100%;min-width:640px">
+        <thead><tr>
+          <th>Merk & product</th>
+          <th>Dosering</th>
+          <th>Prijs/mnd</th>
+          <th>Score</th>
+          <th style="text-align:center">Bol.com</th>
+          <th style="text-align:center">Amazon.nl</th>
+          <th style="text-align:center">Vitaminstore</th>
+          <th style="text-align:center">H&amp;B</th>
+          <th style="text-align:center">Drogisterij</th>
+        </tr></thead>
         <tbody>${rows}</tbody>
       </table>
-      <p style="font-size:11px;color:var(--sub);margin-top:12px">${d.note}</p>`;
+      </div>
+      <p style="font-size:11px;color:var(--sub);margin-top:12px">${d.note}</p>
+      <p style="font-size:10px;color:var(--sub);margin-top:6px">* Prijzen zijn indicatief. Links zijn zoekresultaten; worden affiliate links na aanmelding bij het partnerprogramma.</p>`;
 
     document.getElementById('compareModal').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -2202,6 +2577,7 @@
   function closeCompareOnOverlay(e) {
     if (e.target === document.getElementById('compareModal')) closeCompare();
   }
+
 
   function setStars(n) {
     document.getElementById('starInput').value = n + ' sterren';
