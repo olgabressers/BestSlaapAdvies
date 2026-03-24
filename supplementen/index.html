@@ -214,9 +214,8 @@
     .reviews-header p { font-size: 13px; color: var(--sub); margin-top: 4px; }
     .write-review-btn { background: var(--primary); color: white; font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
     .write-review-btn:hover { background: var(--dark); }
-    .review-types { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    @media(max-width:700px){ .review-types { grid-template-columns: 1fr; } }
-    .editorial-box { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); border-radius: 14px; padding: 24px; color: white; }
+    .review-types { display: flex; flex-direction: column; gap: 20px; }
+    .editorial-box { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); border-radius: 14px; padding: 24px; color: white; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
     .editorial-badge { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7dd3f0; margin-bottom: 12px; }
     .editorial-product { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
     .editorial-sub { font-size: 12px; color: rgba(255,255,255,.6); margin-bottom: 16px; }
@@ -232,7 +231,8 @@
     .pros li::before { content: "✓ "; color: #86efac; }
     .cons li::before { content: "✗ "; color: #fca5a5; }
 
-    .user-reviews-col { display: flex; flex-direction: column; gap: 14px; }
+    .user-reviews-col { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .user-reviews-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--sub); margin-bottom: 4px; grid-column: 1/-1; }
     .user-review-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
     .review-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
     .reviewer-info { }
@@ -1938,6 +1938,7 @@
 
     <!-- LEFT: Editorial expert review -->
     <div class="editorial-box">
+      <div style="flex:1;min-width:260px">
       <div class="editorial-badge">✏️ Redactionele review · BestSlaapAdvies expert</div>
       <div class="editorial-product">Lucovitaal Melatonine 0.299mg</div>
       <div class="editorial-sub">500 tabletten · ±€9 · Beste koop in categorie</div>
@@ -1969,10 +1970,12 @@
       <div style="margin-top:14px">
         <a href="https://www.bol.com/nl/nl/s/?searchtext=lucovitaal+melatonine+0.3mg" target="_blank" rel="noopener" class="buy-mini" style="font-size:12px;padding:8px 16px;">Bekijk prijs op Bol.com →</a>
       </div>
+      </div>
     </div>
 
-    <!-- RIGHT: User reviews -->
+    <!-- USER REVIEWS GRID -->
     <div class="user-reviews-col">
+      <div class="user-reviews-label">Gebruikerservaringen (8)</div>
 
       <div class="user-review-card">
         <div class="review-top">
