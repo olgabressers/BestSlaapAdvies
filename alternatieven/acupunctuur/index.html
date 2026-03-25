@@ -22,8 +22,11 @@
     :root{--primary:#1a6b8a;--dark:#0d3d52;--accent:#2d9cdb;--light:#e8f4f9;--bg:#f0f7fa;--border:#d0e8f2;--text:#1a2e3b;--sub:#5a7a8a;--green:#1a8a5a;--green-light:#e6f7f0;--amber:#c47a1a;--amber-light:#fef3e2}
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
     nav{background:white;border-bottom:2px solid var(--border);padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-    .nav-logo{padding:14px 0;margin-right:28px;text-decoration:none}
-    .nav-logo span{font-size:17px;font-weight:800;color:var(--dark)}
+    .nav-logo{padding:14px 0;margin-right:28px;text-decoration:none;flex-shrink:0;display:flex;align-items:center;gap:10px}
+    .nav-logo-icon{width:36px;height:36px}
+    .nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .nav-logo-text span:first-child{font-size:17px;font-weight:800;color:var(--dark);letter-spacing:-0.3px}
+    .nav-logo-text span:last-child{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub)}
     .nav-links{display:flex;margin-left:auto}
     .nav-links a{color:var(--sub);text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap}
     .nav-links a:hover,.nav-links a.active{color:var(--primary);border-bottom-color:var(--primary)}
@@ -103,7 +106,19 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="../../index.html"><span>BestSlaapAdvies</span></a>
+  <a class="nav-logo" href="../../index.html">
+    <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="8" fill="#1a6b8a"/>
+      <path d="M18 8C13.6 8 10 11.6 10 16c0 3.5 2.1 6.5 5.2 7.8V26h5.6v-2.2C23.9 22.5 26 19.5 26 16c0-4.4-3.6-8-8-8z" fill="white" opacity="0.9"/>
+      <rect x="15.5" y="26" width="5" height="2" rx="1" fill="white" opacity="0.7"/>
+      <rect x="16.5" y="28.5" width="3" height="1.5" rx="0.75" fill="white" opacity="0.5"/>
+      <circle cx="18" cy="16" r="3" fill="#7dd3f0"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>BestSlaapAdvies</span>
+      <span>Nederland &amp; België</span>
+    </div>
+  </a>
   <div class="nav-links">
     <a href="../../supplementen/index.html">Supplementen</a>
     <a href="../../ontspanning/index.html">Ontspanning</a>
@@ -208,7 +223,7 @@
       <div class="sidebar-box">
         <h3>Uw praktijk aanmelden</h3>
         <p>Behandelt u slaapproblemen met acupunctuur maar staat uw stad of praktijk er nog niet bij? Meld u aan voor een gratis vermelding.</p>
-        <a href="mailto:info@bestslaapadvies.nl?subject=Aanmelding%20acupunctuur" style="display:block;margin-top:4px;background:var(--primary);color:white;font-size:12px;font-weight:700;padding:9px 16px;border-radius:7px;text-decoration:none;text-align:center">Aanmelden →</a>
+        <a href="mailto:info@bestslaapadvies.nl?subject=Aanmelding%20acupunctuur" style="display:block;margin-top:4px;background:#1a6b8a;color:white;font-size:12px;font-weight:700;padding:9px 16px;border-radius:7px;text-decoration:none;text-align:center">Aanmelden →</a>
       </div>
     </div>
 

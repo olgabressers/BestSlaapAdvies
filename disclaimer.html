@@ -26,9 +26,12 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
     nav { background: white; border-bottom: 2px solid var(--border); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
-    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; }
-    .nav-logo span { font-size: 17px; font-weight: 800; color: var(--dark); }
-    .nav-logo small { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); display: block; }
+    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon { width: 36px; height: 36px; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-text span:first-child { font-size: 17px; font-weight: 800; color: var(--dark); letter-spacing: -0.3px; }
+    .nav-logo-text span:last-child { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); }
+        .nav-logo small { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); display: block; }
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
     .nav-links a:hover { color: var(--primary); border-bottom-color: var(--primary); }
@@ -127,6 +130,7 @@
   <div class="nav-links">
     <a href="supplementen/index.html">Supplementen</a>
     <a href="ontspanning/index.html">Ontspanning</a>
+    <a href="alternatieven/acupunctuur/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Alternatieven</a>
     <a href="gids/index.html">Slaapgids</a>
     <a href="media/index.html">Media</a>
   </div>
@@ -138,6 +142,7 @@
   <a href="/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Home</a>
   <a href="/supplementen/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Supplementen</a>
   <a href="/ontspanning/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Ontspanning</a>
+    <a href="alternatieven/acupunctuur/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Alternatieven</a>
   <a href="/gids/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Slaapgids</a>
   <a href="/media/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;display:block">Media</a>
 </div>
@@ -376,6 +381,7 @@
         <span class="footer-col-title">Categorieën</span>
         <a href="supplementen/index.html">Supplementen</a>
     <a href="ontspanning/index.html">Ontspanning</a>
+    <a href="alternatieven/acupunctuur/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Alternatieven</a>
         <a href="gids/index.html">Slaapgids</a>
         <a href="media/index.html">Media</a>
       </div>
