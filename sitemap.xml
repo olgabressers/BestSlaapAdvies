@@ -7,6 +7,9 @@
   <url><loc>https://bestslaapadvies.nl/ontspanning/</loc><priority>0.8</priority></url>
   <url><loc>https://bestslaapadvies.nl/media/</loc><priority>0.8</priority></url>
 
+  <!-- Alternatieven -->
+  <url><loc>https://bestslaapadvies.nl/alternatieven/ayurveda/</loc><priority>0.8</priority></url>
+
   <!-- Acupunctuur -->
   <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/</loc><priority>0.9</priority></url>
   <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/amsterdam/</loc><priority>0.8</priority></url>
