@@ -1877,7 +1877,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€15–25 / 60 caps</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=suan+zao+ren+slaap" class="buy-btn" target="_blank" rel="noopener sponsored">Bekijk op Bol.com →</a>
+          <button class="compare-btn" onclick="openCompare('suanZaoRen')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1928,7 +1928,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€12–22 / 60 caps</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=schisandra+slaap" class="buy-btn" target="_blank" rel="noopener sponsored">Bekijk op Bol.com →</a>
+          <button class="compare-btn" onclick="openCompare('schisandra')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -1979,7 +1979,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€15–28 / 60 caps</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=albizia+slaap" class="buy-btn" target="_blank" rel="noopener sponsored">Bekijk op Bol.com →</a>
+          <button class="compare-btn" onclick="openCompare('heHuanPi')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -2030,7 +2030,7 @@
       <div class="card-footer">
         <div><div class="price-tag">±€18–30 / 60 caps</div></div>
         <div class="card-btns">
-          <a href="https://www.bol.com/nl/nl/s/?searchtext=polygala+slaap" class="buy-btn" target="_blank" rel="noopener sponsored">Bekijk op Bol.com →</a>
+          <button class="compare-btn" onclick="openCompare('yuanZhi')">Vergelijk merken &amp; prijzen →</button>
         </div>
       </div>
     </div>
@@ -2577,11 +2577,12 @@
 
   // ── BRAND COMPARE MODAL ──
 const stores = {
-    bol: (q) => `https://www.bol.com/nl/nl/s/?searchtext=${q}`,
-    amz: (q) => `https://www.amazon.nl/s?k=${q}`,
-    vit: (q) => `https://www.vitaminstore.nl/search?q=${q}`,
-    hb:  (q) => `https://www.hollandandbarrett.nl/search/?query=${q}`,
-    dr:  (q) => `https://www.drogisterij.net/zoeken?q=${q}`,
+    bol:   (q) => `https://www.bol.com/nl/nl/s/?searchtext=${q}`,
+    amz:   (q) => `https://www.amazon.nl/s?k=${q}`,
+    vit:   (q) => `https://www.vitaminstore.nl/search?q=${q}`,
+    hb:    (q) => `https://www.hollandandbarrett.nl/search/?query=${q}`,
+    dr:    (q) => `https://www.drogisterij.net/zoeken?q=${q}`,
+    iherb: (q) => `https://www.iherb.com/search?kw=${q}`,
   };
 
   const compareData = {
@@ -2899,6 +2900,54 @@ const stores = {
           stores:{bol:stores.bol('solgar+pompoen+zaad+olie'), amz:stores.amz('Solgar+Pumpkin+Seed+Oil'), vit:null, hb:stores.hb('pumpkin+seed'), dr:null} },
       ]
     },
+    suanZaoRen: {
+      title: 'Suan Zao Ren — Merken vergelijking',
+      sub: 'Ziziphus jujuba zaadextract — meest onderzochte Chinese slaapkruid',
+      note: '🌿 Specialty Chinese kruiden winkels (affiliate potentieel): tcmkruiden.nl · chinaherbs.nl · meridian-tcm.nl — neem contact op voor affiliate samenwerking.',
+      brands: [
+        { name:'Dragon Herbs Zizyphus Formula', sub:'500mg extract · 100 caps · TCM-specialist', dose:'2 caps', price:'~€18/mnd', score:80, cls:'', best:true,
+          stores:{bol:stores.bol('suan+zao+ren+capsules'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('dragon+herbs+zizyphus')} },
+        { name:'Plum Flower Suan Zao Ren', sub:'500mg · 100 tabs · TCM-kwaliteitsmerk', dose:'2 tabs', price:'~€14/mnd', score:76, cls:'mid', best:false,
+          stores:{bol:stores.bol('suan+zao+ren+ziziphus+slaap'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('plum+flower+suan+zao+ren')} },
+        { name:"Nature's Answer Ziziphus Seed", sub:'400mg extract · 60 caps', dose:'2 caps', price:'~€12/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('ziziphus+jujuba+slaap+capsules'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('ziziphus+seed+extract')} },
+      ]
+    },
+    schisandra: {
+      title: 'Schisandra — Merken vergelijking',
+      sub: 'Schisandra chinensis (Wu Wei Zi) — adaptogeen voor stress en slaapkwaliteit',
+      note: '🌿 Specialty Chinese kruiden winkels (affiliate potentieel): tcmkruiden.nl · chinaherbs.nl · meridian-tcm.nl — neem contact op voor affiliate samenwerking.',
+      brands: [
+        { name:"Nature's Way Schisandra Standardized", sub:'570mg extract · 60 caps · gestandaardiseerd', dose:'1 cap', price:'~€10/mnd', score:76, cls:'', best:true,
+          stores:{bol:stores.bol('natures+way+schisandra+extract'), amz:null, vit:null, hb:stores.hb('schisandra'), dr:null, iherb:stores.iherb('natures+way+schisandra')} },
+        { name:'NOW Foods Schisandra Extract', sub:'500mg · 90 vcaps', dose:'1 cap', price:'~€9/mnd', score:74, cls:'mid', best:false,
+          stores:{bol:stores.bol('now+foods+schisandra+extract'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('now+schisandra+extract')} },
+        { name:'Solgar Schisandra Berry Extract', sub:'250mg · 60 vcaps · premium', dose:'1 cap', price:'~€16/mnd', score:72, cls:'mid', best:false,
+          stores:{bol:stores.bol('solgar+schisandra+berry'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('solgar+schisandra')} },
+      ]
+    },
+    heHuanPi: {
+      title: 'He Huan Pi — Merken vergelijking',
+      sub: 'Albizia julibrissin — "boom van geluk", TCM-kruid bij angst en emotionele onrust',
+      note: '🌿 He Huan Pi is minder gangbaar in grote ketens. Beste kansen bij specialty TCM winkels: tcmkruiden.nl · chinaherbs.nl — ideale shops voor affiliate outreach.',
+      brands: [
+        { name:'Dragon Herbs He Huan Pi', sub:'500mg · 100 caps · TCM-specialist', dose:'2 caps', price:'~€16/mnd', score:72, cls:'mid', best:true,
+          stores:{bol:stores.bol('albizia+julibrissin+capsules'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('dragon+herbs+he+huan+pi')} },
+        { name:'Herb Pharm Albizia', sub:'Vloeibaar extract · 30ml tinctuur', dose:'1ml', price:'~€12/mnd', score:68, cls:'low', best:false,
+          stores:{bol:null, amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('herb+pharm+albizia')} },
+      ]
+    },
+    yuanZhi: {
+      title: 'Yuan Zhi — Merken vergelijking',
+      sub: 'Polygala tenuifolia — TCM-kruid voor diepe slaap en cognitief herstel',
+      note: '🌿 Yuan Zhi is voornamelijk beschikbaar bij TCM-specialisten. Overweeg affiliate contact met: tcmkruiden.nl · chinaherbs.nl · meridian-tcm.nl.',
+      brands: [
+        { name:'Dragon Herbs Yuan Zhi', sub:'500mg extract · 100 caps · TCM-specialist', dose:'2 caps', price:'~€18/mnd', score:72, cls:'mid', best:true,
+          stores:{bol:stores.bol('polygala+tenuifolia+capsules'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('dragon+herbs+yuan+zhi')} },
+        { name:'Plum Flower Polygala Root', sub:'500mg · 100 tabs', dose:'2 tabs', price:'~€14/mnd', score:68, cls:'low', best:false,
+          stores:{bol:stores.bol('polygala+root+slaap'), amz:null, vit:null, hb:null, dr:null, iherb:stores.iherb('plum+flower+polygala')} },
+      ]
+    },
     zaagpalm: {
       title: 'Zaagpalmetto — Merken vergelijking',
       sub: 'Bij prostaat en nachtplassen bij mannen',
@@ -2951,6 +3000,7 @@ const stores = {
         b.stores.vit   ? `<a href="${b.stores.vit}"   target="_blank" rel="noopener sponsored" class="store-btn vit">Vitaminstore</a>`    : '<span class="store-na">—</span>',
         b.stores.hb    ? `<a href="${b.stores.hb}"    target="_blank" rel="noopener sponsored" class="store-btn hb">H&B</a>`              : '<span class="store-na">—</span>',
         b.stores.dr    ? `<a href="${b.stores.dr}"    target="_blank" rel="noopener sponsored" class="store-btn dr">Drogisterij</a>`      : '<span class="store-na">—</span>',
+        b.stores.iherb ? `<a href="${b.stores.iherb}" target="_blank" rel="noopener sponsored" class="store-btn vit">iHerb</a>`           : '<span class="store-na">—</span>',
       ];
       return `<tr>
         <td>
@@ -2977,6 +3027,7 @@ const stores = {
           <th style="text-align:center">Vitaminstore</th>
           <th style="text-align:center">H&amp;B</th>
           <th style="text-align:center">Drogisterij</th>
+          <th style="text-align:center">iHerb</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
