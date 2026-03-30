@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main pages -->
-  <url><loc>https://bestslaapadvies.nl/</loc><priority>1.0</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/</loc><priority>0.9</priority></url>
-  <url><loc>https://bestslaapadvies.nl/gids/</loc><priority>0.9</priority></url>
-  <url><loc>https://bestslaapadvies.nl/ontspanning/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/media/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/</loc><priority>1.0</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/</loc><priority>0.9</priority></url>
+  <url><loc>https://besteslaapadvies.nl/gids/</loc><priority>0.9</priority></url>
+  <url><loc>https://besteslaapadvies.nl/ontspanning/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/media/</loc><priority>0.8</priority></url>
 
   <!-- Alternatieven -->
-  <url><loc>https://bestslaapadvies.nl/alternatieven/ayurveda/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/ayurveda/</loc><priority>0.8</priority></url>
 
   <!-- Acupunctuur -->
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/</loc><priority>0.9</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/amsterdam/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/den-haag/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/eindhoven/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/enschede/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/haarlem/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/hengelo/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/leiden/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/rotterdam/</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/alternatieven/acupunctuur/utrecht/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/</loc><priority>0.9</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/amsterdam/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/den-haag/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/eindhoven/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/enschede/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/haarlem/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/hengelo/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/leiden/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/rotterdam/</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/alternatieven/acupunctuur/utrecht/</loc><priority>0.8</priority></url>
 
   <!-- Supplementen artikelen -->
-  <url><loc>https://bestslaapadvies.nl/supplementen/melatonine-slaap.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/beste-magnesium-slaap.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/magnesium-glycinaat-vs-citraat.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/ashwagandha-slaap.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/l-theanine-slaap.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/cbd-olie-slaap.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/valeriaan-review.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/supplement-combinaties.html</loc><priority>0.7</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/alternatieven-melatonine.html</loc><priority>0.7</priority></url>
-  <url><loc>https://bestslaapadvies.nl/supplementen/supplementen-vrouwen-40.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/melatonine-slaap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/beste-magnesium-slaap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/magnesium-glycinaat-vs-citraat.html</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/ashwagandha-slaap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/l-theanine-slaap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/cbd-olie-slaap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/valeriaan-review.html</loc><priority>0.8</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/supplement-combinaties.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/alternatieven-melatonine.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/supplementen/supplementen-vrouwen-40.html</loc><priority>0.7</priority></url>
 
   <!-- Slaapgids artikelen -->
-  <url><loc>https://bestslaapadvies.nl/gids/slaaphygiene.html</loc><priority>0.7</priority></url>
-  <url><loc>https://bestslaapadvies.nl/gids/hoeveel-slaap.html</loc><priority>0.7</priority></url>
-  <url><loc>https://bestslaapadvies.nl/gids/slaap-stress.html</loc><priority>0.7</priority></url>
-  <url><loc>https://bestslaapadvies.nl/gids/slaap-beweging.html</loc><priority>0.7</priority></url>
-  <url><loc>https://bestslaapadvies.nl/gids/slaap-menopauze.html</loc><priority>0.7</priority></url>
-  <url><loc>https://bestslaapadvies.nl/gids/slaapsupplementen-veilig.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/gids/slaaphygiene.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/gids/hoeveel-slaap.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/gids/slaap-stress.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/gids/slaap-beweging.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/gids/slaap-menopauze.html</loc><priority>0.7</priority></url>
+  <url><loc>https://besteslaapadvies.nl/gids/slaapsupplementen-veilig.html</loc><priority>0.7</priority></url>
 
   <!-- Overige -->
-  <url><loc>https://bestslaapadvies.nl/contact.html</loc><priority>0.5</priority></url>
-  <url><loc>https://bestslaapadvies.nl/privacy.html</loc><priority>0.4</priority></url>
-  <url><loc>https://bestslaapadvies.nl/disclaimer.html</loc><priority>0.4</priority></url>
+  <url><loc>https://besteslaapadvies.nl/contact.html</loc><priority>0.5</priority></url>
+  <url><loc>https://besteslaapadvies.nl/privacy.html</loc><priority>0.4</priority></url>
+  <url><loc>https://besteslaapadvies.nl/disclaimer.html</loc><priority>0.4</priority></url>
 </urlset>
