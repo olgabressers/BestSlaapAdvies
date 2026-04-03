@@ -74,6 +74,20 @@
     .home { display: inline-block; margin-top: 28px; font-size: 13px; color: #6b7280; text-decoration: none; }
     .home:hover { color: #111827; }
     @media(max-width:600px){ .task-right { display: none; } }
+
+    /* Filter bar */
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; align-items: center; }
+    .filter-bar-label { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: .5px; margin-right: 4px; }
+    .filter-pill { font-size: 11px; font-weight: 700; padding: 5px 13px; border-radius: 20px; cursor: pointer; border: 1.5px solid transparent; transition: all .15s; user-select: none; }
+    .filter-pill.all     { background: #0f2340; color: white; border-color: #0f2340; }
+    .filter-pill.blocker { background: rgba(192,33,34,.09); color: #c02122; border-color: rgba(192,33,34,.25); }
+    .filter-pill.urgent  { background: rgba(192,33,34,.09); color: #c02122; border-color: rgba(192,33,34,.25); }
+    .filter-pill.week    { background: rgba(184,134,11,.09); color: #b8860b; border-color: rgba(184,134,11,.25); }
+    .filter-pill.later   { background: #f3f4f6; color: #6b7280; border-color: #e5e7eb; }
+    .filter-pill.done-filter { background: rgba(26,143,76,.09); color: #1a8f4c; border-color: rgba(26,143,76,.25); }
+    .filter-pill:not(.all):not(.active) { opacity: .55; }
+    .filter-pill.active  { opacity: 1; box-shadow: 0 0 0 2px currentColor; }
+    .task-row.hidden { display: none; }
   </style>
 </head>
 <body>
@@ -84,6 +98,17 @@
   <h1>Open Actions & Task Tracker</h1>
   <p class="meta">Admin view · Not indexed by Google · April 2026</p>
   <p class="notice">Check off tasks as completed — progress is saved in your browser. Click any link for direct access to the external service.</p>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-bar-label">Show:</span>
+    <span class="filter-pill all active" onclick="filterTasks('all')">All tasks</span>
+    <span class="filter-pill blocker active" onclick="filterTasks('blocker')">⚡ Blocker — do first</span>
+    <span class="filter-pill urgent active" onclick="filterTasks('urgent')">🔴 Urgent — do now</span>
+    <span class="filter-pill week active" onclick="filterTasks('week')">🟡 This week</span>
+    <span class="filter-pill later active" onclick="filterTasks('later')">⬜ Later / backlog</span>
+    <span class="filter-pill done-filter active" onclick="filterTasks('done')">✓ Done</span>
+  </div>
 
   <!-- PROGRESS -->
   <div class="progress-summary">
@@ -123,7 +148,7 @@
       <div class="block-icon">⚙️</div>
       <div><h2>Technical & Domain</h2><div class="sub">Cloudflare, redirect, domain migration</div></div>
     </div>
-    <div class="task-row" data-id="cf1" data-cat="tech">
+    <div class="task-row" data-id="cf1" data-priority="urgent" data-cat="tech">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://cloudflare.com" target="_blank">Set up Cloudflare for bestslaapadvies.nl →</a></div>
@@ -132,7 +157,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-urgent">⚡ Urgent</span></div>
     </div>
-    <div class="task-row" data-id="cf2" data-cat="tech">
+    <div class="task-row" data-id="cf2" data-priority="week" data-cat="tech">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://search.google.com/search-console" target="_blank">Google Search Console — complete Change of Address →</a></div>
@@ -141,7 +166,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-soon">After step 1</span></div>
     </div>
-    <div class="task-row" data-id="cf3" data-cat="tech">
+    <div class="task-row" data-id="cf3" data-priority="blocker" data-cat="tech">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://improvmx.com" target="_blank">Set up email info@besteslaapadvies.nl via ImprovMX →</a></div>
@@ -158,7 +183,7 @@
       <div class="block-icon">🔍</div>
       <div><h2>SEO & Google Indexing</h2><div class="sub">Search Console, sitemap, indexing requests</div></div>
     </div>
-    <div class="task-row" data-id="seo1" data-cat="seo">
+    <div class="task-row" data-id="seo1" data-priority="urgent" data-cat="seo">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://search.google.com/search-console" target="_blank">Submit sitemap for besteslaapadvies.nl →</a></div>
@@ -167,7 +192,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-urgent">⚡ Urgent</span></div>
     </div>
-    <div class="task-row" data-id="seo2" data-cat="seo">
+    <div class="task-row" data-id="seo2" data-priority="week" data-cat="seo">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title">Submit indexing requests for key pages</div>
@@ -176,7 +201,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-soon">This week</span></div>
     </div>
-    <div class="task-row" data-id="seo3" data-cat="seo">
+    <div class="task-row" data-id="seo3" data-priority="later" data-cat="seo">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://adsense.google.com" target="_blank">Apply for Google AdSense →</a></div>
@@ -193,7 +218,7 @@
       <div class="block-icon">💶</div>
       <div><h2>Affiliate Programs</h2><div class="sub">Apply in order — email address required for most · see <a href="/admin/affiliates.html" style="color:#1a6b8a">full affiliate overview →</a></div></div>
     </div>
-    <div class="task-row" data-id="aff1" data-cat="aff">
+    <div class="task-row" data-id="aff1" data-priority="urgent" data-cat="aff">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://ui.awin.com/merchant-profile/76734" target="_blank">iHerb — apply via Awin (merchant #76734) →</a></div>
@@ -202,7 +227,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-urgent">⚡ Now</span></div>
     </div>
-    <div class="task-row" data-id="aff2" data-cat="aff">
+    <div class="task-row" data-id="aff2" data-priority="urgent" data-cat="aff">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://affiliate.bol.com" target="_blank">Apply to Bol.com Partners →</a></div>
@@ -211,7 +236,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-urgent">⚡ Email first</span></div>
     </div>
-    <div class="task-row" data-id="aff3" data-cat="aff">
+    <div class="task-row" data-id="aff3" data-priority="week" data-cat="aff">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://daisycon.com" target="_blank">Apply to Daisycon →</a></div>
@@ -220,7 +245,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-soon">Step 2</span></div>
     </div>
-    <div class="task-row" data-id="aff4" data-cat="aff">
+    <div class="task-row" data-id="aff4" data-priority="week" data-cat="aff">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://affiliate-program.amazon.nl" target="_blank">Apply to Amazon Associates NL →</a></div>
@@ -229,7 +254,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-soon">Step 2</span></div>
     </div>
-    <div class="task-row" data-id="aff5" data-cat="aff">
+    <div class="task-row" data-id="aff5" data-priority="later" data-cat="aff">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title">Activate Vitaminstore & Holland & Barrett inside Daisycon</div>
@@ -238,7 +263,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-later">Step 3</span></div>
     </div>
-    <div class="task-row" data-id="aff6" data-cat="aff">
+    <div class="task-row" data-id="aff6" data-priority="week" data-cat="aff">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="mailto:info@chineseapotheek.nl">Email ChineseApotheek.nl — direct affiliate proposal →</a></div>
@@ -247,7 +272,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-soon">Direct contact</span></div>
     </div>
-    <div class="task-row" data-id="aff7" data-cat="aff">
+    <div class="task-row" data-id="aff7" data-priority="week" data-cat="aff">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="mailto:info@tcmshops.com">Email TCMshops.com (Amsterdam) — direct affiliate proposal →</a></div>
@@ -264,7 +289,7 @@
       <div class="block-icon">✉️</div>
       <div><h2>Email & Communication</h2><div class="sub">Professional email — required before affiliate applications</div></div>
     </div>
-    <div class="task-row" data-id="email1" data-cat="email">
+    <div class="task-row" data-id="email1" data-priority="blocker" data-cat="email">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://improvmx.com" target="_blank">Set up info@besteslaapadvies.nl via ImprovMX →</a></div>
@@ -281,7 +306,7 @@
       <div class="block-icon">✍️</div>
       <div><h2>Content & Pages</h2><div class="sub">Pages and sections still to be added to the site</div></div>
     </div>
-    <div class="task-row" data-id="con1" data-cat="content">
+    <div class="task-row" data-id="con1" data-priority="later" data-cat="content">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://besteslaapadvies.nl/alternatieven/ayurveda/" target="_blank">Ayurveda — add city practice pages →</a></div>
@@ -290,7 +315,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-later">Backlog</span></div>
     </div>
-    <div class="task-row" data-id="con2" data-cat="content">
+    <div class="task-row" data-id="con2" data-priority="week" data-cat="content">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title"><a href="https://besteslaapadvies.nl/ontspanning/" target="_blank">Ontspanning — check compare modal buttons →</a></div>
@@ -299,7 +324,7 @@
       </div>
       <div class="task-right"><span class="deadline dl-soon">Check</span></div>
     </div>
-    <div class="task-row" data-id="con3" data-cat="content">
+    <div class="task-row" data-id="con3" data-priority="later" data-cat="content">
       <div class="task-cb" onclick="toggle(this)"></div>
       <div class="task-body">
         <div class="task-title">Add more acupuncture cities</div>
@@ -314,6 +339,7 @@
 
 </div>
 <script>
+  // Restore saved checkbox state
   document.querySelectorAll('.task-row').forEach(row => {
     const id = row.dataset.id;
     if (localStorage.getItem('bsa_task_' + id) === 'done') {
@@ -344,6 +370,38 @@
     });
   }
   updateProgress();
+
+  // Filter by priority tag
+  function filterTasks(filter) {
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(p => p.classList.remove('active'));
+    const clicked = document.querySelector(`.filter-pill.${filter}`);
+    if (clicked) clicked.classList.add('active');
+
+    document.querySelectorAll('.task-row').forEach(row => {
+      const pri = row.dataset.priority;
+      const isDone = row.classList.contains('done');
+      if (filter === 'all') {
+        row.classList.remove('hidden');
+      } else if (filter === 'done') {
+        row.classList.toggle('hidden', !isDone);
+      } else if (filter === 'blocker') {
+        row.classList.toggle('hidden', pri !== 'blocker');
+      } else if (filter === 'urgent') {
+        row.classList.toggle('hidden', pri !== 'urgent' && pri !== 'blocker');
+      } else if (filter === 'week') {
+        row.classList.toggle('hidden', pri !== 'week');
+      } else if (filter === 'later') {
+        row.classList.toggle('hidden', pri !== 'later');
+      }
+    });
+
+    // Show/hide blocks with no visible rows
+    document.querySelectorAll('.block').forEach(block => {
+      const visibleRows = Array.from(block.querySelectorAll('.task-row')).filter(r => !r.classList.contains('hidden'));
+      block.style.display = visibleRows.length ? '' : 'none';
+    });
+  }
 </script>
 </body>
 </html>
