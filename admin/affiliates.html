@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Affiliate Programs Overview — BesteSlaapAdvies.nl</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #111827; line-height: 1.6; padding: 40px 24px 80px; }
+    .wrapper { max-width: 980px; margin: 0 auto; }
+    .top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .logo { font-size: 20px; font-weight: 800; color: #1a6b8a; }
+    h1 { font-size: 22px; font-weight: 800; color: #0f2340; margin-bottom: 4px; }
+    .meta { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+    .notice { background: #fef9c3; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #92400e; margin-bottom: 36px; }
+
+    /* Summary strip */
+    .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px; }
+    .sum-card { background: white; border-radius: 12px; padding: 16px 18px; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    .sum-label { font-size: 11px; color: #9ca3af; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+    .sum-val { font-size: 22px; font-weight: 800; color: #0f2340; margin-top: 4px; }
+    .sum-sub { font-size: 11px; color: #6b7280; margin-top: 2px; }
+    @media(max-width:700px){ .summary { grid-template-columns: repeat(2,1fr); } }
+
+    /* Blocks */
+    .block { background: white; border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.08); margin-bottom: 28px; overflow: hidden; }
+    .block-header { display: flex; align-items: center; gap: 14px; padding: 18px 24px; border-bottom: 1px solid #e5e7eb; }
+    .block-icon { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .block-header h2 { font-size: 15px; font-weight: 800; color: #0f2340; }
+    .block-header .sub { font-size: 12px; color: #9ca3af; margin-top: 1px; }
+
+    /* Affiliate rows */
+    .aff-row { display: grid; grid-template-columns: 1fr 90px 90px 120px 100px; gap: 16px; align-items: start; padding: 15px 24px; border-bottom: 1px solid #f3f4f6; transition: background .1s; }
+    .aff-row:last-child { border-bottom: none; }
+    .aff-row:hover { background: #f9fafb; }
+    .aff-row.header { background: #f9fafb; font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: .5px; padding: 10px 24px; }
+    .aff-name { font-size: 14px; font-weight: 700; color: #0f2340; }
+    .aff-name a { color: #1a6b8a; text-decoration: none; }
+    .aff-name a:hover { text-decoration: underline; }
+    .aff-note { font-size: 12px; color: #6b7280; margin-top: 3px; line-height: 1.5; }
+    .aff-req { font-size: 11.5px; color: #6b7280; }
+    .aff-commission { font-size: 13px; font-weight: 700; color: #1a8f4c; }
+    .aff-cookie { font-size: 12px; color: #6b7280; }
+    .aff-network { font-size: 12px; color: #6b7280; }
+    @media(max-width:800px){
+      .aff-row { grid-template-columns: 1fr; }
+      .aff-row.header { display: none; }
+    }
+
+    /* Status badges */
+    .status { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px; white-space: nowrap; margin-top: 5px; }
+    .s-now    { background: rgba(192,33,34,.09); color: #c02122; }
+    .s-soon   { background: rgba(184,134,11,.09); color: #b8860b; }
+    .s-pending { background: #e0f2fe; color: #0369a1; }
+    .s-direct { background: #ede9fe; color: #5b21b6; }
+    .s-later  { background: #f3f4f6; color: #9ca3af; }
+
+    /* Tags */
+    .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; letter-spacing: .3px; white-space: nowrap; }
+    .tag-nl  { background: #d1fae5; color: #065f46; }
+    .tag-int { background: #dbeafe; color: #1e40af; }
+    .tag-tcm { background: #fef3c7; color: #92400e; }
+
+    .b-main .block-icon  { background: #d1fae5; }
+    .b-net .block-icon   { background: #e0f2fe; }
+    .b-tcm .block-icon   { background: #fef3c7; }
+    .b-order .block-icon { background: #ede9fe; }
+
+    /* Application order */
+    .order-list { counter-reset: step; }
+    .order-item { display: flex; gap: 14px; padding: 14px 24px; border-bottom: 1px solid #f3f4f6; align-items: flex-start; }
+    .order-item:last-child { border-bottom: none; }
+    .order-num { width: 28px; height: 28px; border-radius: 50%; background: #1a6b8a; color: white; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .order-body { flex: 1; }
+    .order-title { font-size: 14px; font-weight: 700; color: #0f2340; }
+    .order-title a { color: #1a6b8a; text-decoration: none; }
+    .order-title a:hover { text-decoration: underline; }
+    .order-note { font-size: 12.5px; color: #6b7280; margin-top: 3px; }
+
+    .home { display: inline-block; margin-top: 28px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .home:hover { color: #111827; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 11.5px; font-family: monospace; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="top"><div class="logo">BesteSlaapAdvies.nl</div></div>
+  <h1>Affiliate Programs Overview</h1>
+  <p class="meta">Admin view · Not indexed by Google · April 2026</p>
+  <p class="notice">⚠ Before applying to Bol.com, Daisycon, or Amazon — set up <strong>info@besteslaapadvies.nl</strong> via ImprovMX first. All major programs require a professional email on the site's domain.</p>
+
+  <!-- Summary -->
+  <div class="summary">
+    <div class="sum-card">
+      <div class="sum-label">Programs found</div>
+      <div class="sum-val">8</div>
+      <div class="sum-sub">Researched & documented</div>
+    </div>
+    <div class="sum-card">
+      <div class="sum-label">Apply now</div>
+      <div class="sum-val">3</div>
+      <div class="sum-sub">iHerb, Bol.com, Amazon</div>
+    </div>
+    <div class="sum-card">
+      <div class="sum-label">Direct outreach</div>
+      <div class="sum-val">2</div>
+      <div class="sum-sub">ChineseApotheek, TCMshops</div>
+    </div>
+    <div class="sum-card">
+      <div class="sum-label">Est. avg commission</div>
+      <div class="sum-val">6%</div>
+      <div class="sum-sub">Across all programs</div>
+    </div>
+  </div>
+
+  <!-- MAIN DUTCH PROGRAMS -->
+  <div class="block b-main">
+    <div class="block-header">
+      <div class="block-icon">🛒</div>
+      <div>
+        <h2>Main Dutch Affiliate Programs</h2>
+        <div class="sub">Apply in this order — each unlocks the next</div>
+      </div>
+    </div>
+    <div class="aff-row header">
+      <div>Program</div>
+      <div>Commission</div>
+      <div>Cookie</div>
+      <div>Network</div>
+      <div>Status</div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name"><a href="https://affiliate.bol.com" target="_blank">Bol.com Partners →</a> <span class="tag tag-nl">NL</span></div>
+        <div class="aff-note">Largest Dutch e-commerce platform. Already linked across all supplement cards on the site. High approval rate for new sites. Requires KVK number, IBAN, and domain email. Apply first — it unlocks credibility for other programs.</div>
+        <div><span class="status s-now">⚡ Apply first</span></div>
+      </div>
+      <div><div class="aff-commission">~8%</div><div class="aff-note">Health & beauty category</div></div>
+      <div><div class="aff-cookie">30 days</div></div>
+      <div><div class="aff-network">Direct<br/><span style="font-size:11px">affiliate.bol.com</span></div></div>
+      <div><div class="aff-req">KVK + IBAN + info@ email required</div></div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name"><a href="https://daisycon.com" target="_blank">Daisycon →</a> <span class="tag tag-nl">NL</span></div>
+        <div class="aff-note">Main Dutch affiliate network. Gateway to Vitaminstore, Holland & Barrett NL, and dozens of other Dutch health/wellness brands. Apply after Bol.com is approved — use that as a reference.</div>
+        <div><span class="status s-soon">Step 2</span></div>
+      </div>
+      <div><div class="aff-commission">Varies</div><div class="aff-note">Per merchant</div></div>
+      <div><div class="aff-cookie">30 days</div></div>
+      <div><div class="aff-network">Network<br/><span style="font-size:11px">daisycon.com</span></div></div>
+      <div><div class="aff-req">Domain email required</div></div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name"><a href="https://affiliate-program.amazon.nl" target="_blank">Amazon Associates NL →</a> <span class="tag tag-nl">NL</span></div>
+        <div class="aff-note">Dutch Amazon program. Lower commissions than Bol.com but useful for international brands (NOW Foods, Solgar, Natrol etc) that appear in the compare modals. Apply alongside Daisycon.</div>
+        <div><span class="status s-soon">Step 2</span></div>
+      </div>
+      <div><div class="aff-commission">3–5%</div><div class="aff-note">Health products</div></div>
+      <div><div class="aff-cookie">24 hours</div></div>
+      <div><div class="aff-network">Direct<br/><span style="font-size:11px">affiliate-program.amazon.nl</span></div></div>
+      <div><div class="aff-req">Domain email required</div></div>
+    </div>
+
+  </div>
+
+  <!-- VIA DAISYCON -->
+  <div class="block b-net">
+    <div class="block-header">
+      <div class="block-icon">🔗</div>
+      <div>
+        <h2>Via Daisycon — Activate After Joining</h2>
+        <div class="sub">Search these merchants inside Daisycon after your account is approved</div>
+      </div>
+    </div>
+    <div class="aff-row header">
+      <div>Merchant</div>
+      <div>Commission</div>
+      <div>Cookie</div>
+      <div>Find in Daisycon</div>
+      <div>Status</div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name">Vitaminstore <span class="tag tag-nl">NL</span></div>
+        <div class="aff-note">Dutch vitamin & supplement specialist. Carries Vitakruid, NOW Foods, Solgar, Doctor's Best. Already referenced in compare modals — activate to earn on those clicks.</div>
+        <div><span class="status s-later">After Daisycon</span></div>
+      </div>
+      <div><div class="aff-commission">~5–7%</div></div>
+      <div><div class="aff-cookie">30 days</div></div>
+      <div><div class="aff-network">Search "Vitaminstore" in Daisycon merchant list</div></div>
+      <div><div class="aff-req">Daisycon account required</div></div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name">Holland & Barrett NL <span class="tag tag-nl">NL</span></div>
+        <div class="aff-note">Major health retailer with NL stores and webshop. Carries Solgar, valerian, L-theanine, passionflower, schisandra. Good match for the site's herbal supplement section.</div>
+        <div><span class="status s-later">After Daisycon</span></div>
+      </div>
+      <div><div class="aff-commission">~6%</div></div>
+      <div><div class="aff-cookie">30 days</div></div>
+      <div><div class="aff-network">Search "Holland & Barrett" in Daisycon merchant list</div></div>
+      <div><div class="aff-req">Daisycon account required</div></div>
+    </div>
+
+  </div>
+
+  <!-- INTERNATIONAL -->
+  <div class="block b-net">
+    <div class="block-header">
+      <div class="block-icon">🌍</div>
+      <div>
+        <h2>International Programs</h2>
+        <div class="sub">Self-service — no approval wait time</div>
+      </div>
+    </div>
+    <div class="aff-row header">
+      <div>Program</div>
+      <div>Commission</div>
+      <div>Cookie</div>
+      <div>Network</div>
+      <div>Status</div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name"><a href="https://ui.awin.com/merchant-profile/76734" target="_blank">iHerb — via Awin (merchant #76734) →</a> <span class="tag tag-int">International</span></div>
+        <div class="aff-note">Large international supplement retailer. Ships to NL and BE. Best source for Chinese herbs (Dragon Herbs, Plum Flower brands) and imported supplements (NOW Foods, Herb Pharm). Already added as 6th column in all compare modals. Sign up on Awin — self-service, instant access.</div>
+        <div><span class="status s-now">⚡ Apply now</span></div>
+      </div>
+      <div><div class="aff-commission">5%</div><div class="aff-note">10% first 3 months</div></div>
+      <div><div class="aff-cookie">7 days</div></div>
+      <div><div class="aff-network">Awin<br/><span style="font-size:11px">awin.com</span></div></div>
+      <div><div class="aff-req">Self-service · No KVK needed</div></div>
+    </div>
+
+  </div>
+
+  <!-- TCM DIRECT OUTREACH -->
+  <div class="block b-tcm">
+    <div class="block-header">
+      <div class="block-icon">🌿</div>
+      <div>
+        <h2>Chinese Herb Specialists — Direct Outreach</h2>
+        <div class="sub">No public affiliate program — approach directly with a private commission proposal</div>
+      </div>
+    </div>
+    <div class="aff-row header">
+      <div>Shop</div>
+      <div>Proposed commission</div>
+      <div>Affiliate program</div>
+      <div>Contact</div>
+      <div>Status</div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name"><a href="https://www.chineseapotheek.nl" target="_blank">ChineseApotheek.nl →</a> <span class="tag tag-tcm">TCM</span></div>
+        <div class="aff-note">100% TCM-focused Dutch webshop. Organised by health concern (sleep, digestion, skin). Ships NL €4.80 / BE €7.50, free above €100. No public affiliate program — best candidate for a private deal. Use the email template in Affiliate_Action_Chinese_Kruiden.docx.</div>
+        <div><span class="status s-direct">Direct contact</span></div>
+      </div>
+      <div><div class="aff-commission">Propose 5–10%</div></div>
+      <div><div class="aff-note">None found on Daisycon, Awin, or TradeTracker</div></div>
+      <div><div class="aff-network"><a href="mailto:info@chineseapotheek.nl">info@chineseapotheek.nl</a></div></div>
+      <div><div class="aff-req">Email template ready in Word doc</div></div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name"><a href="https://tcmshops.com" target="_blank">TCMshops.com →</a> <span class="tag tag-tcm">TCM</span></div>
+        <div class="aff-note">Physical store in Amsterdam (Geldersekade 67) plus online shop. Carries patent medicines, granules, dried herbs, acupuncture supplies. Ships within Europe. No public affiliate program. Same direct outreach approach as ChineseApotheek.</div>
+        <div><span class="status s-direct">Direct contact</span></div>
+      </div>
+      <div><div class="aff-commission">Propose 5–10%</div></div>
+      <div><div class="aff-note">None found on Daisycon, Awin, or TradeTracker</div></div>
+      <div><div class="aff-network"><a href="mailto:info@tcmshops.com">info@tcmshops.com</a></div></div>
+      <div><div class="aff-req">Email template ready in Word doc</div></div>
+    </div>
+
+    <div class="aff-row">
+      <div>
+        <div class="aff-name"><a href="https://www.euroherbsshop.nl" target="_blank">EuroherbsPharmacy (euroherbsshop.nl) →</a> <span class="tag tag-tcm">TCM</span></div>
+        <div class="aff-note">Professional-grade TCM pharmacy in Simpelveld, NL. Carries Chinese granule formulas (KAN, KP, Sanjiao), single herbs, acupuncture supplies. Primarily B2B / practitioners. Less likely to do consumer affiliate deals, but worth a try once the site has more traffic.</div>
+        <div><span class="status s-later">Later</span></div>
+      </div>
+      <div><div class="aff-commission">Propose 5%</div></div>
+      <div><div class="aff-note">None found · B2B focus</div></div>
+      <div><div class="aff-network"><a href="https://www.euroherbsshop.nl" target="_blank">Contact form on site</a></div></div>
+      <div><div class="aff-req">Wait for more traffic first</div></div>
+    </div>
+
+  </div>
+
+  <!-- APPLICATION ORDER -->
+  <div class="block b-order">
+    <div class="block-header">
+      <div class="block-icon">📋</div>
+      <div>
+        <h2>Recommended Application Order</h2>
+        <div class="sub">Follow this sequence — each step enables the next</div>
+      </div>
+    </div>
+    <div class="order-list">
+      <div class="order-item">
+        <div class="order-num">1</div>
+        <div class="order-body">
+          <div class="order-title"><a href="https://improvmx.com" target="_blank">Set up info@besteslaapadvies.nl via ImprovMX →</a></div>
+          <div class="order-note">Free email forwarding to Gmail. Required by Bol.com, Daisycon and Amazon before they will approve your application. Takes 10 minutes.</div>
+        </div>
+      </div>
+      <div class="order-item">
+        <div class="order-num">2</div>
+        <div class="order-body">
+          <div class="order-title"><a href="https://ui.awin.com/merchant-profile/76734" target="_blank">Apply to iHerb via Awin (merchant #76734) →</a></div>
+          <div class="order-note">Self-service. No domain email required. Do this immediately — links already in the site's compare modals.</div>
+        </div>
+      </div>
+      <div class="order-item">
+        <div class="order-num">3</div>
+        <div class="order-body">
+          <div class="order-title"><a href="https://affiliate.bol.com" target="_blank">Apply to Bol.com Partners →</a></div>
+          <div class="order-note">Requires KVK + IBAN + info@ email. Highest priority Dutch program — most products on the site already link to Bol.com.</div>
+        </div>
+      </div>
+      <div class="order-item">
+        <div class="order-num">4</div>
+        <div class="order-body">
+          <div class="order-title"><a href="https://daisycon.com" target="_blank">Apply to Daisycon →</a> + <a href="https://affiliate-program.amazon.nl" target="_blank">Amazon Associates NL →</a></div>
+          <div class="order-note">Apply to both simultaneously once Bol.com is approved. Daisycon unlocks Vitaminstore and Holland & Barrett.</div>
+        </div>
+      </div>
+      <div class="order-item">
+        <div class="order-num">5</div>
+        <div class="order-body">
+          <div class="order-title">Activate Vitaminstore + Holland & Barrett inside Daisycon</div>
+          <div class="order-note">Once Daisycon account is live, search both merchants and request activation.</div>
+        </div>
+      </div>
+      <div class="order-item">
+        <div class="order-num">6</div>
+        <div class="order-body">
+          <div class="order-title">Email ChineseApotheek.nl and TCMshops.com directly</div>
+          <div class="order-note">Use the email template in <code>Affiliate_Action_Chinese_Kruiden.docx</code>. Propose 5–10% commission on referred sales.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="/admin.html" class="home">← Back to Admin Index</a>
+</div>
+</body>
+</html>
