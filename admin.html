@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Admin — BesteSlaapAdvies.nl</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f1f5f9; color: #111827; line-height: 1.6; padding: 40px 24px 80px; }
+    .wrapper { max-width: 960px; margin: 0 auto; }
+
+    /* Header */
+    .top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .logo-main { font-size: 20px; font-weight: 800; color: #1a6b8a; }
+    .logo-sub  { font-size: 11px; font-weight: 800; color: #1a2e3b; letter-spacing: 3px; text-transform: uppercase; }
+    h1 { font-size: 20px; font-weight: 800; color: #1a2e3b; margin-bottom: 4px; }
+    .meta { font-size: 13px; color: #6b7280; margin-bottom: 10px; }
+    .notice { background: #fef9c3; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #92400e; margin-bottom: 32px; }
+
+    /* Progress summary */
+    .progress-summary { background: white; border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.08); padding: 20px 24px; margin-bottom: 28px; }
+    .progress-summary h3 { font-size: 13px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 14px; }
+    .prog-rows { display: flex; flex-direction: column; gap: 10px; }
+    .prog-row { display: flex; align-items: center; gap: 12px; }
+    .prog-label { font-size: 12px; color: #6b7280; width: 140px; flex-shrink: 0; }
+    .prog-bar-wrap { flex: 1; background: #e5e7eb; border-radius: 6px; height: 7px; overflow: hidden; }
+    .prog-bar-fill { height: 100%; border-radius: 6px; background: #1a6b8a; transition: width .4s; }
+    .prog-count { font-size: 11px; color: #9ca3af; width: 40px; text-align: right; flex-shrink: 0; }
+
+    /* Blocks */
+    .block { background: white; border-radius: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.08); margin-bottom: 24px; overflow: hidden; }
+    .block-header { display: flex; align-items: center; gap: 14px; padding: 16px 22px; border-bottom: 1px solid #e5e7eb; }
+    .block-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .block-header h2 { font-size: 14px; font-weight: 800; color: #1a2e3b; }
+    .block-header .sub { font-size: 12px; color: #9ca3af; margin-top: 1px; }
+
+    /* Task rows */
+    .task-row { display: flex; align-items: flex-start; gap: 14px; padding: 13px 22px; border-bottom: 1px solid #f3f4f6; transition: background .1s; }
+    .task-row:last-child { border-bottom: none; }
+    .task-row:hover { background: #f9fafb; }
+    .task-cb { margin-top: 2px; width: 18px; height: 18px; border: 1.5px solid #d1d5db; border-radius: 5px; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all .15s; }
+    .task-cb.done { background: #1a8f4c; border-color: #1a8f4c; }
+    .task-cb.done::after { content: "✓"; color: white; font-size: 11px; font-weight: 800; }
+    .task-row.done .task-title { text-decoration: line-through; opacity: .5; }
+    .task-row.done .task-note { opacity: .4; }
+    .task-body { flex: 1; min-width: 0; }
+    .task-title { font-size: 14px; font-weight: 600; color: #1a2e3b; }
+    .task-title a { color: #1a6b8a; text-decoration: none; }
+    .task-title a:hover { text-decoration: underline; }
+    .task-note { font-size: 12.5px; color: #6b7280; margin-top: 3px; line-height: 1.5; }
+    .task-meta { display: flex; align-items: center; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+    .task-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; padding-top: 2px; }
+
+    /* Tags */
+    .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; letter-spacing: .3px; white-space: nowrap; }
+    .tag-now    { background: rgba(192,33,34,.09); color: #c02122; }
+    .tag-week   { background: rgba(184,134,11,.09); color: #b8860b; }
+    .tag-later  { background: #f3f4f6; color: #6b7280; }
+    .tag-done   { background: rgba(26,143,76,.09); color: #1a8f4c; }
+    .tag-tech   { background: #e0f2fe; color: #0369a1; }
+    .tag-seo    { background: #ede9fe; color: #5b21b6; }
+    .tag-aff    { background: #d1fae5; color: #065f46; }
+    .tag-content { background: #fef3c7; color: #92400e; }
+    .tag-email  { background: #fce7f3; color: #9d174d; }
+
+    /* Deadline pill */
+    .deadline { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+    .dl-urgent { background: rgba(192,33,34,.09); color: #c02122; }
+    .dl-soon   { background: rgba(184,134,11,.09); color: #b8860b; }
+    .dl-later  { background: #f3f4f6; color: #9ca3af; }
+
+    /* Block icon backgrounds */
+    .b-tech .block-icon    { background: #e0f2fe; }
+    .b-seo .block-icon     { background: #ede9fe; }
+    .b-affiliate .block-icon { background: #d1fae5; }
+    .b-content .block-icon { background: #fef3c7; }
+    .b-email .block-icon   { background: #fce7f3; }
+
+    .home { display: inline-block; margin-top: 28px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .home:hover { color: #111827; }
+
+    @media (max-width: 600px) {
+      .task-right { display: none; }
+      .prog-label { width: 100px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="top">
+    <div class="logo-main">BesteSlaapAdvies</div>
+    <div class="logo-sub">.nl</div>
+  </div>
+  <h1>Admin — Openstaande Acties</h1>
+  <div class="meta">Niet geïndexeerd door Google · Niet gelinkt vanuit navigatie · Bijgewerkt april 2026</div>
+  <div class="notice">Vink taken af als ze klaar zijn — voortgang wordt opgeslagen in je browser. Klik op links voor directe toegang tot externe diensten.</div>
+
+  <!-- PROGRESS SUMMARY -->
+  <div class="progress-summary">
+    <h3>Voortgang per categorie</h3>
+    <div class="prog-rows">
+      <div class="prog-row">
+        <div class="prog-label">Technisch & Domein</div>
+        <div class="prog-bar-wrap"><div class="prog-bar-fill" id="prog-tech" style="width:0%"></div></div>
+        <div class="prog-count" id="cnt-tech">0/3</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-label">SEO & Indexering</div>
+        <div class="prog-bar-wrap"><div class="prog-bar-fill" id="prog-seo" style="width:0%"></div></div>
+        <div class="prog-count" id="cnt-seo">0/3</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-label">Affiliate</div>
+        <div class="prog-bar-wrap"><div class="prog-bar-fill" id="prog-aff" style="width:0%"></div></div>
+        <div class="prog-count" id="cnt-aff">0/7</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-label">Email & Communicatie</div>
+        <div class="prog-bar-wrap"><div class="prog-bar-fill" id="prog-email" style="width:0%"></div></div>
+        <div class="prog-count" id="cnt-email">0/1</div>
+      </div>
+      <div class="prog-row">
+        <div class="prog-label">Content</div>
+        <div class="prog-bar-wrap"><div class="prog-bar-fill" id="prog-content" style="width:0%"></div></div>
+        <div class="prog-count" id="cnt-content">0/3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNICAL -->
+  <div class="block b-tech">
+    <div class="block-header">
+      <div class="block-icon">⚙️</div>
+      <div>
+        <h2>Technisch & Domein</h2>
+        <div class="sub">Cloudflare, redirect, domein migratie</div>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="cf1" data-cat="tech">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://cloudflare.com" target="_blank">Cloudflare instellen voor bestslaapadvies.nl →</a></div>
+        <div class="task-note">Voeg bestslaapadvies.nl toe aan Cloudflare (gratis plan). Pas nameservers aan bij Namecheap. Maak een Page Rule: redirect alles 301 → https://besteslaapadvies.nl/. Dit lost het HTTPS-redirect probleem op zodat Google de domeinverhuizing kan verwerken.</div>
+        <div class="task-meta">
+          <span class="tag tag-tech">Technisch</span>
+          <span class="tag tag-now">Nu doen</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-urgent">⚡ Urgent</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="cf2" data-cat="tech">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title">Google Search Console — Change of Address voltooien</div>
+        <div class="task-note">Nadat Cloudflare werkt en HTTPS redirect actief is: ga naar bestslaapadvies.nl property → Instellingen → Adreswijziging → selecteer besteslaapadvies.nl → Valideer. Dit verplaatst SEO-waarde van oud naar nieuw domein.</div>
+        <div class="task-meta">
+          <span class="tag tag-seo">SEO</span>
+          <span class="tag tag-week">Na Cloudflare</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-soon">Na stap 1</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="cf3" data-cat="tech">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://improvmx.com" target="_blank">E-mail instellen: info@besteslaapadvies.nl via ImprovMX →</a></div>
+        <div class="task-note">Ga naar improvmx.com → voeg domein besteslaapadvies.nl toe → doorsturen naar Gmail. Voeg daarna MX-records toe bij Namecheap (ImprovMX geeft exacte waarden). Gratis. Verplicht voor affiliate-aanvragen bij Bol.com en Daisycon.</div>
+        <div class="task-meta">
+          <span class="tag tag-email">E-mail</span>
+          <span class="tag tag-now">Nu doen</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-urgent">⚡ Urgent</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEO -->
+  <div class="block b-seo">
+    <div class="block-header">
+      <div class="block-icon">🔍</div>
+      <div>
+        <h2>SEO & Google Indexering</h2>
+        <div class="sub">Search Console, sitemap, indexeringsverzoeken</div>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="seo1" data-cat="seo">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://search.google.com/search-console" target="_blank">Sitemap indienen voor besteslaapadvies.nl →</a></div>
+        <div class="task-note">Ga naar Search Console → besteslaapadvies.nl property → Sitemaps → voer sitemap.xml in → Indienen. De sitemap bevat 34+ URL's inclusief alle acupunctuur- en ayurveda-pagina's.</div>
+        <div class="task-meta">
+          <span class="tag tag-seo">SEO</span>
+          <span class="tag tag-now">Nu doen</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-urgent">⚡ Urgent</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="seo2" data-cat="seo">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title">Indexeringsverzoeken indienen voor nieuwe pagina's</div>
+        <div class="task-note">In Search Console → URL-inspectie → voer elke URL in → "Indexering aanvragen". Prioriteit: homepage, /supplementen/, /alternatieven/acupunctuur/, /alternatieven/ayurveda/. Maximaal 10–12 verzoeken per dag.</div>
+        <div class="task-meta">
+          <span class="tag tag-seo">SEO</span>
+          <span class="tag tag-week">Deze week</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-soon">Deze week</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="seo3" data-cat="seo">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title">Google AdSense aanvragen</div>
+        <div class="task-note">Wacht tot minimaal 10–15 pagina's geïndexeerd zijn en er enig verkeer is. Ga dan naar adsense.google.com → site toevoegen → besteslaapadvies.nl. Privacybeleid is al bijgewerkt met GA4-vermelding (vereist voor AdSense).</div>
+        <div class="task-meta">
+          <span class="tag tag-seo">Monetisatie</span>
+          <span class="tag tag-later">Later</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-later">Na indexering</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AFFILIATE -->
+  <div class="block b-affiliate">
+    <div class="block-header">
+      <div class="block-icon">💶</div>
+      <div>
+        <h2>Affiliate Programma's</h2>
+        <div class="sub">Aanmelden in volgorde — e-mailadres verplicht voor meeste aanvragen</div>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="aff1" data-cat="aff">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://ui.awin.com/merchant-profile/76734" target="_blank">iHerb aanmelden via Awin (merchant #76734) →</a></div>
+        <div class="task-note">Zelfbediening, geen wachttijd. Ga naar Awin → zoek merchant #76734 (iHerb EUR) → aanmelden. Commissie: ~5% standaard, 10% eerste 3 maanden. Al gelinkt in Chinese Kruiden vergelijkingsmodals op de site.</div>
+        <div class="task-meta">
+          <span class="tag tag-aff">Affiliate</span>
+          <span class="tag tag-now">Nu doen</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-urgent">⚡ Nu</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="aff2" data-cat="aff">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://affiliate.bol.com" target="_blank">Bol.com Partners aanmelden →</a></div>
+        <div class="task-note">Verplicht: KVK-nummer + IBAN + info@besteslaapadvies.nl e-mailadres. Stel eerst e-mail in via ImprovMX. Bol.com keurt nieuwe sites goed — als eerste aanvragen.</div>
+        <div class="task-meta">
+          <span class="tag tag-aff">Affiliate</span>
+          <span class="tag tag-now">Nu doen</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-urgent">⚡ Eerst e-mail</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="aff3" data-cat="aff">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://daisycon.com" target="_blank">Daisycon aanmelden →</a></div>
+        <div class="task-note">Na Bol.com. Via Daisycon heb je toegang tot Vitaminstore en Holland & Barrett NL. Aanmelden met info@ e-mailadres.</div>
+        <div class="task-meta">
+          <span class="tag tag-aff">Affiliate</span>
+          <span class="tag tag-week">Na Bol.com</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-soon">Stap 2</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="aff4" data-cat="aff">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://affiliate-program.amazon.nl" target="_blank">Amazon Associates NL aanmelden →</a></div>
+        <div class="task-note">Na Bol.com. Aanmelden met info@ e-mailadres. Standaard Amazon affiliate commissie ~3–5%.</div>
+        <div class="task-meta">
+          <span class="tag tag-aff">Affiliate</span>
+          <span class="tag tag-week">Na Bol.com</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-soon">Stap 2</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="aff5" data-cat="aff">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title">Vitaminstore & Holland & Barrett via Daisycon activeren</div>
+        <div class="task-note">Nadat Daisycon-account is goedgekeurd: zoek Vitaminstore en Holland & Barrett NL in het Daisycon platform en vraag toegang aan.</div>
+        <div class="task-meta">
+          <span class="tag tag-aff">Affiliate</span>
+          <span class="tag tag-later">Na Daisycon</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-later">Stap 3</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="aff6" data-cat="aff">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="mailto:info@chineseapotheek.nl">E-mail ChineseApotheek.nl — privé affiliate voorstel →</a></div>
+        <div class="task-note">Geen publiek affiliateprogramma. Benader direct: stel voor 5–10% commissie op doorverwezen verkopen. E-mailsjabloon staat in het Word-document "Affiliate_Action_Chinese_Kruiden.docx".</div>
+        <div class="task-meta">
+          <span class="tag tag-aff">Affiliate</span>
+          <span class="tag tag-week">Deze week</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-soon">Direct contact</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="aff7" data-cat="aff">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="mailto:info@tcmshops.com">E-mail TCMshops.com (Amsterdam) — privé affiliate voorstel →</a></div>
+        <div class="task-note">Fysieke winkel in Amsterdam (Geldersekade 67), ook online. Geen publiek affiliate. Benader direct met hetzelfde voorstel als ChineseApotheek. Zelfde e-mailsjabloon.</div>
+        <div class="task-meta">
+          <span class="tag tag-aff">Affiliate</span>
+          <span class="tag tag-week">Deze week</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-soon">Direct contact</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EMAIL -->
+  <div class="block b-email">
+    <div class="block-header">
+      <div class="block-icon">✉️</div>
+      <div>
+        <h2>E-mail & Communicatie</h2>
+        <div class="sub">Zakelijk e-mailadres instellen — vereist voor affiliate-aanvragen</div>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="email1" data-cat="email">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://improvmx.com" target="_blank">info@besteslaapadvies.nl instellen via ImprovMX →</a></div>
+        <div class="task-note">1. Ga naar improvmx.com → voeg domein besteslaapadvies.nl toe → stel doorsturen in naar je Gmail. 2. Voeg MX-records toe bij Namecheap Advanced DNS voor besteslaapadvies.nl (ImprovMX toont exacte waarden). 3. Gratis plan is voldoende. Vereist voor Bol.com Partners, Daisycon en Amazon Associates.</div>
+        <div class="task-meta">
+          <span class="tag tag-email">E-mail</span>
+          <span class="tag tag-now">Eerst doen</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-urgent">⚡ Blocker</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="block b-content">
+    <div class="block-header">
+      <div class="block-icon">✍️</div>
+      <div>
+        <h2>Content & Pagina's</h2>
+        <div class="sub">Nog toe te voegen pagina's en secties op de site</div>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="con1" data-cat="content">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://besteslaapadvies.nl/alternatieven/ayurveda/" target="_blank">Ayurveda — stedenpagina's toevoegen →</a></div>
+        <div class="task-note">De Ayurveda-pagina is live maar heeft nog geen stedenpagina's (de steden-grid staat op "coming soon"). Voeg praktijklijsten toe voor bijv. Amsterdam, Utrecht, Den Haag — zelfde opzet als acupunctuursteden.</div>
+        <div class="task-meta">
+          <span class="tag tag-content">Content</span>
+          <span class="tag tag-later">Later</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-later">Backlog</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="con2" data-cat="content">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title"><a href="https://besteslaapadvies.nl/ontspanning/" target="_blank">Ontspanning — "Vergelijk merken & prijzen" modal controleren →</a></div>
+        <div class="task-note">Controleer of de producten op de Ontspanning-pagina ook een vergelijkingsmodal nodig hebben (zoals supplementen). Mogelijk ontbreken er knoppen of werken ze niet correct.</div>
+        <div class="task-meta">
+          <span class="tag tag-content">Site check</span>
+          <span class="tag tag-week">Deze week</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-soon">Check</span>
+      </div>
+    </div>
+
+    <div class="task-row" data-id="con3" data-cat="content">
+      <div class="task-cb" onclick="toggle(this)"></div>
+      <div class="task-body">
+        <div class="task-title">Meer acupunctuursteden toevoegen</div>
+        <div class="task-note">Huidige steden: Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven, Haarlem, Leiden, Enschede, Hengelo. Mogelijk toe te voegen: Groningen, Tilburg, Breda, Nijmegen, Maastricht. Vraag Claude om een stad per keer te doen.</div>
+        <div class="task-meta">
+          <span class="tag tag-content">Content</span>
+          <span class="tag tag-later">Later</span>
+        </div>
+      </div>
+      <div class="task-right">
+        <span class="deadline dl-later">Backlog</span>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="https://besteslaapadvies.nl" class="home">← Terug naar BesteSlaapAdvies.nl</a>
+
+</div>
+
+<script>
+  // Load saved state
+  document.querySelectorAll('.task-row').forEach(row => {
+    const id = row.dataset.id;
+    if (localStorage.getItem('task_' + id) === 'done') {
+      row.classList.add('done');
+      row.querySelector('.task-cb').classList.add('done');
+    }
+  });
+
+  function toggle(cb) {
+    const row = cb.closest('.task-row');
+    const id = row.dataset.id;
+    const isDone = cb.classList.toggle('done');
+    row.classList.toggle('done', isDone);
+    localStorage.setItem('task_' + id, isDone ? 'done' : 'open');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const cats = { tech: { total: 3 }, seo: { total: 3 }, aff: { total: 7 }, email: { total: 1 }, content: { total: 3 } };
+
+    Object.keys(cats).forEach(cat => {
+      const rows = document.querySelectorAll(`.task-row[data-cat="${cat}"]`);
+      const done = Array.from(rows).filter(r => r.classList.contains('done')).length;
+      const total = rows.length;
+      const pct = total ? Math.round(done / total * 100) : 0;
+      const bar = document.getElementById('prog-' + cat);
+      const cnt = document.getElementById('cnt-' + cat);
+      if (bar) bar.style.width = pct + '%';
+      if (cnt) cnt.textContent = done + '/' + total;
+    });
+  }
+
+  updateProgress();
+</script>
+</body>
+</html>
