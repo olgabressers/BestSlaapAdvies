@@ -25,118 +25,131 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --primary: #1a6b8a;
-      --dark: #0d3d52;
-      --accent: #2d9cdb;
-      --light: #e8f4f9;
-      --bg: #f0f7fa;
-      --border: #d0e8f2;
-      --text: #1a2e3b;
-      --sub: #5a7a8a;
+      --sage:         #e8eedd;
+      --sage-soft:    #eff4e3;
+      --sage-paper:   #f5f8eb;
+      --sage-lighter: #fafcf2;
+      --ink:          #1b2a14;
+      --ink-soft:     #2d4024;
+      --body:         #3f5234;
+      --muted:        #768464;
+      --green:        #5c7a46;
+      --green-soft:   #81996a;
+      --hairline:     #cfdcb6;
+      --hairline-soft:#dce5c8;
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--sage); color: var(--body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
 
-    /* NAV */
-    nav { background: white; border-bottom: 2px solid var(--border); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    /* NAV — site-consistent */
+    nav { background: white; border-bottom: 1px solid #d0e8f2; padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.05); }
     .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
     .nav-logo-icon { width: 36px; height: 36px; }
     .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .nav-logo-text span:first-child { font-size: 17px; font-weight: 800; color: var(--dark); letter-spacing: -0.3px; }
-    .nav-logo-text span:last-child { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); }
-        .nav-links { display: flex; margin-left: auto; }
-    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .nav-logo-text span:first-child { font-size: 17px; font-weight: 800; color: #0d3d52; letter-spacing: -0.3px; }
+    .nav-logo-text span:last-child { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #5a7a8a; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: #5a7a8a; text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: #1a6b8a; border-bottom-color: #1a6b8a; }
 
-    /* HERO */
-    .page-hero { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); color: white; padding: 52px 32px 44px; }
-    .page-hero .inner { max-width: 1000px; margin: 0 auto; }
-    .page-hero .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7dd3f0; font-weight: 700; margin-bottom: 12px; }
-    .page-hero h1 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
-    .page-hero p { font-size: 16px; color: rgba(255,255,255,.78); max-width: 560px; }
+    /* HERO — soft sage, editorial */
+    .page-hero { background: linear-gradient(180deg, var(--sage-soft) 0%, var(--sage) 100%); padding: 100px 32px 80px; text-align: center; border-bottom: 1px solid var(--hairline); }
+    .page-hero .inner { max-width: 720px; margin: 0 auto; }
+    .page-hero .eyebrow { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 14px; color: var(--green); letter-spacing: .3px; margin-bottom: 24px; }
+    .page-hero .eyebrow::before, .page-hero .eyebrow::after { content: "—"; opacity: .45; margin: 0 10px; }
+    .page-hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(32px, 4.8vw, 54px); font-weight: 400; letter-spacing: -0.6px; line-height: 1.08; margin-bottom: 22px; color: var(--ink); }
+    .page-hero h1 em { font-style: italic; color: var(--green); font-weight: 400; }
+    .page-hero .sub { font-size: 16px; color: var(--body); max-width: 560px; margin: 0 auto; line-height: 1.8; }
 
-    /* CONTENT */
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 24px 80px; }
+    /* TOPIC NAV — deep forest band */
+    .topic-nav { background: #1f2d1a; padding: 20px 32px; display: flex; justify-content: center; gap: 2px 34px; flex-wrap: wrap; border-bottom: 1px solid #142010; box-shadow: inset 0 1px 0 rgba(255,255,255,.04); }
+    .topic-nav a { color: #d6e2b8; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: .5px; padding: 6px 2px; border-bottom: 1px solid transparent; transition: all .2s; }
+    .topic-nav a:hover { color: #eaf2d0; border-bottom-color: #a8c07a; }
 
-    /* FEATURED ARTICLE */
-    .featured-article { background: white; border-radius: 14px; border: 2px solid var(--accent); padding: 28px 32px; margin-bottom: 48px; display: flex; gap: 28px; align-items: flex-start; text-decoration: none; color: inherit; transition: box-shadow .2s; }
-    .featured-article:hover { box-shadow: 0 8px 28px rgba(45,156,219,.15); }
-    .fa-badge { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-    .fa-title { font-size: 22px; font-weight: 800; color: var(--dark); line-height: 1.25; margin-bottom: 10px; }
-    .fa-desc { font-size: 14px; color: var(--sub); line-height: 1.65; margin-bottom: 16px; }
-    .fa-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--sub); }
-    .fa-meta span { display: flex; align-items: center; gap: 4px; }
-    .fa-icon { width: 80px; height: 80px; background: var(--light); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .fa-link { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--primary); }
-    @media (max-width: 600px) { .featured-article { flex-direction: column; } .fa-icon { width: 56px; height: 56px; } }
+    /* WRAP */
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 88px 24px 64px; }
+
+    /* FEATURED ARTICLE — roomy editorial card */
+    .featured-article { background: var(--sage-lighter); border: 1px solid var(--hairline); border-radius: 2px; padding: 44px 48px; margin-bottom: 64px; display: block; text-decoration: none; color: inherit; transition: border-color .25s, background .25s, box-shadow .25s; position: relative; }
+    .featured-article::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--green); opacity: 0; transition: opacity .25s; }
+    .featured-article:hover { background: white; border-color: var(--green-soft); box-shadow: 0 12px 32px rgba(92,122,70,.1); }
+    .featured-article:hover::before { opacity: 1; }
+    .fa-meta { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: var(--green); letter-spacing: .4px; margin-bottom: 14px; }
+    .fa-meta::before { content: "◆"; margin-right: 8px; font-size: 8px; vertical-align: middle; opacity: .7; }
+    .fa-title { font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 3vw, 32px); font-weight: 400; color: var(--ink); line-height: 1.2; letter-spacing: -0.3px; margin-bottom: 12px; }
+    .fa-desc { font-size: 15px; color: var(--body); line-height: 1.8; max-width: 720px; margin-bottom: 20px; }
+    .fa-info { display: flex; gap: 22px; flex-wrap: wrap; font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--muted); }
+    .fa-info span { position: relative; }
+    .fa-info span:not(:first-child)::before { content: '·'; margin-right: 22px; margin-left: -12px; color: var(--green-soft); }
+    .fa-cta { margin-top: 22px; font-family: Georgia, serif; font-style: italic; font-size: 13.5px; color: var(--green); letter-spacing: .4px; display: inline-block; }
 
     /* SECTION TITLE */
-    .section-title { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+    .section-header { margin: 64px 0 40px; text-align: center; }
+    .section-header .section-label { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--green); letter-spacing: .3px; margin-bottom: 8px; }
+    .section-header .section-title { font-family: Georgia, serif; font-size: clamp(24px, 3vw, 30px); font-weight: 400; color: var(--ink); letter-spacing: -0.3px; }
 
-    /* ARTICLES GRID */
-    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; margin-bottom: 48px; }
-    .article-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 22px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
-    .article-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); transform: translateY(-2px); }
-    .ac-cat { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
-    .ac-title { font-size: 15px; font-weight: 700; color: var(--dark); line-height: 1.35; margin-bottom: 8px; }
-    .ac-desc { font-size: 13px; color: var(--sub); line-height: 1.6; flex: 1; }
-    .ac-footer { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .ac-time { font-size: 11px; color: var(--sub); }
-    .ac-link { font-size: 12px; font-weight: 700; color: var(--primary); }
+    /* ARTICLES GRID — hairline divided */
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; margin-bottom: 72px; }
+    .article-card { background: var(--sage-paper); padding: 32px 30px 28px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background .2s; }
+    .article-card:hover { background: white; }
+    .ac-cat { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: var(--green); letter-spacing: .3px; margin-bottom: 6px; }
+    .ac-title { font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 400; color: var(--ink); line-height: 1.25; letter-spacing: -0.2px; margin-bottom: 14px; }
+    .ac-rule { width: 32px; height: 1px; background: var(--green-soft); margin: 0 0 14px; }
+    .ac-desc { font-size: 13.5px; color: var(--body); line-height: 1.75; flex: 1; }
+    .ac-footer { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--hairline-soft); display: flex; align-items: center; justify-content: space-between; }
+    .ac-time { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: var(--muted); }
+    .ac-link { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--green); letter-spacing: .3px; }
 
-    /* COMING SOON CARD */
-    .coming-soon { background: white; border-radius: 12px; border: 1.5px dashed var(--border); padding: 22px; opacity: .6; cursor: default; }
-    .coming-soon .ac-link { color: var(--sub); }
+    /* CTA BOX — deep forest */
+    .cta-box { background: #1f2d1a; border-radius: 2px; padding: 44px 48px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; position: relative; overflow: hidden; }
+    .cta-box::before { content: '◆'; position: absolute; top: 24px; right: 32px; color: rgba(214,226,184,.25); font-size: 14px; letter-spacing: 6px; }
+    .cta-label { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: #a8c07a; letter-spacing: .3px; margin-bottom: 8px; }
+    .cta-title { font-family: Georgia, serif; font-size: 22px; font-weight: 400; color: white; letter-spacing: -0.2px; margin-bottom: 6px; }
+    .cta-desc { color: #d6e2b8; font-size: 14.5px; line-height: 1.7; max-width: 440px; }
+    .cta-btn { background: #a8c07a; color: #1f2d1a; font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: .5px; padding: 13px 26px; border-radius: 2px; text-decoration: none; white-space: nowrap; transition: all .2s; }
+    .cta-btn:hover { background: #c4d897; transform: translateY(-1px); }
 
-    /* CTA BOX */
-    .cta-box { background: var(--dark); border-radius: 14px; padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    .cta-box p:first-child { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 6px; }
-    .cta-box p:last-child { color: rgba(255,255,255,.85); font-size: 15px; }
-    .cta-box a { background: var(--primary); color: white; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 8px; text-decoration: none; white-space: nowrap; transition: background .15s; }
-    .cta-box a:hover { background: var(--accent); }
+    /* EDITORIAL NOTE */
+    .editorial-note { max-width: 720px; margin: 0 auto; padding: 56px 24px 40px; text-align: center; font-family: Georgia, serif; font-style: italic; font-size: 14.5px; color: var(--muted); line-height: 1.85; }
+    .editorial-note::before { content: "◆"; display: block; color: var(--green-soft); font-size: 10px; margin-bottom: 18px; letter-spacing: 8px; }
 
-    /* FOOTER */
-    .site-footer { background: #0d3d52; color: #7aacbf; padding: 48px 32px 32px; font-size: 13px; }
-    .footer-inner { max-width: 1000px; margin: 0 auto 28px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
-    .footer-brand strong { font-size: 16px; color: white; display: block; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; color: #7aacbf; max-width: 240px; line-height: 1.6; }
-    .footer-brand a { color: #a8d4e6; text-decoration: none; }
-    .footer-nav { background: transparent; display: flex; gap: 40px; flex-wrap: wrap; }
-    .footer-col { display: flex; flex-direction: column; gap: 6px; }
-    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
-    .footer-col a { color: #a8d4e6; text-decoration: none; transition: color .15s; }
+    /* FOOTER — deep forest */
+    .site-footer { background: #1b2a14; color: #9eac86; padding: 64px 32px 40px; font-size: 13px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto 32px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+    .footer-brand strong { font-family: Georgia, serif; font-size: 19px; color: white; display: block; margin-bottom: 10px; font-weight: 400; letter-spacing: -0.3px; }
+    .footer-brand p { font-size: 13px; color: #9eac86; max-width: 260px; line-height: 1.75; }
+    .footer-brand a { color: #c4d897; text-decoration: none; }
+    .footer-nav { background: transparent; display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col-title { font-family: Georgia, serif; font-style: italic; font-size: 12.5px; color: #c4d897; margin-bottom: 8px; letter-spacing: .3px; }
+    .footer-col a { color: #9eac86; text-decoration: none; transition: color .15s; font-size: 13.5px; }
     .footer-col a:hover { color: white; }
-    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; text-align: center; }
-    .footer-copy { color: #5a8a9f; margin-bottom: 8px; }
-    .footer-copy a { color: #7aacbf; text-decoration: none; }
-    .footer-disc { font-size: 11px; color: #5a8a9f; max-width: 640px; margin: 0 auto; line-height: 1.6; }
-  
-@media (max-width: 768px) {
-  nav { padding: 0 16px; }
-  .nav-links { display: none; }
-  .nav-mobile { display: flex !important; }
-  .hero { padding: 40px 16px 36px; }
-  .page-hero { padding: 32px 16px 28px; }
-  .trust-bar { padding: 12px 16px; gap: 12px; }
-  .wrap { padding: 32px 16px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .articles-grid { grid-template-columns: 1fr; }
-  .media-grid { grid-template-columns: 1fr; }
-  .site-footer { padding: 32px 16px 24px; }
-  .footer-inner { flex-direction: column; gap: 24px; }
-  .footer-nav { flex-direction: column; gap: 16px; }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .product-header { flex-direction: column; }
-  .product-footer { flex-direction: column; align-items: flex-start; }
-  .compare-table { font-size: 12px; }
-  .compare-table th, .compare-table td { padding: 8px 6px; }
-  .filter-bar { flex-direction: column; }
-  #cookie-banner { flex-direction: column !important; gap: 12px; }
-}
-@media (max-width: 480px) {
-  .hero h1 { font-size: 24px; }
-  .nav-logo-text span:first-child { font-size: 15px; }
-}
-</style>
+    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; text-align: center; }
+    .footer-copy { color: #9eac86; margin-bottom: 10px; font-size: 12.5px; }
+    .footer-copy a { color: #c4d897; text-decoration: none; }
+    .footer-disc { font-size: 11px; color: #70805a; max-width: 640px; margin: 0 auto; line-height: 1.75; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { display: none; }
+      .nav-mobile { display: flex !important; }
+      .page-hero { padding: 60px 20px 50px; }
+      .topic-nav { padding: 14px 20px; gap: 2px 20px; }
+      .wrap { padding: 56px 16px 40px; }
+      .featured-article { padding: 32px 24px; margin-bottom: 48px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .article-card { padding: 28px 24px; }
+      .cta-box { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 18px; }
+      .site-footer { padding: 48px 16px 32px; }
+      .footer-inner { flex-direction: column; gap: 32px; }
+      .footer-nav { flex-direction: column; gap: 24px; }
+      #cookie-banner { flex-direction: column !important; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 30px; }
+      .nav-logo-text span:first-child { font-size: 15px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -169,128 +182,151 @@
   <a href="../index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Home</a>
   <a href="../supplementen/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Supplementen</a>
   <a href="../ontspanning/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Ontspanning</a>
-    <a href="../alternatieven/acupunctuur/index.html">Alternatieven</a>
-  <a href="../gids/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Slaapgids</a>
+  <a href="../alternatieven/acupunctuur/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Alternatieven</a>
+  <a href="index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Slaapgids</a>
   <a href="../media/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;display:block">Media</a>
 </div>
 
+<!-- HERO -->
 <div class="page-hero">
   <div class="inner">
-    <div class="eyebrow">Slaapgids</div>
-    <h1>Beter slapen — bewezen tips en gidsen</h1>
-    <p>Praktische artikelen op basis van wetenschappelijk onderzoek. Geen hype, geen verkoopverhalen — alleen wat werkt.</p>
+    <div class="eyebrow">Praktische gidsen — onderbouwd en eerlijk</div>
+    <h1>Beter slapen, <em>stap voor stap</em>.</h1>
+    <p class="sub">Korte, leesbare artikelen op basis van wetenschappelijk onderzoek. Geen hype, geen verkoopverhalen — alleen wat echt werkt. Van slaaphygiëne tot stress, hormonen en supplementen.</p>
   </div>
+</div>
+
+<!-- TOPIC NAV -->
+<div class="topic-nav">
+  <a href="#aanbevolen">Aanbevolen</a>
+  <a href="slaaphygiene.html">Slaaphygiëne</a>
+  <a href="slaap-stress.html">Stress</a>
+  <a href="slaap-menopauze.html">Menopauze</a>
+  <a href="hoeveel-slaap.html">Slaapbehoefte</a>
+  <a href="slaapsupplementen-veilig.html">Supplementen</a>
+  <a href="slaap-beweging.html">Beweging</a>
 </div>
 
 <div class="wrap">
 
   <!-- FEATURED ARTICLE -->
-  <a class="featured-article" href="slaaphygiene.html">
-    <div class="fa-icon">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1a6b8a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+  <a class="featured-article" href="slaaphygiene.html" id="aanbevolen">
+    <div class="fa-meta">Aanbevolen startpunt · Slaaphygiëne</div>
+    <div class="fa-title">Slaaphygiëne: de 12 regels die écht werken</div>
+    <div class="fa-desc">De twaalf bewezen slaaphygiëne-regels die je slaapkwaliteit direct verbeteren — van lichtblootstelling en cafeïnegebruik tot slaapkamer­omgeving en avondroutine. Gebaseerd op peer-reviewed onderzoek, vertaald naar praktische stappen.</div>
+    <div class="fa-info">
+      <span>9 minuten lezen</span>
+      <span>Wetenschappelijk onderbouwd</span>
+      <span>Bijgewerkt maart 2026</span>
     </div>
-    <div>
-      <div class="fa-badge">⭐ Aanbevolen startpunt · Slaaphygiëne</div>
-      <div class="fa-title">Slaaphygiëne: de 12 regels die écht werken (2026)</div>
-      <div class="fa-desc">De 12 bewezen slaaphygiëne-regels die je slaapkwaliteit direct verbeteren — van lichtblootstelling en cafeïnegebruik tot slaapkameromgeving en avondroutine. Gebaseerd op peer-reviewed onderzoek.</div>
-      <div class="fa-meta">
-        <span>📖 9 min lezen</span>
-        <span>🔬 Wetenschappelijk onderbouwd</span>
-        <span>📅 Maart 2026</span>
-      </div>
-      <div class="fa-link">Lees het artikel →</div>
-    </div>
+    <div class="fa-cta">Lees het artikel →</div>
   </a>
 
-  <!-- MORE ARTICLES -->
-  <div class="section-title">Alle slaapgidsen</div>
+  <!-- ALL ARTICLES -->
+  <div class="section-header">
+    <div class="section-label">Alle gidsen</div>
+    <div class="section-title">Van basis tot diepgang</div>
+  </div>
+
   <div class="articles-grid">
 
     <a class="article-card" href="slaaphygiene.html">
       <div class="ac-cat">Slaaphygiëne</div>
       <div class="ac-title">Slaaphygiëne: de 12 regels die écht werken</div>
-      <div class="ac-desc">Van lichtblootstelling en cafeïne tot slaapkameromgeving — de basis voor elke slaapverbetering.</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Van lichtblootstelling en cafeïne tot slaapkameromgeving — de basis voor elke slaapverbetering, in heldere stappen.</div>
       <div class="ac-footer">
-        <span class="ac-time">9 min lezen</span>
-        <span class="ac-link">Lees meer →</span>
+        <span class="ac-time">9 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
       </div>
     </a>
 
     <a class="article-card" href="slaap-stress.html">
       <div class="ac-cat">Slaapproblemen</div>
       <div class="ac-title">Slaapproblemen door stress: wat helpt echt?</div>
-      <div class="ac-desc">Piekeren, cortisol en de vicieuze cirkel van slaapangst — en hoe je er uitkomt.</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Piekeren, cortisol en de vicieuze cirkel van slaapangst — hoe je er stap voor stap uitkomt met bewezen technieken.</div>
       <div class="ac-footer">
-        <span class="ac-time">8 min lezen</span>
-        <span class="ac-link">Lees meer →</span>
+        <span class="ac-time">8 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
       </div>
     </a>
 
     <a class="article-card" href="slaap-menopauze.html">
-      <div class="ac-cat">Vrouwen &amp; Hormonen</div>
+      <div class="ac-cat">Vrouwen &amp; hormonen</div>
       <div class="ac-title">Slaap en menopauze: praktische tips voor de overgang</div>
-      <div class="ac-desc">Hoe oestrogeen en progesteron je slaap beïnvloeden, en welke aanpassingen het meeste helpen.</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Hoe oestrogeen en progesteron je slaap beïnvloeden, en welke aanpassingen in leefstijl en supplementen het meeste helpen.</div>
       <div class="ac-footer">
-        <span class="ac-time">9 min lezen</span>
-        <span class="ac-link">Lees meer →</span>
+        <span class="ac-time">9 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
       </div>
     </a>
 
     <a class="article-card" href="hoeveel-slaap.html">
       <div class="ac-cat">Wetenschap</div>
-      <div class="ac-title">Hoeveel slaap heb je echt nodig?</div>
-      <div class="ac-desc">De wetenschap achter slaapbehoefte per leeftijdsgroep — en waarom 8 uur niet voor iedereen geldt.</div>
+      <div class="ac-title">Hoeveel slaap heb je écht nodig?</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">De wetenschap achter slaapbehoefte per leeftijdsgroep — en waarom het klassieke "acht uur per nacht" niet voor iedereen opgaat.</div>
       <div class="ac-footer">
-        <span class="ac-time">7 min lezen</span>
-        <span class="ac-link">Lees meer →</span>
+        <span class="ac-time">7 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
       </div>
     </a>
 
     <a class="article-card" href="slaapsupplementen-veilig.html">
       <div class="ac-cat">Supplementen</div>
       <div class="ac-title">Zijn slaapsupplementen veilig? Wat je moet weten</div>
-      <div class="ac-desc">Veiligheid, interacties en wanneer je beter een arts kunt raadplegen — een eerlijk overzicht.</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Veiligheid, interacties en wanneer je beter een arts raadpleegt — een eerlijk overzicht zonder verkooppraat.</div>
       <div class="ac-footer">
-        <span class="ac-time">7 min lezen</span>
-        <span class="ac-link">Lees meer →</span>
+        <span class="ac-time">7 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
       </div>
     </a>
 
     <a class="article-card" href="slaap-beweging.html">
       <div class="ac-cat">Leefstijl</div>
       <div class="ac-title">Slaap en beweging: het verband dat je moet kennen</div>
-      <div class="ac-desc">Welke sporten en tijdstippen je slaap verbeteren — en welke je slaap juist saboteren.</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Welke sporten en tijdstippen je slaap verbeteren — en welke juist slaap saboteren wanneer je te laat op de dag traint.</div>
       <div class="ac-footer">
-        <span class="ac-time">7 min lezen</span>
-        <span class="ac-link">Lees meer →</span>
+        <span class="ac-time">7 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
       </div>
     </a>
 
   </div>
 
+  <!-- CTA -->
   <div class="cta-box">
     <div>
-      <p>Supplementen vergelijken</p>
-      <p>Bekijk onze onafhankelijke vergelijking van slaapsupplementen — inclusief bewijs, dosering en prijs.</p>
+      <div class="cta-label">Van lezen naar toepassen</div>
+      <div class="cta-title">Supplementen vergelijken</div>
+      <div class="cta-desc">Onafhankelijke beoordeling van slaapsupplementen met wetenschappelijk bewijs, dosering en actuele prijs.</div>
     </div>
-    <a href="../supplementen/index.html">Naar supplementen →</a>
+    <a href="../supplementen/index.html" class="cta-btn">NAAR SUPPLEMENTEN →</a>
   </div>
 
+</div>
+
+<div class="editorial-note">
+  Alle gidsen zijn geschreven op basis van peer-reviewed onderzoek en worden periodiek herzien wanneer nieuw bewijs beschikbaar komt. De inhoud is informatief — bij ernstige of aanhoudende slaapklachten raadpleeg altijd een arts.
 </div>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <strong>BesteSlaapAdvies.nl</strong>
-      <p>Onafhankelijke vergelijkingen van slaapsupplementen, matrassen en trackers voor Nederland en België.</p>
+      <p>Onafhankelijke vergelijkingen van slaapsupplementen en ontspanningsproducten voor Nederland en België.</p>
       <p style="margin-top:10px"><a href="mailto:info@besteslaapadvies.nl">info@besteslaapadvies.nl</a></p>
     </div>
     <nav class="footer-nav">
       <div class="footer-col">
         <span class="footer-col-title">Categorieën</span>
         <a href="../supplementen/index.html">Supplementen</a>
-    <a href="../ontspanning/index.html">Ontspanning</a>
-    <a href="../alternatieven/acupunctuur/index.html">Alternatieven</a>
+        <a href="../ontspanning/index.html">Ontspanning</a>
+        <a href="../alternatieven/acupunctuur/index.html">Alternatieven</a>
         <a href="index.html">Slaapgids</a>
         <a href="../media/index.html">Media</a>
       </div>
@@ -304,20 +340,19 @@
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 BesteSlaapAdvies.nl · <a href="mailto:info@besteslaapadvies.nl">info@besteslaapadvies.nl</a></p>
-    <p class="footer-disc">Deze site bevat affiliate links. Wij ontvangen een kleine commissie als je via onze links iets koopt — zonder extra kosten voor jou. Alle vergelijkingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
+    <p class="footer-disc">Deze site bevat affiliate links. Wij ontvangen een kleine commissie als je via onze links iets koopt — zonder extra kosten voor jou. Alle beoordelingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
   </div>
 </footer>
 
-
 <!-- COOKIE CONSENT BANNER -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1b2a14;color:white;padding:16px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">
     Wij gebruiken functionele cookies voor de werking van de site. Als u op een productlink klikt, kunnen externe partijen (Bol.com, Awin) tracking cookies plaatsen voor commissieverwerking.
-    <a href="../privacy.html" style="color:#7dd3f0;font-weight:600;">Lees onze privacyverklaring →</a>
+    <a href="../privacy.html" style="color:#c4d897;font-weight:600;">Lees onze privacyverklaring →</a>
   </p>
   <div style="display:flex;gap:10px;flex-shrink:0;">
     <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;cursor:pointer;">Alleen noodzakelijk</button>
-    <button onclick="setCookieConsent('accepted')" style="background:#2d9cdb;border:none;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:6px;cursor:pointer;">Akkoord</button>
+    <button onclick="setCookieConsent('accepted')" style="background:#5c7a46;border:none;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:6px;cursor:pointer;">Akkoord</button>
   </div>
 </div>
 <script>
