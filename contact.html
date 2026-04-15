@@ -83,6 +83,16 @@
 
     .form-card { background: var(--cream-paper); border: 1px solid var(--hairline); padding: 44px 48px; border-radius: 2px; position: relative; }
     .form-card::before { content: "◆"; position: absolute; top: 20px; right: 28px; color: var(--gold-soft); font-size: 10px; letter-spacing: 4px; opacity: .6; }
+
+    .email-cta { background: var(--cream-paper); border: 1px solid var(--hairline); padding: 56px 40px; border-radius: 2px; position: relative; text-align: center; }
+    .email-cta::before { content: "◆"; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); color: var(--gold-soft); font-size: 10px; letter-spacing: 8px; opacity: .7; }
+    .email-cta-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--gold); letter-spacing: .3px; margin-bottom: 22px; margin-top: 12px; }
+    .email-cta-address { display: inline-block; font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px, 3.6vw, 34px); font-weight: 400; color: var(--ink); letter-spacing: -0.3px; text-decoration: none; border-bottom: 1px solid var(--gold-soft); padding-bottom: 4px; transition: color .2s, border-color .2s; }
+    .email-cta-address:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .email-cta-sub { font-family: Georgia, serif; font-style: italic; font-size: 14.5px; color: var(--muted); max-width: 440px; margin: 22px auto 28px; line-height: 1.8; }
+    .email-cta-btn { display: inline-block; background: var(--ink); color: white; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 14px 28px; border-radius: 2px; text-decoration: none; transition: all .2s; box-shadow: 0 3px 10px rgba(27,33,57,.18); }
+    .email-cta-btn:hover { background: var(--ink-soft); box-shadow: 0 6px 18px rgba(27,33,57,.28); transform: translateY(-1px); color: white; }
+    @media (max-width: 560px) { .email-cta { padding: 40px 24px; } }
     .form-group { margin-bottom: 24px; }
     .form-group label { display: block; font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--ink); margin-bottom: 8px; letter-spacing: .2px; }
     .form-group .req { color: var(--gold); font-style: normal; margin-left: 4px; }
@@ -229,62 +239,65 @@
   </div>
 
   <div class="form-header">
-    <div class="section-label">Stuur een bericht</div>
+    <div class="section-label">Direct contact</div>
     <h2>Schrijf de redactie</h2>
     <p>Wij lezen elk bericht zelf — geen geautomatiseerde reacties.</p>
   </div>
 
-  <div class="form-card">
-    <div class="form-success" id="form-success">
-      <strong>Bericht verstuurd</strong>
-      <p>Bedankt voor het bericht. Wij reageren zo spoedig mogelijk, normaal binnen 1–2 werkdagen.</p>
-    </div>
-
-    <div class="form-error" id="form-error">
-      <strong>Er ging iets mis</strong>
-      <p>Het bericht kon niet verstuurd worden. Probeer het opnieuw of stuur een e-mail naar <a href="mailto:contact@besteslaapadvies.nl">contact@besteslaapadvies.nl</a>.</p>
-    </div>
-
-    <!--
-      The form uses FormSubmit.co — a free service that emails form submissions.
-      No API key, no signup. The FIRST submission triggers a verification email
-      to the destination address below; after one click to activate, all future
-      submissions arrive in that inbox.
-    -->
-    <form id="contact-form" action="https://formsubmit.co/alenabressers@gmail.com" method="POST" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Naam<span class="req">*</span></label>
-          <input type="text" id="name" name="name" placeholder="Je naam" required/>
-        </div>
-        <div class="form-group">
-          <label for="email">E-mailadres<span class="req">*</span></label>
-          <input type="email" id="email" name="email" placeholder="je@email.nl" required/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="subject">Onderwerp</label>
-        <select id="subject" name="subject">
-          <option value="">Kies een onderwerp...</option>
-          <option value="Fout of onjuistheid melden">Fout of onjuistheid melden</option>
-          <option value="Samenwerking of merkpartnerschap">Samenwerking of merkpartnerschap</option>
-          <option value="Algemene feedback">Algemene feedback</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Bericht<span class="req">*</span></label>
-        <textarea id="message" name="message" placeholder="Schrijf hier je vraag of opmerking..." required></textarea>
-      </div>
-
-      <input type="hidden" name="_subject" value="Nieuw contactbericht — BesteSlaapAdvies.nl"/>
-      <input type="hidden" name="_captcha" value="false"/>
-      <input type="hidden" name="_template" value="table"/>
-      <input type="hidden" name="_next" value="https://besteslaapadvies.nl/contact.html?sent=1"/>
-      <input type="text" name="_honey" style="display:none"/>
-
-      <button type="submit" class="btn-submit">Verstuur bericht →</button>
-    </form>
+  <div class="email-cta">
+    <div class="email-cta-eyebrow">— Stuur een e-mail —</div>
+    <a class="email-cta-address" href="mailto:contact@besteslaapadvies.nl?subject=Vraag%20aan%20de%20redactie">contact@besteslaapadvies.nl</a>
+    <p class="email-cta-sub">Klik hierboven om een bericht te openen in uw eigen mailprogramma. Wij reageren normaal binnen 1–2 werkdagen.</p>
+    <a class="email-cta-btn" href="mailto:contact@besteslaapadvies.nl?subject=Vraag%20aan%20de%20redactie">Open mailprogramma</a>
   </div>
+
+  <!--
+    Contact form temporarily hidden — FormSubmit.co delivery is unreliable.
+    To restore: un-comment the block below and remove the .email-cta block above.
+
+    <div class="form-card">
+      <div class="form-success" id="form-success">
+        <strong>Bericht verstuurd</strong>
+        <p>Bedankt voor het bericht. Wij reageren zo spoedig mogelijk, normaal binnen 1–2 werkdagen.</p>
+      </div>
+      <div class="form-error" id="form-error">
+        <strong>Er ging iets mis</strong>
+        <p>Het bericht kon niet verstuurd worden. Probeer het opnieuw of stuur een e-mail naar <a href="mailto:contact@besteslaapadvies.nl">contact@besteslaapadvies.nl</a>.</p>
+      </div>
+      <form id="contact-form" action="https://formsubmit.co/alenabressers@gmail.com" method="POST" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Naam<span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Je naam" required/>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mailadres<span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="je@email.nl" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Onderwerp</label>
+          <select id="subject" name="subject">
+            <option value="">Kies een onderwerp...</option>
+            <option value="Fout of onjuistheid melden">Fout of onjuistheid melden</option>
+            <option value="Samenwerking of merkpartnerschap">Samenwerking of merkpartnerschap</option>
+            <option value="Algemene feedback">Algemene feedback</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Bericht<span class="req">*</span></label>
+          <textarea id="message" name="message" placeholder="Schrijf hier je vraag of opmerking..." required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Nieuw contactbericht — BesteSlaapAdvies.nl"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_next" value="https://besteslaapadvies.nl/contact.html?sent=1"/>
+        <input type="text" name="_honey" style="display:none"/>
+        <button type="submit" class="btn-submit">Verstuur bericht →</button>
+      </form>
+    </div>
+  -->
+
 
   <div class="editorial-note">
     BesteSlaapAdvies.nl is een Nederlandse redactionele site. Wij werken onafhankelijk, accepteren geen betaalde vermeldingen en melden affiliate-samenwerkingen transparant in onze <a href="disclaimer.html" style="color:var(--gold);text-decoration:underline;">methode-pagina</a>.
