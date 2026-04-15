@@ -18,88 +18,151 @@
   <meta property="og:title" content="Acupunctuur voor slaapproblemen — Vind een praktijk bij u in de buurt"/>
   <meta property="og:image" content="https://besteslaapadvies.nl/og-image.jpg"/>
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--primary:#1a6b8a;--dark:#0d3d52;--accent:#2d9cdb;--light:#e8f4f9;--bg:#f0f7fa;--border:#d0e8f2;--text:#1a2e3b;--sub:#5a7a8a;--green:#1a8a5a;--green-light:#e6f7f0;--amber:#c47a1a;--amber-light:#fef3e2}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    nav{background:white;border-bottom:2px solid var(--border);padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-    .nav-logo{padding:14px 0;margin-right:28px;text-decoration:none;flex-shrink:0;display:flex;align-items:center;gap:10px}
-    .nav-logo-icon{width:36px;height:36px}
-    .nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
-    .nav-logo-text span:first-child{font-size:17px;font-weight:800;color:var(--dark);letter-spacing:-0.3px}
-    .nav-logo-text span:last-child{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sub)}
-    .nav-links{display:flex;margin-left:auto}
-    .nav-links a{color:var(--sub);text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap}
-    .nav-links a:hover,.nav-links a.active{color:var(--primary);border-bottom-color:var(--primary)}
-    .page-hero{background:linear-gradient(135deg,#0d3d52 0%,#1a6b4a 100%);color:white;padding:48px 32px 40px}
-    .page-hero .inner{max-width:1100px;margin:0 auto}
-    .page-hero .eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#7dd3b0;font-weight:700;margin-bottom:12px}
-    .page-hero h1{font-size:clamp(22px,4vw,34px);font-weight:800;margin-bottom:10px}
-    .page-hero p{font-size:15px;color:rgba(255,255,255,.78);max-width:620px}
-    .breadcrumb{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:16px}
-    .breadcrumb a{color:rgba(255,255,255,.6);text-decoration:none}
-    .breadcrumb span{margin:0 6px}
-    .wrap{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
-    .two-col{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start}
-    @media(max-width:900px){.two-col{grid-template-columns:1fr}}
-    h2{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:14px}
-    p{font-size:14px;color:#3a5a6a;line-height:1.7;margin-bottom:14px}
-    .evidence-box{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;font-size:13px;color:#1a4a35;line-height:1.6}
-    .evidence-box strong{display:block;margin-bottom:4px;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--green)}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:          #1f3d2e;
+      --ink-deep:     #142820;
+      --ink-soft:     #2e5643;
+      --body:         #465449;
+      --muted:        #8a8273;
+      --sub:          #6a7368;
+      --jade:         #3d6b52;
+      --jade-soft:    #7a9c88;
+      --copper:       #b5724a;
+      --copper-soft:  #d9a07e;
+      --sand:         #f5efe4;
+      --sand-soft:    #fdfaf3;
+      --paper:        #fbfaf6;
+      --paper-warm:   #faf6ec;
+      --cream:        #faf6ec;
+      --hairline:     #ddd5c3;
+      --hairline-soft:#e8e0d0;
+      --gold:         #8b6f3d;
+      --gold-soft:    #b69b6d;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--paper); color: var(--body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
 
-    /* CITY GRID */
-    .city-section{margin-top:36px}
-    .city-section h2{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:6px;padding-top:24px;border-top:2px solid var(--border)}
-    .city-section .section-note{font-size:13px;color:var(--sub);margin-bottom:20px}
-    .city-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
-    .city-card{background:white;border-radius:12px;border:1px solid var(--border);padding:18px 20px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:box-shadow .2s,transform .2s}
-    .city-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px)}
-    .city-card.active{border-color:var(--green);border-width:2px}
-    .city-card.soon{opacity:.5;cursor:default;pointer-events:none}
-    .city-name{font-size:16px;font-weight:800;color:var(--dark)}
-    .city-count{font-size:12px;color:var(--green);font-weight:700}
-    .city-count.soon-label{color:var(--sub)}
-    .city-arrow{font-size:13px;color:var(--accent);margin-top:4px}
+    /* NAV */
+    body > nav { background: white; border-bottom: 1px solid var(--hairline); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(31,61,46,.05); }
+    .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon { width: 36px; height: 36px; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-text span:first-child { font-size: 17px; font-weight: 800; color: #0d3d52; letter-spacing: -0.3px; }
+    .nav-logo-text span:last-child { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #5a7a8a; }
+    .nav-links { display: flex; margin-left: auto; }
+    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--jade); border-bottom-color: var(--jade); }
+
+    /* HERO */
+    .page-hero { background: linear-gradient(135deg, var(--ink-deep) 0%, var(--ink) 48%, var(--ink-soft) 100%); color: white; padding: 76px 32px 68px; position: relative; overflow: hidden; }
+    .page-hero::before { content: "◆"; position: absolute; top: 32px; left: 50%; transform: translateX(-50%); color: var(--copper-soft); font-size: 10px; letter-spacing: 10px; opacity: .7; }
+    .page-hero .inner { max-width: 1120px; margin: 0 auto; position: relative; text-align: center; }
+    .breadcrumb { font-family: Georgia, serif; font-style: italic; font-size: 12.5px; color: rgba(255,255,255,.55); margin-bottom: 22px; letter-spacing: .2px; }
+    .breadcrumb a { color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: var(--copper-soft); }
+    .breadcrumb span { margin: 0 8px; opacity: .5; }
+    .page-hero .eyebrow { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 14px; color: var(--copper-soft); margin-bottom: 18px; letter-spacing: .3px; }
+    .page-hero .eyebrow::before, .page-hero .eyebrow::after { content: "—"; opacity: .45; margin: 0 10px; }
+    .page-hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(28px, 4.4vw, 44px); font-weight: 400; line-height: 1.1; margin-bottom: 22px; letter-spacing: -0.5px; color: white; }
+    .page-hero h1 em { font-style: italic; color: var(--copper-soft); font-weight: 400; }
+    .page-hero p { font-size: 16px; color: rgba(255,255,255,.78); max-width: 620px; margin: 0 auto; line-height: 1.85; }
+
+    /* CONTENT */
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 72px 24px 80px; }
+    .two-col { display: grid; grid-template-columns: 1fr 320px; gap: 56px; align-items: start; }
+    @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; gap: 40px; } .wrap { padding: 48px 16px 60px; } }
+
+    .main-col h2 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: 400; color: var(--ink); letter-spacing: -0.3px; line-height: 1.2; margin-bottom: 18px; }
+    .main-col h2 em { font-style: italic; color: var(--jade); font-weight: 400; }
+    .main-col p { font-size: 15.5px; color: var(--body); line-height: 1.85; margin-bottom: 18px; }
+    .intro-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--gold); letter-spacing: .3px; margin-bottom: 10px; }
+    .intro-eyebrow::before { content: "— "; opacity: .55; }
+
+    .evidence-box { background: var(--paper-warm); border: 1px solid var(--hairline); border-left: 3px solid var(--jade); padding: 22px 26px; margin: 32px 0; border-radius: 2px; }
+    .evidence-box strong { display: block; font-family: Georgia, serif; font-style: italic; font-size: 12.5px; color: var(--jade); margin-bottom: 8px; letter-spacing: .3px; font-weight: 400; }
+    .evidence-box p { font-size: 14.5px; color: var(--body); line-height: 1.75; margin-bottom: 0; }
+
+    /* CITY SECTION */
+    .city-section { margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--hairline); position: relative; }
+    .city-section::before { content: "◆"; position: absolute; top: -8px; left: 50%; transform: translateX(-50%); color: var(--copper-soft); background: var(--paper); padding: 0 18px; font-size: 10px; letter-spacing: 6px; }
+    .city-section-head { text-align: center; margin-bottom: 40px; }
+    .city-section-head .section-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--gold); letter-spacing: .3px; margin-bottom: 10px; }
+    .city-section-head .section-eyebrow::before, .city-section-head .section-eyebrow::after { content: "—"; opacity: .5; margin: 0 8px; }
+    .city-section-head h2 { font-family: Georgia, serif; font-size: clamp(26px, 3.2vw, 32px); font-weight: 400; color: var(--ink); letter-spacing: -0.3px; margin-bottom: 12px; }
+    .city-section-head h2 em { font-style: italic; color: var(--jade); }
+    .city-section-head p { font-family: Georgia, serif; font-style: italic; font-size: 14.5px; color: var(--muted); max-width: 540px; margin: 0 auto; line-height: 1.75; }
+
+    .city-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; }
+    @media (max-width: 760px) { .city-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .city-grid { grid-template-columns: 1fr; } }
+    .city-card { background: var(--paper); padding: 28px 26px; text-decoration: none; display: flex; flex-direction: column; gap: 6px; transition: background .2s, transform .2s; }
+    .city-card:hover { background: white; }
+    .city-card.soon { opacity: .5; cursor: default; pointer-events: none; }
+    .city-tag { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; color: var(--gold); letter-spacing: .3px; margin-bottom: 4px; }
+    .city-name { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 400; color: var(--ink); letter-spacing: -0.2px; line-height: 1.2; }
+    .city-rule { width: 28px; height: 1px; background: var(--copper-soft); margin: 8px 0 4px; }
+    .city-count { font-size: 13px; color: var(--body); letter-spacing: .2px; margin-bottom: 12px; }
+    .city-count.soon-label { color: var(--muted); font-style: italic; }
+    .city-arrow { font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--jade); display: inline-flex; align-items: center; gap: 5px; margin-top: auto; }
+    .city-arrow::after { content: "→"; transition: transform .2s; }
+    .city-card:hover .city-arrow { color: var(--ink); }
+    .city-card:hover .city-arrow::after { transform: translateX(3px); }
 
     /* SIDEBAR */
-    .sidebar{display:flex;flex-direction:column;gap:16px}
-    .sidebar-box{background:white;border-radius:12px;border:1px solid var(--border);padding:20px}
-    .sidebar-box h3{font-size:14px;font-weight:800;color:var(--dark);margin-bottom:12px}
-    .sidebar-box p{font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:10px}
-    .method-list{list-style:none}
-    .method-list li{border-bottom:1px solid var(--border)}
-    .method-list li:last-child{border:none}
-    .method-list a{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:13px;font-weight:600;color:var(--primary);text-decoration:none}
-    .method-list a:hover{color:var(--dark)}
-    .method-list a.active{color:var(--dark);font-weight:800}
-    .method-list .soon{font-size:11px;color:var(--sub)}
-    .cta-box{background:linear-gradient(135deg,var(--dark),#1a6b4a);border-radius:12px;padding:20px;color:white}
-    .cta-box h3{font-size:14px;font-weight:800;color:white;margin-bottom:8px}
-    .cta-box p{font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:14px}
-    .cta-btn{display:block;background:white;color:var(--dark);font-size:12px;font-weight:700;padding:9px 16px;border-radius:7px;text-decoration:none;text-align:center}
-    .cta-btn:hover{opacity:.9}
+    .sidebar { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 88px; }
+    @media (max-width: 900px) { .sidebar { position: static; } }
+    .sidebar-box { background: white; border: 1px solid var(--hairline); border-radius: 2px; padding: 26px 28px; }
+    .sidebar-box h3 { font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: 400; color: var(--ink); letter-spacing: -0.2px; margin-bottom: 6px; }
+    .sidebar-rule { width: 28px; height: 1px; background: var(--copper-soft); margin: 4px 0 14px; }
+    .sidebar-box p { font-size: 13.5px; color: var(--body); line-height: 1.75; margin-bottom: 14px; }
+    .method-list { list-style: none; }
+    .method-list li { border-bottom: 1px dashed var(--hairline); }
+    .method-list li:last-child { border: none; }
+    .method-list a { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; font-size: 14px; color: var(--ink); text-decoration: none; font-family: Georgia, serif; transition: color .2s; }
+    .method-list a span { font-size: 13px; color: var(--copper); transition: transform .2s; }
+    .method-list a:hover { color: var(--jade); }
+    .method-list a:hover span { transform: translateX(3px); }
+    .method-list a.active { color: var(--jade); font-style: italic; }
 
-    .site-footer{background:#0d3d52;color:#7aacbf;padding:48px 32px 32px;font-size:13px}
-    .footer-inner{max-width:1000px;margin:0 auto 28px;display:flex;gap:48px;flex-wrap:wrap;justify-content:space-between}
-    .footer-brand strong{font-size:16px;color:white;display:block;margin-bottom:10px}
-    .footer-brand p{font-size:13px;color:#7aacbf;max-width:240px;line-height:1.6}
-    .footer-brand a{color:#a8d4e6;text-decoration:none}
-    .footer-nav{background:transparent;display:flex;gap:40px;flex-wrap:wrap}
-    .footer-col{display:flex;flex-direction:column;gap:6px}
-    .footer-col-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
-    .footer-col a{color:#a8d4e6;text-decoration:none;transition:color .15s}
-    .footer-col a:hover{color:white}
-    .footer-bottom{max-width:1000px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center}
-    .footer-copy{color:#5a8a9f;margin-bottom:8px}
-    .footer-disc{font-size:11px;color:#5a8a9f;max-width:640px;margin:0 auto;line-height:1.6}
+    .cta-box { background: linear-gradient(135deg, var(--ink-deep), var(--ink)); border-radius: 2px; padding: 28px; color: white; position: relative; overflow: hidden; }
+    .cta-box::before { content: "◆"; position: absolute; top: 14px; right: 18px; color: var(--copper-soft); font-size: 9px; letter-spacing: 4px; opacity: .7; }
+    .cta-box .cta-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: var(--copper-soft); margin-bottom: 8px; letter-spacing: .3px; }
+    .cta-box h3 { font-family: Georgia, serif; font-size: 20px; font-weight: 400; color: white; line-height: 1.25; letter-spacing: -0.2px; margin-bottom: 10px; }
+    .cta-box p { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.7; margin-bottom: 18px; }
+    .cta-btn { display: block; background: white; color: var(--ink); font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 12px 18px; border-radius: 2px; text-decoration: none; text-align: center; transition: all .2s; box-shadow: 0 3px 10px rgba(0,0,0,.2); }
+    .cta-btn:hover { background: var(--copper-soft); color: var(--ink-deep); transform: translateY(-1px); }
 
-    @media(max-width:768px){
-      nav{padding:0 16px}
-      .nav-links{display:none}
-      .page-hero{padding:32px 16px 28px}
-      .wrap{padding:24px 16px 64px}
-      .site-footer{padding:32px 16px 24px}
-      .footer-inner{flex-direction:column;gap:24px}
-      .footer-nav{flex-direction:column;gap:16px}
+    .register-btn { display: block; background: var(--ink); color: white; font-size: 11.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 12px 18px; border-radius: 2px; text-decoration: none; text-align: center; transition: all .2s; margin-top: 6px; }
+    .register-btn:hover { background: var(--jade); transform: translateY(-1px); }
+
+    /* FOOTER */
+    .site-footer { background: var(--ink-deep); color: #a8b5ad; padding: 64px 32px 40px; font-size: 13px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto 32px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+    .footer-brand strong { font-family: Georgia, serif; font-size: 19px; color: white; display: block; margin-bottom: 10px; font-weight: 400; letter-spacing: -0.3px; }
+    .footer-brand p { font-size: 13px; color: #a8b5ad; max-width: 260px; line-height: 1.75; }
+    .footer-brand a { color: var(--copper-soft); text-decoration: none; }
+    .footer-brand a:hover { color: white; }
+    .footer-nav { background: transparent; display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col-title { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: var(--copper-soft); letter-spacing: .3px; margin-bottom: 6px; text-transform: none; }
+    .footer-col a { color: #bec9c1; text-decoration: none; transition: color .15s; font-size: 13.5px; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; text-align: center; }
+    .footer-copy { color: #8a968e; margin-bottom: 8px; font-size: 12.5px; }
+    .footer-copy a { color: #bec9c1; text-decoration: none; }
+    .footer-disc { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; color: #8a968e; max-width: 680px; margin: 0 auto; line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      body > nav { padding: 0 16px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 56px 16px 48px; }
+      .site-footer { padding: 48px 16px 28px; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-nav { flex-direction: column; gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      .nav-logo-text span:first-child { font-size: 15px; }
     }
   </style>
 </head>
@@ -120,6 +183,7 @@
     </div>
   </a>
   <div class="nav-links">
+    <a href="../../index.html">Home</a>
     <a href="../../supplementen/index.html">Supplementen</a>
     <a href="../../ontspanning/index.html">Ontspanning</a>
     <a href="index.html" class="active">Alternatieven</a>
@@ -136,7 +200,7 @@
       Acupunctuur
     </div>
     <div class="eyebrow">Alternatieve methoden</div>
-    <h1>Acupunctuur voor slaapproblemen</h1>
+    <h1>Acupunctuur voor <em>slaapproblemen</em></h1>
     <p>Vind acupunctuurbedrijven bij u in de buurt die slaapproblemen behandelen. Per stad een onafhankelijk overzicht — alleen praktijken die slaap expliciet vermelden.</p>
   </div>
 </div>
@@ -144,76 +208,99 @@
 <div class="wrap">
   <div class="two-col">
 
-    <div>
-      <h2>Hoe werkt acupunctuur bij slaapproblemen?</h2>
+    <div class="main-col">
+      <p class="intro-eyebrow">Wat de redactie weet</p>
+      <h2>Hoe werkt acupunctuur bij <em>slaapproblemen</em>?</h2>
       <p>Acupunctuur is een van de meest onderzochte alternatieve behandelingen voor slaapproblemen. In de Chinese geneeskunde worden slaapstoornissen gezien als een verstoord evenwicht in het lichaam. Door specifieke punten te stimuleren met dunne naalden, wordt dit evenwicht hersteld.</p>
       <p>Vanuit westers oogpunt beïnvloedt acupunctuur het autonome zenuwstelsel, verlaagt het cortisol en stimuleert het de aanmaak van serotonine — mechanismen die direct bijdragen aan een gezonde slaapcyclus.</p>
 
       <div class="evidence-box">
         <strong>Wetenschappelijke basis</strong>
-        Meerdere meta-analyses concluderen dat acupunctuur significant effectief is bij het verminderen van inslaaptijd en het verbeteren van slaapkwaliteit. Het effect is het sterkst bij chronische slapeloosheid en slaapproblemen door stress of hormonale veranderingen (menopauze).
+        <p>Meerdere meta-analyses concluderen dat acupunctuur significant effectief is bij het verminderen van inslaaptijd en het verbeteren van slaapkwaliteit. Het effect is het sterkst bij chronische slapeloosheid en slaapproblemen door stress of hormonale veranderingen (menopauze).</p>
       </div>
 
       <p>Een behandeltraject bestaat doorgaans uit 6 tot 10 sessies van 45 tot 60 minuten. Veel mensen merken na 3 à 4 behandelingen al verschil. Kosten liggen gemiddeld op €60 tot €90 per sessie. Controleer uw aanvullende verzekering — acupunctuur wordt bij veel polissen vergoed.</p>
 
       <!-- CITIES -->
       <div class="city-section">
-        <h2>Kies uw stad</h2>
-        <p class="section-note">Klik op een stad om de acupunctuurbedrijven te zien die slaapproblemen behandelen.</p>
+        <div class="city-section-head">
+          <div class="section-eyebrow">Per stad</div>
+          <h2>Kies <em>uw stad</em></h2>
+          <p>Klik op een stad om de acupunctuurbedrijven te zien die slaapproblemen behandelen.</p>
+        </div>
         <div class="city-grid">
-          <a href="amsterdam/index.html" class="city-card active">
+          <a href="amsterdam/index.html" class="city-card">
+            <div class="city-tag">Noord-Holland</div>
             <div class="city-name">Amsterdam</div>
+            <div class="city-rule"></div>
             <div class="city-count">4 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="den-haag/index.html" class="city-card active">
+          <a href="den-haag/index.html" class="city-card">
+            <div class="city-tag">Zuid-Holland</div>
             <div class="city-name">Den Haag</div>
+            <div class="city-rule"></div>
             <div class="city-count">5 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="eindhoven/index.html" class="city-card active">
+          <a href="eindhoven/index.html" class="city-card">
+            <div class="city-tag">Noord-Brabant</div>
             <div class="city-name">Eindhoven</div>
+            <div class="city-rule"></div>
             <div class="city-count">4 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="enschede/index.html" class="city-card active">
+          <a href="enschede/index.html" class="city-card">
+            <div class="city-tag">Overijssel</div>
             <div class="city-name">Enschede</div>
+            <div class="city-rule"></div>
             <div class="city-count">4 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="haarlem/index.html" class="city-card active">
+          <a href="haarlem/index.html" class="city-card">
+            <div class="city-tag">Noord-Holland</div>
             <div class="city-name">Haarlem</div>
+            <div class="city-rule"></div>
             <div class="city-count">4 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="hengelo/index.html" class="city-card active">
+          <a href="hengelo/index.html" class="city-card">
+            <div class="city-tag">Overijssel</div>
             <div class="city-name">Hengelo</div>
+            <div class="city-rule"></div>
             <div class="city-count">3 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="leiden/index.html" class="city-card active">
+          <a href="leiden/index.html" class="city-card">
+            <div class="city-tag">Zuid-Holland</div>
             <div class="city-name">Leiden</div>
+            <div class="city-rule"></div>
             <div class="city-count">4 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="rotterdam/index.html" class="city-card active">
+          <a href="rotterdam/index.html" class="city-card">
+            <div class="city-tag">Zuid-Holland</div>
             <div class="city-name">Rotterdam</div>
+            <div class="city-rule"></div>
             <div class="city-count">7 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
-          <a href="utrecht/" class="city-card active">
+          <a href="utrecht/" class="city-card">
+            <div class="city-tag">Utrecht</div>
             <div class="city-name">Utrecht</div>
+            <div class="city-rule"></div>
             <div class="city-count">7 praktijken</div>
-            <div class="city-arrow">Bekijk overzicht →</div>
+            <span class="city-arrow">Bekijk overzicht</span>
           </a>
         </div>
       </div>
     </div>
 
     <!-- SIDEBAR -->
-    <div class="sidebar">
+    <aside class="sidebar">
       <div class="sidebar-box">
         <h3>Andere methoden</h3>
+        <div class="sidebar-rule"></div>
         <ul class="method-list">
           <li><a href="index.html" class="active">Acupunctuur <span>→</span></a></li>
           <li><a href="../ayurveda/index.html">Ayurveda <span>→</span></a></li>
@@ -225,17 +312,19 @@
       </div>
 
       <div class="cta-box">
+        <div class="cta-eyebrow">— Redactietip</div>
         <h3>Eerst supplementen proberen?</h3>
         <p>Magnesium glycinaat en L-theanine zijn de best onderzochte opties voor slaap — goedkoop en direct beschikbaar.</p>
-        <a href="../../supplementen/index.html" class="cta-btn">Vergelijk slaapsupplementen →</a>
+        <a href="../../supplementen/index.html" class="cta-btn">Vergelijk supplementen</a>
       </div>
 
       <div class="sidebar-box">
         <h3>Uw praktijk aanmelden</h3>
+        <div class="sidebar-rule"></div>
         <p>Behandelt u slaapproblemen met acupunctuur maar staat uw stad of praktijk er nog niet bij? Meld u aan voor een gratis vermelding.</p>
-        <a href="mailto:contact@besteslaapadvies.nl?subject=Aanmelding%20acupunctuur" style="display:block;margin-top:4px;background:#1a6b8a;color:white;font-size:12px;font-weight:700;padding:9px 16px;border-radius:7px;text-decoration:none;text-align:center">Aanmelden →</a>
+        <a href="mailto:contact@besteslaapadvies.nl?subject=Aanmelding%20acupunctuur" class="register-btn">Aanmelden</a>
       </div>
-    </div>
+    </aside>
 
   </div>
 </div>
@@ -254,6 +343,7 @@
         <a href="../../ontspanning/index.html">Ontspanning</a>
         <a href="index.html">Alternatieven</a>
         <a href="../../gids/index.html">Slaapgids</a>
+        <a href="../../media/index.html">Media</a>
       </div>
       <div class="footer-col">
         <span class="footer-col-title">Informatie</span>
