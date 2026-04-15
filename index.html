@@ -25,179 +25,202 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --primary:  #1a6b8a;
-      --dark:     #0d3d52;
-      --accent:   #2d9cdb;
-      --light:    #e8f4f9;
-      --bg:       #f0f7fa;
-      --white:    #ffffff;
-      --border:   #d0e8f2;
-      --text:     #1a2e3b;
-      --sub:      #5a7a8a;
+      --ink:          #0d3d52;
+      --ink-deep:     #082e3f;
+      --ink-soft:     #1a5570;
+      --body:         #3e5561;
+      --muted:        #7a92a0;
+      --sub:          #5a7687;
+      --teal:         #1a6b8a;
+      --teal-soft:    #3a8aa8;
+      --accent:       #2d9cdb;
+      --paper:        #fbfdfe;
+      --paper-soft:   #f3f8fa;
+      --cream:        #faf6ec;
+      --cream-soft:   #fdfaf3;
+      --hairline:     #d6e4eb;
+      --hairline-soft:#e5eef2;
+      --gold:         #8b6f3d;
+      --gold-soft:    #b69b6d;
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--paper); color: var(--body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
 
     /* NAV */
-    nav { background: white; border-bottom: 2px solid var(--border); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,.07); }
+    nav { background: white; border-bottom: 1px solid var(--hairline); padding: 0 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(13,61,82,.05); }
     .nav-logo { padding: 14px 0; margin-right: 28px; text-decoration: none; flex-shrink: 0; display: flex; align-items: center; gap: 10px; }
     .nav-logo-icon { width: 36px; height: 36px; }
     .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .nav-logo-text span:first-child { font-size: 17px; font-weight: 800; color: var(--dark); letter-spacing: -0.3px; }
-    .nav-logo-text span:last-child { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sub); }
+    .nav-logo-text span:first-child { font-size: 17px; font-weight: 800; color: #0d3d52; letter-spacing: -0.3px; }
+    .nav-logo-text span:last-child { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #5a7a8a; }
     .nav-links { display: flex; margin-left: auto; }
-    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 500; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; letter-spacing: .2px; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); border-bottom-color: var(--teal); }
 
     /* HERO */
-    .hero { background: linear-gradient(135deg, var(--dark) 0%, #1a5570 100%); color: white; padding: 72px 32px 64px; text-align: center; }
-    .hero .inner { max-width: 680px; margin: auto; }
-    .hero .eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7dd3f0; font-weight: 700; margin-bottom: 16px; }
-    .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; line-height: 1.1; margin-bottom: 18px; }
-    .hero h1 span { color: #7dd3f0; }
-    .hero p { font-size: 17px; color: rgba(255,255,255,.78); max-width: 540px; margin: 0 auto 32px; line-height: 1.7; }
-    .hero-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
-    .hero-pill { background: rgba(255,255,255,.12); color: rgba(255,255,255,.9); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
-    .hero-cta { display: inline-block; background: var(--accent); color: white; font-size: 14px; font-weight: 700; padding: 13px 28px; border-radius: 8px; text-decoration: none; transition: background .15s; }
-    .hero-cta:hover { background: #2189c4; }
+    .hero { background: linear-gradient(135deg, var(--ink-deep) 0%, var(--ink) 48%, var(--ink-soft) 100%); color: white; padding: 104px 32px 92px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: "◆"; position: absolute; top: 42px; left: 50%; transform: translateX(-50%); color: var(--gold-soft); font-size: 11px; letter-spacing: 10px; opacity: .65; }
+    .hero .inner { max-width: 720px; margin: auto; position: relative; }
+    .hero .eyebrow { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 14px; letter-spacing: .3px; color: #d9c58e; margin-bottom: 24px; }
+    .hero .eyebrow::before, .hero .eyebrow::after { content: "—"; opacity: .45; margin: 0 10px; }
+    .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(32px, 5.4vw, 56px); font-weight: 400; line-height: 1.08; margin-bottom: 24px; letter-spacing: -0.8px; color: white; }
+    .hero h1 em { font-style: italic; color: #d9c58e; font-weight: 400; }
+    .hero p { font-size: 17px; color: rgba(255,255,255,.78); max-width: 560px; margin: 0 auto 38px; line-height: 1.8; }
+    .hero-cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; align-items: center; }
+    .hero-cta { display: inline-block; background: white; color: var(--ink); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 15px 30px; border-radius: 2px; text-decoration: none; transition: all .2s; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+    .hero-cta:hover { background: #d9c58e; color: var(--ink-deep); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.32); }
+    .hero-cta.ghost { background: transparent; color: white; border: 1px solid rgba(255,255,255,.35); box-shadow: none; }
+    .hero-cta.ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.6); color: white; transform: translateY(-1px); }
 
-    /* TRUST BAR */
-    .trust-bar { background: var(--bg); border-bottom: 1px solid var(--border); padding: 16px 32px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--sub); }
-    .trust-item svg { color: var(--accent); }
+    /* TRUST BAR — hairline grid */
+    .trust-bar { background: var(--paper); border-bottom: 1px solid var(--hairline); }
+    .trust-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-item { padding: 22px 20px; text-align: center; border-left: 1px solid var(--hairline-soft); }
+    .trust-item:first-child { border-left: none; }
+    .trust-item .t-label { font-family: Georgia, serif; font-style: italic; font-size: 11px; color: var(--gold); letter-spacing: .3px; margin-bottom: 4px; }
+    .trust-item .t-text { font-size: 13px; font-weight: 600; color: var(--ink); letter-spacing: .1px; }
+    @media (max-width: 720px) { .trust-inner { grid-template-columns: repeat(2, 1fr); } .trust-item:nth-child(3) { border-left: none; border-top: 1px solid var(--hairline-soft); } .trust-item:nth-child(4) { border-top: 1px solid var(--hairline-soft); } }
 
     /* EDITORIAL INTRO BAND */
-    .intro-band { background: linear-gradient(180deg, #faf7f2 0%, #f5eee3 100%); border-bottom: 1px solid #e8dfd0; padding: 64px 32px 72px; }
-    .intro-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
-    .intro-eyebrow { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 14px; color: #8a6d3b; margin-bottom: 14px; letter-spacing: .2px; }
-    .intro-heading { font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 3.4vw, 36px); font-weight: 700; line-height: 1.18; color: #1a2e3b; margin-bottom: 18px; letter-spacing: -0.4px; }
-    .intro-heading em { font-style: italic; color: #1a6b8a; font-weight: 600; }
-    .intro-lede { font-size: 15.5px; line-height: 1.75; color: #4a5a66; margin-bottom: 24px; max-width: 520px; }
-    .intro-lede strong { color: #1a2e3b; font-weight: 600; }
-    .intro-links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-    .intro-link { font-size: 13.5px; font-weight: 600; text-decoration: none; padding: 10px 18px; border-radius: 24px; transition: all .15s; }
-    .intro-link.primary { background: #1a6b8a; color: white; }
-    .intro-link.primary:hover { background: #0d3d52; }
-    .intro-link:not(.primary) { color: #5a7a8a; border: 1px solid #d8c9ad; background: rgba(255,255,255,.5); }
-    .intro-link:not(.primary):hover { background: white; color: #1a6b8a; border-color: #1a6b8a; }
+    .intro-band { background: linear-gradient(180deg, var(--cream-soft) 0%, var(--cream) 100%); border-bottom: 1px solid var(--hairline); padding: 88px 32px 96px; }
+    .intro-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
+    .intro-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 14px; color: var(--gold); letter-spacing: .2px; margin-bottom: 18px; }
+    .intro-eyebrow::before { content: "— "; opacity: .55; }
+    .intro-heading { font-family: Georgia, "Times New Roman", serif; font-size: clamp(28px, 3.8vw, 40px); font-weight: 400; line-height: 1.14; color: var(--ink); margin-bottom: 22px; letter-spacing: -0.5px; }
+    .intro-heading em { font-style: italic; color: var(--teal); font-weight: 400; }
+    .intro-lede { font-size: 16px; line-height: 1.8; color: var(--body); margin-bottom: 30px; max-width: 540px; }
+    .intro-lede strong { color: var(--ink); font-weight: 600; }
+    .intro-links { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .intro-link { font-size: 12.5px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; text-decoration: none; padding: 13px 22px; border-radius: 2px; transition: all .2s; }
+    .intro-link.primary { background: var(--ink); color: white; box-shadow: 0 3px 10px rgba(13,61,82,.2); }
+    .intro-link.primary:hover { background: var(--teal); box-shadow: 0 6px 18px rgba(13,61,82,.28); transform: translateY(-1px); }
+    .intro-link:not(.primary) { color: var(--ink); border: 1px solid var(--hairline); background: rgba(255,255,255,.55); }
+    .intro-link:not(.primary):hover { background: white; color: var(--teal); border-color: var(--teal); }
 
-    .intro-stats { display: flex; flex-direction: column; gap: 14px; }
-    .stat-card { background: white; border: 1px solid #e8dfd0; border-radius: 4px; padding: 26px 28px; position: relative; box-shadow: 0 1px 3px rgba(125,90,40,.06); }
-    .stat-card.big { padding: 32px 30px 28px; }
-    .stat-card.big::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #1a6b8a; border-radius: 4px 0 0 4px; }
-    .stat-num { font-family: Georgia, "Times New Roman", serif; font-size: 56px; font-weight: 400; color: #0d3d52; line-height: 1; letter-spacing: -2px; display: flex; align-items: baseline; gap: 2px; }
-    .stat-num span { font-size: 28px; color: #1a6b8a; font-weight: 400; }
-    .stat-num .stat-of { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 13px; color: #8a6d3b; font-style: italic; font-weight: 400; margin: 0 6px; letter-spacing: 0; }
-    .stat-card.big .stat-num { font-size: 68px; }
-    .stat-card.small .stat-num { font-size: 40px; }
-    .stat-card.small .stat-num span { font-size: 20px; }
-    .stat-label { font-size: 14px; color: #4a5a66; line-height: 1.5; margin-top: 10px; max-width: 320px; }
-    .stat-source { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; color: #8a6d3b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e0d2b8; }
-    .stat-source a { color: #8a6d3b; text-decoration: underline; text-decoration-color: #d8c9ad; text-underline-offset: 2px; }
-    .stat-source a:hover { color: #1a6b8a; text-decoration-color: #1a6b8a; }
-    .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .intro-stats { display: flex; flex-direction: column; gap: 16px; }
+    .stat-card { background: white; border: 1px solid var(--hairline); border-radius: 2px; padding: 28px 30px; position: relative; box-shadow: 0 1px 3px rgba(13,61,82,.05); }
+    .stat-card.big { padding: 34px 32px 30px; }
+    .stat-card.big::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--teal); }
+    .stat-num { font-family: Georgia, "Times New Roman", serif; font-size: 60px; font-weight: 400; color: var(--ink); line-height: 1; letter-spacing: -2px; display: flex; align-items: baseline; gap: 2px; }
+    .stat-num span { font-size: 30px; color: var(--teal); font-weight: 400; }
+    .stat-num .stat-of { font-family: Georgia, serif; font-size: 13px; color: var(--gold); font-style: italic; font-weight: 400; margin: 0 8px; letter-spacing: 0; }
+    .stat-card.big .stat-num { font-size: 72px; }
+    .stat-card.small .stat-num { font-size: 44px; }
+    .stat-card.small .stat-num span { font-size: 22px; }
+    .stat-label { font-size: 14px; color: var(--body); line-height: 1.55; margin-top: 12px; max-width: 320px; }
+    .stat-source { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; color: var(--gold); margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--hairline); }
+    .stat-source a { color: var(--gold); text-decoration: underline; text-decoration-color: var(--gold-soft); text-underline-offset: 2px; }
+    .stat-source a:hover { color: var(--teal); text-decoration-color: var(--teal); }
 
-    @media (max-width: 880px) {
-      .intro-band { padding: 44px 20px 52px; }
-      .intro-inner { grid-template-columns: 1fr; gap: 36px; }
-      .stat-row { grid-template-columns: 1fr; }
-      .stat-card.big .stat-num { font-size: 56px; }
+    @media (max-width: 900px) {
+      .intro-band { padding: 56px 20px 64px; }
+      .intro-inner { grid-template-columns: 1fr; gap: 40px; }
+      .stat-card.big .stat-num { font-size: 58px; }
     }
 
-    /* SECTION CARDS */
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 56px 24px; }
-    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 24px; }
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 56px; }
+    /* SECTIONS */
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 92px 24px 48px; }
+    .section-head { text-align: center; margin-bottom: 48px; }
+    .section-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--gold); letter-spacing: .3px; margin-bottom: 10px; }
+    .section-eyebrow::before, .section-eyebrow::after { content: "—"; opacity: .5; margin: 0 8px; }
+    .section-title { font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 3.2vw, 34px); font-weight: 400; color: var(--ink); letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 12px; }
+    .section-title em { font-style: italic; color: var(--teal); }
+    .section-lede { font-family: Georgia, serif; font-style: italic; font-size: 15px; color: var(--muted); max-width: 560px; margin: 0 auto; line-height: 1.75; }
 
-    .card { background: white; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.05); overflow: hidden; color: inherit; display: flex; flex-direction: column; }
-    .card-top { padding: 24px 22px 0; display: flex; align-items: flex-start; gap: 14px; }
-    .card-icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: transparent; border: 1.5px solid #d0e8f2; color: #1a6b8a; }
-    .card-icon svg { width: 22px; height: 22px; stroke-width: 1.4; }
-    .card-title { font-size: 17px; font-weight: 800; color: var(--dark); margin-bottom: 3px; }
-    .card-sub { font-size: 12px; color: var(--sub); font-weight: 500; }
-    .card-body { padding: 14px 22px; flex: 1; }
-    .card-desc { font-size: 13.5px; color: var(--sub); line-height: 1.6; margin-bottom: 12px; }
-    .card-teaser { background: var(--light); border-radius: 8px; padding: 10px 13px; border-left: 3px solid var(--accent); font-size: 12.5px; line-height: 1.5; }
-    .card-teaser .t-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--primary); margin-bottom: 3px; }
-    .card-footer { padding: 13px 22px 18px; display: flex; align-items: center; justify-content: space-between; }
-    .card-badge { font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; background: var(--light); color: var(--primary); }
-    .card-link { font-size: 13px; font-weight: 700; color: var(--primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; border-bottom: 1.5px solid transparent; transition: border-color .15s, color .15s; }
-    .card-link:hover { color: var(--dark); border-bottom-color: var(--primary); }
+    /* CATEGORIES — magazine grid */
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; margin-bottom: 96px; }
+    @media (max-width: 900px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
+    .cat-card { background: var(--paper); padding: 38px 32px 32px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background .2s; position: relative; }
+    .cat-card:hover { background: white; }
+    .cat-card .cat-tag { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; color: var(--gold); letter-spacing: .3px; margin-bottom: 14px; }
+    .cat-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 400; color: var(--ink); letter-spacing: -0.3px; line-height: 1.25; margin-bottom: 10px; }
+    .cat-card .cat-rule { width: 28px; height: 1px; background: var(--gold-soft); margin: 4px 0 16px; }
+    .cat-card .cat-desc { font-size: 14px; color: var(--body); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .cat-card .cat-teaser { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--sub); line-height: 1.6; border-top: 1px dashed var(--hairline); padding-top: 14px; margin-bottom: 18px; }
+    .cat-card .cat-link { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--teal); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .cat-card .cat-link::after { content: "→"; transition: transform .2s; }
+    .cat-card:hover .cat-link { color: var(--ink); }
+    .cat-card:hover .cat-link::after { transform: translateX(3px); }
 
-    /* FEATURED ARTICLES */
-    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-bottom: 56px; }
-    .article-card { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 20px; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
-    .article-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); transform: translateY(-2px); }
-    .article-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-    .article-title { font-size: 15px; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 8px; }
-    .article-desc { font-size: 12.5px; color: var(--sub); line-height: 1.55; }
-    .article-footer { margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--primary); }
+    /* FEATURED ARTICLES — editorial list */
+    .articles-wrap { margin-bottom: 24px; }
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; }
+    @media (max-width: 900px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .articles-grid { grid-template-columns: 1fr; } }
+    .article-card { background: var(--paper); padding: 30px 28px 28px; text-decoration: none; color: inherit; transition: background .2s; display: flex; flex-direction: column; }
+    .article-card:hover { background: white; }
+    .article-tag { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; color: var(--gold); letter-spacing: .3px; margin-bottom: 10px; }
+    .article-title { font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: 400; color: var(--ink); line-height: 1.3; letter-spacing: -0.2px; margin-bottom: 12px; }
+    .article-desc { font-size: 13.5px; color: var(--body); line-height: 1.65; flex: 1; margin-bottom: 16px; }
+    .article-footer { font-size: 11.5px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--teal); display: inline-flex; align-items: center; gap: 5px; }
+    .article-footer::after { content: "→"; transition: transform .2s; }
+    .article-card:hover .article-footer { color: var(--ink); }
+    .article-card:hover .article-footer::after { transform: translateX(3px); }
 
-    /* MEDIA PREVIEW */
-    .media-strip { background: var(--bg); padding: 48px 24px; }
-    .media-strip .inner { max-width: 1100px; margin: 0 auto; }
-    .media-strip h2 { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
-    .media-strip p { font-size: 14px; color: var(--sub); margin-bottom: 28px; }
-    .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-    .media-item { background: var(--bg); border-radius: 10px; border: 1px solid var(--border); padding: 16px; display: flex; gap: 12px; align-items: flex-start; text-decoration: none; color: inherit; transition: box-shadow .2s; }
-    .media-item:hover { box-shadow: 0 4px 14px rgba(0,0,0,.08); }
-    .media-thumb { width: 44px; height: 44px; border-radius: 8px; background: var(--dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
-    .media-info .m-type { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
-    .media-info .m-title { font-size: 13px; font-weight: 700; color: var(--dark); line-height: 1.35; margin-bottom: 3px; }
-    .media-info .m-sub { font-size: 11.5px; color: var(--sub); }
+    /* MEDIA STRIP — dark band */
+    .media-strip { background: linear-gradient(180deg, var(--ink-deep) 0%, var(--ink) 100%); color: white; padding: 84px 24px 72px; margin-top: 48px; position: relative; }
+    .media-strip::before { content: "◆"; position: absolute; top: 34px; left: 50%; transform: translateX(-50%); color: var(--gold-soft); font-size: 10px; letter-spacing: 8px; opacity: .55; }
+    .media-strip .inner { max-width: 1120px; margin: 0 auto; }
+    .media-strip .section-eyebrow { color: #d9c58e; }
+    .media-strip .section-title { color: white; }
+    .media-strip .section-lede { color: rgba(255,255,255,.7); }
+    .media-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.12); border-radius: 2px; overflow: hidden; margin-top: 44px; }
+    @media (max-width: 900px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .media-grid { grid-template-columns: 1fr; } }
+    .media-item { background: rgba(255,255,255,.03); padding: 24px 22px; text-decoration: none; color: inherit; transition: background .2s; display: flex; flex-direction: column; }
+    .media-item:hover { background: rgba(255,255,255,.08); }
+    .m-type { font-family: Georgia, serif; font-style: italic; font-size: 11px; color: #d9c58e; letter-spacing: .3px; margin-bottom: 10px; }
+    .m-title { font-family: Georgia, "Times New Roman", serif; font-size: 16px; font-weight: 400; color: white; line-height: 1.3; letter-spacing: -0.2px; margin-bottom: 8px; }
+    .m-sub { font-size: 12.5px; color: rgba(255,255,255,.62); line-height: 1.5; }
+    .media-more { margin-top: 40px; text-align: center; }
+    .media-more a { display: inline-block; color: white; border: 1px solid rgba(255,255,255,.35); padding: 13px 28px; text-decoration: none; font-size: 12.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 2px; transition: all .2s; }
+    .media-more a:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.6); }
 
     /* FOOTER */
-    .site-footer { background: #0d3d52; color: #7aacbf; padding: 48px 32px 32px; font-size: 13px; }
-    .footer-inner { max-width: 1000px; margin: 0 auto 28px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
-    .footer-brand strong { font-size: 16px; color: white; display: block; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; color: #7aacbf; max-width: 240px; line-height: 1.6; }
-    .footer-brand a { color: #a8d4e6; text-decoration: none; }
-    .footer-nav { background: transparent; display: flex; gap: 40px; flex-wrap: wrap; }
-    .footer-col { display: flex; flex-direction: column; gap: 6px; }
-    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
-    .footer-col a { color: #a8d4e6; text-decoration: none; transition: color .15s; }
+    .site-footer { background: var(--ink-deep); color: #8fadbb; padding: 64px 32px 40px; font-size: 13px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto 32px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: space-between; }
+    .footer-brand strong { font-family: Georgia, serif; font-size: 19px; color: white; display: block; margin-bottom: 10px; font-weight: 400; letter-spacing: -0.3px; }
+    .footer-brand p { font-size: 13px; color: #8fadbb; max-width: 260px; line-height: 1.75; }
+    .footer-brand a { color: #d9c58e; text-decoration: none; }
+    .footer-brand a:hover { color: white; }
+    .footer-nav { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col-title { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: #d9c58e; letter-spacing: .3px; margin-bottom: 6px; }
+    .footer-col a { color: #b8cfd9; text-decoration: none; transition: color .15s; font-size: 13.5px; }
     .footer-col a:hover { color: white; }
-    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; text-align: center; }
-    .footer-copy { color: #5a8a9f; margin-bottom: 8px; }
-    .footer-copy a { color: #7aacbf; text-decoration: none; }
-    .footer-disc { font-size: 11px; color: #5a8a9f; max-width: 640px; margin: 0 auto; line-height: 1.6; }
-  
-@media (max-width: 768px) {
-  nav { padding: 0 16px; }
-  .nav-links { display: none; }
-  .nav-mobile { display: flex !important; }
-  .hero { padding: 40px 16px 36px; }
-  .page-hero { padding: 32px 16px 28px; }
-  .trust-bar { padding: 12px 16px; gap: 12px; }
-  .wrap { padding: 32px 16px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .articles-grid { grid-template-columns: 1fr; }
-  .media-grid { grid-template-columns: 1fr; }
-  .site-footer { padding: 32px 16px 24px; }
-  .footer-inner { flex-direction: column; gap: 24px; }
-  .footer-nav { flex-direction: column; gap: 16px; }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .product-header { flex-direction: column; }
-  .product-footer { flex-direction: column; align-items: flex-start; }
-  .compare-table { font-size: 12px; }
-  .compare-table th, .compare-table td { padding: 8px 6px; }
-  .filter-bar { flex-direction: column; }
-  #cookie-banner { flex-direction: column !important; gap: 12px; }
-}
-@media (max-width: 480px) {
-  .hero h1 { font-size: 24px; }
-  .nav-logo-text span:first-child { font-size: 15px; }
-}
-</style>
+    .footer-bottom { max-width: 1000px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; text-align: center; }
+    .footer-copy { color: #7696a6; margin-bottom: 8px; font-size: 12.5px; }
+    .footer-copy a { color: #b8cfd9; text-decoration: none; }
+    .footer-disc { font-size: 11.5px; color: #7696a6; max-width: 680px; margin: 0 auto; line-height: 1.7; font-style: italic; font-family: Georgia, serif; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { display: none; }
+      .nav-mobile { display: flex !important; }
+      .hero { padding: 64px 16px 56px; }
+      .wrap { padding: 56px 16px 32px; }
+      .media-strip { padding: 56px 16px 48px; }
+      .site-footer { padding: 48px 16px 28px; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-nav { flex-direction: column; gap: 20px; }
+      #cookie-banner { flex-direction: column !important; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .nav-logo-text span:first-child { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">
     <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="18" cy="18" r="17" stroke="#1b2139" stroke-width="0.9" fill="white"/>
-      <path d="M22.5 9.5 A 8.5 8.5 0 1 0 22.5 26.5 A 6 6 0 0 1 22.5 9.5 Z" fill="#1b2139"/>
-      <circle cx="10.5" cy="13" r="0.9" fill="#1b2139"/>
-      <circle cx="9" cy="22" r="0.5" fill="#1b2139" opacity="0.7"/>
+      <rect width="36" height="36" rx="8" fill="#1a6b8a"/>
+      <path d="M18 8C13.6 8 10 11.6 10 16c0 3.5 2.1 6.5 5.2 7.8V26h5.6v-2.2C23.9 22.5 26 19.5 26 16c0-4.4-3.6-8-8-8z" fill="white" opacity="0.9"/>
+      <rect x="15.5" y="26" width="5" height="2" rx="1" fill="white" opacity="0.7"/>
+      <rect x="16.5" y="28.5" width="3" height="1.5" rx="0.75" fill="white" opacity="0.5"/>
+      <circle cx="18" cy="16" r="3" fill="#7dd3f0"/>
     </svg>
     <div class="nav-logo-text">
       <span>BesteSlaapAdvies</span>
@@ -205,6 +228,7 @@
     </div>
   </a>
   <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
     <a href="supplementen/index.html">Supplementen</a>
     <a href="ontspanning/index.html">Ontspanning</a>
     <a href="alternatieven/acupunctuur/index.html">Alternatieven</a>
@@ -215,45 +239,47 @@
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
-<div id="mobile-menu" style="display:none;position:fixed;top:64px;left:0;right:0;background:white;border-bottom:2px solid #d0e8f2;z-index:99;flex-direction:column;box-shadow:0 4px 12px rgba(0,0,0,.1)">
-  <a href="/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Home</a>
-  <a href="/supplementen/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Supplementen</a>
-  <a href="/ontspanning/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Ontspanning</a>
-    <a href="alternatieven/acupunctuur/index.html">Alternatieven</a>
-  <a href="/gids/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Slaapgids</a>
-  <a href="/media/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;display:block">Media</a>
+<div id="mobile-menu" style="display:none;position:fixed;top:64px;left:0;right:0;background:white;border-bottom:1px solid #d6e4eb;z-index:99;flex-direction:column;box-shadow:0 4px 12px rgba(13,61,82,.1)">
+  <a href="index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Home</a>
+  <a href="supplementen/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Supplementen</a>
+  <a href="ontspanning/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Ontspanning</a>
+  <a href="alternatieven/acupunctuur/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Alternatieven</a>
+  <a href="gids/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Slaapgids</a>
+  <a href="media/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;display:block">Media</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <div class="inner">
     <div class="eyebrow">Onafhankelijk · Eerlijk · Gratis</div>
-    <h1>Beter slapen begint met <span>het juiste advies</span></h1>
+    <h1>Beter slapen begint met <em>het juiste advies</em></h1>
     <p>Wij vergelijken slaapsupplementen, ontspanningsproducten en slaapgidsen op wetenschappelijk bewijs — zodat jij kunt kiezen wat écht werkt bij jouw slaapproblemen. Geen reclame, geen verborgen agenda.</p>
-    <div class="hero-pills">
-      <span class="hero-pill">Supplementen</span>
-      <span class="hero-pill">Ontspanning</span>
-      <span class="hero-pill">Podcasts & Video's</span>
+    <div class="hero-cta-row">
+      <a href="supplementen/index.html" class="hero-cta">Bekijk vergelijkingen</a>
+      <a href="gids/index.html" class="hero-cta ghost">Lees de slaapgids</a>
     </div>
-    <a href="supplementen/index.html" class="hero-cta">Bekijk alle vergelijkingen →</a>
   </div>
 </div>
 
+<!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-    Onafhankelijke vergelijkingen
-  </div>
-  <div class="trust-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-    Geen betaalde plaatsingen
-  </div>
-  <div class="trust-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-    Scores op klinisch onderzoek
-  </div>
-  <div class="trust-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-    Altijd bijgewerkt in 2026
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="t-label">Redactie</div>
+      <div class="t-text">Onafhankelijke vergelijkingen</div>
+    </div>
+    <div class="trust-item">
+      <div class="t-label">Integriteit</div>
+      <div class="t-text">Geen betaalde plaatsingen</div>
+    </div>
+    <div class="trust-item">
+      <div class="t-label">Methode</div>
+      <div class="t-text">Scores op klinisch onderzoek</div>
+    </div>
+    <div class="trust-item">
+      <div class="t-label">Actueel</div>
+      <div class="t-text">Bijgewerkt in 2026</div>
+    </div>
   </div>
 </div>
 
@@ -261,11 +287,11 @@
 <section class="intro-band">
   <div class="intro-inner">
     <div class="intro-copy">
-      <p class="intro-eyebrow">— Waarom deze site bestaat</p>
+      <p class="intro-eyebrow">Waarom deze site bestaat</p>
       <h2 class="intro-heading">Slecht slapen is een <em>Nederlands</em> probleem.</h2>
       <p class="intro-lede">Niet kunnen inslapen, 's nachts wakker worden, nooit echt uitgerust opstaan. Stress, hormonen, een slecht matras, een magnesiumtekort — de oorzaken zijn divers. De oplossingen ook. Wij vergelijken slaapsupplementen, ontspanningsproducten en slaapgidsen op <strong>wetenschappelijk bewijs</strong>, niet op marketing.</p>
       <div class="intro-links">
-        <a class="intro-link primary" href="supplementen/index.html">Supplementen vergelijken →</a>
+        <a class="intro-link primary" href="supplementen/index.html">Supplementen vergelijken</a>
         <a class="intro-link" href="gids/slaaphygiene.html">Slaaphygiëne gids</a>
         <a class="intro-link" href="disclaimer.html">Onze methode</a>
       </div>
@@ -284,212 +310,167 @@
   </div>
 </section>
 
+<!-- CATEGORIES -->
 <div class="wrap">
-  <div class="section-label">Onze categorieën</div>
-  <div class="cards-grid">
+  <div class="section-head">
+    <div class="section-eyebrow">De redactie</div>
+    <h2 class="section-title">Onze <em>categorieën</em></h2>
+    <p class="section-lede">Vier thema's, één methode: onafhankelijk vergelijken op basis van bewijs in plaats van marketing.</p>
+  </div>
 
-    <article class="card">
-      <div class="card-top">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5a6 6 0 0 1-4.24-10.24l4.24-4.24a6 6 0 0 1 8.48 8.48l-4.24 4.24a6 6 0 0 1-4.24 1.76z"/><path d="M6.26 13.74 17.74 10.26"/></svg></div>
-        <div>
-          <div class="card-title">Slaapsupplementen</div>
-          <div class="card-sub">Beoordelingen &amp; vergelijkingen</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Van magnesium tot ashwagandha: wij leggen uit wat écht werkt, wat overgewaardeerd is en welk supplement bij jouw situatie past.</div>
-        <div class="card-teaser">
-          <div class="t-label">Uit deze categorie</div>
-          Magnesium glycinaat vs citraat: welke is beter voor slaap?
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-badge">Hoofdcategorie</span>
-        <a class="card-link" href="supplementen/index.html">Bekijk beoordelingen →</a>
-      </div>
-    </article>
+  <div class="cat-grid">
 
-    <article class="card">
-      <div class="card-top">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.5 2-3 3.5-3 6a3 3 0 0 0 6 0c0-2.5-1.5-4-3-6z"/><path d="M9 15c-1 1.5-2 2.5-2 4a2 2 0 0 0 4 0"/><path d="M15 15c1 1.5 2 2.5 2 4a2 2 0 0 1-4 0"/></svg></div>
-        <div>
-          <div class="card-title">Ontspanning</div>
-          <div class="card-sub">Aroma, bad, massage &amp; thee</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Rituals, NEOM, This Works: wij vergelijken de beste ontspanningsproducten voor een betere slaaproutine — op geur, effect en prijs-kwaliteit.</div>
-        <div class="card-teaser">
-          <div class="t-label">Uit deze categorie</div>
-          Beste pillow spray voor slaap: Rituals vs This Works
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-badge">Nieuw</span>
-        <a class="card-link" href="ontspanning/index.html">Bekijk vergelijkingen →</a>
-      </div>
-    </article>
+    <a class="cat-card" href="supplementen/index.html">
+      <div class="cat-tag">Supplementen</div>
+      <h3>Slaapsupplementen</h3>
+      <div class="cat-rule"></div>
+      <div class="cat-desc">Van magnesium tot ashwagandha: wij leggen uit wat écht werkt, wat overgewaardeerd is en welk supplement bij jouw situatie past.</div>
+      <div class="cat-teaser">Magnesium glycinaat vs citraat: welke is beter voor slaap?</div>
+      <span class="cat-link">Bekijk beoordelingen</span>
+    </a>
 
-    <article class="card">
-      <div class="card-top">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 4.5v17"/><path d="M8 7h8"/><path d="M8 11h6"/></svg></div>
-        <div>
-          <div class="card-title">Slaapgids</div>
-          <div class="card-sub">Complete slaaptips &amp; gidsen</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Slaaphygiëne, stress, menopauze, hoeveel slaap je nodig hebt: onze complete gidsen geven praktisch antwoord op elke slaapvraag.</div>
-        <div class="card-teaser">
-          <div class="t-label">Uit deze categorie</div>
-          Slaap en menopauze: praktische tips die écht helpen
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-badge">Informatief</span>
-        <a class="card-link" href="gids/index.html">Lees meer →</a>
-      </div>
-    </article>
+    <a class="cat-card" href="ontspanning/index.html">
+      <div class="cat-tag">Ontspanning</div>
+      <h3>Ontspanningsproducten</h3>
+      <div class="cat-rule"></div>
+      <div class="cat-desc">Rituals, NEOM, This Works: wij vergelijken de beste ontspanningsproducten voor een betere slaaproutine — op geur, effect en prijs-kwaliteit.</div>
+      <div class="cat-teaser">Beste pillow spray voor slaap: Rituals vs This Works.</div>
+      <span class="cat-link">Bekijk vergelijkingen</span>
+    </a>
 
-    <article class="card">
-      <div class="card-top">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/><path d="M8 22h8"/></svg></div>
-        <div>
-          <div class="card-title">Slaap Media</div>
-          <div class="card-sub">Podcasts &amp; YouTube-kanalen</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">De beste podcasts en YouTube-kanalen over slaap op één plek. Gesorteerd op onderwerp — van slaapwetenschap tot supplementen.</div>
-        <div class="card-teaser">
-          <div class="t-label">Uit deze categorie</div>
-          Gecureerde slaappodcasts voor Nederland &amp; België
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-badge">Nieuw</span>
-        <a class="card-link" href="media/index.html">Bekijk media →</a>
-      </div>
-    </article>
+    <a class="cat-card" href="gids/index.html">
+      <div class="cat-tag">Slaapgids</div>
+      <h3>Complete slaapgidsen</h3>
+      <div class="cat-rule"></div>
+      <div class="cat-desc">Slaaphygiëne, stress, menopauze, hoeveel slaap je nodig hebt: onze complete gidsen geven praktisch antwoord op elke slaapvraag.</div>
+      <div class="cat-teaser">Slaap en menopauze: praktische tips die écht helpen.</div>
+      <span class="cat-link">Lees de gidsen</span>
+    </a>
 
-    <article class="card">
-      <div class="card-top">
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg></div>
-        <div>
-          <div class="card-title">Alternatieve methoden</div>
-          <div class="card-sub">Acupunctuur per stad</div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-desc">Acupunctuur bij slaapproblemen: vind een praktijk bij u in de buurt. Per stad een onafhankelijk overzicht — Amsterdam, Utrecht, Enschede en meer.</div>
-        <div class="card-teaser">
-          <div class="t-label">Uit deze categorie</div>
-          Acupunctuur voor slaapproblemen: vind een praktijk in uw stad
-        </div>
-      </div>
-      <div class="card-footer">
-        <span class="card-badge">Nieuw</span>
-        <a class="card-link" href="alternatieven/acupunctuur/index.html">Bekijk praktijken →</a>
-      </div>
-    </article>
+    <a class="cat-card" href="media/index.html">
+      <div class="cat-tag">Slaap Media</div>
+      <h3>Podcasts &amp; video's</h3>
+      <div class="cat-rule"></div>
+      <div class="cat-desc">De beste podcasts en YouTube-kanalen over slaap op één plek. Gesorteerd op onderwerp — van slaapwetenschap tot supplementen.</div>
+      <div class="cat-teaser">Gecureerde slaappodcasts voor Nederland &amp; België.</div>
+      <span class="cat-link">Bekijk media</span>
+    </a>
+
+    <a class="cat-card" href="alternatieven/acupunctuur/index.html">
+      <div class="cat-tag">Alternatieven</div>
+      <h3>Alternatieve methoden</h3>
+      <div class="cat-rule"></div>
+      <div class="cat-desc">Acupunctuur bij slaapproblemen: vind een praktijk bij u in de buurt. Per stad een onafhankelijk overzicht — Amsterdam, Utrecht, Enschede en meer.</div>
+      <div class="cat-teaser">Acupunctuur voor slaapproblemen: vind een praktijk in uw stad.</div>
+      <span class="cat-link">Bekijk praktijken</span>
+    </a>
+
+    <a class="cat-card" href="contact.html">
+      <div class="cat-tag">Redactie</div>
+      <h3>Contact &amp; methode</h3>
+      <div class="cat-rule"></div>
+      <div class="cat-desc">Vragen over onze beoordelingen, samenwerkingen of feedback? Schrijf de redactie. Wij reageren binnen 1–2 werkdagen.</div>
+      <div class="cat-teaser">Lees ook hoe onze onafhankelijke methode werkt.</div>
+      <span class="cat-link">Neem contact op</span>
+    </a>
 
   </div>
 
   <!-- FEATURED ARTICLES -->
-  <div class="section-label">Uitgelichte artikelen</div>
-  <div class="articles-grid">
+  <div class="section-head">
+    <div class="section-eyebrow">Uitgelicht</div>
+    <h2 class="section-title">Artikelen <em>uit de redactie</em></h2>
+    <p class="section-lede">Diepgaande stukken over de vragen die onze lezers het vaakst stellen.</p>
+  </div>
 
-    <a class="article-card" href="supplementen/magnesium-glycinaat-vs-citraat.html">
-      <div class="article-tag">Supplementen</div>
-      <div class="article-title">Magnesium glycinaat vs citraat: welke is beter voor slaap?</div>
-      <div class="article-desc">Twee populaire vormen, heel verschillende effecten. Wij leggen uit welke jij nodig hebt.</div>
-      <div class="article-footer">Lees meer →</div>
-    </a>
+  <div class="articles-wrap">
+    <div class="articles-grid">
 
-    <a class="article-card" href="supplementen/beste-magnesium-slaap.html">
-      <div class="article-tag">Supplementen</div>
-      <div class="article-title">Beste magnesium supplement voor slaap 2026</div>
-      <div class="article-desc">Vergelijking van 7 magnesiumsupplementen — op effectiviteit, prijs en beschikbaarheid in Nederland.</div>
-      <div class="article-footer">Lees meer →</div>
-    </a>
+      <a class="article-card" href="supplementen/magnesium-glycinaat-vs-citraat.html">
+        <div class="article-tag">Supplementen</div>
+        <div class="article-title">Magnesium glycinaat vs citraat: welke is beter voor slaap?</div>
+        <div class="article-desc">Twee populaire vormen, heel verschillende effecten. Wij leggen uit welke jij nodig hebt.</div>
+        <div class="article-footer">Lees meer</div>
+      </a>
 
-    <a class="article-card" href="supplementen/alternatieven-melatonine.html">
-      <div class="article-tag">Supplementen</div>
-      <div class="article-title">Natuurlijke alternatieven voor melatonine</div>
-      <div class="article-desc">Melatonine werkt niet voor iedereen — en is in Nederland aan regels gebonden. Dit zijn de beste alternatieven.</div>
-      <div class="article-footer">Lees meer →</div>
-    </a>
+      <a class="article-card" href="supplementen/beste-magnesium-slaap.html">
+        <div class="article-tag">Supplementen</div>
+        <div class="article-title">Beste magnesium supplement voor slaap 2026</div>
+        <div class="article-desc">Vergelijking van 7 magnesiumsupplementen — op effectiviteit, prijs en beschikbaarheid in Nederland.</div>
+        <div class="article-footer">Lees meer</div>
+      </a>
 
-    <a class="article-card" href="ontspanning/index.html">
-      <div class="article-tag">Ontspanning</div>
-      <div class="article-title">Beste pillow spray voor slaap: Rituals vs This Works</div>
-      <div class="article-desc">Welke pillow spray helpt écht bij inslapen? Wij vergelijken de populairste merken op geur, effect en prijs.</div>
-      <div class="article-footer">Lees meer →</div>
-    </a>
+      <a class="article-card" href="supplementen/alternatieven-melatonine.html">
+        <div class="article-tag">Supplementen</div>
+        <div class="article-title">Natuurlijke alternatieven voor melatonine</div>
+        <div class="article-desc">Melatonine werkt niet voor iedereen — en is in Nederland aan regels gebonden. Dit zijn de beste alternatieven.</div>
+        <div class="article-footer">Lees meer</div>
+      </a>
 
-    <a class="article-card" href="gids/slaap-menopauze.html">
-      <div class="article-tag">Slaapgids</div>
-      <div class="article-title">Slaap en menopauze: praktische tips die écht helpen</div>
-      <div class="article-desc">Nachtelijk zweten, wakker liggen, vroeg wakker — hoe je slaap aanpakt tijdens de overgang.</div>
-      <div class="article-footer">Lees meer →</div>
-    </a>
+      <a class="article-card" href="ontspanning/index.html">
+        <div class="article-tag">Ontspanning</div>
+        <div class="article-title">Beste pillow spray voor slaap: Rituals vs This Works</div>
+        <div class="article-desc">Welke pillow spray helpt écht bij inslapen? Wij vergelijken de populairste merken op geur, effect en prijs.</div>
+        <div class="article-footer">Lees meer</div>
+      </a>
 
-    <a class="article-card" href="ontspanning/index.html">
-      <div class="article-tag">Ontspanning</div>
-      <div class="article-title">Rituals badproducten voor slaap: welke zijn het beste?</div>
-      <div class="article-desc">De Ritual of Jing lijn belooft diepe ontspanning. Wij vergelijken de bath foam, massage oil en pillow mist op slaapeffect.</div>
-      <div class="article-footer">Lees meer →</div>
-    </a>
+      <a class="article-card" href="gids/slaap-menopauze.html">
+        <div class="article-tag">Slaapgids</div>
+        <div class="article-title">Slaap en menopauze: praktische tips die écht helpen</div>
+        <div class="article-desc">Nachtelijk zweten, wakker liggen, vroeg wakker — hoe je slaap aanpakt tijdens de overgang.</div>
+        <div class="article-footer">Lees meer</div>
+      </a>
 
+      <a class="article-card" href="ontspanning/index.html">
+        <div class="article-tag">Ontspanning</div>
+        <div class="article-title">Rituals badproducten voor slaap: welke zijn het beste?</div>
+        <div class="article-desc">De Ritual of Jing lijn belooft diepe ontspanning. Wij vergelijken de bath foam, massage oil en pillow mist op slaapeffect.</div>
+        <div class="article-footer">Lees meer</div>
+      </a>
+
+    </div>
   </div>
 </div>
 
 <!-- MEDIA STRIP -->
 <div class="media-strip">
   <div class="inner">
-    <h2>Slaap Media</h2>
-    <p>De beste podcasts en YouTube kanalen over slaap — gecureerd en gesorteerd per onderwerp.</p>
+    <div class="section-head">
+      <div class="section-eyebrow">Luister &amp; kijk</div>
+      <h2 class="section-title">Slaap <em>in de media</em></h2>
+      <p class="section-lede">De beste podcasts en YouTube-kanalen over slaap — gecureerd en gesorteerd per onderwerp.</p>
+    </div>
+
     <div class="media-grid">
 
       <a class="media-item" href="media/index.html#podcasts">
-        <div class="media-thumb" style="background:#1a5570"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
-        <div class="media-info">
-          <div class="m-type">Podcast</div>
-          <div class="m-title">Sleep Is a Skill</div>
-          <div class="m-sub">Wetenschap & praktijk · Engels</div>
-        </div>
+        <div class="m-type">Podcast</div>
+        <div class="m-title">Sleep Is a Skill</div>
+        <div class="m-sub">Wetenschap &amp; praktijk · Engels</div>
       </a>
 
       <a class="media-item" href="media/index.html#podcasts">
-        <div class="media-thumb" style="background:#1a5570"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
-        <div class="media-info">
-          <div class="m-type">YouTube &amp; Podcast</div>
-          <div class="m-title">Matthew Walker — Why We Sleep</div>
-          <div class="m-sub">Slaapwetenschap · Engels</div>
-        </div>
+        <div class="m-type">YouTube &amp; Podcast</div>
+        <div class="m-title">Matthew Walker — Why We Sleep</div>
+        <div class="m-sub">Slaapwetenschap · Engels</div>
       </a>
 
       <a class="media-item" href="media/index.html#podcasts">
-        <div class="media-thumb" style="background:#1a5570"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
-        <div class="media-info">
-          <div class="m-type">Podcast</div>
-          <div class="m-title">Huberman Lab — Slaap Protocol</div>
-          <div class="m-sub">Neurologie &amp; slaap · Engels</div>
-        </div>
+        <div class="m-type">Podcast</div>
+        <div class="m-title">Huberman Lab — Slaap Protocol</div>
+        <div class="m-sub">Neurologie &amp; slaap · Engels</div>
       </a>
 
       <a class="media-item" href="media/index.html#nederlands">
-        <div class="media-thumb" style="background:#c47a1a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="white"/></svg></div>
-        <div class="media-info">
-          <div class="m-type">Documentaire</div>
-          <div class="m-title">VPRO Tegenlicht — Slaap</div>
-          <div class="m-sub">Maatschappij &amp; slaap · Nederlands</div>
-        </div>
+        <div class="m-type">Documentaire</div>
+        <div class="m-title">VPRO Tegenlicht — Slaap</div>
+        <div class="m-sub">Maatschappij &amp; slaap · Nederlands</div>
       </a>
 
     </div>
-    <div style="margin-top:24px; text-align:center;">
-      <a href="media/index.html" style="color:var(--primary); font-weight:700; text-decoration:none; font-size:14px;">Bekijk alle slaap media →</a>
+
+    <div class="media-more">
+      <a href="media/index.html">Bekijk alle slaap media</a>
     </div>
   </div>
 </div>
@@ -505,8 +486,8 @@
       <div class="footer-col">
         <span class="footer-col-title">Categorieën</span>
         <a href="supplementen/index.html">Supplementen</a>
-    <a href="ontspanning/index.html">Ontspanning</a>
-    <a href="alternatieven/acupunctuur/index.html">Alternatieven</a>
+        <a href="ontspanning/index.html">Ontspanning</a>
+        <a href="alternatieven/acupunctuur/index.html">Alternatieven</a>
         <a href="gids/index.html">Slaapgids</a>
         <a href="media/index.html">Media</a>
       </div>
@@ -526,14 +507,14 @@
 
 
 <!-- COOKIE CONSENT BANNER -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d3d52;color:white;padding:16px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#082e3f;color:white;padding:16px 24px;z-index:9999;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.2);">
   <p style="margin:0;font-size:13px;color:rgba(255,255,255,.85);max-width:680px;line-height:1.5;">
     Wij gebruiken functionele cookies voor de werking van de site. Als u op een productlink klikt, kunnen externe partijen (Bol.com, Awin) tracking cookies plaatsen voor commissieverwerking.
-    <a href="privacy.html" style="color:#7dd3f0;font-weight:600;">Lees onze privacyverklaring →</a>
+    <a href="privacy.html" style="color:#d9c58e;font-weight:600;">Lees onze privacyverklaring →</a>
   </p>
   <div style="display:flex;gap:10px;flex-shrink:0;">
-    <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;cursor:pointer;">Alleen noodzakelijk</button>
-    <button onclick="setCookieConsent('accepted')" style="background:#2d9cdb;border:none;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:6px;cursor:pointer;">Akkoord</button>
+    <button onclick="setCookieConsent('declined')" style="background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75);font-size:13px;font-weight:600;padding:9px 18px;border-radius:2px;cursor:pointer;letter-spacing:.5px;">Alleen noodzakelijk</button>
+    <button onclick="setCookieConsent('accepted')" style="background:#d9c58e;border:none;color:#0d3d52;font-size:13px;font-weight:700;padding:9px 18px;border-radius:2px;cursor:pointer;letter-spacing:.5px;">Akkoord</button>
   </div>
 </div>
 <script>
