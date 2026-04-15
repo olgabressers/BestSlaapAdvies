@@ -333,21 +333,33 @@ async function handleSubmit(e) {
   errorEl.style.display = 'none';
   btn.textContent = 'VERSTUREN…';
   btn.disabled = true;
+
+  const payload = {};
+  new FormData(form).forEach((v, k) => { payload[k] = v; });
+
   try {
-    const res = await fetch(form.action, {
+    const res = await fetch('https://formsubmit.co/ajax/alenabressers@gmail.com', {
       method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
     });
-    if (res.ok) {
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && (data.success === 'true' || data.success === true)) {
       form.style.display = 'none';
       successEl.style.display = 'block';
       successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
-      throw new Error('Non-ok response');
+      throw new Error(data.message || 'Submission failed');
     }
-  } catch {
+  } catch (err) {
     errorEl.style.display = 'block';
+    const errMsg = errorEl.querySelector('p');
+    if (errMsg && err && err.message) {
+      errMsg.innerHTML = 'Er ging iets mis: <em>' + err.message + '</em>. Probeer het opnieuw of mail direct naar <a href="mailto:contact@besteslaapadvies.nl">contact@besteslaapadvies.nl</a>.';
+    }
     btn.textContent = 'VERSTUUR BERICHT →';
     btn.disabled = false;
   }
