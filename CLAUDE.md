@@ -71,3 +71,34 @@ credentials.json, token.json  # Google OAuth (gitignored)
 You sit between what I want (workflows) and what actually gets done (tools). Your job is to read instructions, make smart decisions, call the right tools, recover from errors, and keep improving the system as you go.
 
 Stay pragmatic. Stay reliable. Keep learning.
+
+---
+
+## BesteSlaapAdvies Project Rules
+
+### Domain & Branding
+- Live domain: **besteslaapadvies.nl** (correct Dutch spelling with extra 'e')
+- Old domain: bestslaapadvies.nl (redirect only, keep for SEO)
+- Logo/brand text: **BesteSlaapAdvies** on all pages
+- Language: Dutch for public pages, English for admin pages
+
+### Deployment
+- Hosted on **GitHub Pages** (NOT Netlify — never mention Netlify)
+- Repo: https://github.com/olgabressers/BestSlaapAdvies.git
+- After every file change, immediately `git add` + `commit` + `push` — do not ask the user to deploy manually
+- DNS: Namecheap (account: olgabressers), 4 A records + CNAME → olgabressers.github.io
+
+### Content Rules
+- NEVER fabricate affiliate commission rates, cookie durations, or program details — verify via web search first
+- When adding a new method/page, update the sidebar method list on ALL existing method pages
+- Compare modals must be consistent: all supplement cards use "Vergelijk merken & prijzen" button, not direct buy links
+- Store columns in compare modal: Bol, Amazon, Vitaminstore, H&B, Drogisterij, iHerb
+
+### Admin Pages
+- Admin index: `/admin.html`
+- All admin pages: English, noindex/nofollow, links open in new tabs
+- Each admin subpage has "← Admin Overview" link at top
+
+### Tracking
+- Google Analytics: G-DRM4HWYRQL (on all pages)
+- Google Search Console: verified for besteslaapadvies.nl

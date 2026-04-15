@@ -65,6 +65,44 @@
     .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--sub); }
     .trust-item svg { color: var(--accent); }
 
+    /* EDITORIAL INTRO BAND */
+    .intro-band { background: linear-gradient(180deg, #faf7f2 0%, #f5eee3 100%); border-bottom: 1px solid #e8dfd0; padding: 64px 32px 72px; }
+    .intro-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+    .intro-eyebrow { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 14px; color: #8a6d3b; margin-bottom: 14px; letter-spacing: .2px; }
+    .intro-heading { font-family: Georgia, "Times New Roman", serif; font-size: clamp(26px, 3.4vw, 36px); font-weight: 700; line-height: 1.18; color: #1a2e3b; margin-bottom: 18px; letter-spacing: -0.4px; }
+    .intro-heading em { font-style: italic; color: #1a6b8a; font-weight: 600; }
+    .intro-lede { font-size: 15.5px; line-height: 1.75; color: #4a5a66; margin-bottom: 24px; max-width: 520px; }
+    .intro-lede strong { color: #1a2e3b; font-weight: 600; }
+    .intro-links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .intro-link { font-size: 13.5px; font-weight: 600; text-decoration: none; padding: 10px 18px; border-radius: 24px; transition: all .15s; }
+    .intro-link.primary { background: #1a6b8a; color: white; }
+    .intro-link.primary:hover { background: #0d3d52; }
+    .intro-link:not(.primary) { color: #5a7a8a; border: 1px solid #d8c9ad; background: rgba(255,255,255,.5); }
+    .intro-link:not(.primary):hover { background: white; color: #1a6b8a; border-color: #1a6b8a; }
+
+    .intro-stats { display: flex; flex-direction: column; gap: 14px; }
+    .stat-card { background: white; border: 1px solid #e8dfd0; border-radius: 4px; padding: 26px 28px; position: relative; box-shadow: 0 1px 3px rgba(125,90,40,.06); }
+    .stat-card.big { padding: 32px 30px 28px; }
+    .stat-card.big::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #1a6b8a; border-radius: 4px 0 0 4px; }
+    .stat-num { font-family: Georgia, "Times New Roman", serif; font-size: 56px; font-weight: 400; color: #0d3d52; line-height: 1; letter-spacing: -2px; display: flex; align-items: baseline; gap: 2px; }
+    .stat-num span { font-size: 28px; color: #1a6b8a; font-weight: 400; }
+    .stat-num .stat-of { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 13px; color: #8a6d3b; font-style: italic; font-weight: 400; margin: 0 6px; letter-spacing: 0; }
+    .stat-card.big .stat-num { font-size: 68px; }
+    .stat-card.small .stat-num { font-size: 40px; }
+    .stat-card.small .stat-num span { font-size: 20px; }
+    .stat-label { font-size: 14px; color: #4a5a66; line-height: 1.5; margin-top: 10px; max-width: 320px; }
+    .stat-source { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; color: #8a6d3b; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e0d2b8; }
+    .stat-source a { color: #8a6d3b; text-decoration: underline; text-decoration-color: #d8c9ad; text-underline-offset: 2px; }
+    .stat-source a:hover { color: #1a6b8a; text-decoration-color: #1a6b8a; }
+    .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    @media (max-width: 880px) {
+      .intro-band { padding: 44px 20px 52px; }
+      .intro-inner { grid-template-columns: 1fr; gap: 36px; }
+      .stat-row { grid-template-columns: 1fr; }
+      .stat-card.big .stat-num { font-size: 56px; }
+    }
+
     /* SECTION CARDS */
     .wrap { max-width: 1100px; margin: 0 auto; padding: 56px 24px; }
     .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 24px; }
@@ -72,13 +110,9 @@
 
     .card { background: white; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.05); overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
     .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.1); transform: translateY(-2px); }
-    .card-top { padding: 22px 22px 0; display: flex; align-items: flex-start; gap: 14px; }
-    .card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-    .card-icon.blue { background: #dff0f9; }
-    .card-icon.green { background: #dff5ec; }
-    .card-icon.purple { background: #ede9fb; }
-    .card-icon.orange { background: #fef0e4; }
-    .card-icon.pink { background: #fde8f2; }
+    .card-top { padding: 24px 22px 0; display: flex; align-items: flex-start; gap: 14px; }
+    .card-icon { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: transparent; border: 1.5px solid #d0e8f2; color: #1a6b8a; }
+    .card-icon svg { width: 22px; height: 22px; stroke-width: 1.4; }
     .card-title { font-size: 17px; font-weight: 800; color: var(--dark); margin-bottom: 3px; }
     .card-sub { font-size: 12px; color: var(--sub); font-weight: 500; }
     .card-body { padding: 14px 22px; flex: 1; }
@@ -225,19 +259,32 @@
   </div>
 </div>
 
-<!-- SEO INTRO SECTION -->
-<div style="background:var(--bg);border-bottom:1px solid var(--border);padding:32px 32px">
-  <div style="max-width:860px;margin:0 auto">
-    <h2 style="font-size:20px;font-weight:800;color:var(--dark);margin-bottom:12px">Slaapproblemen? Je bent niet alleen.</h2>
-    <p style="font-size:14px;color:var(--sub);line-height:1.75;margin-bottom:12px">Meer dan <strong style="color:var(--text)">1 op de 3 Nederlanders</strong> kampt regelmatig met slecht slapen — niet kunnen inslapen, 's nachts wakker worden, of nooit uitgerust wakker worden. De oorzaken zijn divers: stress, hormonen, een slecht matras, te veel cafeïne, of een tekort aan magnesium. De oplossingen ook.</p>
-    <p style="font-size:14px;color:var(--sub);line-height:1.75;margin-bottom:16px">BesteSlaapAdvies vergelijkt <strong style="color:var(--text)">slaapsupplementen</strong>, <strong style="color:var(--text)">ontspanningsproducten</strong> en <strong style="color:var(--text)">slaapgidsen</strong> op wetenschappelijk bewijs — niet op marketing. Of je nu last hebt van <em>insomnia</em>, nachtmerries, snurken, nacht plassen of gewoon beter wilt slapen: hier vind je eerlijk, praktisch advies.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <a href="supplementen/index.html" style="font-size:13px;font-weight:700;color:var(--primary);text-decoration:none;border:1.5px solid var(--primary);padding:6px 14px;border-radius:20px">Supplementen vergelijken</a>
-      <a href="gids/slaaphygiene.html" style="font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;border:1.5px solid var(--border);padding:6px 14px;border-radius:20px">Slaaphygiëne gids</a>
-      <a href="disclaimer.html" style="font-size:13px;font-weight:700;color:var(--sub);text-decoration:none;border:1.5px solid var(--border);padding:6px 14px;border-radius:20px">Onze methode</a>
+<!-- EDITORIAL INTRO BAND -->
+<section class="intro-band">
+  <div class="intro-inner">
+    <div class="intro-copy">
+      <p class="intro-eyebrow">— Waarom deze site bestaat</p>
+      <h2 class="intro-heading">Slecht slapen is een <em>Nederlands</em> probleem.</h2>
+      <p class="intro-lede">Niet kunnen inslapen, 's nachts wakker worden, nooit echt uitgerust opstaan. Stress, hormonen, een slecht matras, een magnesiumtekort — de oorzaken zijn divers. De oplossingen ook. Wij vergelijken slaapsupplementen, ontspanningsproducten en slaapgidsen op <strong>wetenschappelijk bewijs</strong>, niet op marketing.</p>
+      <div class="intro-links">
+        <a class="intro-link primary" href="supplementen/index.html">Supplementen vergelijken →</a>
+        <a class="intro-link" href="gids/slaaphygiene.html">Slaaphygiëne gids</a>
+        <a class="intro-link" href="disclaimer.html">Onze methode</a>
+      </div>
     </div>
+    <aside class="intro-stats" aria-label="Nederlandse slaapcijfers">
+      <figure class="stat-card big">
+        <div class="stat-num">63<span>%</span></div>
+        <div class="stat-label">van de Nederlanders is niet positief over de eigen slaapkwaliteit.</div>
+        <figcaption class="stat-source">Bron: <a href="https://www.hersenstichting.nl/slaap-cijfers/" target="_blank" rel="noopener">Hersenstichting — Hoe slaapt Nederland?</a></figcaption>
+      </figure>
+      <figure class="stat-card small">
+        <div class="stat-num">1<span class="stat-of">op de</span>5</div>
+        <div class="stat-label">geeft de eigen slaap een onvoldoende.</div>
+      </figure>
+    </aside>
   </div>
-</div>
+</section>
 
 <div class="wrap">
   <div class="section-label">Onze categorieën</div>
@@ -245,37 +292,37 @@
 
     <a class="card" href="supplementen/index.html">
       <div class="card-top">
-        <div class="card-icon blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a6b8a" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5a6 6 0 0 1-4.24-10.24l4.24-4.24a6 6 0 0 1 8.48 8.48l-4.24 4.24a6 6 0 0 1-4.24 1.76z"/><path d="M6.26 13.74 17.74 10.26"/></svg></div>
         <div>
           <div class="card-title">Slaapsupplementen</div>
-          <div class="card-sub">15 reviews & vergelijkingen</div>
+          <div class="card-sub">Reviews &amp; vergelijkingen</div>
         </div>
       </div>
       <div class="card-body">
         <div class="card-desc">Van magnesium tot ashwagandha: wij leggen uit wat écht werkt, wat overgewaardeerd is en welk supplement bij jouw situatie past.</div>
         <div class="card-teaser">
-          <div class="t-label">Meest gelezen</div>
+          <div class="t-label">Uit deze categorie</div>
           Magnesium glycinaat vs citraat: welke is beter voor slaap?
         </div>
       </div>
       <div class="card-footer">
-        <span class="card-badge">Top categorie</span>
+        <span class="card-badge">Hoofdcategorie</span>
         <span class="card-link">Bekijk reviews →</span>
       </div>
     </a>
 
     <a class="card" href="ontspanning/index.html">
       <div class="card-top">
-        <div class="card-icon" style="background:#fde8f2;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px">🕯️</div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.5 2-3 3.5-3 6a3 3 0 0 0 6 0c0-2.5-1.5-4-3-6z"/><path d="M9 15c-1 1.5-2 2.5-2 4a2 2 0 0 0 4 0"/><path d="M15 15c1 1.5 2 2.5 2 4a2 2 0 0 1-4 0"/></svg></div>
         <div>
           <div class="card-title">Ontspanning</div>
-          <div class="card-sub">Aroma, bad, massage & thee</div>
+          <div class="card-sub">Aroma, bad, massage &amp; thee</div>
         </div>
       </div>
       <div class="card-body">
         <div class="card-desc">Rituals, NEOM, This Works: wij vergelijken de beste ontspanningsproducten voor een betere slaaproutine — op geur, effect en prijs-kwaliteit.</div>
         <div class="card-teaser">
-          <div class="t-label">Meest gelezen</div>
+          <div class="t-label">Uit deze categorie</div>
           Beste pillow spray voor slaap: Rituals vs This Works
         </div>
       </div>
@@ -287,16 +334,16 @@
 
     <a class="card" href="gids/index.html">
       <div class="card-top">
-        <div class="card-icon orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c47a1a" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 4.5v17"/><path d="M8 7h8"/><path d="M8 11h6"/></svg></div>
         <div>
           <div class="card-title">Slaapgids</div>
-          <div class="card-sub">Complete slaaptips & gidsen</div>
+          <div class="card-sub">Complete slaaptips &amp; gidsen</div>
         </div>
       </div>
       <div class="card-body">
         <div class="card-desc">Slaaphygiëne, stress, menopauze, hoeveel slaap je nodig hebt: onze complete gidsen geven praktisch antwoord op elke slaapvraag.</div>
         <div class="card-teaser">
-          <div class="t-label">Meest gelezen</div>
+          <div class="t-label">Uit deze categorie</div>
           Slaap en menopauze: praktische tips die écht helpen
         </div>
       </div>
@@ -308,17 +355,17 @@
 
     <a class="card" href="media/index.html">
       <div class="card-top">
-        <div class="card-icon pink"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a0397a" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/><path d="M8 22h8"/></svg></div>
         <div>
           <div class="card-title">Slaap Media</div>
-          <div class="card-sub">Beste podcasts & YouTube kanalen</div>
+          <div class="card-sub">Podcasts &amp; YouTube-kanalen</div>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-desc">De beste podcasts en YouTube video's over slaap, op één plek. Gesorteerd op onderwerp — van wetenschap tot supplementen.</div>
+        <div class="card-desc">De beste podcasts en YouTube-kanalen over slaap op één plek. Gesorteerd op onderwerp — van slaapwetenschap tot supplementen.</div>
         <div class="card-teaser">
-          <div class="t-label">Aanbevolen</div>
-          De 10 beste slaappodcasts voor Nederland &amp; België
+          <div class="t-label">Uit deze categorie</div>
+          Gecureerde slaappodcasts voor Nederland &amp; België
         </div>
       </div>
       <div class="card-footer">
@@ -329,16 +376,16 @@
 
     <a class="card" href="alternatieven/acupunctuur/index.html">
       <div class="card-top">
-        <div class="card-icon" style="background:#e6f7f0;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a8a5a" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg></div>
         <div>
           <div class="card-title">Alternatieve methoden</div>
           <div class="card-sub">Acupunctuur per stad</div>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-desc">Acupunctuur bij slaapproblemen: vind een gecertificeerde praktijk bij u in de buurt. Per stad een onafhankelijk overzicht — Amsterdam, Utrecht, Enschede en meer.</div>
+        <div class="card-desc">Acupunctuur bij slaapproblemen: vind een praktijk bij u in de buurt. Per stad een onafhankelijk overzicht — Amsterdam, Utrecht, Enschede en meer.</div>
         <div class="card-teaser">
-          <div class="t-label">Populair</div>
+          <div class="t-label">Uit deze categorie</div>
           Acupunctuur voor slaapproblemen: vind een praktijk in uw stad
         </div>
       </div>
@@ -351,48 +398,48 @@
   </div>
 
   <!-- FEATURED ARTICLES -->
-  <div class="section-label">Populaire artikelen</div>
+  <div class="section-label">Uitgelichte artikelen</div>
   <div class="articles-grid">
 
     <a class="article-card" href="supplementen/magnesium-glycinaat-vs-citraat.html">
-      <div class="article-tag">💊 Supplementen</div>
+      <div class="article-tag">Supplementen</div>
       <div class="article-title">Magnesium glycinaat vs citraat: welke is beter voor slaap?</div>
       <div class="article-desc">Twee populaire vormen, heel verschillende effecten. Wij leggen uit welke jij nodig hebt.</div>
       <div class="article-footer">Lees meer →</div>
     </a>
 
     <a class="article-card" href="supplementen/beste-magnesium-slaap.html">
-      <div class="article-tag">💊 Supplementen</div>
+      <div class="article-tag">Supplementen</div>
       <div class="article-title">Beste magnesium supplement voor slaap 2026</div>
-      <div class="article-desc">Vergelijking van de 7 beste magnesiumsupplementen — op effectiviteit, prijs en beschikbaarheid in Nederland.</div>
+      <div class="article-desc">Vergelijking van 7 magnesiumsupplementen — op effectiviteit, prijs en beschikbaarheid in Nederland.</div>
       <div class="article-footer">Lees meer →</div>
     </a>
 
     <a class="article-card" href="supplementen/alternatieven-melatonine.html">
-      <div class="article-tag">💊 Supplementen</div>
+      <div class="article-tag">Supplementen</div>
       <div class="article-title">Natuurlijke alternatieven voor melatonine</div>
       <div class="article-desc">Melatonine werkt niet voor iedereen — en is in Nederland aan regels gebonden. Dit zijn de beste alternatieven.</div>
       <div class="article-footer">Lees meer →</div>
     </a>
 
     <a class="article-card" href="ontspanning/index.html">
-      <div class="article-tag">🕯️ Ontspanning</div>
+      <div class="article-tag">Ontspanning</div>
       <div class="article-title">Beste pillow spray voor slaap: Rituals vs This Works</div>
       <div class="article-desc">Welke pillow spray helpt écht bij inslapen? Wij vergelijken de populairste merken op geur, effect en prijs.</div>
       <div class="article-footer">Lees meer →</div>
     </a>
 
     <a class="article-card" href="gids/slaap-menopauze.html">
-      <div class="article-tag">📖 Slaapgids</div>
+      <div class="article-tag">Slaapgids</div>
       <div class="article-title">Slaap en menopauze: praktische tips die écht helpen</div>
       <div class="article-desc">Nachtelijk zweten, wakker liggen, vroeg wakker — hoe je slaap aanpakt tijdens de overgang.</div>
       <div class="article-footer">Lees meer →</div>
     </a>
 
     <a class="article-card" href="ontspanning/index.html">
-      <div class="article-tag">🛁 Ontspanning</div>
+      <div class="article-tag">Ontspanning</div>
       <div class="article-title">Rituals badproducten voor slaap: welke zijn het beste?</div>
-      <div class="article-desc">De Ritual of Jing lijn beloofd diep ontspanning. Wij vergelijken de bath foam, massage oil en pillow mist op slaapeffect.</div>
+      <div class="article-desc">De Ritual of Jing lijn belooft diepe ontspanning. Wij vergelijken de bath foam, massage oil en pillow mist op slaapeffect.</div>
       <div class="article-footer">Lees meer →</div>
     </a>
 
@@ -418,18 +465,9 @@
       <a class="media-item" href="media/index.html#podcasts">
         <div class="media-thumb" style="background:#1a5570"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
         <div class="media-info">
-          <div class="m-type">Podcast</div>
-          <div class="m-title">Why We Sleep — Matthew Walker</div>
+          <div class="m-type">YouTube &amp; Podcast</div>
+          <div class="m-title">Matthew Walker — Why We Sleep</div>
           <div class="m-sub">Slaapwetenschap · Engels</div>
-        </div>
-      </a>
-
-      <a class="media-item" href="media/index.html#youtube">
-        <div class="media-thumb" style="background:#c0392b"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        <div class="media-info">
-          <div class="m-type">YouTube</div>
-          <div class="m-title">Andrew Huberman — Slaap Protocol</div>
-          <div class="m-sub">Neurologie & slaap · Engels</div>
         </div>
       </a>
 
@@ -437,8 +475,17 @@
         <div class="media-thumb" style="background:#1a5570"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
         <div class="media-info">
           <div class="m-type">Podcast</div>
-          <div class="m-title">De Slaapcoach Podcast</div>
-          <div class="m-sub">Tips & ervaringen · Nederlands</div>
+          <div class="m-title">Huberman Lab — Slaap Protocol</div>
+          <div class="m-sub">Neurologie &amp; slaap · Engels</div>
+        </div>
+      </a>
+
+      <a class="media-item" href="media/index.html#nederlands">
+        <div class="media-thumb" style="background:#c47a1a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="white"/></svg></div>
+        <div class="media-info">
+          <div class="m-type">Documentaire</div>
+          <div class="m-title">VPRO Tegenlicht — Slaap</div>
+          <div class="m-sub">Maatschappij &amp; slaap · Nederlands</div>
         </div>
       </a>
 
