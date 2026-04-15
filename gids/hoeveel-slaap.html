@@ -23,94 +23,152 @@
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://besteslaapadvies.nl/gids/hoeveel-slaap.html"/>
   <style>
-  :root{--primary:#1a6b8a;--dark:#0d3d52;--accent:#2d9cdb;--light:#e8f4f9;--bg:#f0f7fa;--border:#d0e8f2;--text:#1a2e3b;--sub:#5a7a8a;}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;}
-  .article-hero{background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 100%);color:white;padding:48px 24px 56px;}
-  .article-hero .container{max-width:800px;margin:0 auto;}
-  .breadcrumb{font-size:12px;color:rgba(255,255,255,.65);margin-bottom:16px;display:flex;align-items:center;gap:6px;}
-  .breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;}
-  .cat-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:white;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-bottom:18px;}
-  .article-hero h1{font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.2;margin-bottom:20px;letter-spacing:-.3px;}
-  .article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:28px;}
-  .key-takeaway{background:rgba(255,255,255,.1);border-left:4px solid rgba(255,255,255,.5);border-radius:0 6px 6px 0;padding:16px 20px;font-size:14px;color:rgba(255,255,255,.9);line-height:1.6;}
-  .key-takeaway strong{color:white;display:block;margin-bottom:6px;font-size:13px;letter-spacing:.5px;text-transform:uppercase;}
-  .main-container{max-width:800px;margin:0 auto;padding:40px 24px 64px;}
-  .toc{background:white;border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:40px;}
-  .toc h2{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--sub);margin-bottom:14px;}
-  .toc ol{padding-left:20px;display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;}
-  .toc li{font-size:14px;}.toc a{color:var(--primary);text-decoration:none;line-height:1.8;}
-  .article-body p{margin-bottom:18px;color:var(--text);}
-  .article-body h2{font-size:22px;font-weight:800;color:var(--dark);margin:44px 0 16px;padding-top:8px;border-top:2px solid var(--border);line-height:1.3;}
-  .article-body h3{font-size:17px;font-weight:700;color:var(--primary);margin:24px 0 10px;}
-  .article-body ul,.article-body ol{padding-left:24px;margin-bottom:18px;}
-  .article-body li{margin-bottom:8px;font-size:15px;}
-  .article-body strong{font-weight:700;}
-  .num-badge{display:inline-block;background:var(--primary);color:white;font-size:11px;font-weight:800;width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;margin-right:8px;vertical-align:middle;position:relative;top:-2px;}
-  .tip-box{background:var(--light);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 6px 6px 0;padding:14px 18px;margin:20px 0;font-size:14px;}
-  .tip-box strong{color:var(--dark);}
-  .warning-box{background:#fff8e6;border:1px solid #f0d080;border-left:4px solid #d4a017;border-radius:0 6px 6px 0;padding:14px 18px;margin:20px 0;font-size:14px;}
-  .warning-box strong{color:#7a5800;}
-  .data-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14px;background:white;border-radius:10px;overflow:hidden;border:1px solid var(--border);}
-  .data-table th{background:var(--dark);color:white;padding:11px 16px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.5px;}
-  .data-table td{padding:10px 16px;border-bottom:1px solid var(--border);}
-  .data-table tr:last-child td{border-bottom:none;}
-  .data-table tr:nth-child(even) td{background:#f8fcfe;}
-  .cta-box{background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%);border-radius:10px;padding:32px 36px;text-align:center;margin:48px 0;color:white;}
-  .cta-box h3{font-size:20px;font-weight:800;margin-bottom:10px;color:white;}
-  .cta-box p{font-size:15px;color:rgba(255,255,255,.88);margin-bottom:20px;}
-  .cta-btn{display:inline-block;background:white;color:var(--primary);font-weight:700;font-size:15px;padding:12px 28px;border-radius:6px;text-decoration:none;}
-  .related{margin-top:48px;}.related h2{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--border);}
-  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  @media(max-width:620px){.related-grid{grid-template-columns:1fr;}.toc ol{grid-template-columns:1fr;}}
-  .related-card{background:white;border:1px solid var(--border);border-radius:8px;overflow:hidden;text-decoration:none;display:block;transition:box-shadow .2s,transform .2s;}
-  .related-card:hover{box-shadow:0 4px 16px rgba(26,107,138,.12);transform:translateY(-2px);}
-  .rc-img{height:80px;display:flex;align-items:center;justify-content:center;font-size:28px;}
-  .rc-body{padding:14px 16px;}
-  .rc-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--sub);margin-bottom:6px;}
-  .rc-title{font-size:14px;font-weight:700;color:var(--dark);line-height:1.4;}
-  footer{background:#0d3d52;color:#7aacbf;padding:32px;text-align:center;font-size:13px;}
-  footer a{color:#a8d4e6;text-decoration:none;}
-  .disc{font-size:11px;color:#5a8a9f;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root {
+  --sage:#e8eedd; --sage-soft:#eff4e3; --sage-paper:#f5f8eb; --sage-lighter:#fafcf2;
+  --ink:#1b2a14; --ink-soft:#2d4024; --body:#3f5234; --muted:#768464;
+  --green:#5c7a46; --green-soft:#81996a; --hairline:#cfdcb6; --hairline-soft:#dce5c8;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--sage);color:var(--body);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
 
-@media (max-width: 768px) {
-  nav { padding: 0 16px; }
-  .nav-links { display: none; }
-  .nav-mobile { display: flex !important; }
-  .hero { padding: 40px 16px 36px; }
-  .page-hero { padding: 32px 16px 28px; }
-  .trust-bar { padding: 12px 16px; gap: 12px; }
-  .wrap { padding: 32px 16px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .articles-grid { grid-template-columns: 1fr; }
-  .media-grid { grid-template-columns: 1fr; }
-  .site-footer { padding: 32px 16px 24px; }
-  .footer-inner { flex-direction: column; gap: 24px; }
-  .footer-nav { flex-direction: column; gap: 16px; }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .product-header { flex-direction: column; }
-  .product-footer { flex-direction: column; align-items: flex-start; }
-  .compare-table { font-size: 12px; }
-  .compare-table th, .compare-table td { padding: 8px 6px; }
-  .filter-bar { flex-direction: column; }
-  #cookie-banner { flex-direction: column !important; gap: 12px; }
+/* NAV */
+nav{background:white;border-bottom:1px solid #d0e8f2;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.nav-logo{padding:14px 0;margin-right:28px;text-decoration:none;flex-shrink:0;display:flex;align-items:center;gap:10px;}
+.nav-logo-icon{width:36px;height:36px;}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.nav-logo-text span:first-child{font-size:17px;font-weight:800;color:#0d3d52;letter-spacing:-0.3px;}
+.nav-logo-text span:last-child{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#5a7a8a;}
+.nav-links{display:flex;margin-left:auto;}
+.nav-links a{color:#5a7a8a;text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:#1a6b8a;border-bottom-color:#1a6b8a;}
+
+/* HERO */
+.article-hero{background:linear-gradient(135deg,#1b2a14 0%,#2d4024 100%);color:white;padding:72px 32px 64px;}
+.article-hero .container{max-width:780px;margin:0 auto;}
+.breadcrumb{font-family:Georgia,serif;font-style:italic;font-size:12.5px;color:rgba(214,226,184,.7);margin-bottom:20px;}
+.breadcrumb a{color:rgba(214,226,184,.85);text-decoration:none;}
+.breadcrumb a:hover{color:white;}
+.cat-tag{display:inline-block;background:transparent;border:1px solid rgba(214,226,184,.35);color:#d6e2b8;font-family:Georgia,serif;font-style:italic;font-size:12px;letter-spacing:.3px;padding:5px 14px;margin-bottom:22px;}
+.article-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(28px,4.5vw,46px);font-weight:400;line-height:1.12;margin-bottom:22px;letter-spacing:-0.5px;color:white;}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;font-family:Georgia,serif;font-style:italic;font-size:13px;color:rgba(214,226,184,.75);margin-bottom:32px;}
+.article-meta span:not(:first-child)::before{content:'·';margin-right:20px;margin-left:-12px;color:rgba(168,192,122,.5);}
+.key-takeaway{background:rgba(168,192,122,.08);border-left:2px solid #a8c07a;padding:20px 24px;font-size:14.5px;color:rgba(214,226,184,.95);line-height:1.7;}
+.key-takeaway strong{color:#d6e2b8;display:block;margin-bottom:10px;font-family:Georgia,serif;font-style:italic;font-size:12px;letter-spacing:.3px;text-transform:none;font-weight:400;}
+
+/* MAIN */
+.main-container{max-width:780px;margin:0 auto;padding:72px 24px 64px;}
+.toc{background:var(--sage-lighter);border:1px solid var(--hairline);border-radius:2px;padding:28px 32px;margin-bottom:56px;}
+.toc h2{font-family:Georgia,serif;font-style:italic;font-size:13px;font-weight:400;text-transform:none;letter-spacing:.3px;color:var(--green);margin-bottom:16px;}
+.toc ol{padding-left:22px;display:grid;grid-template-columns:1fr 1fr;gap:6px 28px;}
+.toc li{font-size:14px;color:var(--body);}
+.toc a{color:var(--ink-soft);text-decoration:none;line-height:1.8;transition:color .15s;}
+.toc a:hover{color:var(--green);}
+
+/* ARTICLE BODY — serif prose */
+.article-body{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.85;color:var(--body);}
+.article-body p{margin-bottom:22px;}
+.article-body h2{font-family:Georgia,serif;font-size:26px;font-weight:400;color:var(--ink);margin:56px 0 20px;padding-top:18px;border-top:1px solid var(--hairline);line-height:1.25;letter-spacing:-0.2px;}
+.article-body h3{font-family:Georgia,serif;font-style:italic;font-size:20px;font-weight:400;color:var(--green);margin:32px 0 14px;}
+.article-body ul,.article-body ol{padding-left:26px;margin-bottom:22px;}
+.article-body li{margin-bottom:10px;font-size:16px;}
+.article-body strong{font-weight:700;color:var(--ink);}
+.article-body em{font-style:italic;color:var(--ink-soft);}
+.article-body a{color:var(--green);text-decoration:underline;text-decoration-color:var(--green-soft);text-underline-offset:2px;}
+.article-body a:hover{color:var(--ink);text-decoration-color:var(--ink);}
+.num-badge{display:inline-block;background:var(--green);color:white;font-family:Georgia,serif;font-size:12px;font-weight:700;width:26px;height:26px;border-radius:50%;text-align:center;line-height:26px;margin-right:10px;vertical-align:middle;position:relative;top:-2px;}
+
+.tip-box{background:var(--sage-paper);border:1px solid var(--hairline);border-left:3px solid var(--green);padding:18px 22px;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.7;color:var(--body);}
+.tip-box strong{color:var(--ink);font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:13px;letter-spacing:.3px;display:block;margin-bottom:6px;}
+
+.warning-box{background:#f7f0d8;border:1px solid #d9c888;border-left:3px solid #a08018;padding:18px 22px;margin:24px 0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.7;color:#5a4618;}
+.warning-box strong{color:#4a3a0f;font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:13px;letter-spacing:.3px;display:block;margin-bottom:6px;}
+
+.data-table{width:100%;border-collapse:collapse;margin:28px 0 32px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;background:var(--sage-lighter);border:1px solid var(--hairline);border-radius:2px;overflow:hidden;}
+.data-table th{background:#1b2a14;color:#d6e2b8;padding:14px 18px;text-align:left;font-family:Georgia,serif;font-style:italic;font-size:12px;font-weight:400;letter-spacing:.3px;}
+.data-table td{padding:12px 18px;border-bottom:1px solid var(--hairline-soft);color:var(--body);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:var(--sage-paper);}
+
+.source-note{font-family:Georgia,serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+
+/* CTA at end of article */
+.cta-box{background:#1b2a14 !important;background-image:none !important;border-radius:2px;padding:40px 44px;text-align:left;margin:56px 0 32px;color:white;position:relative;overflow:hidden;}
+.cta-box::before{content:'◆';position:absolute;top:24px;right:32px;color:rgba(214,226,184,.25);font-size:14px;letter-spacing:6px;}
+.cta-box h3{font-family:Georgia,serif;font-size:22px;font-weight:400;margin-bottom:8px;color:white;letter-spacing:-0.2px;}
+.cta-box p{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14.5px;color:#d6e2b8;margin-bottom:22px;line-height:1.7;max-width:540px;}
+.cta-btn{display:inline-block;background:#a8c07a;color:#1b2a14;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;padding:13px 26px;border-radius:2px;text-decoration:none;transition:all .2s;}
+.cta-btn:hover{background:#c4d897;}
+
+/* RELATED */
+.related{margin-top:64px;padding-top:48px;border-top:1px solid var(--hairline);}
+.related h2{font-family:Georgia,serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:24px;letter-spacing:-0.2px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:2px;overflow:hidden;}
+.related-card{background:var(--sage-paper);padding:22px 24px;text-decoration:none;display:block;transition:background .2s;}
+.related-card:hover{background:white;}
+.rc-img{display:none;}
+.rc-body{padding:0;}
+.rc-tag{font-family:Georgia,serif;font-style:italic;font-size:11.5px;color:var(--green);margin-bottom:8px;letter-spacing:.3px;}
+.rc-title{font-family:Georgia,serif;font-size:16px;font-weight:400;color:var(--ink);line-height:1.3;}
+
+/* FOOTER */
+.site-footer{background:#1b2a14;color:#9eac86;padding:64px 32px 40px;font-size:13px;}
+.footer-inner{max-width:1000px;margin:0 auto 32px;display:flex;gap:48px;flex-wrap:wrap;justify-content:space-between;}
+.footer-brand strong{font-family:Georgia,serif;font-size:19px;color:white;display:block;margin-bottom:10px;font-weight:400;letter-spacing:-0.3px;}
+.footer-brand p{font-size:13px;color:#9eac86;max-width:260px;line-height:1.75;}
+.footer-brand a{color:#c4d897;text-decoration:none;}
+.footer-nav{background:transparent;display:flex;gap:48px;flex-wrap:wrap;}
+.footer-col{display:flex;flex-direction:column;gap:8px;}
+.footer-col-title{font-family:Georgia,serif;font-style:italic;font-size:12.5px;color:#c4d897;margin-bottom:8px;letter-spacing:.3px;}
+.footer-col a{color:#9eac86;text-decoration:none;transition:color .15s;font-size:13.5px;}
+.footer-col a:hover{color:white;}
+.footer-bottom{max-width:1000px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center;}
+.footer-copy{color:#9eac86;margin-bottom:10px;font-size:12.5px;}
+.footer-copy a{color:#c4d897;text-decoration:none;}
+.footer-disc{font-size:11px;color:#70805a;max-width:640px;margin:0 auto;line-height:1.75;}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .nav-mobile{display:flex !important;}
+  .article-hero{padding:52px 20px 48px;}
+  .main-container{padding:48px 16px 40px;}
+  .toc ol{grid-template-columns:1fr;}
+  .cta-box{padding:32px 24px;}
+  .related-grid{grid-template-columns:1fr;}
+  .site-footer{padding:48px 16px 32px;}
+  .footer-inner{flex-direction:column;gap:32px;}
+  .footer-nav{flex-direction:column;gap:24px;}
+  #cookie-banner{flex-direction:column !important;gap:12px;}
 }
-@media (max-width: 480px) {
-  .hero h1 { font-size: 24px; }
-  .nav-logo-text span:first-child { font-size: 15px; }
+@media(max-width:480px){
+  .article-hero h1{font-size:26px;}
+  .article-body{font-size:16px;}
+  .nav-logo-text span:first-child{font-size:15px;}
 }
-    .footer-nav { background: transparent !important; }
   </style>
 </head>
 <body>
-<nav style="background:#0d3d52;padding:0 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.2);">
-  <a style="padding:14px 0;margin-right:28px;text-decoration:none;" href="../index.html"><span style="font-size:17px;font-weight:800;color:white;">BesteSlaapAdvies</span></a>
-  <div style="display:flex;margin-left:auto;">
-    <a style="color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;" href="../supplementen/index.html">Supplementen</a>
-    <a style="color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;" href="../ontspanning/index.html">Ontspanning</a>
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="8" fill="#1a6b8a"/>
+      <path d="M18 8C13.6 8 10 11.6 10 16c0 3.5 2.1 6.5 5.2 7.8V26h5.6v-2.2C23.9 22.5 26 19.5 26 16c0-4.4-3.6-8-8-8z" fill="white" opacity="0.9"/>
+      <rect x="15.5" y="26" width="5" height="2" rx="1" fill="white" opacity="0.7"/>
+      <rect x="16.5" y="28.5" width="3" height="1.5" rx="0.75" fill="white" opacity="0.5"/>
+      <circle cx="18" cy="16" r="3" fill="#7dd3f0"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span>BesteSlaapAdvies</span>
+      <span>Nederland &amp; België</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="../supplementen/index.html">Supplementen</a>
+    <a href="../ontspanning/index.html">Ontspanning</a>
     <a href="../alternatieven/acupunctuur/index.html">Alternatieven</a>
-    <a style="color:white;text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid #2d9cdb;" href="index.html">Slaapgids</a>
-    <a style="color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:500;padding:18px 13px;border-bottom:3px solid transparent;" href="../media/index.html">Media</a>
+    <a href="index.html" class="active">Slaapgids</a>
+    <a href="../media/index.html">Media</a>
   </div>
   <button class="nav-mobile" onclick="var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='flex'?'none':'flex'" style="display:none;background:none;border:none;cursor:pointer;padding:14px 0;margin-left:auto;color:#1a6b8a">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -120,8 +178,8 @@
   <a href="../index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Home</a>
   <a href="../supplementen/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Supplementen</a>
   <a href="../ontspanning/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Ontspanning</a>
-    <a href="../alternatieven/acupunctuur/index.html">Alternatieven</a>
-  <a href="../gids/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Slaapgids</a>
+  <a href="../alternatieven/acupunctuur/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Alternatieven</a>
+  <a href="index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;border-bottom:1px solid #d0e8f2;display:block">Slaapgids</a>
   <a href="../media/index.html" style="padding:14px 20px;color:#1a2e3b;text-decoration:none;font-weight:600;display:block">Media</a>
 </div>
 <div class="article-hero">
@@ -129,7 +187,7 @@
     <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="index.html">Slaapgids</a> <span>›</span> Hoeveel slaap heb je nodig</div>
     <div class="cat-tag">Wetenschap</div>
     <h1>Hoeveel slaap heb je echt nodig?</h1>
-    <div class="article-meta"><span>📖 7 min lezen</span><span>·</span><span>🔬 Wetenschappelijk onderbouwd</span><span>·</span><span>📅 Maart 2026</span></div>
+    <div class="article-meta"><span>7 minuten lezen</span><span>Wetenschappelijk onderbouwd</span><span>Bijgewerkt maart 2026</span></div>
     <div class="key-takeaway"><strong>Kern van dit artikel</strong>De meeste volwassenen hebben 7–9 uur nodig — maar individuele variatie is groot. Genetica speelt een grotere rol dan je denkt. En slaapschuld is reëler dan je wilt geloven.</div>
   </div>
 </div>
@@ -163,12 +221,12 @@
         <tr><td>Ouderen (65+)</td><td>7–8 uur</td><td>5 uur</td></tr>
       </tbody>
     </table>
-    <p class="source-note" style="font-size:13px;color:var(--sub);font-style:italic;">Bron: National Sleep Foundation Sleep Duration Recommendations (2015, bijgewerkt 2023)</p>
+    <p class="source-note">Bron: National Sleep Foundation Sleep Duration Recommendations (2015, bijgewerkt 2023)</p>
 
     <h2 id="individueel">Individuele variatie: niet iedereen is hetzelfde</h2>
     <p>De "8 uur per nacht" is een gemiddelde, geen absolute norm. Genetica speelt een grote rol. Ongeveer 3% van de bevolking heeft een mutatie in het DEC2-gen waardoor zij prima functioneren op 6 uur — de zogenaamde "korte slapers". Dit is geen bewuste keuze of training, maar erfelijk bepaald.</p>
     <p>Aan de andere kant zijn er mensen die structureel 9–10 uur nodig hebben om optimaal te functioneren. Dit is evenmin lui — het is biologie.</p>
-    <div class="warning-box"><strong>⚠️ Pas op voor slaaptrots:</strong> "Ik heb maar 5 uur nodig" is zelden waar. Onderzoek van Matthew Walker (Why We Sleep) toont aan dat chronisch slaapbeperkte mensen hun slaaptekort niet meer voelen — maar cognitief wél achteruitgaan. Je verliest het vermogen om je eigen tekort te herkennen.</div>
+    <div class="warning-box"><strong>Pas op voor slaaptrots:</strong> "Ik heb maar 5 uur nodig" is zelden waar. Onderzoek van Matthew Walker (Why We Sleep) toont aan dat chronisch slaapbeperkte mensen hun slaaptekort niet meer voelen — maar cognitief wél achteruitgaan. Je verliest het vermogen om je eigen tekort te herkennen.</div>
 
     <h2 id="slaapschuld">Slaapschuld: wat het echt is</h2>
     <p>Slaapschuld is het cumulatieve tekort tussen de slaap die je nodig hebt en de slaap die je krijgt. Een uur minder per nacht gedurende een week is zeven uur slaapschuld — vergelijkbaar met een volledig nacht wakker blijven qua cognitieve impact.</p>
@@ -207,9 +265,9 @@
     <div class="related">
       <h2>Meer lezen</h2>
       <div class="related-grid">
-        <a class="related-card" href="slaaphygiene.html"><div class="rc-img" style="background:#e8f4f9;">📋</div><div class="rc-body"><div class="rc-tag">Slaaphygiëne</div><div class="rc-title">De 12 slaaphygiëne-regels die écht werken</div></div></a>
-        <a class="related-card" href="slaap-stress.html"><div class="rc-img" style="background:#e8f4f9;">😰</div><div class="rc-body"><div class="rc-tag">Slaapproblemen</div><div class="rc-title">Slaapproblemen door stress: wat helpt?</div></div></a>
-        <a class="related-card" href="slaap-beweging.html"><div class="rc-img" style="background:#e8f4f9;">🏃</div><div class="rc-body"><div class="rc-tag">Leefstijl</div><div class="rc-title">Slaap en beweging: het verband</div></div></a>
+        <a class="related-card" href="slaaphygiene.html"><div class="rc-img"></div><div class="rc-body"><div class="rc-tag">Slaaphygiëne</div><div class="rc-title">De 12 slaaphygiëne-regels die écht werken</div></div></a>
+        <a class="related-card" href="slaap-stress.html"><div class="rc-img"></div><div class="rc-body"><div class="rc-tag">Slaapproblemen</div><div class="rc-title">Slaapproblemen door stress: wat helpt?</div></div></a>
+        <a class="related-card" href="slaap-beweging.html"><div class="rc-img"></div><div class="rc-body"><div class="rc-tag">Leefstijl</div><div class="rc-title">Slaap en beweging: het verband</div></div></a>
       </div>
     </div>
   </div>
@@ -226,8 +284,8 @@
         <span class="footer-col-title">Categorieën</span>
         <a href="../supplementen/index.html">Supplementen</a>
         <a href="../ontspanning/index.html">Ontspanning</a>
-    <a href="../alternatieven/acupunctuur/index.html">Alternatieven</a>
-        <a href="../gids/index.html">Slaapgids</a>
+        <a href="../alternatieven/acupunctuur/index.html">Alternatieven</a>
+        <a href="index.html">Slaapgids</a>
         <a href="../media/index.html">Media</a>
       </div>
       <div class="footer-col">
@@ -240,7 +298,7 @@
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 BesteSlaapAdvies.nl · <a href="mailto:info@besteslaapadvies.nl">info@besteslaapadvies.nl</a></p>
-    <p class="footer-disc">Deze site bevat affiliate links. Wij ontvangen een kleine commissie als je via onze links iets koopt — zonder extra kosten voor jou. Alle vergelijkingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
+    <p class="footer-disc">Deze site bevat affiliate links. Wij ontvangen een kleine commissie als je via onze links iets koopt — zonder extra kosten voor jou. Alle beoordelingen zijn redactioneel onafhankelijk. Inhoud is uitsluitend informatief en geen medisch advies.</p>
   </div>
 </footer>
 
