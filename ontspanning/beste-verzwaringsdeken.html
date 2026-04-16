@@ -104,6 +104,9 @@
     /* PRODUCT CARDS */
     .product-card { background: white; border-radius: 2px; border: 1px solid var(--hairline); padding: 28px 30px; margin-bottom: 20px; transition: border-color .2s, box-shadow .2s; }
     .product-card:hover { border-color: var(--purple-soft); box-shadow: 0 10px 26px rgba(43,26,61,.08); }
+    .product-card[id] { scroll-margin-top: 100px; }
+    .comparison-table td a.product-link { color: var(--ink); text-decoration: none; border-bottom: 1px dashed var(--purple-soft); padding-bottom: 1px; transition: color .15s, border-color .15s; }
+    .comparison-table td a.product-link:hover { color: var(--purple); border-bottom-color: var(--purple); }
     .product-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
     .product-name { font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 400; color: var(--ink); letter-spacing: -0.2px; }
     .product-rating { display: flex; align-items: center; gap: 8px; }
@@ -289,37 +292,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><strong>Calmzy 2.0</strong> <span class="badge-best">Beste keuze</span></td>
+        <td><a href="#calmzy-20" class="product-link"><strong>Calmzy 2.0</strong></a> <span class="badge-best">Beste keuze</span></td>
         <td>100% katoen</td>
         <td>6–10 kg</td>
         <td>9.0/10</td>
       </tr>
       <tr>
-        <td><strong>Ella Verzwaringsdeken</strong></td>
+        <td><a href="#ella" class="product-link"><strong>Ella Verzwaringsdeken</strong></a></td>
         <td>OEKO-TEX katoen</td>
         <td>7–13 kg</td>
         <td>8.7/10</td>
       </tr>
       <tr>
-        <td><strong>Gravity Blanket</strong></td>
+        <td><a href="#gravity" class="product-link"><strong>Gravity Blanket</strong></a></td>
         <td>Biologisch katoen + velours</td>
         <td>4–12 kg</td>
         <td>8.5/10</td>
       </tr>
       <tr>
-        <td><strong>IKEA ODONVIDE</strong></td>
+        <td><a href="#ikea" class="product-link"><strong>IKEA ODONVIDE</strong></a></td>
         <td>Katoen/polyester</td>
         <td>6 of 10 kg</td>
         <td>7.8/10</td>
       </tr>
       <tr>
-        <td><strong>Calmzy Bamboe</strong></td>
+        <td><a href="#calmzy-bamboe" class="product-link"><strong>Calmzy Bamboe</strong></a></td>
         <td>Bamboe viscose</td>
         <td>6–10 kg</td>
         <td>8.3/10</td>
       </tr>
       <tr>
-        <td><strong>SleepMed</strong></td>
+        <td><a href="#sleepmed" class="product-link"><strong>SleepMed</strong></a></td>
         <td>Polyester + glasparels</td>
         <td>7 of 9 kg</td>
         <td>7.2/10</td>
@@ -365,7 +368,7 @@
   <h2>Gedetailleerde productreviews</h2>
 
   <!-- PRODUCT 1: Calmzy 2.0 -->
-  <div class="product-card">
+  <div class="product-card" id="calmzy-20">
     <div class="product-header">
       <div>
         <div class="product-name">1. Calmzy 2.0 Verzwaringsdeken</div>
@@ -393,7 +396,7 @@
   </div>
 
   <!-- PRODUCT 2: Ella -->
-  <div class="product-card">
+  <div class="product-card" id="ella">
     <div class="product-header">
       <div>
         <div class="product-name">2. Ella Verzwaringsdeken</div>
@@ -421,7 +424,7 @@
   </div>
 
   <!-- PRODUCT 3: Gravity Blanket -->
-  <div class="product-card">
+  <div class="product-card" id="gravity">
     <div class="product-header">
       <div>
         <div class="product-name">3. Gravity Blanket</div>
@@ -449,7 +452,7 @@
   </div>
 
   <!-- PRODUCT 4: IKEA ODONVIDE -->
-  <div class="product-card">
+  <div class="product-card" id="ikea">
     <div class="product-header">
       <div>
         <div class="product-name">4. IKEA ODONVIDE</div>
@@ -477,7 +480,7 @@
   </div>
 
   <!-- PRODUCT 5: Calmzy Bamboe -->
-  <div class="product-card">
+  <div class="product-card" id="calmzy-bamboe">
     <div class="product-header">
       <div>
         <div class="product-name">5. Calmzy Bamboe Verzwaringsdeken</div>
@@ -505,7 +508,7 @@
   </div>
 
   <!-- PRODUCT 6: SleepMed -->
-  <div class="product-card">
+  <div class="product-card" id="sleepmed">
     <div class="product-header">
       <div>
         <div class="product-name">6. SleepMed Verzwaringsdeken</div>
@@ -602,6 +605,7 @@
         <span class="footer-col-title">Informatie</span>
         <a href="../disclaimer.html">Methode &amp; Disclaimer</a>
         <a href="../privacy.html">Privacyverklaring</a>
+        <a href="../voorwaarden.html">Algemene voorwaarden</a>
         <a href="../contact.html">Contact</a>
       </div>
     </nav>

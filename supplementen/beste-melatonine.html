@@ -106,6 +106,9 @@
     /* PRODUCT CARDS */
     .product-card { background: white; border-radius: 2px; border: 1px solid var(--hairline); padding: 28px 30px; margin-bottom: 20px; transition: border-color .2s, box-shadow .2s; }
     .product-card:hover { border-color: var(--purple-soft); box-shadow: 0 10px 26px rgba(43,26,61,.08); }
+    .product-card[id] { scroll-margin-top: 100px; }
+    .comparison-table td a.product-link { color: var(--ink); text-decoration: none; border-bottom: 1px dashed var(--purple-soft); padding-bottom: 1px; transition: color .15s, border-color .15s; }
+    .comparison-table td a.product-link:hover { color: var(--purple); border-bottom-color: var(--purple); }
     .product-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
     .product-name { font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 400; color: var(--ink); letter-spacing: -0.2px; }
     .product-rating { display: flex; align-items: center; gap: 8px; }
@@ -290,13 +293,13 @@
       <tr><th>Product</th><th>Dosering</th><th>Vorm</th><th>Score</th><th>Beste voor</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>Lucovitaal Melatonine Puur 0,299 mg</strong> <span class="badge-best">Beste keuze</span></td><td>0,299 mg</td><td>Tabletten</td><td>9.0/10</td><td>Pure melatonine, beste prijs</td></tr>
-      <tr><td>Shiepz Melatonine Original 0,1 mg</td><td>0,1 mg</td><td>Smelttabletten</td><td>8.7/10</td><td>Snel opneembaar</td></tr>
-      <tr><td>Lucovitaal Melatonine Time Released</td><td>0,299 mg</td><td>Tabletten (time release)</td><td>8.5/10</td><td>Doorslapen</td></tr>
-      <tr><td>Shiepz Slaapfit 0,29 mg</td><td>0,29 mg</td><td>Tabletten</td><td>8.2/10</td><td>Melatonine + kruiden</td></tr>
-      <tr><td>Valdispert Slaap &amp; Nacht</td><td>0,29 mg</td><td>Tabletten</td><td>8.0/10</td><td>Complete slaapformule</td></tr>
-      <tr><td>Holland &amp; Barrett Melatonine Puur</td><td>0,29 mg</td><td>Tabletten</td><td>7.8/10</td><td>Winkelverkrijgbaar</td></tr>
-      <tr><td>Etos Melatonine 0,1 mg</td><td>0,1 mg</td><td>Tabletten</td><td>7.5/10</td><td>Laagste prijs</td></tr>
+      <tr><td><a href="#lucovitaal-puur" class="product-link"><strong>Lucovitaal Melatonine Puur 0,299 mg</strong></a> <span class="badge-best">Beste keuze</span></td><td>0,299 mg</td><td>Tabletten</td><td>9.0/10</td><td>Pure melatonine, beste prijs</td></tr>
+      <tr><td><a href="#shiepz-original" class="product-link"><strong>Shiepz Melatonine Original 0,1 mg</strong></a></td><td>0,1 mg</td><td>Smelttabletten</td><td>8.7/10</td><td>Snel opneembaar</td></tr>
+      <tr><td><a href="#lucovitaal-time" class="product-link"><strong>Lucovitaal Melatonine Time Released</strong></a></td><td>0,299 mg</td><td>Tabletten (time release)</td><td>8.5/10</td><td>Doorslapen</td></tr>
+      <tr><td><a href="#shiepz-slaapfit" class="product-link"><strong>Shiepz Slaapfit 0,29 mg</strong></a></td><td>0,29 mg</td><td>Tabletten</td><td>8.2/10</td><td>Melatonine + kruiden</td></tr>
+      <tr><td><a href="#valdispert" class="product-link"><strong>Valdispert Slaap &amp; Nacht</strong></a></td><td>0,29 mg</td><td>Tabletten</td><td>8.0/10</td><td>Complete slaapformule</td></tr>
+      <tr><td><a href="#hb-melatonine" class="product-link"><strong>Holland &amp; Barrett Melatonine Puur</strong></a></td><td>0,29 mg</td><td>Tabletten</td><td>7.8/10</td><td>Winkelverkrijgbaar</td></tr>
+      <tr><td><a href="#etos-melatonine" class="product-link"><strong>Etos Melatonine 0,1 mg</strong></a></td><td>0,1 mg</td><td>Tabletten</td><td>7.5/10</td><td>Laagste prijs</td></tr>
     </tbody>
   </table>
 
@@ -328,7 +331,7 @@
   <h2>Gedetailleerde productreviews</h2>
 
   <!-- Product 1 -->
-  <div class="product-card">
+  <div class="product-card" id="lucovitaal-puur">
     <div class="product-header">
       <div>
         <div class="product-name">1. Lucovitaal Melatonine Puur 0,299 mg</div>
@@ -356,7 +359,7 @@
   </div>
 
   <!-- Product 2 -->
-  <div class="product-card">
+  <div class="product-card" id="shiepz-original">
     <div class="product-header">
       <div>
         <div class="product-name">2. Shiepz Melatonine Original 0,1 mg</div>
@@ -384,7 +387,7 @@
   </div>
 
   <!-- Product 3 -->
-  <div class="product-card">
+  <div class="product-card" id="lucovitaal-time">
     <div class="product-header">
       <div>
         <div class="product-name">3. Lucovitaal Melatonine Time Released 0,299 mg</div>
@@ -411,7 +414,7 @@
   </div>
 
   <!-- Product 4 -->
-  <div class="product-card">
+  <div class="product-card" id="shiepz-slaapfit">
     <div class="product-header">
       <div>
         <div class="product-name">4. Shiepz Slaapfit 0,29 mg</div>
@@ -439,7 +442,7 @@
   </div>
 
   <!-- Product 5 -->
-  <div class="product-card">
+  <div class="product-card" id="valdispert">
     <div class="product-header">
       <div>
         <div class="product-name">5. Valdispert Slaap &amp; Nacht</div>
@@ -467,7 +470,7 @@
   </div>
 
   <!-- Product 6 -->
-  <div class="product-card">
+  <div class="product-card" id="hb-melatonine">
     <div class="product-header">
       <div>
         <div class="product-name">6. Holland &amp; Barrett Melatonine Puur</div>
@@ -494,7 +497,7 @@
   </div>
 
   <!-- Product 7 -->
-  <div class="product-card">
+  <div class="product-card" id="etos-melatonine">
     <div class="product-header">
       <div>
         <div class="product-name">7. Etos Melatonine 0,1 mg</div>
@@ -592,6 +595,7 @@
         <span class="footer-col-title">Informatie</span>
         <a href="../disclaimer.html">Methode &amp; Disclaimer</a>
         <a href="../privacy.html">Privacyverklaring</a>
+        <a href="../voorwaarden.html">Algemene voorwaarden</a>
         <a href="../contact.html">Contact</a>
       </div>
     </nav>

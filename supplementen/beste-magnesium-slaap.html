@@ -104,6 +104,9 @@
     /* PRODUCT CARDS */
     .product-card { background: white; border-radius: 2px; border: 1px solid var(--hairline); padding: 28px 30px; margin-bottom: 20px; transition: border-color .2s, box-shadow .2s; }
     .product-card:hover { border-color: var(--purple-soft); box-shadow: 0 10px 26px rgba(43,26,61,.08); }
+    .product-card[id] { scroll-margin-top: 100px; }
+    .comparison-table td a.product-link { color: var(--ink); text-decoration: none; border-bottom: 1px dashed var(--purple-soft); padding-bottom: 1px; transition: color .15s, border-color .15s; }
+    .comparison-table td a.product-link:hover { color: var(--purple); border-bottom-color: var(--purple); }
     .product-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
     .product-name { font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 400; color: var(--ink); letter-spacing: -0.2px; }
     .product-rating { display: flex; align-items: center; gap: 8px; }
@@ -247,13 +250,13 @@
       <tr><th>Product</th><th>Vorm</th><th>Score</th><th>Beste voor</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>Vitakruid Magnesium Glycinaat</strong> <span class="badge-best">Beste keuze</span></td><td>Glycinaat</td><td>9.2/10</td><td>Slaap & ontspanning</td></tr>
-      <tr><td>Orthica Magnesium-500</td><td>Citraat mix</td><td>8.6/10</td><td>Algemeen gebruik</td></tr>
-      <tr><td>NOW Foods Magnesium Glycinate</td><td>Glycinaat</td><td>8.4/10</td><td>Beste prijs-kwaliteit</td></tr>
-      <tr><td>Natural Calm Magnesium</td><td>Citraat (poeder)</td><td>8.1/10</td><td>Snel effect</td></tr>
-      <tr><td>Holland &amp; Barrett Magnesium Bisglycinaat</td><td>Bisglycinaat</td><td>7.8/10</td><td>Gemakkelijk verkrijgbaar</td></tr>
-      <tr><td>Solgar Magnesium Citraat</td><td>Citraat</td><td>7.5/10</td><td>Bewezen merk</td></tr>
-      <tr><td>Bol.com huismerk Magnesium</td><td>Oxide</td><td>5.8/10</td><td>Budget (minder effectief)</td></tr>
+      <tr><td><a href="#vitakruid" class="product-link"><strong>Vitakruid Magnesium Glycinaat</strong></a> <span class="badge-best">Beste keuze</span></td><td>Glycinaat</td><td>9.2/10</td><td>Slaap & ontspanning</td></tr>
+      <tr><td><a href="#orthica" class="product-link"><strong>Orthica Magnesium-500</strong></a></td><td>Citraat mix</td><td>8.6/10</td><td>Algemeen gebruik</td></tr>
+      <tr><td><a href="#now-foods" class="product-link"><strong>NOW Foods Magnesium Glycinate</strong></a></td><td>Glycinaat</td><td>8.4/10</td><td>Beste prijs-kwaliteit</td></tr>
+      <tr><td><a href="#natural-calm" class="product-link"><strong>Natural Calm Magnesium</strong></a></td><td>Citraat (poeder)</td><td>8.1/10</td><td>Snel effect</td></tr>
+      <tr><td><a href="#hb-magnesium" class="product-link"><strong>Holland &amp; Barrett Magnesium Bisglycinaat</strong></a></td><td>Bisglycinaat</td><td>7.8/10</td><td>Gemakkelijk verkrijgbaar</td></tr>
+      <tr><td><a href="#solgar" class="product-link"><strong>Solgar Magnesium Citraat</strong></a></td><td>Citraat</td><td>7.5/10</td><td>Bewezen merk</td></tr>
+      <tr><td><a href="#bolcom-huismerk" class="product-link"><strong>Bol.com huismerk Magnesium</strong></a></td><td>Oxide</td><td>5.8/10</td><td>Budget (minder effectief)</td></tr>
     </tbody>
   </table>
 
@@ -292,7 +295,7 @@
 
   <h2>Gedetailleerde productreviews</h2>
 
-  <div class="product-card">
+  <div class="product-card" id="vitakruid">
     <div class="product-header">
       <div>
         <div class="product-name">1. Vitakruid Magnesium Glycinaat</div>
@@ -319,7 +322,7 @@
     </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-card" id="orthica">
     <div class="product-header">
       <div>
         <div class="product-name">2. Orthica Magnesium-500</div>
@@ -345,7 +348,7 @@
     </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-card" id="now-foods">
     <div class="product-header">
       <div>
         <div class="product-name">3. NOW Foods Magnesium Glycinate</div>
@@ -418,6 +421,7 @@
         <span class="footer-col-title">Informatie</span>
         <a href="../disclaimer.html">Methode &amp; Disclaimer</a>
         <a href="../privacy.html">Privacyverklaring</a>
+        <a href="../voorwaarden.html">Algemene voorwaarden</a>
         <a href="../contact.html">Contact</a>
       </div>
     </nav>
