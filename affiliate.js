@@ -148,6 +148,15 @@
     processLinks();
   }
 
+  // Watch for dynamically-added links (compare modals, JS-rendered content)
+  var observer = new MutationObserver(function (mutations) {
+    var hasNewLinks = mutations.some(function (m) {
+      return m.addedNodes.length > 0;
+    });
+    if (hasNewLinks) processLinks();
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+
   // Expose for debugging: window.__aff.status() prints whether any ID is active
   window.__aff = {
     status: function () {
