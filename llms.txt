@@ -1,0 +1,33 @@
+# BesteSlaapAdvies.nl
+
+> Onafhankelijk Nederlands vergelijkingsplatform voor slaapadvies. Wij vergelijken slaapsupplementen, ontspanningsproducten en alternatieve slaapbehandelingen op basis van wetenschappelijk bewijs.
+
+## Over deze site
+BesteSlaapAdvies.nl is een redactioneel onafhankelijk platform gericht op consumenten in Nederland en België die last hebben van slaapproblemen. Wij publiceren vergelijkingen, slaaptips en slaapgidsen — geen medisch advies.
+
+## Kernonderwerpen
+- Slaapsupplementen: magnesium, melatonine, ashwagandha, valeriaan, L-theanine, glycine
+- Ontspanningsproducten: pillow sprays, badzout, massage oliën, geurkaarsen, slaapthee
+- Slaapgidsen: slaaphygiëne, slaap bij menopauze, slaap en stress, hoeveel slaap je nodig hebt
+- Alternatieve behandelingen: acupunctuur, ayurveda, massage, mindfulness, kruidengeneeskunde
+- Praktijkenoverzichten per stad: Amsterdam, Rotterdam, Den Haag, Utrecht, Eindhoven, Groningen
+
+## Belangrijkste pagina's
+- Slaapsupplementen vergelijken: https://besteslaapadvies.nl/supplementen/
+- Ontspanningsproducten: https://besteslaapadvies.nl/ontspanning/
+- Slaapgids: https://besteslaapadvies.nl/gids/
+- Alternatieve methoden: https://besteslaapadvies.nl/alternatieven/
+- Magnesium glycinaat vs citraat: https://besteslaapadvies.nl/supplementen/magnesium-glycinaat-vs-citraat.html
+- Melatonine voor slaap: https://besteslaapadvies.nl/supplementen/melatonine-slaap.html
+- Slaaphygiëne tips: https://besteslaapadvies.nl/gids/slaaphygiene.html
+- Slaap en menopauze: https://besteslaapadvies.nl/gids/slaap-menopauze.html
+- Acupunctuur per stad: https://besteslaapadvies.nl/alternatieven/acupunctuur/
+
+## Methode
+Scores zijn gebaseerd op gepubliceerde klinische studies (RCTs, meta-analyses), productspecificaties en gebruikerservaringen. Wij testen niet zelf in een lab. Alle vergelijkingen zijn redactioneel onafhankelijk van affiliate commissies.
+
+## Taal
+Nederlands (primair), gericht op Nederland en België.
+
+## Contact
+contact@besteslaapadvies.nl
