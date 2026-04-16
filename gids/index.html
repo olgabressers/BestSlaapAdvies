@@ -88,6 +88,13 @@
     .section-header .section-label { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--green); letter-spacing: .3px; margin-bottom: 8px; }
     .section-header .section-title { font-family: Georgia, serif; font-size: clamp(24px, 3vw, 30px); font-weight: 400; color: var(--ink); letter-spacing: -0.3px; }
 
+    /* SECTION BANNER — dark green dividers */
+    .section-banner { background: linear-gradient(135deg, #1b2a14 0%, #2d4024 100%); padding: 48px 32px; text-align: center; position: relative; overflow: hidden; margin: 0 -24px; }
+    .section-banner::before { content: "◆"; position: absolute; top: 18px; left: 50%; transform: translateX(-50%); color: rgba(214,226,184,.2); font-size: 10px; letter-spacing: 8px; }
+    .section-banner .sb-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: #a8c07a; letter-spacing: .5px; margin-bottom: 10px; }
+    .section-banner h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: white; letter-spacing: -0.3px; margin-bottom: 10px; }
+    .section-banner p { font-size: 14px; color: #d6e2b8; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
     /* ARTICLES GRID — hairline divided */
     .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; margin-bottom: 72px; }
     .article-card { background: var(--sage-paper); padding: 32px 30px 28px; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background .2s; }
@@ -140,6 +147,7 @@
       .articles-grid { grid-template-columns: 1fr; }
       .article-card { padding: 28px 24px; }
       .cta-box { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 18px; }
+      .section-banner { margin: 0 -16px; padding: 36px 20px; }
       .site-footer { padding: 48px 16px 32px; }
       .footer-inner { flex-direction: column; gap: 32px; }
       .footer-nav { flex-direction: column; gap: 24px; }
@@ -200,16 +208,10 @@
 
 <!-- TOPIC NAV -->
 <div class="topic-nav">
-  <a href="#aanbevolen">Aanbevolen</a>
-  <a href="slaaphygiene.html">Slaaphygiëne</a>
-  <a href="slaap-stress.html">Stress</a>
-  <a href="slaap-menopauze.html">Menopauze</a>
-  <a href="hoeveel-slaap.html">Slaapbehoefte</a>
-  <a href="slaapsupplementen-veilig.html">Supplementen</a>
-  <a href="slaap-beweging.html">Beweging</a>
-  <a href="slaapritme-herstellen.html">Slaapritme</a>
-  <a href="wakker-worden-nacht.html">Doorslapen</a>
-  <a href="niet-slapen-piekeren.html">Piekeren</a>
+  <a href="#basis">De basis</a>
+  <a href="#problemen">Slaapproblemen</a>
+  <a href="#leefstijl">Leefstijl</a>
+  <a href="#hulp">Hulp &amp; supplementen</a>
 </div>
 
 <div class="wrap">
@@ -227,10 +229,13 @@
     <div class="fa-cta">Lees het artikel →</div>
   </a>
 
-  <!-- ALL ARTICLES -->
-  <div class="section-header">
-    <div class="section-label">Alle gidsen</div>
-    <div class="section-title">Van basis tot diepgang</div>
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 1: DE BASIS -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section-banner" id="basis">
+    <div class="sb-eyebrow">Begin hier</div>
+    <h2>De basis van beter slapen</h2>
+    <p>Drie fundamentele artikelen die iedereen zou moeten lezen. Van hoeveel slaap je nodig hebt tot hoe je je ritme herstelt.</p>
   </div>
 
   <div class="articles-grid">
@@ -240,28 +245,6 @@
       <div class="ac-title">Slaaphygiëne: de 12 regels die écht werken</div>
       <div class="ac-rule"></div>
       <div class="ac-desc">Van lichtblootstelling en cafeïne tot slaapkameromgeving — de basis voor elke slaapverbetering, in heldere stappen.</div>
-      <div class="ac-footer">
-        <span class="ac-time">9 minuten lezen</span>
-        <span class="ac-link">Lees verder →</span>
-      </div>
-    </a>
-
-    <a class="article-card" href="slaap-stress.html">
-      <div class="ac-cat">Slaapproblemen</div>
-      <div class="ac-title">Slaapproblemen door stress: wat helpt echt?</div>
-      <div class="ac-rule"></div>
-      <div class="ac-desc">Piekeren, cortisol en de vicieuze cirkel van slaapangst — hoe je er stap voor stap uitkomt met bewezen technieken.</div>
-      <div class="ac-footer">
-        <span class="ac-time">8 minuten lezen</span>
-        <span class="ac-link">Lees verder →</span>
-      </div>
-    </a>
-
-    <a class="article-card" href="slaap-menopauze.html">
-      <div class="ac-cat">Vrouwen &amp; hormonen</div>
-      <div class="ac-title">Slaap en menopauze: praktische tips voor de overgang</div>
-      <div class="ac-rule"></div>
-      <div class="ac-desc">Hoe oestrogeen en progesteron je slaap beïnvloeden, en welke aanpassingen in leefstijl en supplementen het meeste helpen.</div>
       <div class="ac-footer">
         <span class="ac-time">9 minuten lezen</span>
         <span class="ac-link">Lees verder →</span>
@@ -279,28 +262,6 @@
       </div>
     </a>
 
-    <a class="article-card" href="slaapsupplementen-veilig.html">
-      <div class="ac-cat">Supplementen</div>
-      <div class="ac-title">Zijn slaapsupplementen veilig? Wat je moet weten</div>
-      <div class="ac-rule"></div>
-      <div class="ac-desc">Veiligheid, interacties en wanneer je beter een arts raadpleegt — een eerlijk overzicht zonder verkooppraat.</div>
-      <div class="ac-footer">
-        <span class="ac-time">7 minuten lezen</span>
-        <span class="ac-link">Lees verder →</span>
-      </div>
-    </a>
-
-    <a class="article-card" href="slaap-beweging.html">
-      <div class="ac-cat">Leefstijl</div>
-      <div class="ac-title">Slaap en beweging: het verband dat je moet kennen</div>
-      <div class="ac-rule"></div>
-      <div class="ac-desc">Welke sporten en tijdstippen je slaap verbeteren — en welke juist slaap saboteren wanneer je te laat op de dag traint.</div>
-      <div class="ac-footer">
-        <span class="ac-time">7 minuten lezen</span>
-        <span class="ac-link">Lees verder →</span>
-      </div>
-    </a>
-
     <a class="article-card" href="slaapritme-herstellen.html">
       <div class="ac-cat">Slaapritme</div>
       <div class="ac-title">Slaapritme herstellen: 5 stappen die écht werken</div>
@@ -312,8 +273,43 @@
       </div>
     </a>
 
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 2: SLAAPPROBLEMEN -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section-banner" id="problemen">
+    <div class="sb-eyebrow">Herkenbaar?</div>
+    <h2>Slaapproblemen oplossen</h2>
+    <p>Van piekeren en stress tot 's nachts wakker worden — bewezen technieken om specifieke slaapproblemen aan te pakken.</p>
+  </div>
+
+  <div class="articles-grid">
+
+    <a class="article-card" href="slaap-stress.html">
+      <div class="ac-cat">Stress</div>
+      <div class="ac-title">Slaapproblemen door stress: wat helpt echt?</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Piekeren, cortisol en de vicieuze cirkel van slaapangst — hoe je er stap voor stap uitkomt met bewezen technieken.</div>
+      <div class="ac-footer">
+        <span class="ac-time">8 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="niet-slapen-piekeren.html">
+      <div class="ac-cat">Piekeren</div>
+      <div class="ac-title">Niet kunnen slapen door piekeren: 5 technieken die helpen</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Van een gepland piekermoment tot de 4-7-8 ademhalingstechniek — bewezen methoden om je hoofd rustig te krijgen voor het slapen.</div>
+      <div class="ac-footer">
+        <span class="ac-time">8 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
+      </div>
+    </a>
+
     <a class="article-card" href="wakker-worden-nacht.html">
-      <div class="ac-cat">Slaapproblemen</div>
+      <div class="ac-cat">Doorslapen</div>
       <div class="ac-title">Wakker worden midden in de nacht: oorzaken en 5 tips</div>
       <div class="ac-rule"></div>
       <div class="ac-desc">Waarom word je om 3 uur wakker? Van slaaparchitectuur en alcohol tot de ideale slaapkamertemperatuur — en wanneer naar de huisarts.</div>
@@ -323,11 +319,92 @@
       </div>
     </a>
 
-    <a class="article-card" href="niet-slapen-piekeren.html">
-      <div class="ac-cat">Slaapproblemen</div>
-      <div class="ac-title">Niet kunnen slapen door piekeren: 5 technieken die helpen</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 3: LEEFSTIJL -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section-banner" id="leefstijl">
+    <div class="sb-eyebrow">Dagelijkse keuzes</div>
+    <h2>Leefstijl en gewoonten</h2>
+    <p>Hoe beweging, voeding, alcohol en cafeïne je slaapkwaliteit beïnvloeden — en wat je er concreet aan kunt veranderen.</p>
+  </div>
+
+  <div class="articles-grid">
+
+    <a class="article-card" href="slaap-beweging.html">
+      <div class="ac-cat">Beweging</div>
+      <div class="ac-title">Slaap en beweging: het verband dat je moet kennen</div>
       <div class="ac-rule"></div>
-      <div class="ac-desc">Van een gepland piekermoment tot de 4-7-8 ademhalingstechniek — bewezen methoden om je hoofd rustig te krijgen voor het slapen.</div>
+      <div class="ac-desc">Welke sporten en tijdstippen je slaap verbeteren — en welke juist slaap saboteren wanneer je te laat op de dag traint.</div>
+      <div class="ac-footer">
+        <span class="ac-time">7 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="slaap-voeding.html">
+      <div class="ac-cat">Voeding</div>
+      <div class="ac-title">Slaap en voeding: wat eten (en vermijden) voor beter slapen</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Welke voedingsmiddelen je slaap verbeteren, wat je beter kunt vermijden, en waarom timing minstens zo belangrijk is als wat je eet.</div>
+      <div class="ac-footer">
+        <span class="ac-time">8 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="slaap-alcohol-caffeine.html">
+      <div class="ac-cat">Alcohol &amp; cafeïne</div>
+      <div class="ac-title">Slaap, alcohol en cafeïne: wat je moet weten</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Hoe wijn, bier en koffie je slaap beïnvloeden — en de simpele tijdsregel die het verschil maakt.</div>
+      <div class="ac-footer">
+        <span class="ac-time">8 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 4: HULP & SUPPLEMENTEN -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="section-banner" id="hulp">
+    <div class="sb-eyebrow">Verdere stappen</div>
+    <h2>Professionele hulp en supplementen</h2>
+    <p>Wanneer zelfhulp niet genoeg is. Over supplementen, hormonen, en het moment waarop je beter een arts kunt raadplegen.</p>
+  </div>
+
+  <div class="articles-grid">
+
+    <a class="article-card" href="slaapsupplementen-veilig.html">
+      <div class="ac-cat">Supplementen</div>
+      <div class="ac-title">Zijn slaapsupplementen veilig? Wat je moet weten</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Veiligheid, interacties en wanneer je beter een arts raadpleegt — een eerlijk overzicht zonder verkooppraat.</div>
+      <div class="ac-footer">
+        <span class="ac-time">7 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="slaap-menopauze.html">
+      <div class="ac-cat">Hormonen</div>
+      <div class="ac-title">Slaap en menopauze: praktische tips voor de overgang</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">Hoe oestrogeen en progesteron je slaap beïnvloeden, en welke aanpassingen in leefstijl en supplementen het meeste helpen.</div>
+      <div class="ac-footer">
+        <span class="ac-time">9 minuten lezen</span>
+        <span class="ac-link">Lees verder →</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="wanneer-slaapkliniek.html">
+      <div class="ac-cat">Professionele hulp</div>
+      <div class="ac-title">Wanneer naar een slaapkliniek?</div>
+      <div class="ac-rule"></div>
+      <div class="ac-desc">De signalen dat je professionele hulp nodig hebt, wat een slaaponderzoek inhoudt, en welke behandelingen beschikbaar zijn.</div>
       <div class="ac-footer">
         <span class="ac-time">8 minuten lezen</span>
         <span class="ac-link">Lees verder →</span>
