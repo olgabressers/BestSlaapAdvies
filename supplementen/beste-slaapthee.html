@@ -133,6 +133,8 @@
     .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0 36px; font-size: 14px; background: white; border-radius: 2px; overflow: hidden; border: 1px solid var(--hairline); }
     .comparison-table th { background: var(--ink); color: white; padding: 14px 18px; text-align: left; font-family: Georgia, serif; font-style: italic; font-size: 12.5px; font-weight: 400; letter-spacing: .3px; text-transform: none; }
     .comparison-table td { padding: 14px 18px; border-bottom: 1px solid var(--hairline-soft); color: var(--body); }
+    .comparison-table td a.product-link { color: var(--ink); text-decoration: none; border-bottom: 1px dashed var(--purple-soft); padding-bottom: 1px; transition: color .15s, border-color .15s; }
+    .comparison-table td a.product-link:hover { color: var(--purple); border-bottom-color: var(--purple); }
     .comparison-table tr:last-child td { border-bottom: none; }
     .comparison-table tr:nth-child(even) td { background: var(--blush-soft); }
     .comparison-table tr:hover td { background: var(--blush); }
@@ -282,12 +284,12 @@
       <tr><th>Slaapthee</th><th>Hoofdingrediënten</th><th>Score</th><th>Beste voor</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>Pukka Night Time</strong> <span class="badge-best">Beste keuze</span></td><td>Haver, kamille, lavendel, valeriaan</td><td>9.0/10</td><td>Beste algehele slaapthee</td></tr>
-      <tr><td><strong>Clipper Snore & Peace</strong></td><td>Kamille (30%), citroenmelisse, lavendel</td><td>8.7/10</td><td>Beste smaak</td></tr>
-      <tr><td><strong>Yogi Tea Bedtime</strong></td><td>Venkel, kamille, valeriaan, citroenmelisse</td><td>8.4/10</td><td>Ayurvedische aanpak</td></tr>
-      <tr><td><strong>Lucovitaal Slaap Thee</strong></td><td>Kamille, oranjebloesem, valeriaan, lavendel</td><td>8.2/10</td><td>Nederlands merk, hoge dosering</td></tr>
-      <tr><td><strong>Celestial Seasonings Sleepytime</strong></td><td>Kamille, spearmint, lindebloesem</td><td>7.8/10</td><td>Zachte klassieke smaak</td></tr>
-      <tr><td><strong>Pukka Night Time Berry</strong></td><td>Kamille, lavendel, echinacea, valeriaan</td><td>7.6/10</td><td>Fruitige variant voor de winter</td></tr>
+      <tr><td><a href="#pukka-night-time" class="product-link"><strong>Pukka Night Time</strong></a> <span class="badge-best">Beste keuze</span></td><td>Haver, kamille, lavendel, valeriaan</td><td>9.0/10</td><td>Beste algehele slaapthee</td></tr>
+      <tr><td><a href="#clipper-snore-peace" class="product-link"><strong>Clipper Snore & Peace</strong></a></td><td>Kamille (30%), citroenmelisse, lavendel</td><td>8.7/10</td><td>Beste smaak</td></tr>
+      <tr><td><a href="#yogi-bedtime" class="product-link"><strong>Yogi Tea Bedtime</strong></a></td><td>Venkel, kamille, valeriaan, citroenmelisse</td><td>8.4/10</td><td>Ayurvedische aanpak</td></tr>
+      <tr><td><a href="#lucovitaal-slaap" class="product-link"><strong>Lucovitaal Slaap Thee</strong></a></td><td>Kamille, oranjebloesem, valeriaan, lavendel</td><td>8.2/10</td><td>Nederlands merk, hoge dosering</td></tr>
+      <tr><td><a href="#celestial-sleepytime" class="product-link"><strong>Celestial Seasonings Sleepytime</strong></a></td><td>Kamille, spearmint, lindebloesem</td><td>7.8/10</td><td>Zachte klassieke smaak</td></tr>
+      <tr><td><a href="#pukka-berry" class="product-link"><strong>Pukka Night Time Berry</strong></a></td><td>Kamille, lavendel, echinacea, valeriaan</td><td>7.6/10</td><td>Fruitige variant voor de winter</td></tr>
     </tbody>
   </table>
 
@@ -325,7 +327,7 @@
 
   <h2>Gedetailleerde productreviews</h2>
 
-  <div class="product-card">
+  <div class="product-card" id="pukka-night-time">
     <div class="product-header">
       <div>
         <div class="product-name">1. Pukka Night Time</div>
@@ -353,7 +355,7 @@
     </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-card" id="clipper-snore-peace">
     <div class="product-header">
       <div>
         <div class="product-name">2. Clipper Snore & Peace</div>
@@ -380,7 +382,7 @@
     </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-card" id="yogi-bedtime">
     <div class="product-header">
       <div>
         <div class="product-name">3. Yogi Tea Bedtime</div>
@@ -407,7 +409,7 @@
     </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-card" id="lucovitaal-slaap">
     <div class="product-header">
       <div>
         <div class="product-name">4. Lucovitaal Slaap Thee</div>
@@ -434,7 +436,7 @@
     </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-card" id="celestial-sleepytime">
     <div class="product-header">
       <div>
         <div class="product-name">5. Celestial Seasonings Sleepytime</div>
@@ -461,7 +463,7 @@
     </div>
   </div>
 
-  <div class="product-card">
+  <div class="product-card" id="pukka-berry">
     <div class="product-header">
       <div>
         <div class="product-name">6. Pukka Night Time Berry</div>
