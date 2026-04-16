@@ -8,7 +8,7 @@ BesteSlaapAdvies.nl is een redactioneel onafhankelijk platform gericht op consum
 ## Kernonderwerpen
 - Slaapsupplementen: magnesium, melatonine, ashwagandha, valeriaan, L-theanine, glycine
 - Ontspanningsproducten: pillow sprays, badzout, massage oliën, geurkaarsen, slaapthee
-- Slaapgidsen: slaaphygiëne, slaap bij menopauze, slaap en stress, hoeveel slaap je nodig hebt
+- Slaapgidsen: slaaphygiëne, slaap bij menopauze, slaap en stress, hoeveel slaap je nodig hebt, slaapritme herstellen, wakker worden 's nachts, niet slapen door piekeren
 - Alternatieve behandelingen: acupunctuur, ayurveda, massage, mindfulness, kruidengeneeskunde
 - Praktijkenoverzichten per stad: Amsterdam, Rotterdam, Den Haag, Utrecht, Eindhoven, Groningen
 
@@ -21,6 +21,9 @@ BesteSlaapAdvies.nl is een redactioneel onafhankelijk platform gericht op consum
 - Melatonine voor slaap: https://besteslaapadvies.nl/supplementen/melatonine-slaap.html
 - Slaaphygiëne tips: https://besteslaapadvies.nl/gids/slaaphygiene.html
 - Slaap en menopauze: https://besteslaapadvies.nl/gids/slaap-menopauze.html
+- Slaapritme herstellen: https://besteslaapadvies.nl/gids/slaapritme-herstellen.html
+- Wakker worden midden in de nacht: https://besteslaapadvies.nl/gids/wakker-worden-nacht.html
+- Niet slapen door piekeren: https://besteslaapadvies.nl/gids/niet-slapen-piekeren.html
 - Acupunctuur per stad: https://besteslaapadvies.nl/alternatieven/acupunctuur/
 
 ## Methode
