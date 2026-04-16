@@ -36,7 +36,7 @@
     // Bol.com partnerprogramma — direct partner ID (sometimes called "site ID")
     // Wraps every bol.com link via partnerprogramma.bol.com/click/click
     // Example: '1234567'
-    bol: '',
+    bol: '1515810',
 
     // Daisycon — alternative way to monetise Bol.com + many NL shops
     // Fill in EITHER `bol` OR `daisycon.publisherId` — not both (bol takes
