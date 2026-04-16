@@ -31,7 +31,7 @@
   const AFF = {
     // Amazon Associates NL — append ?tag=XYZ-21 to every amazon.nl link
     // Example: 'besteslaap-21'
-    amazon: '',
+    amazon: 'besteslaapadvies21',
 
     // Bol.com partnerprogramma — direct partner ID (sometimes called "site ID")
     // Wraps every bol.com link via partnerprogramma.bol.com/click/click
