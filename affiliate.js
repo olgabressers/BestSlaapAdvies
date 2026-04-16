@@ -118,9 +118,19 @@
   }
 
   // ---------------------------------------------------------------------------
+  // COOKIE CONSENT CHECK
+  // ---------------------------------------------------------------------------
+  function hasConsent() {
+    var match = document.cookie.match(/(^|;)\s*bsa_cookie_consent\s*=\s*([^;]+)/);
+    return match && match[2] === 'accepted';
+  }
+
+  // ---------------------------------------------------------------------------
   // PROCESS EVERY LINK ON THE PAGE
   // ---------------------------------------------------------------------------
   function processLinks() {
+    if (!hasConsent()) return; // respect cookie consent — do nothing without opt-in
+
     const links = document.querySelectorAll('a[href^="http"]');
     links.forEach(function (a) {
       if (a.dataset.aff === 'skip') return;
@@ -147,6 +157,17 @@
   } else {
     processLinks();
   }
+
+  // Re-process after consent is given (user clicks "Akkoord" after page load)
+  document.addEventListener('DOMContentLoaded', function () {
+    var origFn = window.setCookieConsent;
+    if (origFn) {
+      window.setCookieConsent = function (v) {
+        origFn(v);
+        if (v === 'accepted') processLinks();
+      };
+    }
+  });
 
   // Watch for dynamically-added links (compare modals, JS-rendered content)
   var observer = new MutationObserver(function (mutations) {
