@@ -38,13 +38,14 @@
     // Example: '1234567'
     bol: '1515810',
 
-    // Daisycon — alternative way to monetise Bol.com + many NL shops
-    // Fill in EITHER `bol` OR `daisycon.publisherId` — not both (bol takes
-    // precedence). Daisycon gives you a single publisher ID and per-programme
-    // IDs; the helper wraps the URL via Daisycon's click-tracker.
+    // Daisycon — NL affiliate network for Vitaminstore, Rituals, etc.
+    // Publisher ID is your account-wide ID; merchants maps hostname → programme ID.
     daisycon: {
-      publisherId: '',           // e.g. '123456'
-      bolProgrammeId: ''         // e.g. '78910' — the ID Daisycon gives for Bol.com specifically
+      publisherId: '478090',
+      merchants: {
+        'www.vitaminstore.nl': '5676'
+        // 'www.rituals.com':  ''   // add programme ID when approved
+      }
     },
 
     // Awin — one publisher ID covers every Awin merchant (Vitaminstore, Holland
@@ -75,20 +76,20 @@
   }
 
   function wrapBol(originalUrl) {
-    // Prefer direct Bol partnerprogramma ID if set, else fall back to Daisycon
     if (AFF.bol) {
       return 'https://partnerprogramma.bol.com/click/click?p=1&t=url' +
              '&s=' + encodeURIComponent(AFF.bol) +
              '&url=' + encodeURIComponent(originalUrl) +
              '&f=TXL&name=affiliate';
     }
-    if (AFF.daisycon.publisherId && AFF.daisycon.bolProgrammeId) {
-      // Daisycon click URL format (v2): ds1.nl/c/?si=<pub>&li=<programme>&url=<encoded>
-      return 'https://ds1.nl/c/?si=' + encodeURIComponent(AFF.daisycon.publisherId) +
-             '&li=' + encodeURIComponent(AFF.daisycon.bolProgrammeId) +
-             '&url=' + encodeURIComponent(originalUrl);
-    }
     return originalUrl;
+  }
+
+  function wrapDaisycon(originalUrl, programmeId) {
+    if (!AFF.daisycon.publisherId || !programmeId) return originalUrl;
+    return 'https://ds1.nl/c/?si=' + encodeURIComponent(AFF.daisycon.publisherId) +
+           '&li=' + encodeURIComponent(programmeId) +
+           '&url=' + encodeURIComponent(originalUrl);
   }
 
   function wrapAwin(originalUrl, merchantId) {
@@ -110,6 +111,9 @@
 
     if (/(^|\.)amazon\.nl$/.test(host))           return wrapAmazon(href);
     if (/(^|\.)bol\.com$/.test(host))             return wrapBol(href);
+
+    const daisyconPid = AFF.daisycon.merchants[host];
+    if (daisyconPid)                               return wrapDaisycon(href, daisyconPid);
 
     const awinMid = AFF.awin.merchants[host];
     if (awinMid)                                   return wrapAwin(href, awinMid);
@@ -184,7 +188,7 @@
       const on = [];
       if (AFF.amazon) on.push('Amazon NL');
       if (AFF.bol) on.push('Bol.com (direct)');
-      if (AFF.daisycon.publisherId && AFF.daisycon.bolProgrammeId) on.push('Bol.com (via Daisycon)');
+      if (AFF.daisycon.publisherId) on.push('Daisycon (' + Object.keys(AFF.daisycon.merchants).length + ' merchants)');
       if (AFF.awin.publisherId) on.push('Awin (' + Object.keys(AFF.awin.merchants).length + ' merchants)');
       console.log('[affiliate.js] Active programmes:', on.length ? on.join(', ') : 'NONE — links are unwrapped');
       return on;
