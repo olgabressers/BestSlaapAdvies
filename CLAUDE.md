@@ -92,7 +92,7 @@ Stay pragmatic. Stay reliable. Keep learning.
 - NEVER fabricate affiliate commission rates, cookie durations, or program details — verify via web search first
 - When adding a new method/page, update the sidebar method list on ALL existing method pages
 - Compare modals must be consistent: all supplement cards use "Vergelijk merken & prijzen" button, not direct buy links
-- Store columns in compare modal: Bol, Amazon, Vitaminstore, H&B, Drogisterij, iHerb
+- Store columns in compare modal: Bol, Amazon, Vitaminstore, H&B, iHerb
 
 ### Admin Pages
 - Admin index: `/admin.html`
