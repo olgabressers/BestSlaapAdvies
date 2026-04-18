@@ -43,8 +43,8 @@
     daisycon: {
       publisherId: '478090',
       merchants: {
-        'www.vitaminstore.nl': '5676'
-        // 'www.rituals.com':  ''   // add programme ID when approved
+        // 'www.vitaminstore.nl': '5676'  // disabled — subscribe to campaign first, then re-enable
+        // 'www.rituals.com':  ''          // add programme ID when approved
       }
     },
 
