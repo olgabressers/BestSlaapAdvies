@@ -91,7 +91,7 @@
     return 'https://ds1.nl/c/?si=' + encodeURIComponent(AFF.daisycon.publisherId) +
            '&li=' + encodeURIComponent(programmeId) +
            '&wi=' + encodeURIComponent(AFF.daisycon.mediaId) +
-           '&dl=' + encodeURIComponent(originalUrl);
+           '&dl=' + originalUrl;
   }
 
   function wrapAwin(originalUrl, merchantId) {
