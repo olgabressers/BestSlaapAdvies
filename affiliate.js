@@ -133,7 +133,8 @@
   // PROCESS EVERY LINK ON THE PAGE
   // ---------------------------------------------------------------------------
   function processLinks() {
-    if (!hasConsent()) return; // respect cookie consent — do nothing without opt-in
+    // Affiliate links redirect to retailer sites (Bol.com, Amazon) which set their own cookies.
+    // No consent gate needed — our site doesn't place tracking cookies itself.
 
     const links = document.querySelectorAll('a[href^="http"]');
     links.forEach(function (a) {
