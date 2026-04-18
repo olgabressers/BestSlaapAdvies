@@ -42,9 +42,10 @@
     // Publisher ID is your account-wide ID; merchants maps hostname → programme ID.
     daisycon: {
       publisherId: '478090',
+      mediaId: '420082',
       merchants: {
-        // 'www.vitaminstore.nl': '5676'  // disabled — subscribe to campaign first, then re-enable
-        // 'www.rituals.com':  ''          // add programme ID when approved
+        'www.vitaminstore.nl': '1266442'
+        // 'www.rituals.com':  ''   // add programme ID when approved
       }
     },
 
@@ -89,7 +90,8 @@
     if (!AFF.daisycon.publisherId || !programmeId) return originalUrl;
     return 'https://ds1.nl/c/?si=' + encodeURIComponent(AFF.daisycon.publisherId) +
            '&li=' + encodeURIComponent(programmeId) +
-           '&url=' + encodeURIComponent(originalUrl);
+           '&wi=' + encodeURIComponent(AFF.daisycon.mediaId) +
+           '&dl=' + encodeURIComponent(originalUrl);
   }
 
   function wrapAwin(originalUrl, merchantId) {
