@@ -2465,7 +2465,7 @@
 const stores = {
     bol:   (q) => `https://www.bol.com/nl/nl/s/?searchtext=${q}`,
     amz:   (q) => `https://www.amazon.nl/s?k=${q}`,
-    vit:   (q) => `https://www.vitaminstore.nl/search?q=${q}`,
+    /* vit column removed — Daisycon deeplinks not working with search URLs */
     hb:    (q) => `https://www.hollandandbarrett.nl/search/?query=${q}`,
     /* dr column removed — no affiliate available */
     iherb: (q) => `https://www.iherb.com/search?kw=${q}`,
@@ -2478,13 +2478,13 @@ const stores = {
       note: '⚠ In Nederland is max. 0,3mg vrij verkrijgbaar. Hogere doses vereisen apotheekadvies.',
       brands: [
         { name:'Lucovitaal', sub:'0.299mg · 500 tabs · apotheekformule', dose:'0,3mg', price:'~€1,80/mnd', score:88, cls:'', best:true,
-          stores:{bol:stores.bol('lucovitaal+melatonine+0.3mg'), amz:stores.amz('lucovitaal+melatonine'), vit:stores.vit('lucovitaal+melatonine'), hb:null} },
+          stores:{bol:stores.bol('lucovitaal+melatonine+0.3mg'), amz:stores.amz('lucovitaal+melatonine'), hb:null} },
         { name:'Vitakruid', sub:'0,3mg · 90 tabs · NL-kwaliteitsmerk', dose:'0,3mg', price:'~€6,50/mnd', score:82, cls:'mid', best:false,
-          stores:{bol:stores.bol('vitakruid+melatonine'), amz:null, vit:stores.vit('vitakruid+melatonine'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+melatonine'), amz:null, hb:null} },
         { name:'NOW Foods', sub:'1mg · 180 caps · importmerk', dose:'1mg', price:'~€5,00/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+melatonine'), amz:stores.amz('NOW+Foods+melatonine'), vit:stores.vit('now+foods+melatonine'), hb:stores.hb('melatonin')} },
+          stores:{bol:stores.bol('now+foods+melatonine'), amz:stores.amz('NOW+Foods+melatonine'), hb:stores.hb('melatonin')} },
         { name:'Natrol Fast Dissolve', sub:'5mg · smelttablet · snelwerkend', dose:'5mg', price:'~€9,00/mnd', score:68, cls:'low', best:false,
-          stores:{bol:stores.bol('natrol+melatonine+fast+dissolve'), amz:stores.amz('natrol+melatonin+fast+dissolve'), vit:null, hb:null} },
+          stores:{bol:stores.bol('natrol+melatonine+fast+dissolve'), amz:stores.amz('natrol+melatonin+fast+dissolve'), hb:null} },
       ]
     },
     magGlyc: {
@@ -2493,13 +2493,13 @@ const stores = {
       note: 'Magnesium glycinaat = bisglycinaat. Check altijd de elementaire magnesium op het label, niet alleen de totale hoeveelheid.',
       brands: [
         { name:'Vitakruid Mg Bisglycinaat', sub:'200mg elem. · 90 tabs · NL-merk', dose:'200mg', price:'~€14/mnd', score:90, cls:'', best:true,
-          stores:{bol:stores.bol('vitakruid+magnesium+bisglycinaat'), amz:null, vit:stores.vit('vitakruid+magnesium+bisglycinaat'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+magnesium+bisglycinaat'), amz:null, hb:null} },
         { name:"Doctor's Best High Absorption", sub:'200mg elem. · 120 tabs · import', dose:'200mg', price:'~€9/mnd', score:85, cls:'', best:false,
-          stores:{bol:stores.bol('doctors+best+magnesium+glycinaat'), amz:stores.amz('Doctors+Best+Magnesium+Glycinate'), vit:null, hb:null} },
+          stores:{bol:stores.bol('doctors+best+magnesium+glycinaat'), amz:stores.amz('Doctors+Best+Magnesium+Glycinate'), hb:null} },
         { name:'NOW Foods Magnesium Glycinate', sub:'200mg elem. · 180 tabs', dose:'200mg', price:'~€11/mnd', score:82, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+magnesium+glycinate'), amz:stores.amz('NOW+Magnesium+Glycinate'), vit:stores.vit('now+magnesium+glycinaat'), hb:null} },
+          stores:{bol:stores.bol('now+foods+magnesium+glycinate'), amz:stores.amz('NOW+Magnesium+Glycinate'), hb:null} },
         { name:'Solgar Chelated Magnesium', sub:'100mg elem. · 100 tabs', dose:'100mg', price:'~€15/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+magnesium+chelated'), amz:stores.amz('Solgar+Chelated+Magnesium'), vit:null, hb:stores.hb('magnesium+glycinate')} },
+          stores:{bol:stores.bol('solgar+magnesium+chelated'), amz:stores.amz('Solgar+Chelated+Magnesium'), hb:stores.hb('magnesium+glycinate')} },
       ]
     },
     glycine: {
@@ -2508,11 +2508,11 @@ const stores = {
       note: 'Glycine poeder heeft een milde zoete smaak en is gemakkelijk te doseren in water of thee.',
       brands: [
         { name:'NOW Foods Glycine Powder', sub:'3000mg/scheprje · 454g poeder', dose:'3g', price:'~€5/mnd', score:88, cls:'', best:true,
-          stores:{bol:stores.bol('now+foods+glycine+poeder'), amz:stores.amz('NOW+Glycine+Powder'), vit:stores.vit('now+glycine'), hb:null} },
+          stores:{bol:stores.bol('now+foods+glycine+poeder'), amz:stores.amz('NOW+Glycine+Powder'), hb:null} },
         { name:'Bulk Powders Glycine', sub:'3000mg · poeder · 500g', dose:'3g', price:'~€4/mnd', score:82, cls:'', best:false,
-          stores:{bol:stores.bol('bulk+powders+glycine+poeder'), amz:stores.amz('Bulk+Powders+Glycine'), vit:null, hb:null} },
+          stores:{bol:stores.bol('bulk+powders+glycine+poeder'), amz:stores.amz('Bulk+Powders+Glycine'), hb:null} },
         { name:'Jarrow Formulas Glycine', sub:'1000mg · 100 caps', dose:'3g (3 caps)', price:'~€8/mnd', score:75, cls:'mid', best:false,
-          stores:{bol:stores.bol('jarrow+glycine+capsules'), amz:stores.amz('Jarrow+Formulas+Glycine'), vit:null, hb:null} },
+          stores:{bol:stores.bol('jarrow+glycine+capsules'), amz:stores.amz('Jarrow+Formulas+Glycine'), hb:null} },
       ]
     },
     ltheanine: {
@@ -2521,13 +2521,13 @@ const stores = {
       note: 'L-Theanine werkt optimaal in combinatie met 200mg cafeïne overdag (geen effect op slaap) en magnesium \'s avonds.',
       brands: [
         { name:'NOW Foods L-Theanine 200mg', sub:'200mg · 60 caps · meest verkocht', dose:'200mg', price:'~€9/mnd', score:86, cls:'', best:true,
-          stores:{bol:stores.bol('now+foods+l-theanine+200mg'), amz:stores.amz('NOW+L-Theanine+200mg'), vit:stores.vit('now+l-theanine'), hb:stores.hb('l-theanine')} },
+          stores:{bol:stores.bol('now+foods+l-theanine+200mg'), amz:stores.amz('NOW+L-Theanine+200mg'), hb:stores.hb('l-theanine')} },
         { name:'Vitakruid L-Theanine', sub:'200mg · 90 tabs · NL-merk', dose:'200mg', price:'~€12/mnd', score:83, cls:'', best:false,
-          stores:{bol:stores.bol('vitakruid+l-theanine'), amz:null, vit:stores.vit('vitakruid+l-theanine'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+l-theanine'), amz:null, hb:null} },
         { name:'Jarrow Theanine 200', sub:'200mg · 60 caps', dose:'200mg', price:'~€10/mnd', score:80, cls:'mid', best:false,
-          stores:{bol:stores.bol('jarrow+theanine+200'), amz:stores.amz('Jarrow+Formulas+Theanine'), vit:null, hb:null} },
+          stores:{bol:stores.bol('jarrow+theanine+200'), amz:stores.amz('Jarrow+Formulas+Theanine'), hb:null} },
         { name:"Doctor's Best Suntheanine", sub:'150mg · 90 caps · gepatenteerd', dose:'150mg', price:'~€13/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('doctors+best+l-theanine'), amz:stores.amz('Doctors+Best+L-Theanine'), vit:null, hb:null} },
+          stores:{bol:stores.bol('doctors+best+l-theanine'), amz:stores.amz('Doctors+Best+L-Theanine'), hb:null} },
       ]
     },
     ashwagandha: {
@@ -2536,13 +2536,13 @@ const stores = {
       note: 'Kies altijd KSM-66 of Sensoril extract (gestandaardiseerd). Goedkope root powder varianten hebben onbetrouwbare concentraties.',
       brands: [
         { name:'Solgar Ashwagandha KSM-66', sub:'300mg KSM-66 · 60 caps · goudstandaard', dose:'300mg', price:'~€18/mnd', score:90, cls:'', best:true,
-          stores:{bol:stores.bol('solgar+ashwagandha+ksm66'), amz:stores.amz('Solgar+Ashwagandha+KSM-66'), vit:null, hb:stores.hb('ashwagandha+ksm')} },
+          stores:{bol:stores.bol('solgar+ashwagandha+ksm66'), amz:stores.amz('Solgar+Ashwagandha+KSM-66'), hb:stores.hb('ashwagandha+ksm')} },
         { name:'Vitakruid Ashwagandha KSM-66', sub:'300mg KSM-66 · 60 tabs · NL-merk', dose:'300mg', price:'~€15/mnd', score:87, cls:'', best:false,
-          stores:{bol:stores.bol('vitakruid+ashwagandha+ksm66'), amz:null, vit:stores.vit('vitakruid+ashwagandha'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+ashwagandha+ksm66'), amz:null, hb:null} },
         { name:'NOW Foods Ashwagandha', sub:'450mg root · 90 caps', dose:'450mg', price:'~€8/mnd', score:75, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+ashwagandha'), amz:stores.amz('NOW+Ashwagandha'), vit:stores.vit('now+ashwagandha'), hb:stores.hb('ashwagandha')} },
+          stores:{bol:stores.bol('now+foods+ashwagandha'), amz:stores.amz('NOW+Ashwagandha'), hb:stores.hb('ashwagandha')} },
         { name:'Himalaya Ashwagandha', sub:'300mg root · 60 tabs · Ayurveda', dose:'300mg', price:'~€10/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('himalaya+ashwagandha'), amz:stores.amz('Himalaya+Ashwagandha'), vit:null, hb:stores.hb('himalaya+ashwagandha')} },
+          stores:{bol:stores.bol('himalaya+ashwagandha'), amz:stores.amz('Himalaya+Ashwagandha'), hb:stores.hb('himalaya+ashwagandha')} },
       ]
     },
     magCit: {
@@ -2551,13 +2551,13 @@ const stores = {
       note: 'Citraat heeft een laxerend effect bij hoge doses. Begin met 150mg en bouw op. Meer dan 400mg/dag niet aanbevolen.',
       brands: [
         { name:'Solgar Magnesium Citraat', sub:'420mg elem. · 120 tabs', dose:'210mg', price:'~€12/mnd', score:84, cls:'', best:true,
-          stores:{bol:stores.bol('solgar+magnesium+citraat'), amz:stores.amz('Solgar+Magnesium+Citrate'), vit:null, hb:stores.hb('magnesium+citrate')} },
+          stores:{bol:stores.bol('solgar+magnesium+citraat'), amz:stores.amz('Solgar+Magnesium+Citrate'), hb:stores.hb('magnesium+citrate')} },
         { name:'Lucovitaal Magnesium Citraat', sub:'150mg · 30 sachets · bruisgranulaat', dose:'150mg', price:'~€7/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('lucovitaal+magnesium+citraat'), amz:null, vit:null, hb:null} },
+          stores:{bol:stores.bol('lucovitaal+magnesium+citraat'), amz:null, hb:null} },
         { name:'NOW Foods Magnesium Citrate', sub:'200mg elem. · 250 tabs', dose:'200mg', price:'~€8/mnd', score:80, cls:'', best:false,
-          stores:{bol:stores.bol('now+foods+magnesium+citraat'), amz:stores.amz('NOW+Magnesium+Citrate'), vit:stores.vit('now+magnesium+citraat'), hb:null} },
+          stores:{bol:stores.bol('now+foods+magnesium+citraat'), amz:stores.amz('NOW+Magnesium+Citrate'), hb:null} },
         { name:'Pure Encapsulations Mg Citraat', sub:'150mg elem. · 90 caps · clean label', dose:'150mg', price:'~€16/mnd', score:82, cls:'mid', best:false,
-          stores:{bol:stores.bol('pure+encapsulations+magnesium+citraat'), amz:stores.amz('Pure+Encapsulations+Magnesium+Citrate'), vit:null, hb:null} },
+          stores:{bol:stores.bol('pure+encapsulations+magnesium+citraat'), amz:stores.amz('Pure+Encapsulations+Magnesium+Citrate'), hb:null} },
       ]
     },
     valeriaan: {
@@ -2566,13 +2566,13 @@ const stores = {
       note: 'Valeriaan werkt cumulatief: effect na 2–4 weken gebruik. Niet plotseling stoppen na langdurig gebruik.',
       brands: [
         { name:'A-Vogel Dormeasan', sub:'Vers extract valeriaan + hop · 50ml tinctuur', dose:'0,5ml', price:'~€8/mnd', score:88, cls:'', best:true,
-          stores:{bol:stores.bol('avogel+dormeasan+valeriaan'), amz:null, vit:stores.vit('avogel+dormeasan'), hb:stores.hb('dormeasan')} },
+          stores:{bol:stores.bol('avogel+dormeasan+valeriaan'), amz:null, hb:stores.hb('dormeasan')} },
         { name:'Solgar Valerian Root', sub:'250mg extract · 60 caps', dose:'250mg', price:'~€12/mnd', score:82, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+valerian+root'), amz:stores.amz('Solgar+Valerian'), vit:null, hb:stores.hb('solgar+valerian')} },
+          stores:{bol:stores.bol('solgar+valerian+root'), amz:stores.amz('Solgar+Valerian'), hb:stores.hb('solgar+valerian')} },
         { name:'NOW Foods Valerian Root', sub:'500mg root · 100 caps', dose:'500mg', price:'~€7/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+valeriaan'), amz:stores.amz('NOW+Valerian+Root'), vit:stores.vit('now+valeriaan'), hb:null} },
+          stores:{bol:stores.bol('now+foods+valeriaan'), amz:stores.amz('NOW+Valerian+Root'), hb:null} },
         { name:'Holland & Barrett Valeriaan', sub:'375mg extract · 60 tabs · HB eigen merk', dose:'375mg', price:'~€6/mnd', score:70, cls:'mid', best:false,
-          stores:{bol:null, amz:null, vit:null, hb:stores.hb('valerian')} },
+          stores:{bol:null, amz:null, hb:stores.hb('valerian')} },
       ]
     },
     passieflora: {
@@ -2581,11 +2581,11 @@ const stores = {
       note: 'Passieflora is milder dan valeriaan. Goede keuze voor mensen die valeriaan te zwaar vinden of die lichte onrust ervaren.',
       brands: [
         { name:"Nature's Answer Passieflora", sub:'500mg extract · 60 caps', dose:'500mg', price:'~€9/mnd', score:78, cls:'mid', best:true,
-          stores:{bol:stores.bol('natures+answer+passieflora'), amz:stores.amz('Natures+Answer+Passionflower'), vit:null, hb:null} },
+          stores:{bol:stores.bol('natures+answer+passieflora'), amz:stores.amz('Natures+Answer+Passionflower'), hb:null} },
         { name:'Holland & Barrett Passieflora', sub:'250mg · 60 tabs · eigen merk', dose:'250mg', price:'~€6/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:null, amz:null, vit:null, hb:stores.hb('passionflower')} },
+          stores:{bol:null, amz:null, hb:stores.hb('passionflower')} },
         { name:'NOW Foods Passion Flower', sub:'350mg ext. · 90 caps', dose:'350mg', price:'~€10/mnd', score:74, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+passieflora'), amz:stores.amz('NOW+Passion+Flower'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+passieflora'), amz:stores.amz('NOW+Passion+Flower'), hb:null} },
       ]
     },
     magThr: {
@@ -2594,11 +2594,11 @@ const stores = {
       note: 'Magnesium L-threonate is duurder maar bewezen effectief voor geheugen en slaapkwaliteit. Magtein is het gepatenteerde ingrediënt.',
       brands: [
         { name:'Life Extension Neuro-Mag', sub:'Magtein 144mg elem. · 90 caps · gepatenteerd', dose:'144mg', price:'~€22/mnd', score:88, cls:'', best:true,
-          stores:{bol:stores.bol('life+extension+neuro+mag+threonate'), amz:stores.amz('Life+Extension+Neuro-Mag'), vit:null, hb:null} },
+          stores:{bol:stores.bol('life+extension+neuro+mag+threonate'), amz:stores.amz('Life+Extension+Neuro-Mag'), hb:null} },
         { name:'NOW Foods MagMind', sub:'Magtein 50mg elem. · 90 caps', dose:'150mg', price:'~€18/mnd', score:82, cls:'', best:false,
-          stores:{bol:stores.bol('now+foods+magmind+threonate'), amz:stores.amz('NOW+MagMind'), vit:stores.vit('now+magnesium+l-threonate'), hb:null} },
+          stores:{bol:stores.bol('now+foods+magmind+threonate'), amz:stores.amz('NOW+MagMind'), hb:null} },
         { name:'Jarrow Formulas MagMind', sub:'Magtein 48mg elem. · 90 caps', dose:'144mg', price:'~€20/mnd', score:80, cls:'mid', best:false,
-          stores:{bol:stores.bol('jarrow+magmind+threonate'), amz:stores.amz('Jarrow+MagMind'), vit:null, hb:null} },
+          stores:{bol:stores.bol('jarrow+magmind+threonate'), amz:stores.amz('Jarrow+MagMind'), hb:null} },
       ]
     },
     vijfHTP: {
@@ -2607,13 +2607,13 @@ const stores = {
       note: '⚠ 5-HTP NIET combineren met antidepressiva (SSRI/SNRI) — risico op serotoninesyndroom. Altijd arts raadplegen.',
       brands: [
         { name:'Natrol 5-HTP Time Release', sub:'100mg · 45 tabs · vertraagde afgifte', dose:'100mg', price:'~€10/mnd', score:80, cls:'', best:true,
-          stores:{bol:stores.bol('natrol+5-htp+time+release'), amz:stores.amz('Natrol+5-HTP+Time+Release'), vit:null, hb:stores.hb('5-htp')} },
+          stores:{bol:stores.bol('natrol+5-htp+time+release'), amz:stores.amz('Natrol+5-HTP+Time+Release'), hb:stores.hb('5-htp')} },
         { name:'NOW Foods 5-HTP 100mg', sub:'100mg · 60 caps · meest verkocht', dose:'100mg', price:'~€9/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+5-htp+100mg'), amz:stores.amz('NOW+5-HTP+100mg'), vit:stores.vit('now+5-htp'), hb:null} },
+          stores:{bol:stores.bol('now+foods+5-htp+100mg'), amz:stores.amz('NOW+5-HTP+100mg'), hb:null} },
         { name:'Vitakruid 5-HTP', sub:'100mg + vitamine B6 · 60 tabs', dose:'100mg', price:'~€14/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('vitakruid+5-htp'), amz:null, vit:stores.vit('vitakruid+5-htp'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+5-htp'), amz:null, hb:null} },
         { name:'Solgar 5-HTP 100mg', sub:'100mg · 90 caps · premium merk', dose:'100mg', price:'~€20/mnd', score:75, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+5-htp'), amz:stores.amz('Solgar+5-HTP'), vit:null, hb:stores.hb('5-htp+solgar')} },
+          stores:{bol:stores.bol('solgar+5-htp'), amz:stores.amz('Solgar+5-HTP'), hb:stores.hb('5-htp+solgar')} },
       ]
     },
     cbd: {
@@ -2622,13 +2622,13 @@ const stores = {
       note: 'CBD werkt niet voor iedereen. Begin laag (5mg) en bouw op. Kies altijd full-spectrum olie met certificaat van analyse (COA).',
       brands: [
         { name:'Cibdol 5% CBD Olie', sub:'500mg CBD · 10ml · Zwitsers premium', dose:'5mg/druppel', price:'~€22/mnd', score:82, cls:'', best:true,
-          stores:{bol:stores.bol('cibdol+cbd+olie+5%25'), amz:null, vit:null, hb:null} },
+          stores:{bol:stores.bol('cibdol+cbd+olie+5%25'), amz:null, hb:null} },
         { name:'Dutch Natural Healing', sub:'500mg CBD · 10ml · NL-merk', dose:'5mg/druppel', price:'~€18/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('dutch+natural+healing+cbd+olie'), amz:null, vit:null, hb:null} },
+          stores:{bol:stores.bol('dutch+natural+healing+cbd+olie'), amz:null, hb:null} },
         { name:'Medihemp Raw CBD+', sub:'5% CBD · 10ml · bio-gecertificeerd', dose:'5mg/druppel', price:'~€20/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('medihemp+cbd+raw'), amz:null, vit:null, hb:null} },
+          stores:{bol:stores.bol('medihemp+cbd+raw'), amz:null, hb:null} },
         { name:'Endoca Raw Hemp Oil', sub:'3% CBD · 10ml · organisch', dose:'3mg/druppel', price:'~€14/mnd', score:72, cls:'low', best:false,
-          stores:{bol:null, amz:stores.amz('Endoca+Raw+Hemp+Oil+CBD'), vit:null, hb:null} },
+          stores:{bol:null, amz:stores.amz('Endoca+Raw+Hemp+Oil+CBD'), hb:null} },
       ]
     },
     gummies: {
@@ -2637,11 +2637,11 @@ const stores = {
       note: 'Gummies bevatten suiker en additieven. Capsules zijn effectiever per euro. Gummies zijn handig voor reizen.',
       brands: [
         { name:'Vitakruid Slaap Gummies', sub:'Melatonine 0,3mg + L-theanine + valeriaan', dose:'2 gummies', price:'~€14/mnd', score:78, cls:'mid', best:true,
-          stores:{bol:stores.bol('vitakruid+slaap+gummies'), amz:null, vit:stores.vit('vitakruid+slaap+gummies'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+slaap+gummies'), amz:null, hb:null} },
         { name:'NOW Foods Sleep Gummies', sub:'Melatonine + L-theanine · 60 stuks', dose:'2 gummies', price:'~€12/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+sleep+gummies'), amz:stores.amz('NOW+Sleep+Gummies'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+sleep+gummies'), amz:stores.amz('NOW+Sleep+Gummies'), hb:null} },
         { name:'Holland & Barrett Sleep Well Gummies', sub:'Melatonine 1,9mg · 60 gummies', dose:'2 gummies', price:'~€10/mnd', score:65, cls:'low', best:false,
-          stores:{bol:null, amz:null, vit:null, hb:stores.hb('sleep+gummies')} },
+          stores:{bol:null, amz:null, hb:stores.hb('sleep+gummies')} },
       ]
     },
     complex: {
@@ -2650,11 +2650,11 @@ const stores = {
       note: 'Slaap complexen zijn handig maar duurder per werkzame stof dan losse supplementen. Ideaal om te proberen wat werkt.',
       brands: [
         { name:'Vitakruid Slaap Complex', sub:'Valeriaan + hop + passiflora + citroenmelisse', dose:'2 caps', price:'~€16/mnd', score:80, cls:'', best:true,
-          stores:{bol:stores.bol('vitakruid+slaap+complex'), amz:null, vit:stores.vit('vitakruid+slaap+complex'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+slaap+complex'), amz:null, hb:null} },
         { name:'Solgar Natural Sleep', sub:'Valeriaan + L-theanine + hop · 30 caps', dose:'2 caps', price:'~€22/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+natural+sleep'), amz:stores.amz('Solgar+Natural+Sleep'), vit:null, hb:stores.hb('solgar+sleep')} },
+          stores:{bol:stores.bol('solgar+natural+sleep'), amz:stores.amz('Solgar+Natural+Sleep'), hb:stores.hb('solgar+sleep')} },
         { name:'A.Vogel Dormeasan Slaap', sub:'Valeriaan + hop tinctuur · 50ml', dose:'1ml', price:'~€9/mnd', score:74, cls:'mid', best:false,
-          stores:{bol:stores.bol('avogel+slaap+tinctuur'), amz:null, vit:null, hb:stores.hb('dormeasan')} },
+          stores:{bol:stores.bol('avogel+slaap+tinctuur'), amz:null, hb:stores.hb('dormeasan')} },
       ]
     },
     omega3: {
@@ -2663,11 +2663,11 @@ const stores = {
       note: 'Kies altijd visolie met minimaal 500mg EPA+DHA per capsule. Triglyceride vorm is beter opneembaar dan ethyl ester.',
       brands: [
         { name:'Vitakruid Omega-3 TG', sub:'1000mg EPA+DHA · 60 caps · triglyceridevorm', dose:'2 caps', price:'~€16/mnd', score:86, cls:'', best:true,
-          stores:{bol:stores.bol('vitakruid+omega-3+visolie'), amz:null, vit:stores.vit('vitakruid+omega-3'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+omega-3+visolie'), amz:null, hb:null} },
         { name:'Solgar Omega-3 950mg', sub:'950mg EPA+DHA · 100 caps', dose:'1 cap', price:'~€18/mnd', score:82, cls:'', best:false,
-          stores:{bol:stores.bol('solgar+omega-3+950mg'), amz:stores.amz('Solgar+Omega-3+950'), vit:null, hb:stores.hb('omega+3+fish+oil')} },
+          stores:{bol:stores.bol('solgar+omega-3+950mg'), amz:stores.amz('Solgar+Omega-3+950'), hb:stores.hb('omega+3+fish+oil')} },
         { name:'NOW Foods Ultra Omega-3', sub:'500mg EPA+250mg DHA · 100 caps', dose:'2 caps', price:'~€12/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+ultra+omega-3'), amz:stores.amz('NOW+Ultra+Omega-3'), vit:stores.vit('now+omega-3'), hb:null} },
+          stores:{bol:stores.bol('now+foods+ultra+omega-3'), amz:stores.amz('NOW+Ultra+Omega-3'), hb:null} },
       ]
     },
     vitD3: {
@@ -2676,13 +2676,13 @@ const stores = {
       note: 'Vitamine D3 combineer je het best met K2 (MK-7). Laat D-waarden checken bij je huisarts voor je supplementeert.',
       brands: [
         { name:'Vitakruid D3+K2', sub:'25mcg D3 + 45mcg K2 · 60 caps · gecombi', dose:'1 cap', price:'~€9/mnd', score:88, cls:'', best:true,
-          stores:{bol:stores.bol('vitakruid+vitamine+d3+k2'), amz:null, vit:stores.vit('vitakruid+d3+k2'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+vitamine+d3+k2'), amz:null, hb:null} },
         { name:'Lucovitaal D3 2000IE', sub:'50mcg D3 · 365 tabs · jaarvoorraad', dose:'1 tab', price:'~€1,50/mnd', score:80, cls:'', best:false,
-          stores:{bol:stores.bol('lucovitaal+vitamine+d3+2000ie'), amz:null, vit:null, hb:null} },
+          stores:{bol:stores.bol('lucovitaal+vitamine+d3+2000ie'), amz:null, hb:null} },
         { name:'NOW Foods D3 2000IU', sub:'50mcg D3 · 240 caps', dose:'1 cap', price:'~€4/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+vitamine+d3+2000'), amz:stores.amz('NOW+Vitamin+D3+2000'), vit:stores.vit('now+vitamine+d3'), hb:null} },
+          stores:{bol:stores.bol('now+foods+vitamine+d3+2000'), amz:stores.amz('NOW+Vitamin+D3+2000'), hb:null} },
         { name:'Solgar Vitamin D3 1000IU', sub:'25mcg D3 · 250 tabs', dose:'1 tab', price:'~€10/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+vitamine+d3+1000iu'), amz:stores.amz('Solgar+Vitamin+D3+1000'), vit:null, hb:stores.hb('vitamin+d3')} },
+          stores:{bol:stores.bol('solgar+vitamine+d3+1000iu'), amz:stores.amz('Solgar+Vitamin+D3+1000'), hb:stores.hb('vitamin+d3')} },
       ]
     },
     citroenm: {
@@ -2691,9 +2691,9 @@ const stores = {
       note: 'Citroenmelisse werkt milder dan valeriaan maar heeft een goed veiligheidsprofiel. Goed te combineren met valeriaan.',
       brands: [
         { name:'Solgar Lemon Balm Melissa', sub:'250mg extract · 60 caps', dose:'250mg', price:'~€12/mnd', score:76, cls:'mid', best:true,
-          stores:{bol:stores.bol('solgar+citroenmelisse+lemon+balm'), amz:stores.amz('Solgar+Lemon+Balm'), vit:null, hb:stores.hb('lemon+balm')} },
+          stores:{bol:stores.bol('solgar+citroenmelisse+lemon+balm'), amz:stores.amz('Solgar+Lemon+Balm'), hb:stores.hb('lemon+balm')} },
         { name:'NOW Foods Lemon Balm', sub:'500mg · 100 caps', dose:'500mg', price:'~€8/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+citroenmelisse'), amz:stores.amz('NOW+Lemon+Balm'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+citroenmelisse'), amz:stores.amz('NOW+Lemon+Balm'), hb:null} },
       ]
     },
     reishi: {
@@ -2702,9 +2702,9 @@ const stores = {
       note: 'Reishi werkt cumulatief over weken. Kies altijd producten met >30% polysacchariden en >2% triterpenen.',
       brands: [
         { name:'NOW Foods Reishi 270mg', sub:'270mg extract · 100 caps', dose:'270mg', price:'~€10/mnd', score:74, cls:'mid', best:true,
-          stores:{bol:stores.bol('now+foods+reishi+paddenstoel'), amz:stores.amz('NOW+Reishi+Mushroom'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+reishi+paddenstoel'), amz:stores.amz('NOW+Reishi+Mushroom'), hb:null} },
         { name:'Host Defense Reishi', sub:'500mg mycelium · 60 caps · premium', dose:'2 caps', price:'~€25/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('host+defense+reishi'), amz:stores.amz('Host+Defense+Reishi'), vit:null, hb:null} },
+          stores:{bol:stores.bol('host+defense+reishi'), amz:stores.amz('Host+Defense+Reishi'), hb:null} },
       ]
     },
     inositol: {
@@ -2713,9 +2713,9 @@ const stores = {
       note: 'Inositol is veilig in hoge doses (tot 12g/dag). Myo-inositol is de meest onderzochte vorm.',
       brands: [
         { name:'Vitakruid Myo-Inositol', sub:'2000mg · 60 caps · NL-merk', dose:'2g', price:'~€16/mnd', score:80, cls:'', best:true,
-          stores:{bol:stores.bol('vitakruid+myo-inositol'), amz:null, vit:stores.vit('vitakruid+inositol'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+myo-inositol'), amz:null, hb:null} },
         { name:'NOW Foods Inositol', sub:'500mg · 100 caps', dose:'500mg', price:'~€8/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+inositol'), amz:stores.amz('NOW+Inositol'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+inositol'), amz:stores.amz('NOW+Inositol'), hb:null} },
       ]
     },
     vitB6: {
@@ -2724,9 +2724,9 @@ const stores = {
       note: 'Kies P5P (pyridoxaal-5-fosfaat) boven gewone B6 voor betere biologische beschikbaarheid. Max 25mg/dag aanbevolen.',
       brands: [
         { name:'Vitakruid B6 P5P', sub:'25mg P5P · 60 caps · actieve vorm', dose:'25mg', price:'~€9/mnd', score:84, cls:'', best:true,
-          stores:{bol:stores.bol('vitakruid+b6+p5p'), amz:null, vit:stores.vit('vitakruid+vitamine+b6+p5p'), hb:null} },
+          stores:{bol:stores.bol('vitakruid+b6+p5p'), amz:null, hb:null} },
         { name:'Solgar B6 100mg', sub:'100mg pyridoxine · 100 tabs', dose:'50mg', price:'~€8/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+vitamine+b6'), amz:stores.amz('Solgar+Vitamin+B6'), vit:null, hb:stores.hb('vitamin+b6')} },
+          stores:{bol:stores.bol('solgar+vitamine+b6'), amz:stores.amz('Solgar+Vitamin+B6'), hb:stores.hb('vitamin+b6')} },
       ]
     },
     magBad: {
@@ -2735,9 +2735,9 @@ const stores = {
       note: 'Wetenschappelijk bewijs voor transdermal opname is beperkt. Maar warm bad bevordert slaap onafhankelijk van magnesium.',
       brands: [
         { name:'Westlab Epsom Salt', sub:'Magnesiumsulfaat · 1kg · klassiek', dose:'250g/bad', price:'~€3/bad', score:72, cls:'mid', best:true,
-          stores:{bol:stores.bol('westlab+epsom+zout+magnesium'), amz:stores.amz('Westlab+Epsom+Salt'), vit:null, hb:stores.hb('epsom+salts')} },
+          stores:{bol:stores.bol('westlab+epsom+zout+magnesium'), amz:stores.amz('Westlab+Epsom+Salt'), hb:stores.hb('epsom+salts')} },
         { name:'Zechsal Magnesiumvlokken', sub:'MgCl2 · 1kg · NL-merk', dose:'200g/bad', price:'~€4/bad', score:70, cls:'mid', best:false,
-          stores:{bol:stores.bol('zechsal+magnesium+vlokken'), amz:null, vit:null, hb:null} },
+          stores:{bol:stores.bol('zechsal+magnesium+vlokken'), amz:null, hb:null} },
       ]
     },
     lavendel: {
@@ -2746,11 +2746,11 @@ const stores = {
       note: 'Aromatherapie heeft beperkt maar consistent bewijs voor slaapkwaliteit. Kies etherische olie op waterbasis, geen synthetische parfum.',
       brands: [
         { name:'This Works Deep Sleep Spray', sub:'Lavendel + kamille + vetivert · 75ml', dose:'2 sprays', price:'~€8/mnd', score:80, cls:'', best:true,
-          stores:{bol:stores.bol('this+works+deep+sleep+spray'), amz:stores.amz('This+Works+Deep+Sleep+Spray'), vit:null, hb:stores.hb('this+works+sleep')} },
+          stores:{bol:stores.bol('this+works+deep+sleep+spray'), amz:stores.amz('This+Works+Deep+Sleep+Spray'), hb:stores.hb('this+works+sleep')} },
         { name:'Tisserand Lavendel Spray', sub:'Pure lavendel · 100ml · biologisch', dose:'2 sprays', price:'~€6/mnd', score:74, cls:'mid', best:false,
-          stores:{bol:stores.bol('tisserand+lavendel+slaap+spray'), amz:stores.amz('Tisserand+Lavender+Sleep'), vit:null, hb:null} },
+          stores:{bol:stores.bol('tisserand+lavendel+slaap+spray'), amz:stores.amz('Tisserand+Lavender+Sleep'), hb:null} },
         { name:'Neom Perfect Night\'s Sleep', sub:'Lavendel + patchoeli + basil · 50ml', dose:'2 sprays', price:'~€12/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('neom+perfect+nights+sleep+spray'), amz:stores.amz('Neom+Perfect+Night+Sleep'), vit:null, hb:null} },
+          stores:{bol:stores.bol('neom+perfect+nights+sleep+spray'), amz:stores.amz('Neom+Perfect+Night+Sleep'), hb:null} },
       ]
     },
     niacinam: {
@@ -2759,9 +2759,9 @@ const stores = {
       note: 'Niacinamide geeft geen flush (in tegenstelling tot niacine). Hoge doses (>500mg) kunnen methyleringscyclus beïnvloeden.',
       brands: [
         { name:'NOW Foods Niacinamide 500mg', sub:'500mg · 100 tabs', dose:'500mg', price:'~€5/mnd', score:78, cls:'mid', best:true,
-          stores:{bol:stores.bol('now+foods+niacinamide+500mg'), amz:stores.amz('NOW+Niacinamide+500'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+niacinamide+500mg'), amz:stores.amz('NOW+Niacinamide+500'), hb:null} },
         { name:'Solgar Niacinamide', sub:'500mg · 100 tabs', dose:'500mg', price:'~€10/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+niacinamide'), amz:stores.amz('Solgar+Niacinamide'), vit:null, hb:stores.hb('niacinamide')} },
+          stores:{bol:stores.bol('solgar+niacinamide'), amz:stores.amz('Solgar+Niacinamide'), hb:stores.hb('niacinamide')} },
       ]
     },
     quercetin: {
@@ -2770,9 +2770,9 @@ const stores = {
       note: 'Quercetin heeft lage biologische beschikbaarheid. Kies formules met bromelaïne of piperin voor betere opname.',
       brands: [
         { name:'NOW Foods Quercetin 500mg', sub:'500mg + bromelaïne · 100 caps', dose:'500mg', price:'~€10/mnd', score:72, cls:'mid', best:true,
-          stores:{bol:stores.bol('now+foods+quercetin+bromelaïne'), amz:stores.amz('NOW+Quercetin+Bromelain'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+quercetin+bromelaïne'), amz:stores.amz('NOW+Quercetin+Bromelain'), hb:null} },
         { name:'Solgar Quercetin Complex', sub:'500mg + C + bromelaïne · 50 caps', dose:'500mg', price:'~€20/mnd', score:70, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+quercetin+complex'), amz:stores.amz('Solgar+Quercetin+Complex'), vit:null, hb:stores.hb('quercetin')} },
+          stores:{bol:stores.bol('solgar+quercetin+complex'), amz:stores.amz('Solgar+Quercetin+Complex'), hb:stores.hb('quercetin')} },
       ]
     },
     pompoen: {
@@ -2781,9 +2781,9 @@ const stores = {
       note: 'Pompoen zaad extract werkt cumulatief. Resultaten na 4–8 weken gebruik. Combineer met zaagpalmetto voor betere werking.',
       brands: [
         { name:'NOW Foods Pumpkin Seed', sub:'500mg extract · 90 caps', dose:'500mg', price:'~€9/mnd', score:68, cls:'low', best:true,
-          stores:{bol:stores.bol('now+foods+pompoen+zaad+extract'), amz:stores.amz('NOW+Pumpkin+Seed+Extract'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+pompoen+zaad+extract'), amz:stores.amz('NOW+Pumpkin+Seed+Extract'), hb:null} },
         { name:'Solgar Pumpkin Seed Oil', sub:'1000mg olie · 90 softgels', dose:'1000mg', price:'~€14/mnd', score:65, cls:'low', best:false,
-          stores:{bol:stores.bol('solgar+pompoen+zaad+olie'), amz:stores.amz('Solgar+Pumpkin+Seed+Oil'), vit:null, hb:stores.hb('pumpkin+seed')} },
+          stores:{bol:stores.bol('solgar+pompoen+zaad+olie'), amz:stores.amz('Solgar+Pumpkin+Seed+Oil'), hb:stores.hb('pumpkin+seed')} },
       ]
     },
     suanZaoRen: {
@@ -2792,11 +2792,11 @@ const stores = {
       note: '🌿 Specialty Chinese kruiden winkels (affiliate potentieel): tcmkruiden.nl · chinaherbs.nl · meridian-tcm.nl — neem contact op voor affiliate samenwerking.',
       brands: [
         { name:'Dragon Herbs Zizyphus Formula', sub:'500mg extract · 100 caps · TCM-specialist', dose:'2 caps', price:'~€18/mnd', score:80, cls:'', best:true,
-          stores:{bol:stores.bol('suan+zao+ren+capsules'), amz:null, vit:null, hb:null, iherb:stores.iherb('dragon+herbs+zizyphus')} },
+          stores:{bol:stores.bol('suan+zao+ren+capsules'), amz:null, hb:null, iherb:stores.iherb('dragon+herbs+zizyphus')} },
         { name:'Plum Flower Suan Zao Ren', sub:'500mg · 100 tabs · TCM-kwaliteitsmerk', dose:'2 tabs', price:'~€14/mnd', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('suan+zao+ren+ziziphus+slaap'), amz:null, vit:null, hb:null, iherb:stores.iherb('plum+flower+suan+zao+ren')} },
+          stores:{bol:stores.bol('suan+zao+ren+ziziphus+slaap'), amz:null, hb:null, iherb:stores.iherb('plum+flower+suan+zao+ren')} },
         { name:"Nature's Answer Ziziphus Seed", sub:'400mg extract · 60 caps', dose:'2 caps', price:'~€12/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('ziziphus+jujuba+slaap+capsules'), amz:null, vit:null, hb:null, iherb:stores.iherb('ziziphus+seed+extract')} },
+          stores:{bol:stores.bol('ziziphus+jujuba+slaap+capsules'), amz:null, hb:null, iherb:stores.iherb('ziziphus+seed+extract')} },
       ]
     },
     schisandra: {
@@ -2805,11 +2805,11 @@ const stores = {
       note: '🌿 Specialty Chinese kruiden winkels (affiliate potentieel): tcmkruiden.nl · chinaherbs.nl · meridian-tcm.nl — neem contact op voor affiliate samenwerking.',
       brands: [
         { name:"Nature's Way Schisandra Standardized", sub:'570mg extract · 60 caps · gestandaardiseerd', dose:'1 cap', price:'~€10/mnd', score:76, cls:'', best:true,
-          stores:{bol:stores.bol('natures+way+schisandra+extract'), amz:null, vit:null, hb:stores.hb('schisandra'), iherb:stores.iherb('natures+way+schisandra')} },
+          stores:{bol:stores.bol('natures+way+schisandra+extract'), amz:null, hb:stores.hb('schisandra'), iherb:stores.iherb('natures+way+schisandra')} },
         { name:'NOW Foods Schisandra Extract', sub:'500mg · 90 vcaps', dose:'1 cap', price:'~€9/mnd', score:74, cls:'mid', best:false,
-          stores:{bol:stores.bol('now+foods+schisandra+extract'), amz:null, vit:null, hb:null, iherb:stores.iherb('now+schisandra+extract')} },
+          stores:{bol:stores.bol('now+foods+schisandra+extract'), amz:null, hb:null, iherb:stores.iherb('now+schisandra+extract')} },
         { name:'Solgar Schisandra Berry Extract', sub:'250mg · 60 vcaps · premium', dose:'1 cap', price:'~€16/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('solgar+schisandra+berry'), amz:null, vit:null, hb:null, iherb:stores.iherb('solgar+schisandra')} },
+          stores:{bol:stores.bol('solgar+schisandra+berry'), amz:null, hb:null, iherb:stores.iherb('solgar+schisandra')} },
       ]
     },
     heHuanPi: {
@@ -2818,9 +2818,9 @@ const stores = {
       note: '🌿 He Huan Pi is minder gangbaar in grote ketens. Beste kansen bij specialty TCM winkels: tcmkruiden.nl · chinaherbs.nl — ideale shops voor affiliate outreach.',
       brands: [
         { name:'Dragon Herbs He Huan Pi', sub:'500mg · 100 caps · TCM-specialist', dose:'2 caps', price:'~€16/mnd', score:72, cls:'mid', best:true,
-          stores:{bol:stores.bol('albizia+julibrissin+capsules'), amz:null, vit:null, hb:null, iherb:stores.iherb('dragon+herbs+he+huan+pi')} },
+          stores:{bol:stores.bol('albizia+julibrissin+capsules'), amz:null, hb:null, iherb:stores.iherb('dragon+herbs+he+huan+pi')} },
         { name:'Herb Pharm Albizia', sub:'Vloeibaar extract · 30ml tinctuur', dose:'1ml', price:'~€12/mnd', score:68, cls:'low', best:false,
-          stores:{bol:null, amz:null, vit:null, hb:null, iherb:stores.iherb('herb+pharm+albizia')} },
+          stores:{bol:null, amz:null, hb:null, iherb:stores.iherb('herb+pharm+albizia')} },
       ]
     },
     yuanZhi: {
@@ -2829,9 +2829,9 @@ const stores = {
       note: '🌿 Yuan Zhi is voornamelijk beschikbaar bij TCM-specialisten. Overweeg affiliate contact met: tcmkruiden.nl · chinaherbs.nl · meridian-tcm.nl.',
       brands: [
         { name:'Dragon Herbs Yuan Zhi', sub:'500mg extract · 100 caps · TCM-specialist', dose:'2 caps', price:'~€18/mnd', score:72, cls:'mid', best:true,
-          stores:{bol:stores.bol('polygala+tenuifolia+capsules'), amz:null, vit:null, hb:null, iherb:stores.iherb('dragon+herbs+yuan+zhi')} },
+          stores:{bol:stores.bol('polygala+tenuifolia+capsules'), amz:null, hb:null, iherb:stores.iherb('dragon+herbs+yuan+zhi')} },
         { name:'Plum Flower Polygala Root', sub:'500mg · 100 tabs', dose:'2 tabs', price:'~€14/mnd', score:68, cls:'low', best:false,
-          stores:{bol:stores.bol('polygala+root+slaap'), amz:null, vit:null, hb:null, iherb:stores.iherb('plum+flower+polygala')} },
+          stores:{bol:stores.bol('polygala+root+slaap'), amz:null, hb:null, iherb:stores.iherb('plum+flower+polygala')} },
       ]
     },
     zaagpalm: {
@@ -2840,9 +2840,9 @@ const stores = {
       note: 'Zaagpalmetto werkt voor milde tot matige symptomen. Raadpleeg een arts voor prostaatklachten.',
       brands: [
         { name:'NOW Foods Saw Palmetto Extract', sub:'160mg extract · 60 caps · standaard', dose:'160mg', price:'~€8/mnd', score:72, cls:'mid', best:true,
-          stores:{bol:stores.bol('now+foods+zaagpalmetto+saw+palmetto'), amz:stores.amz('NOW+Saw+Palmetto+Extract'), vit:null, hb:null} },
+          stores:{bol:stores.bol('now+foods+zaagpalmetto+saw+palmetto'), amz:stores.amz('NOW+Saw+Palmetto+Extract'), hb:null} },
         { name:'Solgar Saw Palmetto Berries', sub:'540mg berries · 100 caps', dose:'540mg', price:'~€14/mnd', score:68, cls:'low', best:false,
-          stores:{bol:stores.bol('solgar+saw+palmetto'), amz:stores.amz('Solgar+Saw+Palmetto'), vit:null, hb:stores.hb('saw+palmetto')} },
+          stores:{bol:stores.bol('solgar+saw+palmetto'), amz:stores.amz('Solgar+Saw+Palmetto'), hb:stores.hb('saw+palmetto')} },
       ]
     },
     verzwaring: {
@@ -2851,11 +2851,11 @@ const stores = {
       note: 'Kies een deken van 8–12% van je lichaamsgewicht. 7kg voor een persoon van 70kg is de aanbevolen standaard.',
       brands: [
         { name:'Gravity Blanket Original', sub:'7kg · 100% katoen · premium', dose:'7kg', price:'~€149 eenmalig', score:84, cls:'', best:true,
-          stores:{bol:stores.bol('gravity+blanket+verzwaringsdeken'), amz:stores.amz('Gravity+Blanket'), vit:null, hb:null} },
+          stores:{bol:stores.bol('gravity+blanket+verzwaringsdeken'), amz:stores.amz('Gravity+Blanket'), hb:null} },
         { name:'Dreamfy Verzwaringsdeken', sub:'7kg · microvezel · NL-merk', dose:'7kg', price:'~€69 eenmalig', score:76, cls:'mid', best:false,
-          stores:{bol:stores.bol('dreamfy+verzwaringsdeken+7kg'), amz:null, vit:null, hb:null} },
+          stores:{bol:stores.bol('dreamfy+verzwaringsdeken+7kg'), amz:null, hb:null} },
         { name:'Zensation Verzwaringsdeken', sub:'6kg · bamboe katoen', dose:'6kg', price:'~€89 eenmalig', score:74, cls:'mid', best:false,
-          stores:{bol:stores.bol('zensation+verzwaringsdeken'), amz:stores.amz('weighted+blanket+7kg'), vit:null, hb:null} },
+          stores:{bol:stores.bol('zensation+verzwaringsdeken'), amz:stores.amz('weighted+blanket+7kg'), hb:null} },
       ]
     },
     pillowSpray: {
@@ -2864,11 +2864,11 @@ const stores = {
       note: 'Pillow spray werkt via geurconditionering. Consistent gebruik creëert een slaapassociatie die het effect versterkt.',
       brands: [
         { name:'This Works Deep Sleep Pillow Spray', sub:'Lavendel + kamille + vetivert · 75ml', dose:'2 sprays', price:'~€8/mnd', score:82, cls:'', best:true,
-          stores:{bol:stores.bol('this+works+deep+sleep+pillow+spray'), amz:stores.amz('This+Works+Pillow+Spray'), vit:null, hb:stores.hb('this+works+pillow+spray')} },
+          stores:{bol:stores.bol('this+works+deep+sleep+pillow+spray'), amz:stores.amz('This+Works+Pillow+Spray'), hb:stores.hb('this+works+pillow+spray')} },
         { name:'Neom Perfect Night\'s Sleep Pillow Mist', sub:'19 etherische oliën · 100ml', dose:'2 sprays', price:'~€15/mnd', score:78, cls:'mid', best:false,
-          stores:{bol:stores.bol('neom+pillow+mist+sleep'), amz:stores.amz('Neom+Pillow+Mist'), vit:null, hb:null} },
+          stores:{bol:stores.bol('neom+pillow+mist+sleep'), amz:stores.amz('Neom+Pillow+Mist'), hb:null} },
         { name:'REN Clean Skincare Dream Sleep Pillow Spray', sub:'Lavendel + eucalyptus · 75ml', dose:'2 sprays', price:'~€12/mnd', score:72, cls:'mid', best:false,
-          stores:{bol:stores.bol('ren+dream+sleep+pillow+spray'), amz:stores.amz('REN+Pillow+Spray'), vit:null, hb:null} },
+          stores:{bol:stores.bol('ren+dream+sleep+pillow+spray'), amz:stores.amz('REN+Pillow+Spray'), hb:null} },
       ]
     },
   };
@@ -2883,7 +2883,6 @@ const stores = {
       const storeCols = [
         b.stores.bol   ? `<a href="${b.stores.bol}"   target="_blank" rel="noopener sponsored" class="store-btn bol">Bol.com</a>`         : '<span class="store-na">—</span>',
         b.stores.amz   ? `<a href="${b.stores.amz}"   target="_blank" rel="noopener sponsored" class="store-btn amz">Amazon</a>`          : '<span class="store-na">—</span>',
-        b.stores.vit   ? `<a href="${b.stores.vit}"   target="_blank" rel="noopener sponsored" class="store-btn vit">Vitaminstore</a>`    : '<span class="store-na">—</span>',
         b.stores.hb    ? `<a href="${b.stores.hb}"    target="_blank" rel="noopener sponsored" class="store-btn hb">H&B</a>`              : '<span class="store-na">—</span>',
         b.stores.iherb ? `<a href="${b.stores.iherb}" target="_blank" rel="noopener sponsored" class="store-btn vit">iHerb</a>`           : '<span class="store-na">—</span>',
       ];
@@ -2909,7 +2908,6 @@ const stores = {
           <th>Score</th>
           <th style="text-align:center">Bol.com</th>
           <th style="text-align:center">Amazon.nl</th>
-          <th style="text-align:center">Vitaminstore</th>
           <th style="text-align:center">H&amp;B</th>
           <th style="text-align:center">iHerb</th>
         </tr></thead>
