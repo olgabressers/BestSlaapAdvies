@@ -88,10 +88,13 @@
 
   function wrapDaisycon(originalUrl, programmeId) {
     if (!AFF.daisycon.publisherId || !programmeId) return originalUrl;
+    // dl= expects only the path, not the full URL — Daisycon prepends the domain
+    var path = originalUrl;
+    try { path = new URL(originalUrl).pathname + new URL(originalUrl).search; } catch(e) {}
     return 'https://ds1.nl/c/?si=' + encodeURIComponent(AFF.daisycon.publisherId) +
            '&li=' + encodeURIComponent(programmeId) +
            '&wi=' + encodeURIComponent(AFF.daisycon.mediaId) +
-           '&dl=' + originalUrl;
+           '&dl=' + path;
   }
 
   function wrapAwin(originalUrl, merchantId) {
