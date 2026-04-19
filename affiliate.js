@@ -44,7 +44,7 @@
       publisherId: '478090',
       mediaId: '420082',
       merchants: {
-        // 'www.vitaminstore.nl': '1266442'  // deeplinks broken with search URLs — needs product feed URLs
+        'www.vitaminstore.nl': '1266442'
         // 'www.rituals.com':  ''   // add programme ID when approved
       }
     },
