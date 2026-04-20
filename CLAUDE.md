@@ -95,8 +95,7 @@ Stay pragmatic. Stay reliable. Keep learning.
 - Store columns in compare modal: Bol, Amazon, Vitaminstore, H&B, iHerb
 
 ### Instagram Post Rules
-- **ALWAYS add an ornament background to every post visual** — Instagram Graph API rejects flat/sparse images with "There is an issue with the media included" (Buffer reports as error status). Use `<img class="bg" src="../../Ornaments/ornament N.webp"/>` + overlay pattern. Never build a post with a solid flat color as background. Learned 2026-04-20: post 002 failed to publish because it had only `background: #f8f0f2` flat pink.
-- **Export Instagram images as JPEG, not PNG** — Instagram Graph API is more permissive with JPEG. Use quality 92. PNG under 50 KB for a 1080x1080 image is a red flag that the image is too sparse.
+- **Export all Instagram post images as JPEG, not PNG** — Instagram Graph API rejects PNGs more often than JPEGs (Buffer reports "There is an issue with the media included"). Learned 2026-04-20: post 002 failed to publish as PNG. After re-exporting the exact same design as JPEG quality 95, it accepted. NEVER change the visual design to fix a publishing error — the schedule (`000_schedule_19apr-24mei.html`) is the source of truth for how each post should look. Flat-color posts stay flat-color; ornament posts stay ornamented.
 - When ANY post visual or caption changes, update ALL: HTML visual, JPG, Word doc, schedule grid (schedule_19apr-24mei.html), Buffer, and GitHub image
 - Always check new posts don't contradict earlier posts — re-read last 3-5 captions before writing new ones
 - Schedule file: `Instagram Besteslaap advies/Posts/Posting Day 1-30/schedule_19apr-24mei.html`
