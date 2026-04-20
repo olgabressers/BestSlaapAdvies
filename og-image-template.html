@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OG Image — BesteSlaapAdvies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      background: linear-gradient(135deg, #082e3f 0%, #0d3d52 48%, #1a5570 100%);
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 40%, rgba(217,197,142,.14) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 90%, rgba(217,197,142,.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .frame {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 80px;
+      max-width: 1040px;
+    }
+    .diamond {
+      color: #d9c58e;
+      font-size: 14px;
+      letter-spacing: 14px;
+      opacity: 0.7;
+      margin-bottom: 28px;
+    }
+    .logo-text {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 52px;
+      font-weight: 400;
+      letter-spacing: -0.8px;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .logo-text em { font-style: italic; color: #d9c58e; font-weight: 400; }
+    .tld {
+      font-size: 11px;
+      color: rgba(217,197,142,.75);
+      letter-spacing: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .eyebrow {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: #d9c58e;
+      margin-bottom: 22px;
+    }
+    .eyebrow::before, .eyebrow::after { content: "—"; opacity: .45; margin: 0 12px; }
+    .headline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 44px;
+      font-weight: 400;
+      color: rgba(255,255,255,.96);
+      line-height: 1.18;
+      letter-spacing: -0.3px;
+      max-width: 880px;
+      margin: 0 auto 28px;
+    }
+    .headline em { font-style: italic; color: #d9c58e; font-weight: 400; }
+    .rule {
+      width: 60px;
+      height: 1px;
+      background: #d9c58e;
+      margin: 0 auto 24px;
+      opacity: 0.7;
+    }
+    .cta {
+      display: inline-block;
+      background: #d9c58e;
+      color: #082e3f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 34px;
+      border-radius: 2px;
+      margin-bottom: 38px;
+    }
+    .footer-bar {
+      position: absolute;
+      bottom: 38px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+    .domain {
+      font-size: 12px;
+      color: #d9c58e;
+      letter-spacing: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(217,197,142,.5);
+    }
+    .byline {
+      font-size: 12px;
+      color: rgba(255,255,255,.55);
+      letter-spacing: 2px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="diamond">◆ ◆ ◆</div>
+
+    <div class="logo-text">Beste<em>Slaap</em>Advies</div>
+    <div class="tld">.nl</div>
+
+    <div class="eyebrow">Onafhankelijk slaapadvies</div>
+
+    <div class="headline">
+      Beter slapen <em>begint hier.</em>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="cta">Vergelijk slaapsupplementen</div>
+  </div>
+
+  <div class="footer-bar">
+    <span class="domain">besteslaapadvies.nl</span>
+    <span class="dot"></span>
+    <span class="byline">Wetenschappelijk onderbouwd</span>
+  </div>
+</body>
+</html>
