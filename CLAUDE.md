@@ -94,6 +94,23 @@ Stay pragmatic. Stay reliable. Keep learning.
 - Compare modals must be consistent: all supplement cards use "Vergelijk merken & prijzen" button, not direct buy links
 - Store columns in compare modal: Bol, Amazon, Vitaminstore, H&B, iHerb
 
+### Instagram Post Rules
+- **ALWAYS add an ornament background to every post visual** — Instagram Graph API rejects flat/sparse images with "There is an issue with the media included" (Buffer reports as error status). Use `<img class="bg" src="../../Ornaments/ornament N.webp"/>` + overlay pattern. Never build a post with a solid flat color as background. Learned 2026-04-20: post 002 failed to publish because it had only `background: #f8f0f2` flat pink.
+- **Export Instagram images as JPEG, not PNG** — Instagram Graph API is more permissive with JPEG. Use quality 92. PNG under 50 KB for a 1080x1080 image is a red flag that the image is too sparse.
+- When ANY post visual or caption changes, update ALL: HTML visual, JPG, Word doc, schedule grid (schedule_19apr-24mei.html), Buffer, and GitHub image
+- Always check new posts don't contradict earlier posts — re-read last 3-5 captions before writing new ones
+- Schedule file: `Instagram Besteslaap advies/Posts/Posting Day 1-30/schedule_19apr-24mei.html`
+- Captions file: `Instagram Besteslaap advies/Posts/Posting Day 1-30/alle_captions_19apr-18mei.docx`
+- Buffer scheduling: always 19:30 CEST (17:30 UTC), API at api.buffer.com, channel 69e144d4031bfa423c0fe604
+- Tone: warm, flowing, story-like — never directive ("doe dit"), never AI-broken language
+- Each post ends with a hook that makes people come back for the next one
+- Links go in first comment, never in bio
+- Post numbering: 3-digit format (001, 002, etc.)
+- Schedule and captions files prefixed with 000 so they sort to top of folder
+- Captions file: `000_alle_captions_19apr-18mei.docx` — all links must be clickable in Word
+- Schedule file: `000_schedule_19apr-24mei.html`
+- Posts that say "link in de eerste reactie" in caption MUST have first comment — mark as VERPLICHT in Word doc
+
 ### Admin Pages
 - Admin index: `/admin.html`
 - All admin pages: English, noindex/nofollow, links open in new tabs
