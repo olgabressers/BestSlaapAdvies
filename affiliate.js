@@ -53,12 +53,12 @@
     // & Barrett, iHerb, etc.). You still need the per-merchant `mid` (merchant
     // ID) that Awin supplies once you're accepted for each programme.
     awin: {
-      publisherId: '',            // e.g. '987654'
+      publisherId: '2859051',
       merchants: {
         // map a retailer hostname → Awin merchant ID ("mid")
-        // 'www.vitaminstore.nl':     '12345',
-        // 'www.hollandandbarrett.nl': '23456',
-        // 'nl.iherb.com':             '34567'
+        'www.hollandandbarrett.nl': '8108'
+        // 'nl.iherb.com':             '',  // add MID when approved
+        // 'www.superfoodstore.nl':    '',  // add MID when approved
       }
     }
   };
