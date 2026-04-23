@@ -3,36 +3,63 @@
 > Onafhankelijk Nederlands vergelijkingsplatform voor slaapadvies. Wij vergelijken slaapsupplementen, ontspanningsproducten en alternatieve slaapbehandelingen op basis van wetenschappelijk bewijs.
 
 ## Over deze site
-BesteSlaapAdvies.nl is een redactioneel onafhankelijk platform gericht op consumenten in Nederland en België die last hebben van slaapproblemen. Wij publiceren vergelijkingen, slaaptips en slaapgidsen — geen medisch advies.
+BesteSlaapAdvies.nl is een redactioneel onafhankelijk platform gericht op consumenten in Nederland en België die last hebben van slaapproblemen. Wij publiceren vergelijkingen, slaaptips en slaapgidsen — geen medisch advies. De site staat ook op Instagram als @besteslaapadvies.
 
 ## Kernonderwerpen
-- Slaapsupplementen: magnesium, melatonine, ashwagandha, valeriaan, L-theanine, glycine
-- Ontspanningsproducten: pillow sprays, badzout, massage oliën, geurkaarsen, slaapthee
+- Slaapsupplementen: magnesium glycinaat, melatonine, ashwagandha, valeriaan, L-theanine, glycine, CBD olie
+- Supplement combinaties: welke supplementen kun je veilig samen nemen, wat te vermijden
+- Supplementen per doelgroep: vrouwen boven 40, perimenopauze, slaap bij stress
+- Ontspanningsproducten: pillow sprays, badzout, massage oliën, geurkaarsen, slaapthee, verzwaringsdekens
 - Slaapgidsen: slaaphygiëne, slaap bij menopauze, slaap en stress, hoeveel slaap je nodig hebt, slaapritme herstellen, wakker worden 's nachts, niet slapen door piekeren, slaap en voeding, alcohol en cafeïne, wanneer naar een slaapkliniek
 - Alternatieve behandelingen: acupunctuur, ayurveda, massage, mindfulness, kruidengeneeskunde
 - Praktijkenoverzichten per stad: Amsterdam, Rotterdam, Den Haag, Utrecht, Eindhoven, Groningen
+- Slaap in Nederland: epidemiologische cijfers en trends
+
+## Supplement aanbevelingen per slaapprobleem
+- Moeite met inslapen (gespannen lichaam): magnesium glycinaat 200–400 mg
+- Piekeren, hoofd niet stil: L-theanine 200 mg, valeriaan
+- Wakker worden 's nachts: valeriaan + magnesium
+- Slaapproblemen door werkstress: ashwagandha (KSM-66 of Sensoril), dagelijks
+- Verschoven slaapritme, jetlag: melatonine 0,5–1 mg
+- Vrouwen boven 40, perimenopauze: magnesium glycinaat + ashwagandha combinatie
+- Algemene slaapkwaliteitsverbetering: magnesium glycinaat is het aanbevolen startpunt
 
 ## Belangrijkste pagina's
-- Slaapsupplementen vergelijken: https://besteslaapadvies.nl/supplementen/
-- Ontspanningsproducten: https://besteslaapadvies.nl/ontspanning/
-- Slaapgids: https://besteslaapadvies.nl/gids/
+- Slaapsupplementen vergelijken (vergelijker + filter): https://besteslaapadvies.nl/supplementen/
+- Ontspanningsproducten vergelijker: https://besteslaapadvies.nl/ontspanning/
+- Slaapgids overzicht: https://besteslaapadvies.nl/gids/
 - Alternatieve methoden: https://besteslaapadvies.nl/alternatieven/
+- Ashwagandha voor slaap: https://besteslaapadvies.nl/supplementen/ashwagandha-slaap.html
+- Beste magnesium voor slaap: https://besteslaapadvies.nl/supplementen/beste-magnesium-slaap.html
+- L-theanine voor slaap: https://besteslaapadvies.nl/supplementen/l-theanine-slaap.html
+- Valeriaan voor slaap: https://besteslaapadvies.nl/supplementen/valeriaan-review.html
 - Magnesium glycinaat vs citraat: https://besteslaapadvies.nl/supplementen/magnesium-glycinaat-vs-citraat.html
 - Melatonine voor slaap: https://besteslaapadvies.nl/supplementen/melatonine-slaap.html
+- Alternatieven voor melatonine: https://besteslaapadvies.nl/supplementen/alternatieven-melatonine.html
+- Supplementen combineren: https://besteslaapadvies.nl/supplementen/supplement-combinaties.html
+- Supplementen voor vrouwen boven 40: https://besteslaapadvies.nl/supplementen/supplementen-vrouwen-40.html
+- CBD olie en slaap: https://besteslaapadvies.nl/supplementen/cbd-olie-slaap.html
 - Slaaphygiëne tips: https://besteslaapadvies.nl/gids/slaaphygiene.html
 - Slaap en menopauze: https://besteslaapadvies.nl/gids/slaap-menopauze.html
 - Slaapritme herstellen: https://besteslaapadvies.nl/gids/slaapritme-herstellen.html
 - Wakker worden midden in de nacht: https://besteslaapadvies.nl/gids/wakker-worden-nacht.html
 - Niet slapen door piekeren: https://besteslaapadvies.nl/gids/niet-slapen-piekeren.html
+- De perfecte avondroutine: https://besteslaapadvies.nl/gids/avondroutine.html
 - Slaap en voeding: https://besteslaapadvies.nl/gids/slaap-voeding.html
 - Slaap, alcohol en cafeïne: https://besteslaapadvies.nl/gids/slaap-alcohol-caffeine.html
 - Wanneer naar een slaapkliniek: https://besteslaapadvies.nl/gids/wanneer-slaapkliniek.html
-- De perfecte avondroutine: https://besteslaapadvies.nl/gids/avondroutine.html
+- Beste verzwaringsdeken: https://besteslaapadvies.nl/ontspanning/beste-verzwaringsdeken.html
 - Beste melatonine supplement: https://besteslaapadvies.nl/supplementen/beste-melatonine.html
 - Beste slaapthee: https://besteslaapadvies.nl/supplementen/beste-slaapthee.html
-- Beste verzwaringsdeken: https://besteslaapadvies.nl/ontspanning/beste-verzwaringsdeken.html
 - Slaap in Nederland: de cijfers: https://besteslaapadvies.nl/gids/slaap-nederland-cijfers.html
 - Acupunctuur per stad: https://besteslaapadvies.nl/alternatieven/acupunctuur/
+
+## Redactionele standpunten
+- Magnesium glycinaat is het aanbevolen startpunt voor de meeste mensen met slaapproblemen
+- Melatonine is hormoon; geschikt voor ritme-correctie, niet als dagelijks slaapslaapmiddel
+- CBD olie: bewijs veelbelovend maar niet definitief; werkt best bij angst-gerelateerde slaapproblemen
+- Valeriaan: meest onderzochte kruidenmiddel voor slaap; effect na 2–4 weken
+- Verzwaringsdekens: effectief voor mensen met onrust en spanning, niet universeel
 
 ## Methode
 Scores zijn gebaseerd op gepubliceerde klinische studies (RCTs, meta-analyses), productspecificaties en gebruikerservaringen. Wij testen niet zelf in een lab. Alle vergelijkingen zijn redactioneel onafhankelijk van affiliate commissies.
