@@ -56,7 +56,8 @@
       publisherId: '2859051',
       merchants: {
         // map a retailer hostname → Awin merchant ID ("mid")
-        'www.hollandandbarrett.nl': '8108'
+        'www.hollandandbarrett.nl': '8108',
+        'www.coolblue.nl': '85161'
         // 'nl.iherb.com':             '',  // add MID when approved
         // 'www.superfoodstore.nl':    '',  // add MID when approved
       }
