@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <link rel="canonical" href="https://besteslaapadvies.nl/quiz.html"/>
   <title>Slaapquiz: wat helpt jou beter slapen? | BesteSlaapAdvies</title>
-  <meta name="description" content="Beantwoord 3 vragen en ontdek wat jou helpt om beter te slapen. Persoonlijk advies op maat — gratis, in 60 seconden."/>
+  <meta name="description" content="Beantwoord 3 vragen en ontdek wat jou helpt om beter te slapen. Persoonlijk slaapadvies op maat — gratis, in 60 seconden."/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="BesteSlaapAdvies.nl"/>
   <meta property="og:url" content="https://besteslaapadvies.nl/quiz.html"/>
@@ -20,28 +20,7 @@
   <meta property="og:description" content="Beantwoord 3 vragen en ontdek wat jou helpt om beter te slapen. Persoonlijk advies in 60 seconden."/>
   <meta property="og:image" content="https://besteslaapadvies.nl/og-image.jpg"/>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Hoe weet ik wat mij helpt om beter te slapen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Beantwoord onze slaapquiz. Op basis van jouw slaapprobleem geven we persoonlijk advies: van magnesium tot een verzwaringsdeken, van avondroutine tot slaapritme."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Welk supplement helpt bij slecht slapen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Dat hangt af van de oorzaak. Bij piekeren helpt magnesiumglycinaat. Bij moeilijk inslapen kan slaapthee met valeriaan of kamille helpen. De quiz wijst je de goede richting."
-        }
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hoe weet ik wat mij helpt om beter te slapen?","acceptedAnswer":{"@type":"Answer","text":"Beantwoord onze slaapquiz. Op basis van jouw slaapprobleem geven we persoonlijk advies: van magnesium tot een verzwaringsdeken, van avondroutine tot slaapritme."}},{"@type":"Question","name":"Welk supplement helpt bij slecht slapen?","acceptedAnswer":{"@type":"Answer","text":"Dat hangt af van de oorzaak. Bij piekeren helpt magnesiumglycinaat. Bij moeilijk inslapen kan slaapthee met valeriaan of kamille helpen. De quiz wijst je de goede richting."}}]}
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -54,7 +33,6 @@
       --sub:          #5a7687;
       --teal:         #1a6b8a;
       --teal-soft:    #3a8aa8;
-      --accent:       #2d9cdb;
       --paper:        #fbfdfe;
       --paper-soft:   #f3f8fa;
       --cream:        #faf6ec;
@@ -77,91 +55,139 @@
     .nav-links { display: flex; margin-left: auto; }
     .nav-links a { color: var(--sub); text-decoration: none; font-size: 13px; font-weight: 700; padding: 18px 13px; border-bottom: 3px solid transparent; transition: all .15s; white-space: nowrap; letter-spacing: .2px; }
     .nav-links a:hover, .nav-links a.active { color: var(--teal); border-bottom-color: var(--teal); }
-    .nav-mobile { display: none !important; }
-    @media (max-width: 820px) {
-      .nav-links { display: none; }
-      .nav-mobile { display: flex !important; }
-    }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 14px 0; margin-left: auto; color: var(--teal); }
+    @media (max-width: 820px) { .nav-links { display: none; } .nav-mobile-btn { display: block; } }
 
     /* HERO */
-    .hero { background: linear-gradient(135deg, var(--ink-deep) 0%, var(--ink) 48%, var(--ink-soft) 100%); color: white; padding: 72px 32px 64px; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: "◆"; position: absolute; top: 36px; left: 50%; transform: translateX(-50%); color: var(--gold-soft); font-size: 11px; letter-spacing: 10px; opacity: .65; }
-    .hero .inner { max-width: 640px; margin: auto; position: relative; }
-    .hero .eyebrow { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 14px; letter-spacing: .3px; color: #d9c58e; margin-bottom: 20px; }
-    .hero .eyebrow::before, .hero .eyebrow::after { content: "—"; opacity: .45; margin: 0 10px; }
-    .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(28px, 4.5vw, 46px); font-weight: 400; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.6px; color: white; }
-    .hero h1 em { font-style: italic; color: #d9c58e; font-weight: 400; }
-    .hero p { font-size: 16px; color: rgba(255,255,255,.78); max-width: 480px; margin: 0 auto; line-height: 1.8; }
+    .hero { background: linear-gradient(135deg, var(--ink-deep) 0%, var(--ink) 52%, var(--ink-soft) 100%); color: white; padding: 96px 48px 88px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: "◆"; position: absolute; top: 42px; left: 50%; transform: translateX(-50%); color: var(--gold-soft); font-size: 11px; letter-spacing: 10px; opacity: .55; }
+    .hero::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(217,197,142,.3), transparent); }
+    .hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
+    .hero-eyebrow { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 15px; color: #d9c58e; letter-spacing: .3px; margin-bottom: 26px; }
+    .hero-eyebrow::before, .hero-eyebrow::after { content: "—"; opacity: .4; margin: 0 12px; }
+    .hero h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px, 5vw, 58px); font-weight: 400; line-height: 1.07; margin-bottom: 24px; letter-spacing: -1px; color: white; }
+    .hero h1 em { font-style: italic; color: #d9c58e; }
+    .hero-sub { font-size: 18px; color: rgba(255,255,255,.72); max-width: 560px; margin: 0 auto 16px; line-height: 1.8; }
+    .hero-note { font-family: Georgia, serif; font-style: italic; font-size: 14px; color: rgba(255,255,255,.42); }
 
-    /* QUIZ WRAPPER */
-    .quiz-wrap { max-width: 680px; margin: 0 auto; padding: 56px 24px 96px; }
+    /* QUIZ SHELL */
+    .quiz-shell { background: var(--cream-soft); border-bottom: 1px solid var(--hairline); }
+    .quiz-inner { max-width: 1080px; margin: 0 auto; padding: 72px 48px 96px; display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start; }
 
-    /* PROGRESS */
-    .progress-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 48px; }
-    .progress-steps { display: flex; gap: 6px; flex: 1; }
-    .progress-step { flex: 1; height: 3px; border-radius: 2px; background: var(--hairline); transition: background .4s; }
-    .progress-step.done { background: var(--teal); }
-    .progress-step.active { background: var(--teal-soft); }
-    .progress-label { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .5px; white-space: nowrap; }
+    /* SIDEBAR */
+    .quiz-sidebar { position: sticky; top: 88px; }
+    .sidebar-step { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--hairline-soft); }
+    .sidebar-step:last-child { border-bottom: none; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--hairline); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--muted); flex-shrink: 0; transition: all .3s; }
+    .step-num.active { background: var(--teal); border-color: var(--teal); color: white; box-shadow: 0 2px 8px rgba(26,107,138,.25); }
+    .step-num.done { background: var(--ink); border-color: var(--ink); color: white; }
+    .step-body { flex: 1; padding-top: 3px; }
+    .step-label { font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--muted); transition: color .3s; }
+    .step-label.active { color: var(--teal); }
+    .step-label.done { color: var(--ink); }
+    .step-desc { font-family: Georgia, serif; font-style: italic; font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+    .sidebar-note { margin-top: 32px; padding: 20px 22px; background: white; border: 1px solid var(--hairline); border-left: 3px solid var(--teal); border-radius: 2px; }
+    .sidebar-note p { font-size: 13px; color: var(--sub); line-height: 1.7; }
+    .sidebar-note strong { color: var(--ink); font-weight: 600; }
 
-    /* QUESTION CARD */
-    .question-card { background: white; border: 1px solid var(--hairline); border-radius: 4px; padding: 40px 40px 36px; box-shadow: 0 2px 8px rgba(13,61,82,.06); }
-    .q-eyebrow { font-family: Georgia, serif; font-style: italic; font-size: 12px; color: var(--gold); letter-spacing: .3px; margin-bottom: 14px; }
-    .q-text { font-family: Georgia, "Times New Roman", serif; font-size: clamp(20px, 2.8vw, 26px); font-weight: 400; color: var(--ink); line-height: 1.3; margin-bottom: 32px; letter-spacing: -0.3px; }
+    /* QUESTION AREA */
+    .quiz-main {}
+    .question-card { background: white; border: 1px solid var(--hairline); border-radius: 2px; box-shadow: 0 2px 12px rgba(13,61,82,.06); overflow: hidden; }
+    .q-header { padding: 40px 48px 36px; border-bottom: 1px solid var(--hairline-soft); background: linear-gradient(180deg, white 0%, var(--paper-soft) 100%); }
+    .q-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .q-text { font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px, 2.8vw, 32px); font-weight: 400; color: var(--ink); line-height: 1.25; letter-spacing: -0.4px; }
     .q-text em { font-style: italic; color: var(--teal); }
+    .q-subtext { font-size: 15px; color: var(--muted); margin-top: 14px; line-height: 1.7; font-family: Georgia, serif; font-style: italic; }
 
-    /* ANSWER OPTIONS */
-    .options { display: flex; flex-direction: column; gap: 10px; }
-    .option { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; border: 1.5px solid var(--hairline); border-radius: 3px; cursor: pointer; transition: all .18s; background: var(--paper-soft); text-align: left; width: 100%; font-family: inherit; }
-    .option:hover { border-color: var(--teal-soft); background: white; box-shadow: 0 2px 8px rgba(26,107,138,.08); transform: translateX(2px); }
-    .option.selected { border-color: var(--teal); background: white; box-shadow: 0 0 0 3px rgba(26,107,138,.08); }
-    .option-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
-    .option-body { flex: 1; }
-    .option-title { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.4; }
-    .option-sub { font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+    /* OPTIONS */
+    .options { padding: 8px 0; }
+    .option { display: flex; align-items: stretch; width: 100%; background: none; border: none; border-bottom: 1px solid var(--hairline-soft); cursor: pointer; text-align: left; font-family: inherit; padding: 0; transition: background .15s; }
+    .option:last-child { border-bottom: none; }
+    .option:hover { background: var(--paper-soft); }
+    .option:hover .option-marker { background: var(--teal); border-color: var(--teal); }
+    .option:hover .option-arrow { opacity: 1; transform: translateX(0); }
+    .option.selected { background: linear-gradient(90deg, rgba(26,107,138,.04), transparent); }
+    .option.selected .option-marker { background: var(--teal); border-color: var(--teal); }
+    .option-marker { width: 5px; background: transparent; border-right: 1px solid var(--hairline-soft); flex-shrink: 0; transition: background .15s, border-color .15s; }
+    .option-content { flex: 1; padding: 26px 36px 26px 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .option-text { flex: 1; }
+    .option-title { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+    .option-sub { font-size: 13.5px; color: var(--muted); margin-top: 5px; line-height: 1.6; font-family: Georgia, serif; font-style: italic; }
+    .option-arrow { font-size: 18px; color: var(--teal); opacity: 0; transform: translateX(-6px); transition: all .2s; flex-shrink: 0; }
 
-    /* BACK BUTTON */
-    .back-btn { background: none; border: none; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .3px; padding: 0; margin-top: 20px; display: flex; align-items: center; gap: 6px; transition: color .15s; }
+    /* BACK BTN */
+    .back-row { padding: 20px 48px 0; }
+    .back-btn { background: none; border: none; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .3px; padding: 0; display: flex; align-items: center; gap: 8px; transition: color .15s; font-family: inherit; }
     .back-btn:hover { color: var(--ink); }
-    .back-btn::before { content: "←"; }
+    .back-btn::before { content: "←"; font-size: 15px; }
 
-    /* RESULT CARD */
-    .result-card { background: white; border: 1px solid var(--hairline); border-radius: 4px; overflow: hidden; box-shadow: 0 2px 12px rgba(13,61,82,.08); }
-    .result-band { background: linear-gradient(135deg, var(--ink-deep), var(--ink-soft)); color: white; padding: 36px 40px 32px; }
-    .result-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #d9c58e; border: 1px solid rgba(217,197,142,.35); padding: 5px 12px; border-radius: 2px; margin-bottom: 18px; }
-    .result-heading { font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px, 3vw, 30px); font-weight: 400; line-height: 1.2; color: white; margin-bottom: 12px; letter-spacing: -0.3px; }
-    .result-heading em { color: #d9c58e; font-style: italic; }
-    .result-intro { font-size: 15px; color: rgba(255,255,255,.78); line-height: 1.75; }
-    .result-body { padding: 36px 40px 40px; }
-    .result-why { margin-bottom: 28px; }
-    .result-why-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .result-why p { font-size: 15px; color: var(--body); line-height: 1.75; }
-    .result-actions { display: flex; flex-direction: column; gap: 10px; }
-    .result-cta { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-radius: 3px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all .2s; }
-    .result-cta.primary { background: var(--ink); color: white; box-shadow: 0 3px 10px rgba(13,61,82,.2); }
-    .result-cta.primary:hover { background: var(--teal); box-shadow: 0 6px 18px rgba(13,61,82,.25); transform: translateY(-1px); }
-    .result-cta.secondary { background: var(--paper-soft); color: var(--ink); border: 1px solid var(--hairline); }
-    .result-cta.secondary:hover { background: white; border-color: var(--teal-soft); color: var(--teal); }
-    .result-cta-arrow { font-size: 16px; opacity: .7; }
-    .result-restart { text-align: center; margin-top: 28px; }
-    .result-restart button { background: none; border: none; cursor: pointer; font-size: 13px; color: var(--muted); font-family: Georgia, serif; font-style: italic; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--hairline); transition: color .15s; }
+    /* RESULT */
+    .result-card { background: white; border: 1px solid var(--hairline); border-radius: 2px; box-shadow: 0 2px 12px rgba(13,61,82,.06); overflow: hidden; }
+    .result-hero { background: linear-gradient(135deg, var(--ink-deep) 0%, var(--ink-soft) 100%); padding: 52px 52px 48px; position: relative; }
+    .result-hero::before { content: "◆"; position: absolute; top: 24px; right: 32px; color: rgba(217,197,142,.25); font-size: 10px; letter-spacing: 6px; }
+    .result-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d9c58e; border: 1px solid rgba(217,197,142,.3); padding: 5px 14px; border-radius: 2px; margin-bottom: 22px; }
+    .result-heading { font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 3.2vw, 36px); font-weight: 400; color: white; line-height: 1.18; margin-bottom: 18px; letter-spacing: -0.4px; }
+    .result-heading em { font-style: italic; color: #d9c58e; }
+    .result-intro { font-size: 16px; color: rgba(255,255,255,.72); line-height: 1.8; max-width: 560px; }
+
+    .result-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .result-why { padding: 44px 48px; border-right: 1px solid var(--hairline-soft); }
+    .result-actions-col { padding: 44px 48px; background: var(--paper-soft); }
+    .result-section-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .result-why-text { font-size: 15px; color: var(--body); line-height: 1.8; }
+    .result-why-text p + p { margin-top: 14px; }
+
+    .result-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 22px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all .2s; margin-bottom: 10px; }
+    .result-cta:last-child { margin-bottom: 0; }
+    .result-cta.primary { background: var(--ink); color: white; box-shadow: 0 3px 10px rgba(13,61,82,.18); }
+    .result-cta.primary:hover { background: var(--teal); box-shadow: 0 6px 20px rgba(13,61,82,.24); transform: translateY(-1px); }
+    .result-cta.secondary { background: white; color: var(--ink); border: 1px solid var(--hairline); }
+    .result-cta.secondary:hover { border-color: var(--teal-soft); color: var(--teal); transform: translateY(-1px); box-shadow: 0 3px 8px rgba(13,61,82,.08); }
+    .result-cta-label { flex: 1; }
+    .result-cta-arrow { font-size: 16px; flex-shrink: 0; opacity: .6; }
+
+    .result-restart { padding: 28px 48px; border-top: 1px solid var(--hairline-soft); text-align: center; }
+    .result-restart button { background: none; border: none; cursor: pointer; font-family: Georgia, serif; font-style: italic; font-size: 14px; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--hairline); transition: color .15s; }
     .result-restart button:hover { color: var(--body); }
 
-    /* TRANSITION */
-    .quiz-step { animation: fadeUp .28s ease both; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    /* EDITORIAL BAND BELOW */
+    .editorial-band { background: white; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+    .editorial-inner { max-width: 1080px; margin: 0 auto; padding: 72px 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--hairline); border-left: 1px solid var(--hairline); border-right: 1px solid var(--hairline); }
+    .ed-item { background: white; padding: 36px 32px; }
+    .ed-num { font-family: Georgia, serif; font-size: 40px; font-weight: 400; color: var(--ink); letter-spacing: -1px; line-height: 1; margin-bottom: 10px; }
+    .ed-num span { font-size: 18px; color: var(--teal); }
+    .ed-label { font-size: 14px; color: var(--body); line-height: 1.65; }
+    .ed-label strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 4px; }
 
-    @media (max-width: 600px) {
-      .question-card, .result-band, .result-body { padding-left: 24px; padding-right: 24px; }
-      .question-card { padding-top: 28px; padding-bottom: 24px; }
-      .option { padding: 14px 16px; }
-    }
+    /* TRANSITION */
+    .quiz-step { animation: fadeIn .3s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     /* FOOTER */
-    footer { background: var(--ink-deep); color: rgba(255,255,255,.55); text-align: center; padding: 32px 24px; font-size: 13px; }
-    footer a { color: rgba(255,255,255,.55); text-decoration: underline; text-underline-offset: 3px; }
+    footer { background: var(--ink-deep); color: rgba(255,255,255,.5); text-align: center; padding: 36px 24px; font-size: 13px; }
+    footer a { color: rgba(255,255,255,.5); text-decoration: underline; text-underline-offset: 3px; }
     footer a:hover { color: white; }
     .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .quiz-inner { grid-template-columns: 1fr; gap: 36px; padding: 48px 24px 72px; }
+      .quiz-sidebar { position: static; display: flex; gap: 0; background: white; border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; }
+      .sidebar-step { flex-direction: column; align-items: center; text-align: center; flex: 1; padding: 16px 12px; border-bottom: none; border-right: 1px solid var(--hairline-soft); gap: 8px; }
+      .sidebar-step:last-child { border-right: none; }
+      .sidebar-note { display: none; }
+      .q-header { padding: 28px 28px 24px; }
+      .option-content { padding: 20px 24px 20px 20px; }
+      .back-row { padding: 16px 28px 0; }
+      .result-hero { padding: 36px 28px 32px; }
+      .result-body { grid-template-columns: 1fr; }
+      .result-why { border-right: none; border-bottom: 1px solid var(--hairline-soft); padding: 32px 28px; }
+      .result-actions-col { padding: 32px 28px; }
+      .result-restart { padding: 24px 28px; }
+      .editorial-inner { grid-template-columns: 1fr; }
+      .ed-item { padding: 28px 24px; }
+      .hero { padding: 64px 24px 56px; }
+    }
   </style>
 </head>
 <body>
@@ -189,11 +215,11 @@
     <a href="gids/index.html">Slaapgids</a>
     <a href="media/index.html">Media</a>
   </div>
-  <button class="nav-mobile" onclick="var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='flex'?'none':'flex'" style="background:none;border:none;cursor:pointer;padding:14px 0;margin-left:auto;color:#1a6b8a">
+  <button class="nav-mobile-btn" onclick="var m=document.getElementById('mob');m.style.display=m.style.display==='flex'?'none':'flex'">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
-<div id="mobile-menu" style="display:none;position:fixed;top:64px;left:0;right:0;background:white;border-bottom:1px solid #d6e4eb;z-index:99;flex-direction:column;box-shadow:0 4px 12px rgba(13,61,82,.1)">
+<div id="mob" style="display:none;position:fixed;top:64px;left:0;right:0;background:white;border-bottom:1px solid #d6e4eb;z-index:99;flex-direction:column;box-shadow:0 4px 12px rgba(13,61,82,.1)">
   <a href="index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Home</a>
   <a href="supplementen/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Supplementen</a>
   <a href="ontspanning/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;border-bottom:1px solid #e5eef2;display:block">Slaapproducten</a>
@@ -203,340 +229,404 @@
   <a href="media/index.html" style="padding:14px 20px;color:#0d3d52;text-decoration:none;font-weight:600;display:block">Media</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="inner">
-    <div class="eyebrow">Persoonlijk slaapadvies</div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Persoonlijk slaapadvies</div>
     <h1>Wat helpt <em>jou</em> beter slapen?</h1>
-    <p>Beantwoord 3 vragen en ontdek welke aanpak het beste past bij jouw slaapprobleem.</p>
+    <p class="hero-sub">Niet elk slaapprobleem heeft dezelfde oorzaak. Beantwoord drie vragen en ontdek welke aanpak het beste bij jou past.</p>
+    <p class="hero-note">Drie vragen &nbsp;·&nbsp; Wetenschappelijk onderbouwd &nbsp;·&nbsp; Gratis</p>
   </div>
 </div>
 
-<div class="quiz-wrap">
-  <div id="quiz-container"></div>
+<!-- QUIZ -->
+<div class="quiz-shell">
+  <div class="quiz-inner">
+
+    <!-- SIDEBAR -->
+    <div class="quiz-sidebar" id="sidebar">
+      <div class="sidebar-step" id="s1">
+        <div class="step-num active" id="sn1">1</div>
+        <div class="step-body">
+          <div class="step-label active" id="sl1">Jouw slaapprobleem</div>
+          <div class="step-desc">Wat houdt je 's nachts wakker?</div>
+        </div>
+      </div>
+      <div class="sidebar-step" id="s2">
+        <div class="step-num" id="sn2">2</div>
+        <div class="step-body">
+          <div class="step-label" id="sl2">Oorzaak</div>
+          <div class="step-desc">Wat speelt er precies?</div>
+        </div>
+      </div>
+      <div class="sidebar-step" id="s3">
+        <div class="step-num" id="sn3">3</div>
+        <div class="step-body">
+          <div class="step-label" id="sl3">Jouw situatie</div>
+          <div class="step-desc">Één gerichte vervolgvraag</div>
+        </div>
+      </div>
+      <div class="sidebar-note">
+        <p>Onze adviezen zijn gebaseerd op <strong>wetenschappelijk onderzoek</strong> naar slaap. We verdienen commissie als je via onze links koopt — dit beïnvloedt onze aanbevelingen niet.</p>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div id="quiz-main"></div>
+
+  </div>
+</div>
+
+<!-- EDITORIAL STRIP -->
+<div class="editorial-band">
+  <div class="editorial-inner">
+    <div class="ed-item">
+      <div class="ed-num">8<span>+</span></div>
+      <div class="ed-label"><strong>Persoonlijke adviespaden</strong>Afhankelijk van jouw antwoorden sturen we je naar het meest relevante product of artikel.</div>
+    </div>
+    <div class="ed-item">
+      <div class="ed-num">3</div>
+      <div class="ed-label"><strong>Vragen, geen formulier</strong>Geen e-mailadres, geen account. Jij krijgt meteen antwoord — anoniem en gratis.</div>
+    </div>
+    <div class="ed-item">
+      <div class="ed-num">60<span>s</span></div>
+      <div class="ed-label"><strong>Klaar in één minuut</strong>De quiz duurt minder dan een minuut. Het advies is direct toepasbaar — vanavond nog.</div>
+    </div>
+  </div>
 </div>
 
 <footer>
-  <div>© 2026 BesteSlaapAdvies.nl — Onafhankelijk slaapadvies</div>
+  <div>&copy; 2026 BesteSlaapAdvies.nl &mdash; Onafhankelijk slaapadvies</div>
   <div class="footer-links">
-    <a href="disclaimer.html" target="_blank" rel="noopener">Disclaimer</a>
-    <a href="advertentie-disclosure.html" target="_blank" rel="noopener">Affiliate disclosure</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="advertentie-disclosure.html">Affiliate disclosure</a>
     <a href="index.html">Home</a>
   </div>
 </footer>
 
 <script>
-// ─── Quiz data ────────────────────────────────────────────────────────────────
+// ─── Data ──────────────────────────────────────────────────────────────────────
 
-const QUESTIONS = {
+const Q = {
   q1: {
+    step: 1,
     eyebrow: "Vraag 1 van 3",
     text: "Wat is jouw grootste slaapprobleem?",
+    sub: "Kies de situatie die het meest op jou van toepassing is.",
     options: [
-      { icon: "🌀", title: "Ik lig te lang wakker voor ik in slaap val", sub: "Gedachten blijven draaien, ik kan niet loslaten", next: "q2a" },
-      { icon: "🌙", title: "Ik word 's nachts wakker en slaap dan moeilijk verder", sub: "Ik val prima in slaap, maar word tussendoor wakker", next: "q2b" },
-      { icon: "😴", title: "Ik slaap wel, maar voel me 's ochtends niet uitgerust", sub: "Moe wakker, nooit echt fris", next: "q2c" },
-      { icon: "📅", title: "Mijn slaaptijden zijn onregelmatig", sub: "Wisselende werktijden, te laat naar bed of te vroeg op", next: "q2d" },
+      { title: "Ik lig te lang wakker voor ik in slaap val", sub: "Mijn gedachten draaien maar door, ik kan niet loslaten", next: "q2a" },
+      { title: "Ik word 's nachts wakker en slaap dan moeilijk verder", sub: "Ik val prima in slaap, maar word tussendoor wakker", next: "q2b" },
+      { title: "Ik slaap wel, maar voel me 's ochtends niet uitgerust", sub: "Moe wakker — nooit echt fris, ook niet na een lange nacht", next: "q2c" },
+      { title: "Mijn slaaptijden zijn onregelmatig of verschuiven steeds", sub: "Wisselende bedtijden, ploegendienst of jetlag", next: "q2d" },
     ]
   },
   q2a: {
+    step: 2,
     eyebrow: "Vraag 2 van 3",
     text: "Wat speelt er als je wakker ligt?",
+    sub: "Herken je één van deze patronen?",
     options: [
-      { icon: "💭", title: "Gedachten over morgen, to-dolijsten, zorgen", sub: "Mijn hoofd stopt gewoon niet", next: "q3a_piekeren" },
-      { icon: "😬", title: "Spanning of onrust in mijn lijf", sub: "Gespannen spieren, onrustig gevoel", next: "q3a_spanning" },
-      { icon: "📱", title: "Ik gebruik mijn telefoon of kijk nog iets", sub: "Schermen laat op de avond", next: "q3a_scherm" },
+      { title: "Gedachten over morgen, to-dolijsten, zorgen", sub: "Mijn hoofd stopt niet — ik maal over van alles", next: "q3a_piekeren" },
+      { title: "Spanning of onrust in mijn lijf", sub: "Gespannen spieren, rusteloze benen, oncomfortabel gevoel", next: "q3a_spanning" },
+      { title: "Ik gebruik laat op de avond nog schermen", sub: "Telefoon, laptop, televisie vlak voor het slapengaan", next: "q3a_scherm" },
     ]
   },
   q2b: {
+    step: 2,
     eyebrow: "Vraag 2 van 3",
     text: "Wat merk je als je 's nachts wakker wordt?",
+    sub: "Wat is het eerste wat je ervaart?",
     options: [
-      { icon: "💭", title: "Ik ga meteen piekeren", sub: "Gedachten over werk, zorgen, morgen", next: "q3b_piekeren" },
-      { icon: "🌡️", title: "Ik voel me warm of oncomfortabel", sub: "Zweten, te warm, matrasproblemen", next: "q3b_warm" },
-      { icon: "❓", title: "Ik weet het niet precies, ik word gewoon wakker", sub: "Geen duidelijke oorzaak", next: "q3b_onduidelijk" },
+      { title: "Ik ga meteen piekeren of malen", sub: "Gedachten over werk, relaties of zorgen beginnen direct", next: "q3b_piekeren" },
+      { title: "Ik voel me warm, zweterig of oncomfortabel", sub: "Temperatuur lijkt een rol te spelen", next: "q3b_warm" },
+      { title: "Geen duidelijke oorzaak — ik word gewoon wakker", sub: "Ik weet niet waarom, maar het patroon herhaalt zich", next: "q3b_onduidelijk" },
     ]
   },
   q2c: {
+    step: 2,
     eyebrow: "Vraag 2 van 3",
-    text: "Hoe lang slaap je gemiddeld per nacht?",
+    text: "Hoeveel uur slaap je gemiddeld per nacht?",
+    sub: "Inclusief weekenden — wees eerlijk.",
     options: [
-      { icon: "⏱️", title: "Minder dan 7 uur", sub: "Ik slaap te kort", next: "result_slaaptekort" },
-      { icon: "✅", title: "7 uur of meer", sub: "Ik slaap lang genoeg, maar voel me toch moe", next: "q3c_kwaliteit" },
+      { title: "Minder dan 7 uur", sub: "Ik slaap structureel te weinig, dat weet ik", next: "result_slaaptekort" },
+      { title: "7 uur of meer, maar ik voel me nog steeds moe", sub: "De duur lijkt in orde, maar de kwaliteit waarschijnlijk niet", next: "q3c_kwaliteit" },
     ]
   },
   q2d: {
+    step: 2,
     eyebrow: "Vraag 2 van 3",
     text: "Wat verstoort jouw slaapritme het meest?",
+    sub: "Wat is de meest herkenbare oorzaak?",
     options: [
-      { icon: "🌙", title: "Ik ga te laat naar bed", sub: "Schermen, uitstellen, geen vaste routine", next: "result_ritme" },
-      { icon: "🔄", title: "Wisselende werktijden of ploegendienst", sub: "Mijn schema verandert steeds", next: "result_ritme" },
-      { icon: "✈️", title: "Jetlag of tijdzoneverschil", sub: "Reizen of internationale werktijden", next: "result_ritme" },
+      { title: "Ik ga structureel te laat naar bed", sub: "Scrollen, uitstellen, geen vaste avondroutine", next: "result_ritme" },
+      { title: "Wisselende werktijden of ploegendienst", sub: "Mijn schema verandert regelmatig", next: "result_ritme" },
+      { title: "Reizen, jetlag of tijdzoneverschil", sub: "Mijn biologische klok is van slag door tijdsverschillen", next: "result_ritme" },
     ]
   },
   q3a_piekeren: {
+    step: 3,
     eyebrow: "Vraag 3 van 3",
     text: "Hoe lang heb je hier al last van?",
+    sub: "Dit helpt ons bepalen of het situationeel of structureel is.",
     options: [
-      { icon: "📆", title: "Al een tijdje, het is chronisch", sub: "Weken of maanden", next: "result_magnesium" },
-      { icon: "⚡", title: "Vooral in stressvolle periodes", sub: "Het komt en gaat", next: "result_avondroutine" },
+      { title: "Al weken of maanden — het is chronisch", sub: "Het is een terugkerend patroon, ook buiten stressvolle periodes", next: "result_magnesium" },
+      { title: "Voornamelijk in drukke of stressvolle periodes", sub: "Als het rustiger is, slaap ik beter", next: "result_avondroutine" },
     ]
   },
   q3a_spanning: {
+    step: 3,
     eyebrow: "Vraag 3 van 3",
-    text: "Waar voel je de spanning het meest?",
+    text: "Hoe zou je de spanning het beste omschrijven?",
+    sub: "Dit maakt het verschil in wat het meest effectief is.",
     options: [
-      { icon: "🦵", title: "Onrustige benen of armen", sub: "Moet steeds bewegen", next: "result_verzwaringsdeken" },
-      { icon: "🫁", title: "Algemene spanning, moeilijk ontspannen", sub: "Heel mijn lijf is gespannen", next: "result_verzwaringsdeken" },
+      { title: "Onrust of een gespannen gevoel door mijn hele lijf", sub: "Ik kan me niet ontspannen, ook al lig ik stil", next: "result_verzwaringsdeken" },
+      { title: "Rusteloze benen of armen — ik moet bewegen", sub: "Een onaangenaam gevoel dat me dwingt te bewegen", next: "result_verzwaringsdeken" },
     ]
   },
   q3a_scherm: {
+    step: 3,
     eyebrow: "Vraag 3 van 3",
     text: "Wat doe je het liefst in het uur voor bedtijd?",
+    sub: "Eerlijk antwoorden — er is geen goed of fout.",
     options: [
-      { icon: "📱", title: "Scrollen, series kijken, nieuws lezen", sub: "Op mijn telefoon of laptop", next: "result_avondroutine" },
-      { icon: "🛋️", title: "Ik probeer te ontspannen maar het lukt niet", sub: "Ik doe het goed maar val toch moeilijk in slaap", next: "result_magnesium" },
+      { title: "Scrollen, series kijken of nieuws lezen", sub: "Schermen zijn een gewoonte geworden vlak voor het slapengaan", next: "result_avondroutine" },
+      { title: "Ik probeer te ontspannen, maar het lukt niet goed", sub: "Ik doe het wel goed, maar val toch moeilijk in slaap", next: "result_magnesium" },
     ]
   },
   q3b_piekeren: {
+    step: 3,
     eyebrow: "Vraag 3 van 3",
-    text: "Wat helpt jou het beste om tot rust te komen?",
+    text: "Wat helpt jou het beste om je gedachten te stoppen?",
+    sub: "Denk aan wat in het verleden enig effect had.",
     options: [
-      { icon: "✍️", title: "Schrijven, gedachten opschrijven", sub: "Dagboek of to-dolijst voor morgen", next: "result_avondroutine" },
-      { icon: "🧘", title: "Lichamelijke ontspanning", sub: "Ademhaling, meditatie, warm bad", next: "result_ontspanning" },
+      { title: "Iets opschrijven of plannen voor de volgende dag", sub: "Gedachten op papier zetten zodat mijn hoofd het kan loslaten", next: "result_avondroutine" },
+      { title: "Lichamelijke ontspanning — adem, beweging, warmte", sub: "Iets wat mijn lichaam direct tot rust brengt", next: "result_ontspanning" },
     ]
   },
   q3b_warm: {
+    step: 3,
     eyebrow: "Vraag 3 van 3",
     text: "Hoe is de temperatuur in jouw slaapkamer?",
+    sub: "De ideale slaaptemperatuur is 16–18 graden.",
     options: [
-      { icon: "🌡️", title: "Aan de warme kant", sub: "Ik slaap te warm", next: "result_slaaphygiene" },
-      { icon: "❓", title: "Geen idee, ik heb er nooit op gelet", sub: "Misschien ligt het daaraan", next: "result_slaaphygiene" },
+      { title: "Warmer dan dat — ik slaap vaak te warm", sub: "Ik zweef 's nachts of gooi dekbed af", next: "result_slaaphygiene" },
+      { title: "Ik heb er nooit op gelet, ik weet het niet", sub: "De temperatuur kan zeker een rol spelen", next: "result_slaaphygiene" },
     ]
   },
   q3b_onduidelijk: {
+    step: 3,
     eyebrow: "Vraag 3 van 3",
-    text: "Wil je inzicht in je slaappatroon?",
+    text: "Wat wil je het liefst als eerste stap?",
+    sub: "Beide zijn goede startpunten — het gaat om wat bij jou past.",
     options: [
-      { icon: "📊", title: "Ja, ik wil weten hoe ik slaap", sub: "Diepe slaap, REM, slaapfases meten", next: "result_tracker" },
-      { icon: "💊", title: "Ik wil iets proberen wat helpt bij doorslapen", sub: "Een supplement of product", next: "result_magnesium" },
+      { title: "Begrijpen wat er precies in mijn slaap gebeurt", sub: "Ik wil mijn slaapfases, diepe slaap en REM in kaart brengen", next: "result_tracker" },
+      { title: "Iets proberen dat mijn slaap direct kan verbeteren", sub: "Een supplement of product dat doorslapen ondersteunt", next: "result_magnesium" },
     ]
   },
   q3c_kwaliteit: {
+    step: 3,
     eyebrow: "Vraag 3 van 3",
-    text: "Heb je ooit je slaapkwaliteit laten meten?",
+    text: "Heb je ooit jouw slaapkwaliteit laten meten?",
+    sub: "Meten is weten — en er zijn betaalbare opties.",
     options: [
-      { icon: "📊", title: "Nee, maar ik ben wel nieuwsgierig", sub: "Wat gebeurt er precies in mijn slaap?", next: "result_tracker" },
-      { icon: "💊", title: "Ik wil iets proberen dat mijn slaap verdiept", sub: "Een supplement of andere aanpak", next: "result_magnesium" },
+      { title: "Nee, maar ik ben nieuwsgierig wat er in mijn slaap gebeurt", sub: "Ik wil inzicht in mijn diepe slaap, REM en slaapfases", next: "result_tracker" },
+      { title: "Ik wil liever iets proberen dat mijn slaap verdiept", sub: "Een supplement of andere aanpak die direct effect heeft", next: "result_magnesium" },
     ]
   },
 };
 
-const RESULTS = {
+const R = {
   result_magnesium: {
-    badge: "Jouw advies",
-    heading: "Probeer <em>magnesiumglycinaat</em> voor slaap",
-    intro: "Op basis van jouw antwoorden lijkt magnesium een logische eerste stap. Stress verbruikt magnesium, en een tekort maakt het moeilijk om 's avonds los te laten.",
-    why: "Magnesium reguleert GABA — de neurotransmitter die je brein afremt. Het ontspant je spieren en helpt bij het reguleren van melatonine. Magnesiumglycinaat wordt het beste opgenomen en is het meest geschikt voor slaap.",
+    badge: "Jouw persoonlijk advies",
+    heading: "Begin met <em>magnesiumglycinaat</em>",
+    intro: "Op basis van jouw antwoorden lijkt een magnesiumtekort een waarschijnlijke oorzaak. Stress verbruikt magnesium sneller dan je het aanvult — en een tekort maakt het voor je zenuwstelsel onmogelijk om 's avonds echt los te laten.",
+    why: "<p>Magnesium reguleert GABA, de neurotransmitter die je brein afremt en tot rust brengt. Het ontspant je spieren, verlaagt je cortisolniveau en helpt bij de aanmaak van melatonine — het hormoon dat je slaap-waakcyclus stuurt.</p><p>Niet elk magnesium is hetzelfde. Magnesiumglycinaat wordt het beste door het lichaam opgenomen en heeft de minste bijwerkingen. Magnesiumoxide — de goedkoopste variant in de supermarkt — werkt nauwelijks voor slaap.</p>",
     actions: [
-      { label: "Vergelijk de beste magnesiumsupplementen →", url: "supplementen/beste-magnesium-slaap.html", primary: true },
-      { label: "Lees ook: avondroutine opbouwen →", url: "gids/avondroutine.html", primary: false },
+      { label: "Lees: avondroutine opbouwen stap voor stap", url: "gids/avondroutine.html", primary: false },
+      { label: "Vergelijk de beste magnesiumsupplementen", url: "supplementen/beste-magnesium-slaap.html", primary: true },
     ]
   },
   result_avondroutine: {
-    badge: "Jouw advies",
-    heading: "Bouw een vaste <em>avondroutine</em> op",
-    intro: "Jouw slaapprobleem zit waarschijnlijk in de uren vóór je naar bed gaat. Je brein heeft een overgangsperiode nodig — van actief naar ontspannen.",
-    why: "Je lichaam begint al rond 19:00 melatonine aan te maken. Heldere schermen, nieuws en to-dolijsten onderbreken dat signaal. Een vaste routine — elke avond dezelfde volgorde — traint je brein om los te laten.",
+    badge: "Jouw persoonlijk advies",
+    heading: "Bouw een <em>vaste avondroutine</em> op",
+    intro: "Jouw slaapprobleem zit waarschijnlijk in de uren vóór het slapengaan. Je brein heeft een overgangsperiode nodig om van actief naar ontspannen te schakelen — en die overgang kun je trainen.",
+    why: "<p>Rond 19:00 begint je lichaam melatonine aan te maken. Heldere schermen, nieuws en mentaal actieve bezigheden onderbreken dit signaal direct. Je brein blijft in waakstand, ook al ben je lichamelijk moe.</p><p>Consistentie is de sleutel. Een vaste volgorde — dezelfde handelingen op hetzelfde tijdstip — traint je brein om automatisch te ontspannen. Na twee tot drie weken werkt het als een interne schakelaar.</p>",
     actions: [
-      { label: "Lees: zo bouw je een avondroutine op →", url: "gids/avondroutine.html", primary: true },
-      { label: "Bekijk ook: beste slaapthee voor rust →", url: "supplementen/beste-slaapthee.html", primary: false },
+      { label: "Lees: zo bouw je een avondroutine op", url: "gids/avondroutine.html", primary: false },
+      { label: "Bekijk: beste slaapthee voor een rustige avond", url: "supplementen/beste-slaapthee.html", primary: true },
     ]
   },
   result_verzwaringsdeken: {
-    badge: "Jouw advies",
-    heading: "Een <em>verzwaringsdeken</em> bij lichamelijke onrust",
-    intro: "Als je spanning in je lijf voelt als je probeert te slapen, kan een verzwaringsdeken helpen. De extra zwaarte activeert je parasympathisch zenuwstelsel — het systeem dat je lichaam in rustmodus zet.",
-    why: "Diepe drukkeling (deep pressure stimulation) verlaagt aantoonbaar cortisol en verhoogt serotonine. Voor mensen die 's nachts liggen te draaien of onrustige benen hebben, is dit een van de meest effectieve niet-medicamenteuze oplossingen.",
+    badge: "Jouw persoonlijk advies",
+    heading: "Probeer een <em>verzwaringsdeken</em>",
+    intro: "Als je lichamelijke spanning of onrust ervaart bij het inslapen, is een verzwaringsdeken een van de meest effectieve niet-medicamenteuze oplossingen. De werking is direct en merkbaar.",
+    why: "<p>Een verzwaringsdeken maakt gebruik van diepe drukkeling — deep pressure stimulation. De extra zwaarte activeert je parasympathisch zenuwstelsel: het systeem dat je lichaam in rust- en herstelmodus zet.</p><p>Onderzoek toont aan dat dit de aanmaak van serotonine verhoogt en cortisol verlaagt. Voor mensen die 's nachts liggen te draaien, rusteloze benen hebben of spanning vasthouden in hun lichaam, is dit een bewezen effectieve interventie.</p>",
     actions: [
-      { label: "Vergelijk de beste verzwaringsdekens →", url: "ontspanning/beste-verzwaringsdeken.html", primary: true },
-      { label: "Lees ook: ontspanningstechnieken voor slaap →", url: "gids/niet-slapen-piekeren.html", primary: false },
+      { label: "Lees: ontspanningstechnieken voor een betere slaap", url: "gids/niet-slapen-piekeren.html", primary: false },
+      { label: "Vergelijk de beste verzwaringsdekens", url: "ontspanning/beste-verzwaringsdeken.html", primary: true },
     ]
   },
   result_ontspanning: {
-    badge: "Jouw advies",
-    heading: "Ontspanningstechnieken voor <em>beter doorslapen</em>",
-    intro: "Wakker worden en dan piekeren is een patroon dat je kunt doorbreken. Lichamelijke ontspanningstechnieken zijn hiervoor bewezen effectief — ze werken direct op je zenuwstelsel.",
-    why: "Ademhalingsoefeningen zoals de 4-7-8 methode activeren je parasympathisch zenuwstelsel. Progressive muscle relaxation en meditatie verlagen cortisol. Deze technieken zijn wetenschappelijk onderbouwd voor wakker worden 's nachts.",
+    badge: "Jouw persoonlijk advies",
+    heading: "<em>Ontspanningstechnieken</em> voor wakker liggen",
+    intro: "Wakker worden en dan beginnen te malen is een patroon dat je kunt doorbreken. Lichamelijke ontspanningstechnieken zijn hiervoor wetenschappelijk bewezen effectief — ze werken direct op je zenuwstelsel, niet via je gedachten.",
+    why: "<p>De 4-7-8 ademhalingstechniek — vier tellen inademen, zeven vasthouden, acht uitademen — activeert direct je parasympathisch zenuwstelsel. Je hartslag daalt, je spieren ontspannen, en je cortisolniveau zakt.</p><p>Progressive muscle relaxation en body scan meditatie werken op hetzelfde principe. De kracht zit in herhaling: hoe vaker je de techniek gebruikt, hoe sneller je lichaam erop reageert.</p>",
     actions: [
-      { label: "Lees: wat te doen als je niet kunt slapen →", url: "gids/niet-slapen-piekeren.html", primary: true },
-      { label: "Bekijk ook: magnesium voor spierontspanning →", url: "supplementen/beste-magnesium-slaap.html", primary: false },
+      { label: "Lees: wat te doen als je niet kunt slapen", url: "gids/niet-slapen-piekeren.html", primary: false },
+      { label: "Vergelijk: magnesium voor spier- en zenuwontspanning", url: "supplementen/beste-magnesium-slaap.html", primary: true },
     ]
   },
   result_slaaphygiene: {
-    badge: "Jouw advies",
-    heading: "Begin met je <em>slaapomgeving</em>",
-    intro: "Jouw slaapkamer speelt waarschijnlijk een grotere rol dan je denkt. Temperatuur, licht en geluid bepalen voor een groot deel hoe diep je slaapt.",
-    why: "De ideale slaaptemperatuur is 16–18 graden. Je lichaam moet afkoelen om diep te slapen. Verduistering, stilte en een koel bed zijn de drie meest impactvolle aanpassingen die je kunt maken — voor niets.",
+    badge: "Jouw persoonlijk advies",
+    heading: "Begin met jouw <em>slaapomgeving</em>",
+    intro: "Jouw slaapkamer speelt waarschijnlijk een grotere rol dan je denkt. Temperatuur, licht en geluid zijn de drie factoren die het meest direct bepalen hoe diep je slaapt — en ze zijn allemaal aanpasbaar.",
+    why: "<p>De ideale slaaptemperatuur ligt tussen 16 en 18 graden. Je lichaam moet zijn kerntemperatuur laten dalen om diepe slaapfases te bereiken. Een te warme kamer maakt dit fysiologisch onmogelijk.</p><p>Verduistering, stilte en een koele slaapomgeving zijn de meest impactvolle aanpassingen die je kunt maken — en ze kosten niets. Een temperatuurdaling van zelfs twee graden kan je diepe slaap significant verbeteren.</p>",
     actions: [
-      { label: "Lees: slaaphygiëne — de complete gids →", url: "gids/slaaphygiene.html", primary: true },
-      { label: "Bekijk ook: slaaptrackers om jouw slaap te meten →", url: "trackers/index.html", primary: false },
+      { label: "Lees: slaaphygiëne — de complete gids", url: "gids/slaaphygiene.html", primary: false },
+      { label: "Vergelijk de beste slaaptrackers van 2026", url: "trackers/index.html", primary: true },
     ]
   },
   result_tracker: {
-    badge: "Jouw advies",
+    badge: "Jouw persoonlijk advies",
     heading: "Meet eerst wat er <em>echt</em> in je slaap gebeurt",
-    intro: "Als je lang genoeg slaapt maar toch moe wakker wordt, is er waarschijnlijk iets mis met je slaapkwaliteit. Een slaaptracker geeft inzicht in je diepe slaap, REM en slaapfases.",
-    why: "Diepe slaap is verantwoordelijk voor fysiek herstel. REM-slaap voor mentale verwerking. Als je te weinig van een van beide hebt, word je moe wakker — ongeacht hoeveel uur je slaapt. Meten is weten.",
+    intro: "Als je voldoende uren slaapt maar toch moe wakker wordt, is er waarschijnlijk iets mis met je slaapkwaliteit. Een slaaptracker maakt zichtbaar wat er in jouw slaap werkelijk gebeurt.",
+    why: "<p>Diepe slaap is verantwoordelijk voor fysiek herstel — spieropbouw, immuunsysteem, celvernieuwing. REM-slaap verwerkt emoties en consolideert herinneringen. Te weinig van een van beide zorgt voor vermoeidheid, ongeacht het aantal uren.</p><p>Moderne slaaptrackers meten je slaapfases, detecteren slaapapneu-signalen en geven inzicht in je hartslag en zuurstofniveau. Meten is weten — en het geeft je een startpunt voor gerichte verbetering.</p>",
     actions: [
-      { label: "Vergelijk de beste slaaptrackers →", url: "trackers/index.html", primary: true },
-      { label: "Lees ook: hoeveel slaap heb je nodig? →", url: "gids/hoeveel-slaap.html", primary: false },
+      { label: "Lees: hoeveel slaap heb je echt nodig?", url: "gids/hoeveel-slaap.html", primary: false },
+      { label: "Vergelijk de beste slaaptrackers van 2026", url: "trackers/index.html", primary: true },
     ]
   },
   result_slaaptekort: {
-    badge: "Jouw advies",
-    heading: "Je slaapt te <em>kort</em> — dit is wat je kunt doen",
-    intro: "Minder dan 7 uur slaap is voor de meeste volwassenen structureel te weinig. De gevolgen stapelen zich op: concentratieproblemen, prikkelbaarheid, verminderde weerstand.",
-    why: "Slaaptekort is cumulatief. Na een week met 6 uur per nacht presteer je cognitief gelijk aan iemand die 24 uur heeft doorgeslapen. Eerder naar bed is effectiever dan supplementen — maar een goede avondroutine helpt om dat ook daadwerkelijk te doen.",
+    badge: "Jouw persoonlijk advies",
+    heading: "Je slaapt structureel <em>te weinig</em>",
+    intro: "Minder dan 7 uur slaap is voor de meeste volwassenen structureel te kort. De gevolgen zijn cumulatief en stapelen zich op — ook als je je er op een gegeven moment aan gewend hebt.",
+    why: "<p>Na een week van zes uur slaap per nacht presteer je cognitief gelijk aan iemand die 24 uur heeft doorgeslapen. Het gevaarlijke is dat je dit zelf niet merkt — je raakt gewend aan de vermoeidheid.</p><p>Eerder naar bed is effectiever dan supplementen. Maar een goede avondroutine helpt je om dat ook daadwerkelijk te doen: het maakt slapengaan makkelijker en prettiger, zodat het geen moeite meer kost.</p>",
     actions: [
-      { label: "Lees: hoeveel slaap heb je echt nodig? →", url: "gids/hoeveel-slaap.html", primary: true },
-      { label: "Lees ook: zo bouw je een avondroutine op →", url: "gids/avondroutine.html", primary: false },
+      { label: "Lees: hoeveel slaap heb je echt nodig?", url: "gids/hoeveel-slaap.html", primary: false },
+      { label: "Bekijk: beste slaapthee voor een rustiger avond", url: "supplementen/beste-slaapthee.html", primary: true },
     ]
   },
   result_ritme: {
-    badge: "Jouw advies",
-    heading: "Herstel je <em>slaapritme</em> stap voor stap",
-    intro: "Een onregelmatig slaappatroon verstoort je circadiaans ritme — de interne klok die bepaalt wanneer je moe wordt en wakker bent. Dat herstel je niet in één nacht, maar wel systematisch.",
-    why: "Je biologische klok wordt gereset door ochtendlicht, vaste bedtijden en consistente sociale tijden (maaltijden, beweging). Zelfs bij ploegendienst of jetlag zijn er bewezen strategieën die helpen.",
+    badge: "Jouw persoonlijk advies",
+    heading: "Herstel jouw <em>slaapritme</em> stap voor stap",
+    intro: "Een onregelmatig slaappatroon verstoort je circadiaans ritme — de biologische klok die bepaalt wanneer je moe wordt en wakker bent. Dit herstel je niet in één nacht, maar wel systematisch.",
+    why: "<p>Je biologische klok wordt elke dag opnieuw ingesteld door ochtendlicht, vaste bedtijden en sociale tijden zoals maaltijden. Tien minuten daglicht in de eerste dertig minuten na het opstaan is de krachtigste reset die er bestaat.</p><p>Zelfs bij ploegendienst of chronische jetlag zijn er bewezen strategieën. Het begint met begrijpen hoe je ritme werkt — dan wordt het aanpassen een kwestie van een paar gerichte gewoontes.</p>",
     actions: [
-      { label: "Lees: slaapritme herstellen — de gids →", url: "gids/slaapritme-herstellen.html", primary: true },
-      { label: "Bekijk ook: slaaptrackers om je ritme te volgen →", url: "trackers/index.html", primary: false },
+      { label: "Lees: slaapritme herstellen — de complete gids", url: "gids/slaapritme-herstellen.html", primary: false },
+      { label: "Vergelijk de beste slaaptrackers van 2026", url: "trackers/index.html", primary: true },
     ]
   },
 };
 
-// ─── State ────────────────────────────────────────────────────────────────────
-
+// ─── State ─────────────────────────────────────────────────────────────────────
 let history = [];
-let currentStep = 'q1';
-const totalSteps = 3;
+let current = 'q1';
 
-// ─── Render ───────────────────────────────────────────────────────────────────
-
-function getStepNumber(stepId) {
-  if (stepId === 'q1') return 1;
-  if (stepId.startsWith('q2')) return 2;
-  if (stepId.startsWith('q3')) return 3;
-  return 3;
-}
-
-function renderProgress(stepId) {
-  const current = stepId.startsWith('result') ? totalSteps : getStepNumber(stepId);
-  const done = stepId.startsWith('result') ? totalSteps : current - 1;
-  let steps = '';
-  for (let i = 1; i <= totalSteps; i++) {
-    const cls = i <= done ? 'done' : (i === current ? 'active' : '');
-    steps += `<div class="progress-step ${cls}"></div>`;
+// ─── Sidebar ───────────────────────────────────────────────────────────────────
+function updateSidebar(stepId) {
+  const step = R[stepId] ? 3 : (Q[stepId] ? Q[stepId].step : 1);
+  for (let i = 1; i <= 3; i++) {
+    const num = document.getElementById('sn' + i);
+    const lbl = document.getElementById('sl' + i);
+    if (!num) continue;
+    num.className = 'step-num' + (i < step ? ' done' : i === step ? ' active' : '');
+    lbl.className = 'step-label' + (i < step ? ' done' : i === step ? ' active' : '');
   }
-  const label = stepId.startsWith('result') ? 'Jouw advies' : `Vraag ${current} van ${totalSteps}`;
-  return `<div class="progress-bar"><div class="progress-steps">${steps}</div><div class="progress-label">${label}</div></div>`;
 }
 
+// ─── Render question ───────────────────────────────────────────────────────────
 function renderQuestion(qId) {
-  const q = QUESTIONS[qId];
-  const opts = q.options.map((o, i) =>
-    `<button class="option" onclick="answer('${o.next}', ${i})">
-      <span class="option-icon">${o.icon}</span>
-      <span class="option-body">
-        <span class="option-title">${o.title}</span>
-        ${o.sub ? `<span class="option-sub">${o.sub}</span>` : ''}
-      </span>
-    </button>`
-  ).join('');
-
-  const backBtn = history.length > 0
-    ? `<button class="back-btn" onclick="goBack()">Vorige vraag</button>`
-    : '';
-
-  return `
-    ${renderProgress(qId)}
-    <div class="question-card quiz-step">
-      <div class="q-eyebrow">${q.eyebrow}</div>
-      <div class="q-text">${q.text}</div>
-      <div class="options">${opts}</div>
-    </div>
-    ${backBtn}
-  `;
-}
-
-function renderResult(resultId) {
-  const r = RESULTS[resultId];
-  const actions = r.actions.map(a =>
-    `<a href="${a.url}" class="result-cta ${a.primary ? 'primary' : 'secondary'}">
-      <span>${a.label.replace(' →', '')}</span>
-      <span class="result-cta-arrow">→</span>
-    </a>`
-  ).join('');
-
-  // GA event
-  gtag('event', 'quiz_complete', { result: resultId });
-
-  return `
-    ${renderProgress('result')}
-    <div class="result-card quiz-step">
-      <div class="result-band">
-        <div class="result-badge">${r.badge}</div>
-        <div class="result-heading">${r.heading}</div>
-        <p class="result-intro">${r.intro}</p>
-      </div>
-      <div class="result-body">
-        <div class="result-why">
-          <div class="result-why-label">Waarom dit helpt</div>
-          <p>${r.why}</p>
+  const q = Q[qId];
+  const opts = q.options.map((o, i) => `
+    <button class="option" onclick="answer('${o.next}', ${i})">
+      <div class="option-marker"></div>
+      <div class="option-content">
+        <div class="option-text">
+          <div class="option-title">${o.title}</div>
+          ${o.sub ? `<div class="option-sub">${o.sub}</div>` : ''}
         </div>
-        <div class="result-actions">${actions}</div>
+        <div class="option-arrow">›</div>
       </div>
-    </div>
-    <div class="result-restart">
-      <button onclick="restart()">Quiz opnieuw doen</button>
-    </div>
-  `;
+    </button>`).join('');
+
+  const back = history.length > 0 ? `<div class="back-row"><button class="back-btn" onclick="goBack()">Vorige vraag</button></div>` : '';
+
+  document.getElementById('quiz-main').innerHTML = `
+    <div class="quiz-step">
+      <div class="question-card">
+        <div class="q-header">
+          <div class="q-eyebrow">${q.eyebrow}</div>
+          <div class="q-text">${q.text}</div>
+          ${q.sub ? `<div class="q-subtext">${q.sub}</div>` : ''}
+        </div>
+        <div class="options">${opts}</div>
+      </div>
+      ${back}
+    </div>`;
 }
 
+// ─── Render result ─────────────────────────────────────────────────────────────
+function renderResult(rId) {
+  const r = R[rId];
+  const actions = r.actions.map(a => `
+    <a href="${a.url}" class="result-cta ${a.primary ? 'primary' : 'secondary'}">
+      <span class="result-cta-label">${a.label}</span>
+      <span class="result-cta-arrow">→</span>
+    </a>`).join('');
+
+  gtag('event', 'quiz_complete', { result: rId });
+
+  document.getElementById('quiz-main').innerHTML = `
+    <div class="quiz-step">
+      <div class="result-card">
+        <div class="result-hero">
+          <div class="result-badge">${r.badge}</div>
+          <div class="result-heading">${r.heading}</div>
+          <p class="result-intro">${r.intro}</p>
+        </div>
+        <div class="result-body">
+          <div class="result-why">
+            <div class="result-section-label">Waarom dit helpt</div>
+            <div class="result-why-text">${r.why}</div>
+          </div>
+          <div class="result-actions-col">
+            <div class="result-section-label">Advies &amp; product</div>
+            ${actions}
+          </div>
+        </div>
+        <div class="result-restart">
+          <button onclick="restart()">Opnieuw beginnen met de quiz</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ─── Navigation ────────────────────────────────────────────────────────────────
 function render(stepId) {
-  const container = document.getElementById('quiz-container');
-  if (RESULTS[stepId]) {
-    container.innerHTML = renderResult(stepId);
-  } else {
-    container.innerHTML = renderQuestion(stepId);
-  }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateSidebar(stepId);
+  if (R[stepId]) renderResult(stepId);
+  else renderQuestion(stepId);
+  window.scrollTo({ top: document.querySelector('.quiz-shell').offsetTop - 80, behavior: 'smooth' });
 }
 
-// ─── Actions ──────────────────────────────────────────────────────────────────
-
-function answer(next, optionIndex) {
-  // Flash selected state
-  const opts = document.querySelectorAll('.option');
-  if (opts[optionIndex]) opts[optionIndex].classList.add('selected');
-
-  history.push(currentStep);
-  currentStep = next;
-  setTimeout(() => render(currentStep), 160);
+function answer(next, idx) {
+  document.querySelectorAll('.option')[idx]?.classList.add('selected');
+  history.push(current);
+  current = next;
+  setTimeout(() => render(current), 180);
 }
 
 function goBack() {
-  if (history.length === 0) return;
-  currentStep = history.pop();
-  render(currentStep);
+  if (!history.length) return;
+  current = history.pop();
+  render(current);
 }
 
 function restart() {
   history = [];
-  currentStep = 'q1';
-  render(currentStep);
+  current = 'q1';
+  render(current);
 }
-
-// ─── Init ─────────────────────────────────────────────────────────────────────
 
 render('q1');
 </script>
