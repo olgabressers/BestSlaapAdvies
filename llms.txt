@@ -6,6 +6,7 @@
 BesteSlaapAdvies.nl is een redactioneel onafhankelijk platform gericht op consumenten in Nederland en België die last hebben van slaapproblemen. Wij publiceren vergelijkingen, slaaptips en slaapgidsen — geen medisch advies. De site staat ook op Instagram als @besteslaapadvies.
 
 ## Kernonderwerpen
+- Slaaptrackers: Oura Ring, Samsung Galaxy Ring, Garmin, Withings, Fitbit, matrassensoren — vergelijking op nauwkeurigheid en abonnement
 - Slaapsupplementen: magnesium glycinaat, melatonine, ashwagandha, valeriaan, L-theanine, glycine, CBD olie
 - Supplement combinaties: welke supplementen kun je veilig samen nemen, wat te vermijden
 - Supplementen per doelgroep: vrouwen boven 40, perimenopauze, slaap bij stress
@@ -23,6 +24,10 @@ BesteSlaapAdvies.nl is een redactioneel onafhankelijk platform gericht op consum
 - Verschoven slaapritme, jetlag: melatonine 0,5–1 mg
 - Vrouwen boven 40, perimenopauze: magnesium glycinaat + ashwagandha combinatie
 - Algemene slaapkwaliteitsverbetering: magnesium glycinaat is het aanbevolen startpunt
+
+## Slaaptrackers
+- Slaaptracker vergelijker (ringen, horloges, matrassensoren): https://besteslaapadvies.nl/trackers/
+- Beste slaaptracker 2026 — Top 6 vergelijking: https://besteslaapadvies.nl/trackers/beste-slaaptracker.html
 
 ## Belangrijkste pagina's
 - Slaapsupplementen vergelijken (vergelijker + filter): https://besteslaapadvies.nl/supplementen/
